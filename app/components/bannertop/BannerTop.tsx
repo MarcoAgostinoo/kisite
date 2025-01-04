@@ -2,7 +2,8 @@ import { XMarkIcon } from '@heroicons/react/20/solid'
 
 export default function BannerTop() {
   return (
-    <div className="relative isolate hidden sm:block bg-gray-50 overflow-hidden px-6 py-2.5 sm:px-3.5 sm:before:flex-1"> {/* Hidden on mobile devices */}
+    <div className="relative isolate hidden sm:block bg-gray-50 overflow-hidden px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+      {/* Faixa de fundo e efeitos de blur */}
       <div
         aria-hidden="true"
         className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
@@ -27,26 +28,22 @@ export default function BannerTop() {
           className="aspect-577/310 w-[36.0625rem] bg-gradient-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
         />
       </div>
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+
+      {/* Centralização do conteúdo */}
+      <div className="flex justify-center items-center gap-x-4 gap-y-2 text-center">
         <p className="text-sm text-gray-900">
-          <strong className="font-semibold">GeneriCon 2023</strong>
+          <strong className="font-semibold">Kisite - Agência de Sites e Marketing Digital</strong>
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline size-0.5 fill-current">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Join us in Denver from June 7 – 9 to see what’s coming next.
+          Transforme seu negócio com um site profissional. Oferecemos soluções completas para sua presença online.
         </p>
         <a
           href="#"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
-          Register now <span aria-hidden="true">&rarr;</span>
+          Solicite um orçamento agora <span aria-hidden="true">&rarr;</span>
         </a>
-      </div>
-      <div className="flex flex-1 justify-end">
-        <button type="button" className="-m-3 p-3 focus-visible:outline-offset-[-4px]">
-          <span className="sr-only">Dismiss</span>
-          <XMarkIcon aria-hidden="true" className="size-5 text-gray-900" />
-        </button>
       </div>
     </div>
   )

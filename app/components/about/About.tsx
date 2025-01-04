@@ -1,17 +1,17 @@
 import Image from "next/image";
 
 const links = [
-  { name: "Nossa História", href: "#" },
-  { name: "Nossa Missão", href: "#" },
-  { name: "Valores", href: "#" },
-  { name: "Conheça nossa liderança", href: "#" },
+  { name: "Nossos Produtos", href: "#" },
+  { name: "Nossos Serviços", href: "#" },
+  { name: "Depoimentos de Clientes", href: "#" },
+  { name: "Entre em Contato", href: "#" },
 ];
 
 const stats = [
-  { name: "Anos de Experiência", value: "12+" },
-  { name: "Colaboradores", value: "300+" },
-  { name: "Clientes Atendidos", value: "1000+" },
-  { name: "Projetos Concluídos", value: "500+" },
+  { name: "Produtos Disponíveis", value: "100+" },
+  { name: "Serviços Personalizados", value: "50+" },
+  { name: "Clientes Satisfeitos", value: "2000+" },
+  { name: "Projetos Concluídos", value: "1500+" },
 ];
 
 export default function About() {
@@ -52,13 +52,10 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-            Quem Somos
+            Aumente suas Vendas Conosco
           </h2>
           <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
-            Somos uma equipe dedicada, com mais de 12 anos de experiência em
-            transformar o potencial das pessoas e empresas. Nossa missão é
-            oferecer soluções que impulsionem seu crescimento pessoal e
-            profissional.
+            Oferecemos soluções personalizadas para impulsionar seus resultados. Nossos produtos e serviços são projetados para aumentar a performance da sua empresa e melhorar a experiência do seu cliente. Aproveite nossa expertise e conquiste novos mercados.
           </p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">

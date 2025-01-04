@@ -3,7 +3,7 @@ import { Button } from "flowbite-react"; // Importando o botão do Flowbite
 
 export default function SectionTwo() {
   return (
-    <section className="bg-[#f4f4f4] py-20">
+    <section id="SectionTwo" className="bg-[#f4f4f4] py-20">
       <div className="container mx-auto px-6 text-center">
         <h2 className="mb-4 text-4xl font-bold text-[#222]">
           Transforme Sua Presença Online

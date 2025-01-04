@@ -3,11 +3,11 @@ import Navbar from "./components/navbar/NavBar";
 import CustomFooter from "./components/footer/CustomFooter";
 import Hero from "./components/hero/Hero";
 import SectionTwo from "./components/sectiontwo/SectionTwo";
-import Products from "./components/products/Products";
+import Servicos from "./components/servicos/Servicos";
 import About from "./components/about/About";
 import ContantSection from "./components/contentsection/ContentSection";
 import BannerTop from "./components/bannertop/BannerTop";
-import Price from "./components/price/Price";
+import Precos from "./components/precos/Precos";
 
 export default function Home() {
   return (
@@ -16,9 +16,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <SectionTwo />
-      <Products />
+      <Servicos />
       <About />
-      <Price />
+      <Precos />
       <ContantSection />
       <CustomFooter />
     </main>

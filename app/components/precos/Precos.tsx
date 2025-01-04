@@ -1,6 +1,6 @@
 import { CheckIcon } from '@heroicons/react/20/solid';
 
-export default function Price() {
+export default function Precos () {
   interface Plan {
     name: string;
     price: number;
@@ -60,7 +60,7 @@ export default function Price() {
   
 
   return (
-    <div className="bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <div id="precos" className="bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="text-center">
         <h2 className="text-base font-semibold text-indigo-600">Preços</h2>
         <p className="mt-2 text-5xl font-semibold text-gray-900 sm:text-6xl">Escolha o plano ideal para o seu site</p>

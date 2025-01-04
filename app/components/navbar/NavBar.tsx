@@ -33,6 +33,12 @@ export default function NavBar() {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLinkClick = () => {
+    if (isMobile) {
+      setMenuOpen(false); // Fecha o menu ao clicar no link em dispositivos móveis
+    }
+  };
+
   return (
     <Navbar
       fluid
@@ -58,15 +64,17 @@ export default function NavBar() {
       </div>
       <Navbar.Collapse className={menuOpen ? "block" : "hidden"}>
         <Navbar.Link
-          href="#"
+          href="/"
           active
+          onClick={handleLinkClick}
           className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
         >
           Inicio
         </Navbar.Link>
         <Navbar.Link
-          href="#"
+          href="#servicos"
           active
+          onClick={handleLinkClick}
           className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
         >
           Serviços
@@ -74,20 +82,23 @@ export default function NavBar() {
         <Navbar.Link
           href="#"
           active
+          onClick={handleLinkClick}
           className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
         >
-          Services
+          Portifolio
         </Navbar.Link>
         <Navbar.Link
-          href="#"
+          href="#precos"
           active
+          onClick={handleLinkClick}
           className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
         >
           Preços
         </Navbar.Link>
         <Navbar.Link
-          href="#"
+          href="/pages/contato"
           active
+          onClick={handleLinkClick}
           className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
         >
           Contato
