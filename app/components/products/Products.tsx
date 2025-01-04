@@ -1,34 +1,34 @@
 import {
-  ArrowPathIcon,
   CloudArrowUpIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
+  ShieldCheckIcon,
+  WrenchScrewdriverIcon,
+  FolderIcon,
 } from "@heroicons/react/24/outline";
 
 const features = [
   {
-    name: "Push to deploy",
+    name: "Criação de Sites Profissionais",
     description:
-      "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.",
+      "Desenvolvemos sites sob medida para empresas de diversos segmentos, com design responsivo e funcionalidade aprimorada. Seja um mecânico, advogado ou lojista, temos a solução ideal para você.",
     icon: CloudArrowUpIcon,
   },
   {
-    name: "SSL certificates",
+    name: "E-commerce Personalizado",
     description:
-      "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.",
-    icon: LockClosedIcon,
+      "Oferecemos lojas virtuais completas com integração de sistemas de pagamento e funcionalidades específicas para seu negócio. Expanda suas vendas com uma plataforma otimizada e intuitiva.",
+    icon: ShieldCheckIcon,
   },
   {
-    name: "Simple queues",
+    name: "Manutenção e Suporte Contínuo",
     description:
-      "Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.",
-    icon: ArrowPathIcon,
+      "Garantimos que seu site esteja sempre atualizado, seguro e funcionando corretamente. Nossos planos de manutenção asseguram que seu site continue eficaz e livre de problemas.",
+    icon: WrenchScrewdriverIcon,
   },
   {
-    name: "Advanced security",
+    name: "Design Personalizado e Responsivo",
     description:
-      "Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.",
-    icon: FingerPrintIcon,
+      "Criamos sites que oferecem a melhor experiência de usuário em qualquer dispositivo. Seja no desktop, tablet ou celular, seu site estará sempre visualmente atrativo e funcional.",
+    icon: FolderIcon,
   },
 ];
 
@@ -38,15 +38,13 @@ export default function Products() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold text-indigo-600">
-            Deploy faster
+            Transforme sua Presença Online
           </h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-            Everything you need to deploy your app
+            Soluções digitais para alavancar seu negócio
           </p>
           <p className="mt-6 text-lg text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-            Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
-            In mi viverra elit nunc.
+            Na KiSite, criamos sites modernos e responsivos, com foco em resultados reais. Nossa missão é ajudar pequenos e médios negócios a crescerem, se destacarem e conquistarem mais clientes online.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

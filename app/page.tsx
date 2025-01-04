@@ -7,6 +7,7 @@ import Products from "./components/products/Products";
 import About from "./components/about/About";
 import ContantSection from "./components/contentsection/ContentSection";
 import BannerTop from "./components/bannertop/BannerTop";
+import Price from "./components/price/Price";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <SectionTwo />
       <Products />
       <About />
+      <Price />
       <ContantSection />
       <CustomFooter />
     </main>

@@ -1,17 +1,17 @@
 import Image from "next/image";
 
 const links = [
-  { name: "Open roles", href: "#" },
-  { name: "Internship program", href: "#" },
-  { name: "Our values", href: "#" },
-  { name: "Meet our leadership", href: "#" },
+  { name: "Nossa História", href: "#" },
+  { name: "Nossa Missão", href: "#" },
+  { name: "Valores", href: "#" },
+  { name: "Conheça nossa liderança", href: "#" },
 ];
 
 const stats = [
-  { name: "Offices worldwide", value: "12" },
-  { name: "Full-time colleagues", value: "300+" },
-  { name: "Hours per week", value: "40" },
-  { name: "Paid time off", value: "Unlimited" },
+  { name: "Anos de Experiência", value: "12+" },
+  { name: "Colaboradores", value: "300+" },
+  { name: "Clientes Atendidos", value: "1000+" },
+  { name: "Projetos Concluídos", value: "500+" },
 ];
 
 export default function About() {
@@ -52,12 +52,13 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-            Work with us
+            Quem Somos
           </h2>
           <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-            fugiat.
+            Somos uma equipe dedicada, com mais de 12 anos de experiência em
+            transformar o potencial das pessoas e empresas. Nossa missão é
+            oferecer soluções que impulsionem seu crescimento pessoal e
+            profissional.
           </p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">

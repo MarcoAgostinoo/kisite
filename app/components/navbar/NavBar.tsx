@@ -6,15 +6,15 @@ import { useState, useEffect } from "react";
 export default function NavBar() {
   const [scrolling, setScrolling] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); 
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolling(window.scrollY > 100); 
+      setScrolling(window.scrollY > 100);
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); 
+      setIsMobile(window.innerWidth < 768);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -30,7 +30,7 @@ export default function NavBar() {
   }, []);
 
   const handleToggle = () => {
-    setMenuOpen(!menuOpen); 
+    setMenuOpen(!menuOpen);
   };
 
   return (
@@ -52,25 +52,45 @@ export default function NavBar() {
           height={60}
         />
       </Navbar.Brand>
-      <div className="flex md:order-2 gap-10">
+      <div className="flex gap-10 md:order-2">
         <Button>Get started</Button>
-        <Navbar.Toggle onClick={handleToggle} /> 
+        <Navbar.Toggle onClick={handleToggle} />
       </div>
-      <Navbar.Collapse className={menuOpen ? "block" : "hidden"}> {/* Garante que o menu seja visível quando aberto */}
-        <Navbar.Link href="#" active className={menuOpen ? "text-white" : ""}>
-          Home
+      <Navbar.Collapse className={menuOpen ? "block" : "hidden"}>
+        <Navbar.Link
+          href="#"
+          active
+          className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
+        >
+          Inicio
         </Navbar.Link>
-        <Navbar.Link href="#" className={menuOpen ? "text-white" : ""}>
-          About
+        <Navbar.Link
+          href="#"
+          active
+          className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
+        >
+          Serviços
         </Navbar.Link>
-        <Navbar.Link href="#" className={menuOpen ? "text-white" : ""}>
+        <Navbar.Link
+          href="#"
+          active
+          className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
+        >
           Services
         </Navbar.Link>
-        <Navbar.Link href="#" className={menuOpen ? "text-white" : ""}>
-          Pricing
+        <Navbar.Link
+          href="#"
+          active
+          className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
+        >
+          Preços
         </Navbar.Link>
-        <Navbar.Link href="#" className={menuOpen ? "text-white" : ""}>
-          Contact
+        <Navbar.Link
+          href="#"
+          active
+          className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
+        >
+          Contato
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
