@@ -3,15 +3,14 @@ import { Button } from "flowbite-react"; // Importando o botão do Flowbite
 
 export default function SectionTwo() {
   return (
-    <section id="SectionTwo" className="bg-[#f4f4f4] py-20">
+    <section id="SectionTwo" className="bg-[#f4f4f4] lg:mt-10 py-20 ">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="mb-4 text-4xl font-bold text-[#222]">
-          Transforme Sua Presença Online
+        <h2 className="mb-4  text-4xl font-bold text-[#222]">
+          Por Que Sua Empresa Precisa de Um Site?
         </h2>
         <p className="mb-8 text-lg text-[#333]">
-          Criação e venda de sites e landing pages personalizados para alavancar
-          o seu negócio. Tenha uma presença online poderosa e eficiente com
-          design moderno e funcional.
+          Mais de 70% dos consumidores procuram negócios online antes de
+          comprar. Não perca clientes por não estar onde eles estão.
         </p>
 
         <div className="mb-8 flex justify-center gap-8">
@@ -65,14 +64,14 @@ export default function SectionTwo() {
               href="/contato"
               className="rounded-lg bg-[#4CAF50] px-6 py-3 text-xl font-semibold text-white hover:bg-[#45a049]"
             >
-              Entre em Contato
+              Fale por whatsApp
             </Button>
             <Button
               color="dark"
               href="/nossos-servicos"
               className="rounded-lg bg-[#222] px-6 py-3 text-xl font-semibold text-white hover:bg-[#333]"
             >
-              Nossos Serviços
+              Planos
             </Button>
           </div>
         </div>

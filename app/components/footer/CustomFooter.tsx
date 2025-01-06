@@ -12,10 +12,10 @@ export default function CustomFooter() {
             name="Flowbite"
           />
           <FlowbiteFooter.LinkGroup>
-            <FlowbiteFooter.Link href="#">About</FlowbiteFooter.Link>
+            <FlowbiteFooter.Link href="#">Sobre</FlowbiteFooter.Link>
             <FlowbiteFooter.Link href="#">Privacy Policy</FlowbiteFooter.Link>
-            <FlowbiteFooter.Link href="#">Licensing</FlowbiteFooter.Link>
-            <FlowbiteFooter.Link href="#">Contact</FlowbiteFooter.Link>
+            <FlowbiteFooter.Link href="#">Licenças</FlowbiteFooter.Link>
+            <FlowbiteFooter.Link href="/pages/contato">Contato</FlowbiteFooter.Link>
           </FlowbiteFooter.LinkGroup>
         </div>
         <FlowbiteFooter.Divider />

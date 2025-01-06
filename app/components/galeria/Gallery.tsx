@@ -13,13 +13,20 @@ const Gallery = () => {
   const [buttonLink, setButtonLink] = useState('/link-para-imagem-principal');
 
   // Função para atualizar a imagem e as informações quando uma imagem pequena for clicada
-  const handleImageClick = (src, newTitle, newSubtitle, newDescription, newLink) => {
+  const handleImageClick = (
+    src: string, 
+    newTitle: string, 
+    newSubtitle: string, 
+    newDescription: string, 
+    newLink: string
+  ) => {
     setMainImage(src);
     setTitle(newTitle);
     setSubtitle(newSubtitle);
     setDescription(newDescription);
     setButtonLink(newLink);
   };
+  
 
   return (
     <div className="grid gap-4 m-">

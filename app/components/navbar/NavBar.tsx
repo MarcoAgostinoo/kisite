@@ -44,22 +44,27 @@ export default function NavBar() {
       fluid
       rounded
       className={`fixed left-0 right-0 top-0 z-30 transition-all duration-300 ${
-        scrolling ? "bg-gray-500 bg-opacity-60" : "bg-transparent"
-      } ${scrolling ? "top-0" : isMobile ? "top-0" : "mt-16"} ${
+        scrolling ? "bg-gray-200 bg-opacity-80" : "bg-transparent"
+      } ${scrolling ? "top-0" : isMobile ? "top-0" : "mt-12"} ${
         menuOpen ? "bg-gray-900 bg-opacity-70" : ""
       }`}
     >
-      <Navbar.Brand href="https://flowbite-react.com">
-        <Image
-          src="/logo.png"
-          alt="Flowbite Logo"
-          className="mr-3 h-8"
-          width={60}
-          height={60}
-        />
+      <Navbar.Brand href="/">
+        <div className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Flowbite Logo"
+            width={80}
+            height={80}
+            className="mr-3 object-contain"
+          />
+          <span className="text-shadow-lg self-center whitespace-nowrap text-xl font-semibold text-black">
+            Kisite
+          </span>
+        </div>
       </Navbar.Brand>
       <div className="flex gap-10 md:order-2">
-        <Button>Get started</Button>
+        {/* <Button>Get started</Button> */}
         <Navbar.Toggle onClick={handleToggle} />
       </div>
       <Navbar.Collapse className={menuOpen ? "block" : "hidden"}>
@@ -67,15 +72,15 @@ export default function NavBar() {
           href="/"
           active
           onClick={handleLinkClick}
-          className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
+          className={`${menuOpen ? "text-white" : ""} lg:p-[6px]`}
         >
-          Inicio
+          Início
         </Navbar.Link>
         <Navbar.Link
-          href="#servicos"
+          href="/#servicos"
           active
           onClick={handleLinkClick}
-          className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
+          className={`${menuOpen ? "text-white" : ""} lg:p-[6px]`}
         >
           Serviços
         </Navbar.Link>
@@ -83,15 +88,15 @@ export default function NavBar() {
           href="#"
           active
           onClick={handleLinkClick}
-          className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
+          className={`${menuOpen ? "text-white" : ""} lg:p-[6px]`}
         >
-          Portifolio
+          Portfólio
         </Navbar.Link>
         <Navbar.Link
-          href="#precos"
+          href="/#precos"
           active
           onClick={handleLinkClick}
-          className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
+          className={`${menuOpen ? "text-white" : ""}lg:p-[6px]`}
         >
           Preços
         </Navbar.Link>
@@ -99,9 +104,17 @@ export default function NavBar() {
           href="/pages/contato"
           active
           onClick={handleLinkClick}
-          className={`${menuOpen ? "text-white" : ""} lg:rounded-[10px] lg:bg-[#f4f4f4] lg:p-[6px]`}
+          className={`${menuOpen ? "text-white" : ""} lg:p-[6px]`}
         >
           Contato
+        </Navbar.Link>
+        <Navbar.Link
+          href="/pages/blog"
+          active
+          onClick={handleLinkClick}
+          className={`${menuOpen ? "text-white" : ""} lg:p-[6px]`}
+        >
+          Blog
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
