@@ -42,8 +42,7 @@ export default function NavBar() {
   return (
     <Navbar
       fluid
-      rounded
-      className={`fixed left-0 right-0 top-0 z-30 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-30 text-slate-950 transition-all duration-300 ${
         scrolling ? "bg-gray-200 bg-opacity-80" : "bg-transparent"
       } ${scrolling ? "top-0" : isMobile ? "top-0" : "mt-12"} ${
         menuOpen ? "bg-gray-900 bg-opacity-70" : ""
@@ -54,11 +53,11 @@ export default function NavBar() {
           <Image
             src="/logo.png"
             alt="Flowbite Logo"
-            width={80}
-            height={80}
-            className="mr-3 object-contain"
+            width={70}
+            height={70}
+            className="mr-3 object-contain lg:ml-40"
           />
-          <span className="text-shadow-lg self-center whitespace-nowrap text-xl font-semibold text-black">
+          <span className="text-shadow-lg self-center whitespace-nowrap text-xl font-semibold text-slate-800">
             Kisite
           </span>
         </div>
@@ -72,7 +71,7 @@ export default function NavBar() {
           href="/"
           active
           onClick={handleLinkClick}
-          className={`${menuOpen ? "text-white" : ""} lg:p-[6px]`}
+          className={`${menuOpen ? "text-white" : "text-slate-800"} lg:p-[6px] lg:text-black`}
         >
           Início
         </Navbar.Link>
@@ -80,7 +79,7 @@ export default function NavBar() {
           href="/#servicos"
           active
           onClick={handleLinkClick}
-          className={`${menuOpen ? "text-white" : ""} lg:p-[6px]`}
+          className={`${menuOpen ? "text-white" : "text-slate-800"} lg:p-[6px] lg:text-black`}
         >
           Serviços
         </Navbar.Link>
@@ -88,7 +87,7 @@ export default function NavBar() {
           href="#"
           active
           onClick={handleLinkClick}
-          className={`${menuOpen ? "text-white" : ""} lg:p-[6px]`}
+          className={`${menuOpen ? "text-white" : "text-slate-800"} lg:p-[6px] lg:text-black`}
         >
           Portfólio
         </Navbar.Link>
@@ -96,7 +95,7 @@ export default function NavBar() {
           href="/#precos"
           active
           onClick={handleLinkClick}
-          className={`${menuOpen ? "text-white" : ""}lg:p-[6px]`}
+          className={`${menuOpen ? "text-white" : "text-slate-800"} lg:p-[6px] lg:text-black`}
         >
           Preços
         </Navbar.Link>
@@ -104,7 +103,7 @@ export default function NavBar() {
           href="/pages/contato"
           active
           onClick={handleLinkClick}
-          className={`${menuOpen ? "text-white" : ""} lg:p-[6px]`}
+          className={`${menuOpen ? "text-white" : "text-slate-800"} lg:p-[6px] lg:text-black`}
         >
           Contato
         </Navbar.Link>
@@ -112,7 +111,7 @@ export default function NavBar() {
           href="/pages/blog"
           active
           onClick={handleLinkClick}
-          className={`${menuOpen ? "text-white" : ""} lg:p-[6px]`}
+          className={`${menuOpen ? "text-white" : "text-slate-800"} lg:mr-56 lg:p-[6px] lg:text-black`}
         >
           Blog
         </Navbar.Link>
