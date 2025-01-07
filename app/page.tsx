@@ -8,6 +8,8 @@ import About from "./components/about/About";
 import ContantSection from "./components/contentsection/ContentSection";
 import BannerTop from "./components/bannertop/BannerTop";
 import Precos from "./components/precos/Precos";
+import Gallery from "./components/galeria/Gallery";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -19,6 +21,7 @@ export default function Home() {
       <Servicos />
       <About />
       <Precos />
+      <Gallery />
       <ContantSection />
       <CustomFooter />
     </main>

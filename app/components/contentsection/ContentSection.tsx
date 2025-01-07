@@ -58,16 +58,18 @@ export default function ContantSection() {
             </div>
           </div>
         </div>
-        <div className="mt-12 sm:ml-0 sm:mt-0 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+        <div className="lg:mt-12 sm:ml-0 sm:mt-0 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <Image
             alt="Desenvolvimento Web"
-            src="/webinho.webp"
-            width={912}
-            height={512} 
-            className="w-full max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+            src="/webinho.png"
+            width={412}
+            height={412}
+            objectFit="cover"
+            className="w-full lg:mt-20 max-w-[45rem] sm:w-full sm:max-w-[40rem] md:max-w-[35rem] lg:max-w-[30rem]"
             priority
           />
         </div>
+
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="max-w-xl text-base text-gray-700 lg:max-w-lg">

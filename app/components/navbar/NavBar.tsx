@@ -84,7 +84,7 @@ export default function NavBar() {
           Serviços
         </Navbar.Link>
         <Navbar.Link
-          href="#"
+          href="/#portifolio"
           active
           onClick={handleLinkClick}
           className={`${menuOpen ? "text-white" : "text-slate-800"} lg:p-[6px] lg:text-black`}
