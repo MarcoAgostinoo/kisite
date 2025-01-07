@@ -10,6 +10,8 @@ import BannerTop from "./components/bannertop/BannerTop";
 import Precos from "./components/precos/Precos";
 import Gallery from "./components/galeria/Gallery";
 import Image from "next/image";
+import Accordion from "./components/faq/Accordion";
+import GridColumTree from "./components/gridcolumtree/GridColumTree";
 
 export default function Home() {
   return (
@@ -23,6 +25,7 @@ export default function Home() {
       <Precos />
       <Gallery />
       <ContantSection />
+      <GridColumTree />
       <CustomFooter />
     </main>
   );

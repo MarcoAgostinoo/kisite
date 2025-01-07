@@ -4,6 +4,8 @@ import {
   ServerIcon,
 } from "@heroicons/react/20/solid";
 import Image from "next/image";
+import Accordion from "../faq/Accordion";
+
 
 export default function ContantSection() {
   return (
@@ -140,6 +142,7 @@ export default function ContantSection() {
                 seu negócio a crescer. Cada projeto é tratado com seriedade,
                 atenção e compromisso com a excelência.
               </p>
+            <Accordion />
             </div>
           </div>
         </div>
