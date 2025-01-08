@@ -4,8 +4,6 @@ import NavBar from "@/app/components/navbar/NavBar";
 import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import { Field, Label, Switch } from '@headlessui/react'
-import Galeria from "@/app/components/galeria/Gallery";
-import VideoAnimation from "@/app/components/logoanimado/VideoAnimation";
 
 export default function Contato() {
   const [agreed, setAgreed] = useState(false)

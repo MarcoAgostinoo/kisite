@@ -1,12 +1,11 @@
 'use client';
-
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Accordion() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const toggleAccordion = (index) => {
+  const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
@@ -17,14 +16,14 @@ export default function Accordion() {
           <h2 id={`accordion-open-heading-${index + 1}`}>
             <button
               type="button"
-              className={`flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-[${item.bgColor}] dark:hover:bg-[#3a6ea5] gap-3`}
+              className={`flex w-full items-center justify-between rounded-t-xl border border-b-0 border-gray-200 p-5 font-medium text-gray-500 focus:ring-4 focus:ring-gray-200 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-800 rtl:text-right hover:bg-[${item.bgColor}] gap-3 dark:hover:bg-[#3a6ea5]`}
               onClick={() => toggleAccordion(index)}
               aria-expanded={activeIndex === index}
               aria-controls={`accordion-open-body-${index + 1}`}
             >
               <span className="flex items-center">
                 <svg
-                  className="w-5 h-5 me-2 shrink-0"
+                  className="me-2 h-5 w-5 shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +38,7 @@ export default function Accordion() {
               </span>
               <svg
                 data-accordion-icon
-                className={`w-3 h-3 ${activeIndex === index ? 'rotate-180' : ''} shrink-0`}
+                className={`h-3 w-3 ${activeIndex === index ? "rotate-180" : ""} shrink-0`}
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -61,33 +60,36 @@ export default function Accordion() {
               <motion.div
                 id={`accordion-open-body-${index + 1}`}
                 initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
+                animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
                 aria-labelledby={`accordion-open-heading-${index + 1}`}
               >
-                <div className="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-                  <p className="mb-2 text-gray-500 dark:text-gray-400">{item.content}</p>
+                <div className="border border-b-0 border-gray-200 p-5 dark:border-gray-700 dark:bg-gray-900">
+                  <p className="mb-2 text-gray-500 dark:text-gray-400">
+                    {item.content}
+                  </p>
                   {item.link && (
                     <p className="text-gray-500 dark:text-gray-400">
-                      Confira este guia para aprender como{' '}
+                      Confira este guia para aprender como{" "}
                       <a
                         href={item.link}
-                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                        className="text-blue-600 hover:underline dark:text-blue-500"
                       >
                         começar
-                      </a>{' '}
-                      e desenvolver sites ainda mais rápido com componentes sobre o Tailwind CSS.
+                      </a>{" "}
+                      e desenvolver sites ainda mais rápido com componentes
+                      sobre o Tailwind CSS.
                     </p>
                   )}
                   {item.list && (
-                    <ul className="ps-5 text-gray-500 list-disc dark:text-gray-400">
+                    <ul className="list-disc ps-5 text-gray-500 dark:text-gray-400">
                       {item.list.map((listItem, idx) => (
                         <li key={idx}>
                           <a
                             href={listItem.link}
-                            className="text-blue-600 dark:text-blue-500 hover:underline"
+                            className="text-blue-600 hover:underline dark:text-blue-500"
                           >
                             {listItem.text}
                           </a>
@@ -107,28 +109,28 @@ export default function Accordion() {
 
 const accordionData = [
   {
-    title: 'O que é a KiSite?',
+    title: "O que é a KiSite?",
     content:
-      'A KiSite é uma empresa especializada na criação de sites profissionais, e-commerce personalizado e soluções digitais para ajudar pequenos e médios negócios a crescerem online.',
-    link: '/docs/getting-started/introduction/',
-    bgColor: '#3a6ea5', // Azul
+      "A KiSite é uma empresa especializada na criação de sites profissionais, e-commerce personalizado e soluções digitais para ajudar pequenos e médios negócios a crescerem online.",
+    link: "/docs/getting-started/introduction/",
+    bgColor: "#3a6ea5",
   },
   {
-    title: 'Quais serviços a KiSite oferece?',
+    title: "Quais serviços a KiSite oferece?",
     content:
-      'A KiSite oferece serviços como criação de sites personalizados, integração com e-commerce, otimização de SEO, automação de marketing e suporte contínuo para manter seu site sempre atualizado.',
-    link: 'https://kisite.com/servicos/',
-    bgColor: '#f59c42', // Laranja
+      "A KiSite oferece serviços como criação de sites personalizados, integração com e-commerce, otimização de SEO, automação de marketing e suporte contínuo para manter seu site sempre atualizado.",
+    link: "https://kisite.com/servicos/",
+    bgColor: "#f59c42",
   },
   {
-    title: 'Quais planos estão disponíveis?',
+    title: "Quais planos estão disponíveis?",
     content:
-      'Oferecemos três planos: Básico, Profissional e Enterprise, para atender diferentes necessidades e orçamentos. Cada plano inclui recursos personalizados para atender às demandas de sua empresa.',
+      "Oferecemos três planos: Básico, Profissional e Enterprise, para atender diferentes necessidades e orçamentos. Cada plano inclui recursos personalizados para atender às demandas de sua empresa.",
     list: [
-      { text: 'Plano Básico', link: '/planos#basico' },
-      { text: 'Plano Profissional', link: '/planos#profissional' },
-      { text: 'Plano Enterprise', link: '/planos#enterprise' },
+      { text: "Plano Básico", link: "/planos#basico" },
+      { text: "Plano Profissional", link: "/planos#profissional" },
+      { text: "Plano Enterprise", link: "/planos#enterprise" },
     ],
-    bgColor: '#d1d1d1', // Cinza Claro
+    bgColor: "#d1d1d1",
   },
 ];
