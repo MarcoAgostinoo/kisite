@@ -32,7 +32,8 @@ a {
 
 a:hover,
 a:focus {
-  text-decoration: underline;
+  text-decoration: none;
+  
 }
 
 /* Estilos para cabeçalhos */

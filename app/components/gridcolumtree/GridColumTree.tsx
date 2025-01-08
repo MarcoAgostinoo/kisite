@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function GridColumTree() {
   return (
-    <div className="bg-gray-50 py-24 sm:py-32">
+    <div className="bg-gray-50 py-4 sm:py-4">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-center text-base/7 font-semibold text-indigo-600">
           Transforme sua Presença Online
@@ -19,10 +19,12 @@ export default function GridColumTree() {
                   Design Responsivo
                 </p>
                 <p className="max-lg:text-center mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Criamos sites que se adaptam perfeitamente a qualquer dispositivo, garantindo uma experiência impecável para seus clientes.
+                  Criamos sites que se adaptam perfeitamente a qualquer
+                  dispositivo, garantindo uma experiência impecável para seus
+                  clientes.
                 </p>
               </div>
-              <div className="relative h-64 w-full grow lg:min-h-[30rem] lg:max-w-sm">
+              <div className="relative h-96 w-full grow sm:mt-4 lg:min-h-[30rem] lg:max-w-sm">
                 <Image
                   className="object-cover"
                   src="/smarthphone.png"
@@ -42,7 +44,8 @@ export default function GridColumTree() {
                   Otimização de SEO
                 </p>
                 <p className="max-lg:text-center mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Potencialize sua visibilidade online e alcance mais clientes com estratégias avançadas de SEO.
+                  Potencialize sua visibilidade online e alcance mais clientes
+                  com estratégias avançadas de SEO.
                 </p>
               </div>
               <div className="relative h-64 w-full grow lg:h-auto">
@@ -66,7 +69,8 @@ export default function GridColumTree() {
                   Suporte Contínuo
                 </p>
                 <p className="max-lg:text-center mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Conte com nossa equipe para manter seu site sempre atualizado, seguro e funcional.
+                  Conte com nossa equipe para manter seu site sempre atualizado,
+                  seguro e funcional.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center py-6 lg:pb-2">
@@ -92,7 +96,8 @@ export default function GridColumTree() {
                   Integrações Avançadas
                 </p>
                 <p className="max-lg:text-center mt-2 max-w-lg text-sm/6 text-gray-600">
-                  Integramos ferramentas como WhatsApp, Google Analytics e automação de marketing para maximizar seu potencial online.
+                  Integramos ferramentas como WhatsApp, Google Analytics e
+                  automação de marketing para maximizar seu potencial online.
                 </p>
               </div>
               <div className="relative h-64 w-full grow lg:min-h-[30rem]">
