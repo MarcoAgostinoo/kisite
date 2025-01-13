@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import CustomFooter from "@/app/components/footer/CustomFooter";
 import NavBar from "@/app/components/navbar/NavBar";
-
 interface FormStatus {
   success: boolean;
   message: string;
@@ -17,7 +16,10 @@ export default function Contato() {
     message: "",
     captchaAnswer: "",
   });
-  const [captcha, setCaptcha] = useState<{ question: string; id: number | null }>({
+  const [captcha, setCaptcha] = useState<{
+    question: string;
+    id: number | null;
+  }>({
     question: "",
     id: null,
   });
@@ -25,14 +27,17 @@ export default function Contato() {
 
   // Carregar uma pergunta captcha ao montar o componente
   useEffect(() => {
-    fetch("http://localhost:3006/captcha") // Substitua pela URL do backend em produção
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    fetch(`${apiUrl}/captcha`)
       .then((response) => response.json())
       .then((data) => setCaptcha(data))
       .catch((err) => console.error("Erro ao carregar captcha:", err));
   }, []);
 
   // Gerenciar mudanças nos campos do formulário
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -43,16 +48,22 @@ export default function Contato() {
   // Submeter o formulário
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  
     try {
-      const response = await fetch("http://localhost:3006/send", {
+      const response = await fetch(`${apiUrl}/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, captchaId: captcha.id }),
+        body: JSON.stringify({
+          ...formData,       // Dados do formulário
+          captchaId: captcha.id,   // ID do captcha
+          captchaAnswer: formData.captchaAnswer,  // Resposta do captcha
+        }),
       });
-
+  
       const result = await response.json();
-
+  
       if (response.ok) {
         setFormStatus({
           success: true,
@@ -103,6 +114,7 @@ export default function Contato() {
       console.error("Erro ao submeter o formulário:", error);
     }
   };
+  
 
   return (
     <div>
@@ -110,7 +122,7 @@ export default function Contato() {
       <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 top-[-40] sm:-top-80 -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+          className="absolute inset-x-0 top-[-40] -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 sm:top-[-20rem]"
         >
           <div
             style={{
@@ -130,10 +142,16 @@ export default function Contato() {
             maneira possível!
           </p>
         </div>
-        <form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
+        <form
+          onSubmit={handleSubmit}
+          className="mx-auto mt-16 max-w-xl sm:mt-20"
+        >
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div className="sm:col-span-2">
-              <label htmlFor="name" className="block text-sm/6 font-semibold text-gray-900">
+              <label
+                htmlFor="name"
+                className="block text-sm/6 font-semibold text-gray-900"
+              >
                 Nome
               </label>
               <div className="mt-2.5">
@@ -148,7 +166,10 @@ export default function Contato() {
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="company" className="block text-sm/6 font-semibold text-gray-900">
+              <label
+                htmlFor="company"
+                className="block text-sm/6 font-semibold text-gray-900"
+              >
                 Empresa
               </label>
               <div className="mt-2.5">
@@ -163,7 +184,10 @@ export default function Contato() {
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="email" className="block text-sm/6 font-semibold text-gray-900">
+              <label
+                htmlFor="email"
+                className="block text-sm/6 font-semibold text-gray-900"
+              >
                 E-mail
               </label>
               <div className="mt-2.5">
@@ -178,7 +202,10 @@ export default function Contato() {
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="phone" className="block text-sm/6 font-semibold text-gray-900">
+              <label
+                htmlFor="phone"
+                className="block text-sm/6 font-semibold text-gray-900"
+              >
                 Número de telefone
               </label>
               <div className="mt-2.5">
@@ -194,7 +221,10 @@ export default function Contato() {
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="message" className="block text-sm/6 font-semibold text-gray-900">
+              <label
+                htmlFor="message"
+                className="block text-sm/6 font-semibold text-gray-900"
+              >
                 Mensagem
               </label>
               <div className="mt-2.5">
@@ -209,7 +239,10 @@ export default function Contato() {
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="captchaAnswer" className="block text-sm/6 font-semibold text-gray-900">
+              <label
+                htmlFor="captchaAnswer"
+                className="block text-sm/6 font-semibold text-gray-900"
+              >
                 {captcha.question}
               </label>
               <div className="mt-2.5">
@@ -228,7 +261,7 @@ export default function Contato() {
           <div className="mt-8">
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-orange-500 py-3 px-6 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-orange-500 px-6 py-3 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
               Enviar
             </button>
@@ -236,7 +269,9 @@ export default function Contato() {
         </form>
         {formStatus && (
           <div className="mt-4 text-center">
-            <p className={formStatus.success ? "text-green-600" : "text-red-600"}>
+            <p
+              className={formStatus.success ? "text-green-600" : "text-red-600"}
+            >
               {formStatus.message}
             </p>
           </div>

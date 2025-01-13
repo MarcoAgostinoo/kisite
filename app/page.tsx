@@ -11,6 +11,7 @@ import Precos from "./components/precos/Precos";
 import Gallery from "./components/galeria/Gallery";
 import GridColumTree from "./components/gridcolumtree/GridColumTree";
 
+
 export default function Home() {
   return (
     <main className="w-full flex flex-col">

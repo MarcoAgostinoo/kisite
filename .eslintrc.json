@@ -9,5 +9,16 @@
       "callees": ["twMerge", "createTheme"],
       "classRegex": "^(class(Name)|theme)?$"
     }
+  },
+  "rules": {
+    "tailwindcss/classnames-order": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/enforces-shorthand": "off",
+    "tailwindcss/migration-from-tailwind-2": "off",
+    "tailwindcss/no-contradicting-classname": "off",
+    "tailwindcss/no-unnecessary-arbitrary-value": "off",
+    "no-unused-vars": "warn", 
+    "react/react-in-jsx-scope": "off", 
+    "react/jsx-uses-react": "off"
   }
 }
