@@ -48,75 +48,48 @@ export default function Contato() {
   // Submeter o formulário
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-
+    console.log(`Enviando para: ${apiUrl}/send`);
+  
     try {
       const response = await fetch(`${apiUrl}/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...formData, // Dados do formulário
-          captchaId: captcha.id, // ID do captcha
-          captchaAnswer: formData.captchaAnswer, // Resposta do captcha
+          ...formData,
+          captchaId: captcha.id,
+          captchaAnswer: formData.captchaAnswer,
         }),
       });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setFormStatus({
-          success: true,
-          message: "Mensagem enviada com sucesso!",
-        });
-        setFormData({
-          name: "",
-          company: "",
-          email: "",
-          phone: "",
-          message: "",
-          captchaAnswer: "",
-        });
-      } else {
-        switch (response.status) {
-          case 400:
-            if (result.error && result.error.includes("Captcha inválido")) {
-              setFormStatus({
-                success: false,
-                message:
-                  "A resposta do captcha está incorreta. Tente novamente.",
-              });
-            } else {
-              setFormStatus({
-                success: false,
-                message: result.error || "Erro ao enviar a mensagem.",
-              });
-            }
-            break;
-          case 429:
-            setFormStatus({
-              success: false,
-              message:
-                "Você atingiu o limite de envio de e-mails (2) por hora. Tente novamente mais tarde.",
-            });
-            break;
-          default:
-            setFormStatus({
-              success: false,
-              message: result.error || "Erro ao enviar a mensagem.",
-            });
-            break;
-        }
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Erro desconhecido");
       }
+  
+      const result = await response.json();
+      setFormStatus({
+        success: true,
+        message: "Mensagem enviada com sucesso!",
+      });
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        message: "",
+        captchaAnswer: "",
+      });
     } catch (error) {
       setFormStatus({
         success: false,
-        message: "Erro ao enviar o formulário. Tente novamente mais tarde.",
+        message: `Erro ao submeter o formulário: ${error.message}`,
       });
       console.error("Erro ao submeter o formulário:", error);
     }
   };
-
+  
   return (
     <div>
       <NavBar />
