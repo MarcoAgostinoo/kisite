@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import CustomFooter from "@/app/components/footer/CustomFooter";
 import NavBar from "@/app/components/navbar/NavBar";
+
 interface FormStatus {
   success: boolean;
   message: string;
@@ -14,25 +15,8 @@ export default function Contato() {
     email: "",
     phone: "",
     message: "",
-    captchaAnswer: "",
-  });
-  const [captcha, setCaptcha] = useState<{
-    question: string;
-    id: number | null;
-  }>({
-    question: "",
-    id: null,
   });
   const [formStatus, setFormStatus] = useState<FormStatus | null>(null);
-
-  // Carregar uma pergunta captcha ao montar o componente
-  useEffect(() => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL_CAPTCHA;
-    fetch(`${apiUrl}/captcha`)
-      .then((response) => response.json())
-      .then((data) => setCaptcha(data))
-      .catch((err) => console.error("Erro ao carregar captcha:", err));
-  }, []);
 
   // Gerenciar mudanças nos campos do formulário
   const handleChange = (
@@ -56,11 +40,7 @@ export default function Contato() {
       const response = await fetch(`${apiUrl}/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          captchaId: captcha.id,
-          captchaAnswer: formData.captchaAnswer,
-        }),
+        body: JSON.stringify(formData),
       });
 
       // Verificar se a resposta é JSON antes de tentar analisá-la
@@ -83,7 +63,6 @@ export default function Contato() {
         email: "",
         phone: "",
         message: "",
-        captchaAnswer: "",
       });
     } catch (error: unknown) {
       const errorMessage =
@@ -100,18 +79,6 @@ export default function Contato() {
     <div>
       <NavBar />
       <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-[-40] -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 sm:top-[-20rem]"
-        >
-          <div
-            style={{
-              clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
-            className="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
-          />
-        </div>
         <div className="mx-auto mt-16 max-w-2xl text-center">
           <h2 className="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
             Entre em contato conosco
@@ -186,7 +153,7 @@ export default function Contato() {
                 htmlFor="phone"
                 className="block text-sm/6 font-semibold text-gray-900"
               >
-                Número de telefone
+                Telefone
               </label>
               <div className="mt-2.5">
                 <input
@@ -195,7 +162,6 @@ export default function Contato() {
                   type="text"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="(XX) XXXX-XXXX"
                   className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                 />
               </div>
@@ -219,41 +185,20 @@ export default function Contato() {
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label
-                htmlFor="captchaAnswer"
-                className="block text-sm/6 font-semibold text-gray-900"
+              <button
+                type="submit"
+                className="block w-full rounded-md bg-indigo-600 py-3 px-4 text-lg font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50"
               >
-                {captcha.question}
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="captchaAnswer"
-                  name="captchaAnswer"
-                  type="text"
-                  value={formData.captchaAnswer}
-                  onChange={handleChange}
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                />
-              </div>
+                Enviar mensagem
+              </button>
             </div>
           </div>
-
-          <div className="mt-8">
-            <button
-              type="submit"
-              className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-orange-500 px-6 py-3 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-              Enviar
-            </button>
-          </div>
         </form>
+
+        {/* Exibir o status de envio */}
         {formStatus && (
-          <div className="mt-4 text-center">
-            <p
-              className={formStatus.success ? "text-green-600" : "text-red-600"}
-            >
-              {formStatus.message}
-            </p>
+          <div className={`mt-6 text-center text-lg font-semibold ${formStatus.success ? "text-green-600" : "text-red-600"}`}>
+            {formStatus.message}
           </div>
         )}
       </div>
