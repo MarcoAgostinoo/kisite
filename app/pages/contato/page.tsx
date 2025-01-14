@@ -27,7 +27,7 @@ export default function Contato() {
 
   // Carregar uma pergunta captcha ao montar o componente
   useEffect(() => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL_CAPTCHA;
     fetch(`${apiUrl}/captcha`)
       .then((response) => response.json())
       .then((data) => setCaptcha(data))
@@ -48,22 +48,22 @@ export default function Contato() {
   // Submeter o formulário
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  
+
     try {
       const response = await fetch(`${apiUrl}/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...formData,       // Dados do formulário
-          captchaId: captcha.id,   // ID do captcha
-          captchaAnswer: formData.captchaAnswer,  // Resposta do captcha
+          ...formData, // Dados do formulário
+          captchaId: captcha.id, // ID do captcha
+          captchaAnswer: formData.captchaAnswer, // Resposta do captcha
         }),
       });
-  
+
       const result = await response.json();
-  
+
       if (response.ok) {
         setFormStatus({
           success: true,
@@ -83,7 +83,8 @@ export default function Contato() {
             if (result.error && result.error.includes("Captcha inválido")) {
               setFormStatus({
                 success: false,
-                message: "A resposta do captcha está incorreta. Tente novamente.",
+                message:
+                  "A resposta do captcha está incorreta. Tente novamente.",
               });
             } else {
               setFormStatus({
@@ -95,7 +96,8 @@ export default function Contato() {
           case 429:
             setFormStatus({
               success: false,
-              message: "Você atingiu o limite de envio de e-mails (2) por hora. Tente novamente mais tarde.",
+              message:
+                "Você atingiu o limite de envio de e-mails (2) por hora. Tente novamente mais tarde.",
             });
             break;
           default:
@@ -114,7 +116,6 @@ export default function Contato() {
       console.error("Erro ao submeter o formulário:", error);
     }
   };
-  
 
   return (
     <div>
