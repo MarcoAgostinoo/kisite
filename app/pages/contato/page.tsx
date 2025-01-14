@@ -46,12 +46,13 @@ export default function Contato() {
   };
 
   // Submeter o formulário
+  // Submeter o formulário
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     console.log(`Enviando para: ${apiUrl}/send`);
-  
+
     try {
       const response = await fetch(`${apiUrl}/send`, {
         method: "POST",
@@ -62,13 +63,12 @@ export default function Contato() {
           captchaAnswer: formData.captchaAnswer,
         }),
       });
-  
+
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error || "Erro desconhecido");
       }
-  
-      const result = await response.json();
+
       setFormStatus({
         success: true,
         message: "Mensagem enviada com sucesso!",
@@ -81,22 +81,26 @@ export default function Contato() {
         message: "",
         captchaAnswer: "",
       });
-    } catch (error) {
+    } catch (error: unknown) {
+      // Verifica se o erro tem a propriedade message
+      const errorMessage =
+        error instanceof Error ? error.message : "Erro desconhecido";
+
       setFormStatus({
         success: false,
-        message: `Erro ao submeter o formulário: ${error.message}`,
+        message: `Erro ao submeter o formulário: ${errorMessage}`,
       });
-      console.error("Erro ao submeter o formulário:", error);
+      console.error("Erro ao submeter o formulário:", errorMessage);
     }
   };
-  
+
   return (
     <div>
       <NavBar />
       <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 top-[-40] -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 sm:top-[-20rem]"
+          className="absolute inset-x-0 top-[-40] -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         >
           <div
             style={{
