@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CustomFooter from "@/app/components/footer/CustomFooter";
 import NavBar from "@/app/components/navbar/NavBar";
 
@@ -35,6 +35,7 @@ export default function Contato() {
 
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     console.log(`Enviando para: ${apiUrl}/send`);
+    console.log('Dados do formulário:', formData);
 
     try {
       const response = await fetch(`${apiUrl}/send`, {
@@ -43,11 +44,8 @@ export default function Contato() {
         body: JSON.stringify(formData),
       });
 
-      // Verificar se a resposta é JSON antes de tentar analisá-la
-      const responseText = await response.text(); // Obter como texto
-      const jsonResponse = response.ok
-        ? JSON.parse(responseText)
-        : { error: responseText };
+      const responseText = await response.text(); 
+      const jsonResponse = response.ok ? JSON.parse(responseText) : { error: responseText };
 
       if (!response.ok) {
         throw new Error(jsonResponse.error || "Erro desconhecido");
