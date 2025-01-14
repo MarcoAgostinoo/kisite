@@ -30,22 +30,20 @@ export default function Contato() {
   };
 
   // Submeter o formulário
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL; // A URL para a API do backend na Vercel
     console.log(`Enviando para: ${apiUrl}/send`);
-    console.log('Dados do formulário:', formData);
 
     try {
-      const response = await fetch(`${apiUrl}/send`, {
+      const response = await fetch(`${apiUrl}/api/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      const responseText = await response.text(); 
-      const jsonResponse = response.ok ? JSON.parse(responseText) : { error: responseText };
+      const jsonResponse = await response.json();
 
       if (!response.ok) {
         throw new Error(jsonResponse.error || "Erro desconhecido");
@@ -62,14 +60,12 @@ export default function Contato() {
         phone: "",
         message: "",
       });
-    } catch (error: unknown) {
-      const errorMessage =
-        error instanceof Error ? error.message : "Erro desconhecido";
+    } catch (error) {
       setFormStatus({
         success: false,
-        message: `Erro ao submeter o formulário: ${errorMessage}`,
+        message: `Erro ao submeter o formulário: ${error.message}`,
       });
-      console.error("Erro ao submeter o formulário:", errorMessage);
+      console.error("Erro ao submeter o formulário:", error.message);
     }
   };
 
@@ -185,7 +181,7 @@ export default function Contato() {
             <div className="sm:col-span-2">
               <button
                 type="submit"
-                className="block w-full rounded-md bg-indigo-600 py-3 px-4 text-lg font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50"
+                className="block w-full rounded-md bg-indigo-600 px-4 py-3 text-lg font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50"
               >
                 Enviar mensagem
               </button>
@@ -195,7 +191,9 @@ export default function Contato() {
 
         {/* Exibir o status de envio */}
         {formStatus && (
-          <div className={`mt-6 text-center text-lg font-semibold ${formStatus.success ? "text-green-600" : "text-red-600"}`}>
+          <div
+            className={`mt-6 text-center text-lg font-semibold ${formStatus.success ? "text-green-600" : "text-red-600"}`}
+          >
             {formStatus.message}
           </div>
         )}
