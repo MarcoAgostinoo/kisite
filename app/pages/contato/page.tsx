@@ -46,7 +46,6 @@ export default function Contato() {
   };
 
   // Submeter o formulário
-  // Submeter o formulário
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -64,9 +63,14 @@ export default function Contato() {
         }),
       });
 
+      // Verificar se a resposta é JSON antes de tentar analisá-la
+      const responseText = await response.text(); // Obter como texto
+      const jsonResponse = response.ok
+        ? JSON.parse(responseText)
+        : { error: responseText };
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Erro desconhecido");
+        throw new Error(jsonResponse.error || "Erro desconhecido");
       }
 
       setFormStatus({
@@ -82,10 +86,8 @@ export default function Contato() {
         captchaAnswer: "",
       });
     } catch (error: unknown) {
-      // Verifica se o erro tem a propriedade message
       const errorMessage =
         error instanceof Error ? error.message : "Erro desconhecido";
-
       setFormStatus({
         success: false,
         message: `Erro ao submeter o formulário: ${errorMessage}`,
@@ -100,7 +102,7 @@ export default function Contato() {
       <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 top-[-40] -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          className="absolute inset-x-0 top-[-40] -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 sm:top-[-20rem]"
         >
           <div
             style={{
