@@ -3,7 +3,8 @@ import { useState } from "react";
 import CustomFooter from "@/app/components/footer/CustomFooter";
 import NavBar from "@/app/components/navbar/NavBar";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+const apiUrl = "https://backendnodemailer.vercel.app";
+const endpointUrl = `${apiUrl}/send`;
 
 interface FormStatus {
   success: boolean;
@@ -20,7 +21,6 @@ export default function Contato() {
   });
   const [formStatus, setFormStatus] = useState<FormStatus | null>(null);
 
-  // Gerenciar mudanças nos campos do formulário
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -31,16 +31,18 @@ export default function Contato() {
     });
   };
 
-  // Submeter o formulário
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log(`Enviando para: ${apiUrl}/send`);
+    console.log(`Enviando para: ${endpointUrl}`);
 
     try {
-      const response = await fetch(`${apiUrl}/send`, {
+      const response = await fetch(endpointUrl, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify(formData),
       });
 
