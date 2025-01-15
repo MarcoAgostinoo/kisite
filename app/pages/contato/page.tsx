@@ -6,13 +6,22 @@ import NavBar from "@/app/components/navbar/NavBar";
 const apiUrl = "https://backendnodemailer.vercel.app";
 const endpointUrl = `${apiUrl}/send`;
 
+// Definição precisa do tipo de formData
+interface FormData {
+  name: string;
+  company: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
 interface FormStatus {
   success: boolean;
   message: string;
 }
 
 export default function Contato() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     company: "",
     email: "",
@@ -21,7 +30,7 @@ export default function Contato() {
   });
   const [formStatus, setFormStatus] = useState<FormStatus | null>(null);
   const [captchaQuestion, setCaptchaQuestion] = useState<string | null>(null);
-  const [captchaAnswer, setCaptchaAnswer] = useState<string>("");
+  const [captchaAnswer, setCaptchaAnswer] = useState<string>(""); 
   const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
 
   useEffect(() => {
@@ -166,7 +175,7 @@ export default function Contato() {
                       id={field}
                       name={field}
                       rows={4}
-                      value={formData[field]}
+                      value={formData[field as keyof FormData]}
                       onChange={handleChange}
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                     />
@@ -175,7 +184,7 @@ export default function Contato() {
                       id={field}
                       name={field}
                       type={field === "email" ? "email" : "text"}
-                      value={formData[field]}
+                      value={formData[field as keyof FormData]}
                       onChange={handleChange}
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                     />
