@@ -30,14 +30,14 @@ export default function Contato() {
   };
 
   // Submeter o formulário
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const apiUrl = process.env.NEXT_PUBLIC_API_URL; // A URL para a API do backend na Vercel
     console.log(`Enviando para: ${apiUrl}/send`);
 
     try {
-      const response = await fetch(`${apiUrl}/api/send`, {
+      const response = await fetch(`${apiUrl}/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -61,11 +61,19 @@ export default function Contato() {
         message: "",
       });
     } catch (error) {
-      setFormStatus({
-        success: false,
-        message: `Erro ao submeter o formulário: ${error.message}`,
-      });
-      console.error("Erro ao submeter o formulário:", error.message);
+      if (error instanceof Error) {
+        setFormStatus({
+          success: false,
+          message: `Erro ao submeter o formulário: ${error.message}`,
+        });
+        console.error("Erro ao submeter o formulário:", error.message);
+      } else {
+        setFormStatus({
+          success: false,
+          message: "Erro desconhecido ao submeter o formulário.",
+        });
+        console.error("Erro desconhecido ao submeter o formulário:", error);
+      }
     }
   };
 
@@ -192,7 +200,9 @@ export default function Contato() {
         {/* Exibir o status de envio */}
         {formStatus && (
           <div
-            className={`mt-6 text-center text-lg font-semibold ${formStatus.success ? "text-green-600" : "text-red-600"}`}
+            className={`mt-6 text-center text-lg font-semibold ${
+              formStatus.success ? "text-green-600" : "text-red-600"
+            }`}
           >
             {formStatus.message}
           </div>
