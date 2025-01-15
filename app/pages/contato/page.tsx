@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CustomFooter from "@/app/components/footer/CustomFooter";
 import NavBar from "@/app/components/navbar/NavBar";
 
@@ -11,6 +11,9 @@ interface FormStatus {
   message: string;
 }
 
+const questions = JSON.parse(process.env.NEXT_PUBLIC_CAPTCHA_QUESTIONS || "[]");
+const answers = JSON.parse(process.env.NEXT_PUBLIC_CAPTCHA_ANSWERS || "[]");
+
 export default function Contato() {
   const [formData, setFormData] = useState({
     name: "",
@@ -20,6 +23,12 @@ export default function Contato() {
     message: "",
   });
   const [formStatus, setFormStatus] = useState<FormStatus | null>(null);
+  const [captchaIndex, setCaptchaIndex] = useState<number | null>(null);
+  const [captchaAnswer, setCaptchaAnswer] = useState("");
+
+  useEffect(() => {
+    setCaptchaIndex(Math.floor(Math.random() * questions.length));
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -31,8 +40,21 @@ export default function Contato() {
     });
   };
 
+  const handleCaptchaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCaptchaAnswer(e.target.value);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Verifica se a resposta do captcha está correta
+    if (captchaAnswer !== answers[captchaIndex!]) {
+      setFormStatus({
+        success: false,
+        message: "Resposta do CAPTCHA incorreta. Tente novamente.",
+      });
+      return;
+    }
 
     console.log(`Enviando para: ${endpointUrl}`);
 
@@ -189,6 +211,26 @@ export default function Contato() {
                 />
               </div>
             </div>
+
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="captcha"
+                className="block text-sm/6 font-semibold text-gray-900"
+              >
+                Resolva a questão: {questions[captchaIndex!]}
+              </label>
+              <div className="mt-2.5">
+                <input
+                  id="captcha"
+                  name="captcha"
+                  type="text"
+                  value={captchaAnswer}
+                  onChange={handleCaptchaChange}
+                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                />
+              </div>
+            </div>
+
             <div className="sm:col-span-2">
               <button
                 type="submit"
@@ -199,8 +241,6 @@ export default function Contato() {
             </div>
           </div>
         </form>
-
-        {/* Exibir o status de envio */}
         {formStatus && (
           <div
             className={`mt-6 text-center text-lg font-semibold ${
