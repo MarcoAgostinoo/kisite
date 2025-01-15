@@ -3,7 +3,7 @@ import { useState } from "react";
 import CustomFooter from "@/app/components/footer/CustomFooter";
 import NavBar from "@/app/components/navbar/NavBar";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL; // Certifique-se de adicionar esta linha
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 interface FormStatus {
   success: boolean;
