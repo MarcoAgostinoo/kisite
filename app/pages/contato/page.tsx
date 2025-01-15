@@ -3,6 +3,8 @@ import { useState } from "react";
 import CustomFooter from "@/app/components/footer/CustomFooter";
 import NavBar from "@/app/components/navbar/NavBar";
 
+const apiUrl = process.env.NEXT_PUBLIC_API_URL; // Certifique-se de adicionar esta linha
+
 interface FormStatus {
   success: boolean;
   message: string;
@@ -33,7 +35,6 @@ export default function Contato() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL; // A URL para a API do backend na Vercel
     console.log(`Enviando para: ${apiUrl}/send`);
 
     try {
