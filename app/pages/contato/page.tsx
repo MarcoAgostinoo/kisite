@@ -11,9 +11,6 @@ interface FormStatus {
   message: string;
 }
 
-const questions = JSON.parse(process.env.NEXT_PUBLIC_CAPTCHA_QUESTIONS || "[]");
-const answers = JSON.parse(process.env.NEXT_PUBLIC_CAPTCHA_ANSWERS || "[]");
-
 export default function Contato() {
   const [formData, setFormData] = useState({
     name: "",
@@ -23,15 +20,34 @@ export default function Contato() {
     message: "",
   });
   const [formStatus, setFormStatus] = useState<FormStatus | null>(null);
-  const [captchaIndex, setCaptchaIndex] = useState<number | null>(null);
-  const [captchaAnswer, setCaptchaAnswer] = useState("");
+  const [captchaQuestion, setCaptchaQuestion] = useState<string | null>(null);
+  const [captchaAnswer, setCaptchaAnswer] = useState<string>("");
+  const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
 
   useEffect(() => {
-    setCaptchaIndex(Math.floor(Math.random() * questions.length));
+    try {
+      // Carrega perguntas e respostas do .env
+      const questionsEnv = process.env.NEXT_PUBLIC_CAPTCHA_QUESTIONS || "[]";
+      const answersEnv = process.env.NEXT_PUBLIC_CAPTCHA_ANSWERS || "[]";
+      const questions: string[] = JSON.parse(questionsEnv);
+      const answers: string[] = JSON.parse(answersEnv);
+
+      if (questions.length > 0 && questions.length === answers.length) {
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        setCaptchaQuestion(questions[randomIndex]);
+        setCorrectAnswer(answers[randomIndex]);
+      } else {
+        console.error(
+          "Erro: O número de perguntas e respostas do CAPTCHA não coincide ou está vazio."
+        );
+      }
+    } catch (error) {
+      console.error("Erro ao carregar as perguntas e respostas do CAPTCHA:", error);
+    }
   }, []);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData({
@@ -47,8 +63,8 @@ export default function Contato() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Verifica se a resposta do captcha está correta
-    if (captchaAnswer !== answers[captchaIndex!]) {
+    // Valida a resposta do CAPTCHA
+    if (captchaAnswer !== correctAnswer) {
       setFormStatus({
         success: false,
         message: "Resposta do CAPTCHA incorreta. Tente novamente.",
@@ -85,6 +101,7 @@ export default function Contato() {
         phone: "",
         message: "",
       });
+      setCaptchaAnswer(""); // Limpa o campo do CAPTCHA
     } catch (error) {
       if (error instanceof Error) {
         setFormStatus({
@@ -121,103 +138,59 @@ export default function Contato() {
           className="mx-auto mt-16 max-w-xl sm:mt-20"
         >
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="name"
-                className="block text-sm/6 font-semibold text-gray-900"
+            {/* Campos do formulário */}
+            {["name", "company", "email", "phone", "message"].map((field) => (
+              <div
+                key={field}
+                className={`sm:col-span-2 ${
+                  field === "message" ? "" : "sm:col-span-1"
+                }`}
               >
-                Nome
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                />
+                <label
+                  htmlFor={field}
+                  className="block text-sm/6 font-semibold text-gray-900"
+                >
+                  {field === "name"
+                    ? "Nome"
+                    : field === "company"
+                    ? "Empresa"
+                    : field === "email"
+                    ? "E-mail"
+                    : field === "phone"
+                    ? "Telefone"
+                    : "Mensagem"}
+                </label>
+                <div className="mt-2.5">
+                  {field === "message" ? (
+                    <textarea
+                      id={field}
+                      name={field}
+                      rows={4}
+                      value={formData[field]}
+                      onChange={handleChange}
+                      className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                    />
+                  ) : (
+                    <input
+                      id={field}
+                      name={field}
+                      type={field === "email" ? "email" : "text"}
+                      value={formData[field]}
+                      onChange={handleChange}
+                      className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                    />
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="company"
-                className="block text-sm/6 font-semibold text-gray-900"
-              >
-                Empresa
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                />
-              </div>
-            </div>
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="email"
-                className="block text-sm/6 font-semibold text-gray-900"
-              >
-                E-mail
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                />
-              </div>
-            </div>
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="phone"
-                className="block text-sm/6 font-semibold text-gray-900"
-              >
-                Telefone
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="phone"
-                  name="phone"
-                  type="text"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                />
-              </div>
-            </div>
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="message"
-                className="block text-sm/6 font-semibold text-gray-900"
-              >
-                Mensagem
-              </label>
-              <div className="mt-2.5">
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                />
-              </div>
-            </div>
+            ))}
 
+            {/* CAPTCHA */}
             <div className="sm:col-span-2">
               <label
                 htmlFor="captcha"
                 className="block text-sm/6 font-semibold text-gray-900"
               >
-                Resolva a questão: {questions[captchaIndex!]}
+                Resolva a questão: {captchaQuestion || "Carregando..."}
               </label>
               <div className="mt-2.5">
                 <input
@@ -231,6 +204,7 @@ export default function Contato() {
               </div>
             </div>
 
+            {/* Botão Enviar */}
             <div className="sm:col-span-2">
               <button
                 type="submit"
