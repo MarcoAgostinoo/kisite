@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import CustomFooter from "@/app/components/footer/CustomFooter";
 import NavBar from "@/app/components/navbar/NavBar";
+import OutrosServicos from "@/app/components/outrosservicos/OutrosServicos";
+import CaroucelClientes from "@/app/components/caroucelclientes/CaroucelClientes";
 
 const apiUrl = "https://backendnodemailer.vercel.app";
 const endpointUrl = `${apiUrl}/send`;
@@ -234,6 +236,8 @@ export default function Contato() {
           </div>
         )}
       </div>
+      <CaroucelClientes />
+      <OutrosServicos />
       <CustomFooter />
     </div>
   );

@@ -10,6 +10,7 @@ import BannerTop from "./components/bannertop/BannerTop";
 import Precos from "./components/precos/Precos";
 import Gallery from "./components/galeria/Gallery";
 import GridColumTree from "./components/gridcolumtree/GridColumTree";
+import OutrosServicos from "./components/outrosservicos/OutrosServicos";
 
 
 export default function Home() {
@@ -18,8 +19,9 @@ export default function Home() {
       <BannerTop />
       <Navbar />
       <Hero />
-      <SectionTwo />
+      <OutrosServicos />
       <Servicos />
+      <SectionTwo />
       <About />
       <Precos />
       <Gallery />

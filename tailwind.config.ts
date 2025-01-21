@@ -14,6 +14,7 @@ const baseConfig: Config = {
       aspectRatio: {
         "577/310": "577 / 310", // Adicionando a proporção personalizada
       },
+      colors: { myCustomBlue: "#002d52" },
       textShadow: {
         sm: "1px 1px 2px rgba(255, 255, 255, 0.6)", // Pequeno: Sombra clara
         md: "2px 2px 4px rgba(255, 255, 255, 0.5)", // Médio: Sombra mais intensa
@@ -23,7 +24,9 @@ const baseConfig: Config = {
   },
   plugins: [
     flowbite.plugin(),
-    function (pluginApi: { addUtilities: (utilities: Record<string, any>) => void }) {
+    function (pluginApi: {
+      addUtilities: (utilities: Record<string, any>) => void;
+    }) {
       const { addUtilities } = pluginApi;
       addUtilities({
         ".text-shadow-sm": {
