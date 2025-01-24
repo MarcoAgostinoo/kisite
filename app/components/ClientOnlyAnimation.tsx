@@ -2,8 +2,15 @@
 // components/ClientOnlyAnimation.tsx
 import { useEffect, useState } from 'react';
 
-// Componente que será renderizado apenas no lado do cliente
-const ClientOnlyAnimation = ({ threshold, children }: { threshold: number, children: React.ReactNode }) => {
+const ClientOnlyAnimation = ({
+  threshold,
+  children,
+  animationClasses,
+}: {
+  threshold: number;
+  children: React.ReactNode;
+  animationClasses: string;  // Aqui recebemos as classes de animação
+}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   useEffect(() => {
@@ -24,7 +31,7 @@ const ClientOnlyAnimation = ({ threshold, children }: { threshold: number, child
 
   return (
     <div
-      className={`animate-on-scroll transition-all duration-1000 ${isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      className={`animate-on-scroll transition-all duration-1000 ${isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${animationClasses}`}
     >
       {children}
     </div>

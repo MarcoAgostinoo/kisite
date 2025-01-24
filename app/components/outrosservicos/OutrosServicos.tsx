@@ -59,12 +59,22 @@ export default function OutrosServicos() {
         >
           Green to Blue
         </Button>
-        <ClientOnlyAnimation threshold={0.1}>
-          {" "}
-          {/* 10% de visibilidade */}
-          <h2 className="text-3xl font-semibold">Texto Animado</h2>
+        {/* Exemplo de animação com pulse */}
+        <ClientOnlyAnimation threshold={0.1} animationClasses="animate-pulse">
+          <h2 className="text-3xl font-semibold">Texto com animação Pulse</h2>
+          <p className="text-lg">Este texto está animado com o efeito pulse.</p>
+        </ClientOnlyAnimation>
+
+        {/* Exemplo de animação com infinite */}
+        <ClientOnlyAnimation
+          threshold={0.1}
+          animationClasses="animate-spin animate-infinite"
+        >
+          <h2 className="text-3xl font-semibold">
+            Texto com animação Infinite
+          </h2>
           <p className="text-lg">
-            Este é um exemplo de um texto animado com Tailwind CSS.
+            Este texto está animado com o efeito spin infinito.
           </p>
         </ClientOnlyAnimation>
       </div>
