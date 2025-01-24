@@ -60,14 +60,14 @@ export default function ContantSection() {
             </div>
           </div>
         </div>
-        <div className="lg:mt-12 sm:ml-0 sm:mt-0 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+        <div className="lg:mt-12 bg-transparent sm:ml-0 sm:mt-0 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <Image
             alt="Desenvolvimento Web"
             src="/webinho.png"
             width={412}
             height={412}
             objectFit="cover"
-            className="w-full lg:mt-20 max-w-[45rem] sm:w-full sm:max-w-[40rem] md:max-w-[35rem] lg:max-w-[30rem]"
+            className="w-full bg-transparent lg:mt-20 max-w-[45rem] sm:w-full sm:max-w-[40rem] md:max-w-[35rem] lg:max-w-[30rem]"
             priority
           />
         </div>

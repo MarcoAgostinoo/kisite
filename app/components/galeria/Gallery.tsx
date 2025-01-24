@@ -7,17 +7,17 @@ export default function Gallery() {
   const data = [
     {
       imgelink:
-        "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      phrase: "A beleza das montanhas nos inspira a criar projetos grandiosos.",
+        "/index01.png",
+      phrase: "LcCopper Metalurgica eirelli",
       phrase2: "Site para a empresa:",
-      url: "/",
+      url: "https://www.lccopper.com/",
     },
     {
       imgelink:
-        "https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-      phrase: "Cada nascer do sol é uma oportunidade de inovar e transformar.",
+        "/index02.png",
+      phrase: "Garagem Oficina",
       phrase2: "Site para a empresa:",
-      url: "/",
+      url: "https://marcoagostinoo.github.io/garagemoficina/",
     },
     {
       imgelink:

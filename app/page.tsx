@@ -21,7 +21,6 @@ export default function Home() {
       <Hero />
       <OutrosServicos />
       <Servicos />
-      <SectionTwo />
       <About />
       <Precos />
       <Gallery />

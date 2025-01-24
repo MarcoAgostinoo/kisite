@@ -4,38 +4,31 @@ import Homemdigitando from "../animações/homemdigitando/Homemdigitando";
 
 export default function Hero() {
   return (
-    <section className="bg mt-24 flex w-full flex-col items-center justify-center bg-[url('/texte.jpg')] bg-cover bg-center bg-no-repeat px-2 text-center sm:px-4 lg:mt-36 lg:flex-row">
+    <section className="bg mt-24 flex w-full flex-col items-center justify-center  bg-cover bg-center bg-no-repeat px-2 text-center sm:px-4 lg:mt-36 lg:flex-row">
       <div className="ml-0 hidden sm:block lg:ml-16">
         <Homemdigitando />
       </div>
       <div className="ml-0 flex flex-col items-center lg:ml-2">
         <div className="flex flex-col items-center space-y-2">
-          <p className="max-w-lg text-lg text-blue-600 text-shadow-lg sm:text-xl md:text-2xl">
-            Dê o primeiro passo para transformar o seu negócio online.
+          <p className="animate-pulse animate-infinite text-shadow-amber max-w-lg lg:mb-10 mb-0 text-lg text-yellow-400 text-shadow-lg sm:text-xl md:text-2xl">
+            Dê o primeiro passo do seu negócio online.
           </p>
         </div>
         <div className="my-1 sm:mx-2 md:mx-3">
-          <h1 className="text-4xl text-yellow-400 text-shadow-lg sm:text-5xl md:text-6xl">
+          <h1 className="antialiased animate-flip-up animate-once animate-ease-linear animate-normal animate-fill-forwards text-4xl text-black-800 font-bold text-shadow-lg sm:text-5xl md:text-6xl">
             Atraia mais clientes com um site que reflete a essência da sua
             marca.
           </h1>
         </div>
         <div className="my-1 sm:mx-2 md:mx-3">
-          <h3 className="text-lg text-blue-800 text-shadow-lg sm:text-xl md:text-2xl">
+          <h3 className="animate-flip-up animate-once animate-ease-linear animate-normal animate-fill-forwards text-lg  text-blue-800 text-shadow-lg sm:text-xl md:text-2xl">
             Sites rápidos, responsivos e personalizados para alavancar o seu
             negócio. Conquiste o sucesso digital!
           </h3>
         </div>
         <div className="flex flex-col items-center justify-center gap-2 sm:flex-row">
-          <Button className="bg-blue-800 text-white hover:bg-blue-600">
+          <Button className="bg-blue-600 text-white hover:bg-blue-500">
             Solicite Seu Orçamento
-          </Button>
-          <Button
-            outline
-            gradientDuoTone="yellowToGold"
-            className="border-yellow-400 text-yellow-400 bg-yellow-400 hover:text-gray-50"
-          >
-            Descubra Nosso Portfólio
           </Button>
         </div>
       </div>

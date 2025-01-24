@@ -11,14 +11,13 @@ const baseConfig: Config = {
   ],
   theme: {
     extend: {
-      aspectRatio: {
-        "577/310": "577 / 310", // Adicionando a proporção personalizada
-      },
+      aspectRatio: { "577/310": "577 / 310" },
       colors: { myCustomBlue: "#002d52" },
       textShadow: {
-        sm: "1px 1px 2px rgba(255, 255, 255, 0.6)", // Pequeno: Sombra clara
-        md: "2px 2px 4px rgba(255, 255, 255, 0.5)", // Médio: Sombra mais intensa
-        lg: "3px 3px 6px rgba(255, 255, 255, 0.4)", // Grande: Sombra suave
+        sm: "1px 1px 2px rgba(255, 255, 255, 0.6)",
+        md: "2px 2px 4px rgba(255, 255, 255, 0.5)",
+        lg: "3px 3px 6px rgba(255, 255, 255, 0.4)",
+        amber: "0 1px 3px rgba(252, 211, 76, 1)"
       },
     },
   },
@@ -30,19 +29,22 @@ const baseConfig: Config = {
       const { addUtilities } = pluginApi;
       addUtilities({
         ".text-shadow-sm": {
-          textShadow: "1px 1px 2px rgba(255, 255, 255, 0.6)", // Sombra leve
+          textShadow: "1px 1px 2px rgba(255, 255, 255, 0.6)",
         },
         ".text-shadow-md": {
-          textShadow: "2px 2px 4px rgba(255, 255, 255, 0.5)", // Sombra média
+          textShadow: "2px 2px 4px rgba(255, 255, 255, 0.5)",
         },
         ".text-shadow-lg": {
-          textShadow: "3px 3px 6px rgba(255, 255, 255, 0.8)", // Sombra grande e suave
+          textShadow: "3px 3px 6px rgba(255, 255, 255, 0.8)",
+        },
+        ".text-shadow-amber": {
+          textShadow: "0 1px 3px rgba(252, 211, 76, 1)",
         },
       });
     },
+    require('tailwindcss-animated')
   ],
 };
 
 const config = withMT(baseConfig);
-
 export default config;
