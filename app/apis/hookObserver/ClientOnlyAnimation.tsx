@@ -1,17 +1,20 @@
 'use client';
 // components/ClientOnlyAnimation.tsx
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from "react";
 
 const ClientOnlyAnimation = ({
   threshold,
   children,
   animationClasses,
+  animationDelay,
 }: {
   threshold: number;
   children: React.ReactNode;
-  animationClasses: string;  // Aqui recebemos as classes de animação
+  animationClasses: string; // Classes de animação
+  animationDelay?: string; // Delay da animação
 }) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,17 +24,19 @@ const ClientOnlyAnimation = ({
       { threshold }
     );
 
-    const element = document.querySelector('.animate-on-scroll');
-    if (element) observer.observe(element);
+    const currentElement = ref.current;
+    if (currentElement) observer.observe(currentElement);
 
     return () => {
-      if (element) observer.unobserve(element);
+      if (currentElement) observer.unobserve(currentElement);
     };
   }, [threshold]);
 
   return (
     <div
-      className={`animate-on-scroll transition-all duration-1000 ${isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${animationClasses}`}
+      ref={ref}
+      className={`transition-all duration-1000 ${isIntersecting ? animationClasses : "opacity-0"}`}
+      style={{ animationDelay }}
     >
       {children}
     </div>
