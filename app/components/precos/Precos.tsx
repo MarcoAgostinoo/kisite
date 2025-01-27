@@ -106,10 +106,10 @@ export default function Precos() {
               <h3 className="text-lg font-semibold text-indigo-600">{plan.name}</h3>
               <p className="mt-4 text-4xl font-bold text-gray-900">
                 R$ {plan.price.toFixed(2).replace('.', ',')}{' '}
-                <span className="text-xl">por ano.</span>
+                <span className="text-xl">.</span>
               </p>
               <p className="mt-2 text-lg text-gray-600">
-                Ou em até 12x de {calculateParcel(plan.price)}
+                mais {calculateParcel(plan.price)} ao mês
               </p>
               <p className="mt-4 text-gray-600">{plan.description}</p>
               <ul className="mt-6 space-y-3 text-gray-600">

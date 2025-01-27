@@ -11,6 +11,8 @@ import Precos from "./components/precos/Precos";
 import Gallery from "./components/galeria/Gallery";
 import GridColumTree from "./components/gridcolumtree/GridColumTree";
 import OutrosServicos from "./components/outrosservicos/OutrosServicos";
+import FaqAccordion from "./components/faqAccordion/FaqAccordion";
+import HeroSecondary from "./components/hero-secondary/HeroSecondary";
 
 
 export default function Home() {
@@ -24,8 +26,10 @@ export default function Home() {
       <About />
       <Precos />
       <Gallery />
+      <HeroSecondary />
       <ContantSection />      
       <GridColumTree />
+      <FaqAccordion />
       <CustomFooter />
     </main>
   );

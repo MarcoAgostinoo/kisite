@@ -1,11 +1,15 @@
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
 import Image from "next/image";
-import Accordion from "../faq/Accordion";
-
+import {
+  MdCloudUpload,
+  MdLock,
+  MdCloud,
+  MdCode,
+  MdEdit,
+  MdSearch,
+  MdAttachFile,
+  MdPhone,
+  MdWifi,
+} from "react-icons/md";
 
 export default function ContantSection() {
   return (
@@ -60,14 +64,14 @@ export default function ContantSection() {
             </div>
           </div>
         </div>
-        <div className="lg:mt-12 bg-transparent sm:ml-0 sm:mt-0 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+        <div className="bg-transparent sm:ml-0 sm:mt-0 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-12 lg:overflow-hidden">
           <Image
             alt="Desenvolvimento Web"
             src="/webinho.png"
             width={412}
             height={412}
             objectFit="cover"
-            className="w-full bg-transparent lg:mt-20 max-w-[45rem] sm:w-full sm:max-w-[40rem] md:max-w-[35rem] lg:max-w-[30rem]"
+            className="w-full max-w-[45rem] bg-transparent sm:w-full sm:max-w-[40rem] md:max-w-[35rem] lg:mt-20 lg:max-w-[30rem]"
             priority
           />
         </div>
@@ -83,7 +87,49 @@ export default function ContantSection() {
               </p>
               <ul role="list" className="mt-8 space-y-8 text-gray-600">
                 <li className="flex gap-x-3">
-                  <CloudArrowUpIcon
+                  <MdCloud
+                    aria-hidden="true"
+                    className="mt-1 size-5 flex-none text-indigo-600"
+                  />
+                  <span>
+                    <strong className="font-semibold text-gray-900">
+                      Hospedagem e Manutenção.
+                    </strong>{" "}
+                    Oferecemos serviços de hospedagem confiáveis e suporte
+                    contínuo para que seu site esteja sempre no ar.
+                  </span>
+                </li>
+                {/* Novos itens */}
+                <li className="flex gap-x-3">
+                  <MdCode
+                    aria-hidden="true"
+                    className="mt-1 size-5 flex-none text-indigo-600"
+                  />
+                  <span>
+                    <strong className="font-semibold text-gray-900">
+                      Desenvolvimento Personalizado.
+                    </strong>{" "}
+                    Criamos soluções de websites e e-commerce totalmente
+                    customizadas para as necessidades do seu negócio.
+                  </span>
+                </li>
+
+                <li className="flex gap-x-3">
+                  <MdEdit
+                    aria-hidden="true"
+                    className="mt-1 size-5 flex-none text-indigo-600"
+                  />
+                  <span>
+                    <strong className="font-semibold text-gray-900">
+                      Design Responsivo.
+                    </strong>{" "}
+                    Nossos sites são projetados para se adaptar a qualquer
+                    dispositivo, oferecendo uma ótima experiência em desktop e
+                    dispositivos móveis.
+                  </span>
+                </li>
+                <li className="flex gap-x-3">
+                  <MdCloudUpload
                     aria-hidden="true"
                     className="mt-1 size-5 flex-none text-indigo-600"
                   />
@@ -97,7 +143,20 @@ export default function ContantSection() {
                   </span>
                 </li>
                 <li className="flex gap-x-3">
-                  <LockClosedIcon
+                  <MdSearch
+                    aria-hidden="true"
+                    className="mt-1 size-5 flex-none text-indigo-600"
+                  />
+                  <span>
+                    <strong className="font-semibold text-gray-900">
+                      Otimização para SEO.
+                    </strong>{" "}
+                    Implementamos técnicas de SEO para melhorar a visibilidade
+                    do seu site nos motores de busca e atrair mais visitantes.
+                  </span>
+                </li>
+                <li className="flex gap-x-3">
+                  <MdLock
                     aria-hidden="true"
                     className="mt-1 size-5 flex-none text-indigo-600"
                   />
@@ -110,39 +169,48 @@ export default function ContantSection() {
                   </span>
                 </li>
                 <li className="flex gap-x-3">
-                  <ServerIcon
+                  <MdAttachFile
                     aria-hidden="true"
                     className="mt-1 size-5 flex-none text-indigo-600"
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      Hospedagem e Manutenção.
+                      Integração com Ferramentas.
                     </strong>{" "}
-                    Oferecemos serviços de hospedagem confiáveis e suporte
-                    contínuo para que seu site esteja sempre no ar.
+                    Integramos seu site com ferramentas como Google Analytics,
+                    WhatsApp e sistemas de pagamento, garantindo maior
+                    funcionalidade.
+                  </span>
+                </li>
+                <li className="flex gap-x-3">
+                  <MdPhone
+                    aria-hidden="true"
+                    className="mt-1 size-5 flex-none text-indigo-600"
+                  />
+                  <span>
+                    <strong className="font-semibold text-gray-900">
+                      Suporte 24/7.
+                    </strong>{" "}
+                    Oferecemos suporte técnico contínuo para garantir que seu
+                    site esteja sempre em funcionamento e respondendo
+                    rapidamente.
+                  </span>
+                </li>
+                <li className="flex gap-x-3">
+                  <MdWifi
+                    aria-hidden="true"
+                    className="mt-1 size-5 flex-none text-indigo-600"
+                  />
+                  <span>
+                    <strong className="font-semibold text-gray-900">
+                      Conectividade Eficiente.
+                    </strong>{" "}
+                    Garantimos a conectividade do seu site com os principais
+                    serviços e plataformas online, maximizando a experiência do
+                    usuário.
                   </span>
                 </li>
               </ul>
-              <p className="mt-8">
-                Utilizamos tecnologias líderes de mercado, como Next.js,
-                Tailwind CSS, WordPress e muitas outras, para criar sites que
-                são rápidos, modernos e totalmente escaláveis. Essas ferramentas
-                permitem não apenas um design impressionante, mas também uma
-                performance superior e flexibilidade para futuras atualizações.
-                Confie em nossa expertise para transformar sua ideia em um
-                projeto digital que gere resultados concretos para o seu
-                negócio.
-              </p>
-
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-                Por que escolher nossos serviços?
-              </h2>
-              <p className="mt-6">
-                Entregamos mais do que sites: criamos experiências que ajudam
-                seu negócio a crescer. Cada projeto é tratado com seriedade,
-                atenção e compromisso com a excelência.
-              </p>
-            <Accordion />
             </div>
           </div>
         </div>
