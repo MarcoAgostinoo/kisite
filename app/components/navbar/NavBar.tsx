@@ -154,7 +154,7 @@ export default function NavBar() {
           whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
         >
           <Navbar.Link
-            href="/pages/blog"
+            href="/pages/kiblog"
             active
             onClick={handleLinkClick}
             className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${

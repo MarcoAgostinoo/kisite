@@ -7,7 +7,7 @@ export default function Gallery() {
   const data = [
     {
       imgelink:
-        "/index01.png",
+        "/galeria/index01.png",
       phrase: "LcCopper Metalurgica eirelli",
       phrase2: "Site para a empresa:",
       url: "https://www.lccopper.com/",
@@ -21,27 +21,27 @@ export default function Gallery() {
     },
     {
       imgelink:
-        "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+        "/index03.png",
       phrase:
-        "Inspirados pela natureza, criamos soluções que conectam pessoas e ambientes.",
+        "Concursos Agora",
       phrase2: "Site para a empresa:",
-      url: "/",
+      url: "https://www.concursosagora.com.br/",
     },
     {
       imgelink:
-        "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+        "/galeria/index04.png",
       phrase:
-        "A serenidade de um lago reflete a harmonia que buscamos em nossos projetos.",
+        "Delicias da Deda",
       phrase2: "Site para a empresa:",
-      url: "/",
+      url: "https://marcoagostinoo.github.io/deliciasdaguega/",
     },
     {
       imgelink:
-        "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "/index03.png",
       phrase:
-        "Caminhos floridos simbolizam o crescimento sustentável que promovemos.",
+        "Concursos Agora",
       phrase2: "Site para a empresa:",
-      url: "/",
+      url: "https://www.concursosagora.com.br/",
     },
   ];
 

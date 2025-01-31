@@ -2,10 +2,7 @@
 import { useEffect, useState } from "react";
 import CustomFooter from "@/app/components/footer/CustomFooter";
 import NavBar from "@/app/components/navbar/NavBar";
-import OutrosServicos from "@/app/components/outrosservicos/OutrosServicos";
-import CaroucelClientes from "@/app/components/caroucelclientes/CaroucelClientes";
-import AccordionNoveItens from "@/app/components/faqAccordion/FaqAccordion";
-import HeroSecondary from "@/app/components/hero-secondary/HeroSecondary";
+
 
 const apiUrl = "https://backendnodemailer.vercel.app";
 const endpointUrl = `${apiUrl}/send`;
