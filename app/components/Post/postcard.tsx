@@ -1,3 +1,4 @@
+// app/components/Post/postcard.tsx
 import Link from 'next/link';
 
 interface PostCardProps {
