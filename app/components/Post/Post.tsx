@@ -32,11 +32,11 @@ export default function BlogPosts() {
     async function fetchPosts() {
       try {
         const response = await fetch(
-          "http://localhost:1337/api/articles?populate=*",
+          "https://cms-trapi-kisite-app.onrender.com/api/articles?populate=*",
           {
             headers: {
               Authorization:
-                "Bearer 96e8b96deeb1043257913b5485d761690037ee736da498ada5ffb6fac68a77718efc12665374ffccc092eb685bbafe62bfea8b26810e6dba44face96de28e4cf6a9f5f233057aa76dbd6599530d758bf082f89f6202b214b9d557a197474d728eb1f31f8353accc50567ae82d677b5694eaa41aaccdec7243eefbebb48cf0bc8",
+                "2ccdbc4368c3be6e11696ada75a4b97302c60e33c866eea0a71511935d7b194d6fee826d7f74c61bbce7004b5d0adcd6c1c334e8a288b345e9047d831133c5815f3f2bcc15cd1dae7b7d439414c3d138681e2757b9dda7ec9f443f4a161d3f37c81a08b3d50a9e3511b0fa6090093be37e7b960bdb2899efe038f05656d9150b",
             },
           },
         );
