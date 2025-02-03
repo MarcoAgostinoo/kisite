@@ -65,7 +65,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   // Busca o artigo utilizando o filtro de slug e populate para trazer todas as informações
   const res = await fetch(
-    `http://localhost:1337/api/articles?filters[slug][$eq]=${slug}&populate=*`,
+    `https://cms-trapi-kisite-app.onrender.com/api/articles?populate=*`,
     { cache: "no-store" },
   );
 
