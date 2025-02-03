@@ -103,7 +103,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         {/* Imagem de Capa */}
         {cover && (
           <img
-            src={`http://localhost:1337${cover.formats?.medium?.url || cover.url}`}
+            src={`https://cms-trapi-kisite-app.onrender.com${cover.formats?.medium?.url || cover.url}`}
             alt={cover.alternativeText || title}
             className="mb-8 h-80 w-full rounded-lg object-cover shadow-lg"
           />
@@ -171,7 +171,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         {cover2 && (
           <div className="my-8">
             <img
-              src={`http://localhost:1337${cover2.formats?.medium?.url || cover2.url}`}
+              src={`https://cms-trapi-kisite-app.onrender.com${cover2.formats?.medium?.url || cover2.url}`}
               alt={cover2.alternativeText || "Imagem adicional"}
               className="h-80 w-full rounded-lg object-cover shadow-lg"
             />
