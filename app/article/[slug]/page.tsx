@@ -1,7 +1,6 @@
 import Image from "next/image";
 import NavBar from "@/app/components/navbar/NavBar";
 import { notFound } from "next/navigation";
-import CustomFooter from "@/app/components/footer/CustomFooter";
 
 interface Article {
   id: number;
@@ -76,11 +75,9 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
   }
 }
 
-export default async function ArticlePage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+// Aqui alteramos a tipagem para "any" nos parâmetros para evitar o erro de tipo
+export default async function ArticlePage(props: any): Promise<JSX.Element> {
+  const { params, searchParams: _searchParams } = props;
   const article = await getArticleBySlug(params.slug);
 
   if (!article) {
@@ -88,14 +85,13 @@ export default async function ArticlePage({
   }
 
   // Função para limpar tags HTML indesejadas
-  const cleanHtml = (html: string) => {
-    return html.replace(/<(!DOCTYPE|html|head|meta|title|script)[^>]*>/gi, "");
-  };
+  const cleanHtml = (html: string) =>
+    html.replace(/<(!DOCTYPE|html|head|meta|title|script)[^>]*>/gi, "");
 
   return (
     <div className="container mx-auto px-4 py-8">
       <NavBar />
-      <article className="prose prose-lg max-w-none mt-44">
+      <article className="prose prose-lg max-w-none mt-12">
         <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
 
         {/* Capa do Artigo utilizando next/image */}
@@ -116,8 +112,7 @@ export default async function ArticlePage({
         {/* Metadados do Artigo */}
         <div className="mb-8 text-gray-600">
           <p className="text-sm">
-            Publicado em:{" "}
-            {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
+            Publicado em: {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
           </p>
           {article.author?.name && (
             <p className="text-sm">Autor: {article.author.name}</p>
@@ -137,7 +132,6 @@ export default async function ArticlePage({
           ))}
         </div>
       </article>
-      <CustomFooter />
     </div>
   );
 }

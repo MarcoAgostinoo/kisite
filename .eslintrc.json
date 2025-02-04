@@ -15,10 +15,11 @@
     "tailwindcss/no-custom-classname": "off",
     "tailwindcss/enforces-shorthand": "off",
     "tailwindcss/migration-from-tailwind-2": "off",
-    "tailwindcss/no-contradicting-classname": "off",
-    "tailwindcss/no-unnecessary-arbitrary-value": "off",
-    "no-unused-vars": "warn", 
-    "react/react-in-jsx-scope": "off", 
-    "react/jsx-uses-react": "off"
+    "tailwindcss/no-contradicting-classname": "error",
+    "tailwindcss/no-unnecessary-arbitrary-value": "warn",
+    "no-unused-vars": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "@next/next/no-img-element": "warn"
   }
 }
