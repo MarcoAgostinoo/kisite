@@ -1,4 +1,3 @@
-// app/components/Post/postcard.tsx
 import Link from 'next/link';
 
 interface PostCardProps {
@@ -17,7 +16,7 @@ interface PostCardProps {
       };
       alternativeText?: string;
     };
-    author: {
+    author?: {
       name: string;
     };
   };
@@ -40,7 +39,8 @@ export default function PostCard({ post }: PostCardProps) {
         <div className="p-6">
           <h2 className="text-2xl font-bold">{post.title}</h2>
           <p className="text-gray-500 text-sm">
-            Por {post.author.name} - {new Date(post.publishedAt).toLocaleDateString()}
+            Por {post.author?.name || 'Autor Desconhecido'} -{' '}
+            {new Date(post.publishedAt).toLocaleDateString()}
           </p>
           <p className="mt-4 text-gray-700">{post.description.slice(0, 50)}...</p>
         </div>
