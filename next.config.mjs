@@ -7,8 +7,9 @@ const nextConfig = {
       "tailwindui.com",
       "backendnodemailer.vercel.app",
       "backendnodemailer-git-main-marcos-projects-83aa3827.vercel.app",
-      "localhost", // Adicionado para suportar imagens do Strapi
-      "cms-trapi-kisite-app.onrender.com", // Adicionei o novo hostname aqui
+      "localhost",
+      "cms-trapi-kisite-app.onrender.com",
+      "https://cms-trapi-kisite-app.onrender.com",
     ],
     remotePatterns: [
       {

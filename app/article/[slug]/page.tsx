@@ -91,10 +91,9 @@ export default async function ArticlePage(props: any): Promise<JSX.Element> {
   return (
     <div className="container mx-auto px-4 py-8">
       <NavBar />
-      <article className="prose prose-lg max-w-none mt-12">
-        <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
-
-        {/* Capa do Artigo utilizando next/image */}
+      <div className="-mt-56">
+        <article className="prose prose-lg max-w-none">
+        <h1 className="text-4xl font-bold mb-4 mt-40">{article.title}</h1>
         {article.cover?.url && (
           <div className="relative w-full h-96 mb-6 rounded-lg overflow-hidden">
             <Image
@@ -132,6 +131,8 @@ export default async function ArticlePage(props: any): Promise<JSX.Element> {
           ))}
         </div>
       </article>
+      </div>
+      
     </div>
   );
 }
