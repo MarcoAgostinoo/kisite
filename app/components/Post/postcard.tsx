@@ -16,9 +16,8 @@ interface PostCardProps {
       };
       alternativeText?: string;
     };
-    author?: {
-      name: string;
-    };
+    // O schema da API não contém autor, portanto podemos omitir ou definir um valor padrão.
+    blocks?: any[];
   };
 }
 
@@ -28,7 +27,7 @@ export default function PostCard({ post }: PostCardProps) {
       <a className="block bg-white shadow-lg rounded-xl overflow-hidden mb-6">
         {post.cover?.url && (
           <img
-            src={`http://localhost:1337${
+            src={`https://cms-trapi-kisite-app.onrender.com${
               post.cover.formats?.medium?.url || post.cover.url
             }`}
             alt={post.cover.alternativeText || post.title}
@@ -39,10 +38,12 @@ export default function PostCard({ post }: PostCardProps) {
         <div className="p-6">
           <h2 className="text-2xl font-bold">{post.title}</h2>
           <p className="text-gray-500 text-sm">
-            Por {post.author?.name || 'Autor Desconhecido'} -{' '}
+            Por Autor Desconhecido -{' '}
             {new Date(post.publishedAt).toLocaleDateString()}
           </p>
-          <p className="mt-4 text-gray-700">{post.description.slice(0, 50)}...</p>
+          <p className="mt-4 text-gray-700">
+            {post.description.slice(0, 50)}...
+          </p>
         </div>
       </a>
     </Link>
