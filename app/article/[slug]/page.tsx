@@ -1,6 +1,7 @@
-// app/article/[slug]/page.tsx
-import NavBar from '@/app/components/navbar/NavBar';
-import { notFound } from 'next/navigation';
+import Image from "next/image";
+import NavBar from "@/app/components/navbar/NavBar";
+import { notFound } from "next/navigation";
+import CustomFooter from "@/app/components/footer/CustomFooter";
 
 interface Article {
   id: number;
@@ -30,7 +31,7 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
     );
 
     if (!response.ok) {
-      console.error('Falha ao buscar artigo, status:', response.status);
+      console.error("Falha ao buscar artigo, status:", response.status);
       return null;
     }
 
@@ -41,6 +42,16 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
 
     const articleData = data[0];
 
+    // Seleciona a URL da capa com base nos formatos disponíveis (usa "medium" se disponível)
+    let coverUrl = "";
+    if (articleData.cover) {
+      if (articleData.cover.formats && articleData.cover.formats.medium) {
+        coverUrl = articleData.cover.formats.medium.url;
+      } else {
+        coverUrl = articleData.cover.url;
+      }
+    }
+
     return {
       id: articleData.id,
       title: articleData.title,
@@ -49,17 +60,18 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
       slug: articleData.slug,
       cover: articleData.cover
         ? {
-            url: `https://cms-trapi-kisite-app.onrender.com${articleData.cover.url}`,
-            alternativeText: articleData.cover.alternativeText || undefined,
+            url: `https://cms-trapi-kisite-app.onrender.com${coverUrl}`,
+            alternativeText:
+              articleData.cover.alternativeText ||
+              articleData.cover.caption ||
+              articleData.title,
           }
-        : { url: '' },
+        : { url: "" },
       blocks: articleData.blocks || [],
-      author: articleData.author
-        ? { name: articleData.author.name }
-        : undefined,
+      author: articleData.author ? { name: articleData.author.name } : undefined,
     };
   } catch (error) {
-    console.error('Erro ao buscar artigo:', error);
+    console.error("Erro ao buscar artigo:", error);
     return null;
   }
 }
@@ -77,30 +89,35 @@ export default async function ArticlePage({
 
   // Função para limpar tags HTML indesejadas
   const cleanHtml = (html: string) => {
-    return html.replace(/<(!DOCTYPE|html|head|meta|title|script)[^>]*>/gi, '');
+    return html.replace(/<(!DOCTYPE|html|head|meta|title|script)[^>]*>/gi, "");
   };
 
   return (
     <div className="container mx-auto px-4 py-8">
       <NavBar />
-      <article className="prose prose-lg max-w-none mt-12">
+      <article className="prose prose-lg max-w-none mt-44">
         <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
 
-        {/* Capa do Artigo */}
+        {/* Capa do Artigo utilizando next/image */}
         {article.cover?.url && (
-          <img
-            src={article.cover.url}
-            alt={article.cover.alternativeText || article.title}
-            className="w-full h-96 object-cover mb-6 rounded-lg"
-            loading="lazy"
-          />
+          <div className="relative w-full h-96 mb-6 rounded-lg overflow-hidden">
+            <Image
+              src={article.cover.url}
+              alt={article.cover.alternativeText || article.title}
+              fill
+              style={{ objectFit: "cover" }}
+              placeholder="blur"
+              blurDataURL="/placeholder.png" // ajuste conforme sua imagem placeholder
+              priority
+            />
+          </div>
         )}
 
         {/* Metadados do Artigo */}
         <div className="mb-8 text-gray-600">
           <p className="text-sm">
-            Publicado em:{' '}
-            {new Date(article.publishedAt).toLocaleDateString('pt-BR')}
+            Publicado em:{" "}
+            {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
           </p>
           {article.author?.name && (
             <p className="text-sm">Autor: {article.author.name}</p>
@@ -120,6 +137,7 @@ export default async function ArticlePage({
           ))}
         </div>
       </article>
+      <CustomFooter />
     </div>
   );
 }

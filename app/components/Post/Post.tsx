@@ -12,13 +12,16 @@ interface Post {
   cover: {
     url: string;
     formats?: {
+      thumbnail?: {
+        url: string;
+      };
       medium?: {
         url: string;
       };
     };
     alternativeText?: string;
   };
-  author: {
+  author?: {
     name: string;
   };
 }
@@ -36,18 +39,20 @@ export default function BlogPosts() {
           {
             headers: {
               Authorization:
-                "26da69d5fcaca45e24f4d15b5388d996622b1e5840fd5ef9745226b5bb78640150c0ddab5bbd4580e112ca72fa1135372630054dfee16c63370efaa3697649b6d5f40eb8a4332ca49a856e8d198ddad39790bc781fb30764dac82fa7b211128728085e46dc0b00514558797e81013543aa13be1e66d586c4e10f2851f64435f4",
+                "SUA_CHAVE_DE_AUTORIZACAO_AQUI", // substitua pela sua chave
             },
-          },
+          }
         );
 
         if (!response.ok) {
           throw new Error("Erro ao buscar os posts");
         }
 
-        const data = await response.json();
-        setPosts(data.data.slice(0, 15));
+        const json = await response.json();
+        // O schema retorna { data: [...] }, use os 15 primeiros posts
+        setPosts(json.data.slice(0, 15));
       } catch (error) {
+        console.error(error);
         setError("Falha ao carregar posts");
       } finally {
         setLoading(false);
@@ -62,17 +67,17 @@ export default function BlogPosts() {
       <h1 className="mb-6 text-center text-3xl font-bold">KiBlog</h1>
       <div className="flex flex-col items-center justify-center">
         {loading && (
-          <p className="text-center lg:mr-40">
+          <div className="flex flex-col items-center">
             <Image
               src="/Loading_2.gif"
-              alt="Flowbite Logo"
+              alt="Carregando"
               width={70}
               height={70}
-              className="mr-3 object-contain lg:ml-40"
+              className="object-contain"
             />
-          </p>
+            <p className="mt-2">Carregando posts...</p>
+          </div>
         )}
-        {loading && <p className="text-center">Carregando posts...</p>}
         {error && <p className="text-center text-red-500">{error}</p>}
       </div>
 

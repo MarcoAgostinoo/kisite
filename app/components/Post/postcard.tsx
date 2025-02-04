@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import Link from "next/link";
+import Image from "next/image";
 
 interface PostCardProps {
   post: {
@@ -10,35 +11,44 @@ interface PostCardProps {
     cover: {
       url: string;
       formats?: {
+        thumbnail?: {
+          url: string;
+        };
         medium?: {
           url: string;
         };
       };
       alternativeText?: string;
     };
-    // O schema da API não contém autor, portanto podemos omitir ou definir um valor padrão.
-    blocks?: any[];
+    author?: {
+      name: string;
+    };
   };
 }
 
 export default function PostCard({ post }: PostCardProps) {
+  // Se existir um formato thumbnail ou medium, usa-o; caso contrário, usa a url padrão
+  const imageUrl =
+    post.cover?.formats?.medium?.url ||
+    post.cover?.formats?.thumbnail?.url ||
+    post.cover?.url;
+
   return (
     <Link href={`/article/${post.slug}`} legacyBehavior>
       <a className="block bg-white shadow-lg rounded-xl overflow-hidden mb-6">
-        {post.cover?.url && (
-          <img
-            src={`https://cms-trapi-kisite-app.onrender.com${
-              post.cover.formats?.medium?.url || post.cover.url
-            }`}
+        {imageUrl && (
+          <Image
+            src={`https://cms-trapi-kisite-app.onrender.com${imageUrl}`}
             alt={post.cover.alternativeText || post.title}
+            width={400}
+            height={240}
             className="w-full h-60 object-cover"
           />
         )}
-
         <div className="p-6">
           <h2 className="text-2xl font-bold">{post.title}</h2>
           <p className="text-gray-500 text-sm">
-            Por Autor Desconhecido -{' '}
+            Por {post.author?.name || "Autor Desconhecido"} -{" "}
             {new Date(post.publishedAt).toLocaleDateString()}
           </p>
           <p className="mt-4 text-gray-700">
