@@ -6,7 +6,6 @@ export default function KiBlog() {
   return (
     <div>
       <NavBar />
-
       <BlogPosts />
       <CustomFooter />
     </div>

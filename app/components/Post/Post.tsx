@@ -1,65 +1,95 @@
 "use client";
 import { useEffect, useState } from "react";
-import PostCard from "./postcard";
+import ArticleCard from "./ArticleCard";
 import Image from "next/image";
 
-interface Post {
+interface Article {
   id: number;
+  documentId: string;
   title: string;
-  publishedAt: string;
   description: string;
   slug: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
   cover: {
-    url: string;
+    id: number;
+    documentId: string;
+    name: string;
+    alternativeText?: string | null;
+    caption?: string | null;
+    width: number;
+    height: number;
     formats?: {
       thumbnail?: {
+        ext: string;
         url: string;
-      };
-      medium?: {
-        url: string;
+        hash: string;
+        mime: string;
+        name: string;
+        path?: string | null;
+        size: number;
+        width: number;
+        height: number;
+        sizeInBytes: number;
       };
     };
-    alternativeText?: string;
+    hash: string;
+    ext: string;
+    mime: string;
+    size: number;
+    url: string;
+    previewUrl?: string | null;
+    provider: string;
+    provider_metadata?: any;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
   };
-  author?: {
+  author: {
+    id: number;
+    documentId: string;
     name: string;
+    email: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
   };
+  blocks: any[];
 }
 
-export default function BlogPosts() {
-  const [posts, setPosts] = useState<Post[]>([]);
+export default function BlogArticles() {
+  const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchPosts() {
+    async function fetchArticles() {
       try {
         const response = await fetch(
-          "https://cms-trapi-kisite-app.onrender.com/api/articles?populate=*",
+          "https://cms-kisite-production.up.railway.app/api/articles?populate=*",
           {
             headers: {
-              Authorization:
-                "SUA_CHAVE_DE_AUTORIZACAO_AQUI", // substitua pela sua chave
+              Authorization: "YOUR_API_KEY", // Substitua pela sua chave de API
             },
           }
         );
-
         if (!response.ok) {
-          throw new Error("Erro ao buscar os posts");
+          throw new Error("Erro ao buscar os artigos");
         }
-
         const json = await response.json();
-        // O schema retorna { data: [...] }, use os 15 primeiros posts
-        setPosts(json.data.slice(0, 15));
+        // Considerando que os dados dos artigos estão em json.data
+        const articlesData = json.data.slice(0, 15);
+        setArticles(articlesData);
       } catch (error) {
         console.error(error);
-        setError("Falha ao carregar posts");
+        setError("Falha ao carregar artigos");
       } finally {
         setLoading(false);
       }
     }
 
-    fetchPosts();
+    fetchArticles();
   }, []);
 
   return (
@@ -75,15 +105,14 @@ export default function BlogPosts() {
               height={70}
               className="object-contain"
             />
-            <p className="mt-2">Carregando posts...</p>
+            <p className="mt-2">Carregando artigos...</p>
           </div>
         )}
         {error && <p className="text-center text-red-500">{error}</p>}
       </div>
-
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-        {posts.map((post) => (
-          <PostCard key={post.id} post={post} />
+        {articles.map((article) => (
+          <ArticleCard key={article.id} article={article} />
         ))}
       </div>
     </div>

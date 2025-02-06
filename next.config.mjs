@@ -8,14 +8,17 @@ const nextConfig = {
       "backendnodemailer.vercel.app",
       "backendnodemailer-git-main-marcos-projects-83aa3827.vercel.app",
       "localhost",
-      "cms-trapi-kisite-app.onrender.com",
-      "https://cms-trapi-kisite-app.onrender.com",
+      "cms-kisite-production.up.railway.app",
     ],
     remotePatterns: [
       {
-        protocol: "http",
+        protocol: "https", // Atualizado para HTTPS
         hostname: "localhost",
         port: "1337",
+      },
+      {
+        protocol: "https", // Adicionado para HTTPS
+        hostname: "cms-kisite-production.up.railway.app",
       },
     ],
   },

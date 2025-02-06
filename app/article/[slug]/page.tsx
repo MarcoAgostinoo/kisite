@@ -25,7 +25,7 @@ interface Article {
 async function getArticleBySlug(slug: string): Promise<Article | null> {
   try {
     const response = await fetch(
-      `https://cms-trapi-kisite-app.onrender.com/api/articles?filters[slug][$eq]=${slug}&populate=*`,
+      `https://cms-kisite-production.up.railway.app/api/articles?filters[slug][$eq]=${slug}&populate=*`,
       { next: { revalidate: 3600 } } // Revalidação a cada hora
     );
 
@@ -59,7 +59,7 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
       slug: articleData.slug,
       cover: articleData.cover
         ? {
-            url: `https://cms-trapi-kisite-app.onrender.com${coverUrl}`,
+            url: `https://cms-kisite-production.up.railway.app${coverUrl}`,
             alternativeText:
               articleData.cover.alternativeText ||
               articleData.cover.caption ||
@@ -75,9 +75,17 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
   }
 }
 
-// Aqui alteramos a tipagem para "any" nos parâmetros para evitar o erro de tipo
-export default async function ArticlePage(props: any): Promise<JSX.Element> {
-  const { params, searchParams: _searchParams } = props;
+interface Params {
+  slug: string;
+}
+
+interface ArticlePageProps {
+  params: Params;
+}
+
+export default async function ArticlePage({
+  params,
+}: ArticlePageProps): Promise<JSX.Element> {
   const article = await getArticleBySlug(params.slug);
 
   if (!article) {
@@ -93,46 +101,46 @@ export default async function ArticlePage(props: any): Promise<JSX.Element> {
       <NavBar />
       <div className="-mt-56">
         <article className="prose prose-lg max-w-none">
-        <h1 className="text-4xl font-bold mb-4 mt-40">{article.title}</h1>
-        {article.cover?.url && (
-          <div className="relative w-full h-96 mb-6 rounded-lg overflow-hidden">
-            <Image
-              src={article.cover.url}
-              alt={article.cover.alternativeText || article.title}
-              fill
-              style={{ objectFit: "cover" }}
-              placeholder="blur"
-              blurDataURL="/placeholder.png" // ajuste conforme sua imagem placeholder
-              priority
-            />
-          </div>
-        )}
-
-        {/* Metadados do Artigo */}
-        <div className="mb-8 text-gray-600">
-          <p className="text-sm">
-            Publicado em: {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
-          </p>
-          {article.author?.name && (
-            <p className="text-sm">Autor: {article.author.name}</p>
-          )}
-        </div>
-
-        {/* Blocos de Conteúdo */}
-        <div className="text-gray-700 space-y-6">
-          {article.blocks.map((block) => (
-            <section key={block.id}>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: cleanHtml(block.body),
-                }}
+          <h1 className="text-4xl font-bold mb-4 mt-40">{article.title}</h1>
+          {article.cover?.url && (
+            <div className="relative w-full h-96 mb-6 rounded-lg overflow-hidden">
+              <Image
+                src={article.cover.url}
+                alt={article.cover.alternativeText || article.title}
+                fill
+                style={{ objectFit: "cover" }}
+                placeholder="blur"
+                blurDataURL="/placeholder.png" // ajuste conforme sua imagem placeholder
+                priority
               />
-            </section>
-          ))}
-        </div>
-      </article>
+            </div>
+          )}
+
+          {/* Metadados do Artigo */}
+          <div className="mb-8 text-gray-600">
+            <p className="text-sm">
+              Publicado em:{" "}
+              {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
+            </p>
+            {article.author?.name && (
+              <p className="text-sm">Autor: {article.author.name}</p>
+            )}
+          </div>
+
+          {/* Blocos de Conteúdo */}
+          <div className="text-gray-700 space-y-6">
+            {article.blocks.map((block) => (
+              <section key={block.id}>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: cleanHtml(block.body),
+                  }}
+                />
+              </section>
+            ))}
+          </div>
+        </article>
       </div>
-      
     </div>
   );
 }
