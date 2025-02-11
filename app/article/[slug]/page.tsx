@@ -1,6 +1,7 @@
 import Image from "next/image";
 import NavBar from "@/app/components/navbar/NavBar";
 import { notFound } from "next/navigation";
+import CustomFooter from "@/app/components/footer/CustomFooter";
 
 interface Article {
   id: number;
@@ -25,23 +26,17 @@ interface Article {
 async function getArticleBySlug(slug: string): Promise<Article | null> {
   try {
     const response = await fetch(
-      `https://cms-kisite-production.up.railway.app/api/articles?filters[slug][$eq]=${slug}&populate=*`,
-      { next: { revalidate: 3600 } }, // Revalidação a cada hora
+      `http://localhost:1337/api/articles?filters[slug][$eq]=${slug}&populate=*`,
+      { next: { revalidate: 3600 } } // Revalidação a cada hora
     );
-
     if (!response.ok) {
       console.error("Falha ao buscar artigo, status:", response.status);
       return null;
     }
-
     const json = await response.json();
     const { data } = json;
-
     if (!data || data.length === 0) return null;
-
     const articleData = data[0];
-
-    // Seleciona a URL da capa com base nos formatos disponíveis (usa "medium" se disponível)
     let coverUrl = "";
     if (articleData.cover) {
       if (articleData.cover.formats && articleData.cover.formats.medium) {
@@ -50,7 +45,7 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
         coverUrl = articleData.cover.url;
       }
     }
-
+    console.log("Cover URL:", `http://localhost:1337${coverUrl}`);
     return {
       id: articleData.id,
       title: articleData.title,
@@ -59,7 +54,7 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
       slug: articleData.slug,
       cover: articleData.cover
         ? {
-            url: `https://cms-kisite-production.up.railway.app${coverUrl}`,
+            url: `http://localhost:1337${coverUrl}`,
             alternativeText:
               articleData.cover.alternativeText ||
               articleData.cover.caption ||
@@ -89,7 +84,6 @@ export default async function ArticlePage({
   params,
 }: ArticlePageProps): Promise<JSX.Element> {
   const article = await getArticleBySlug(params.slug);
-
   if (!article) {
     notFound();
   }
@@ -99,9 +93,9 @@ export default async function ArticlePage({
     html.replace(/<(!DOCTYPE|html|head|meta|title|script)[^>]*>/gi, "");
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 mt-">
       <NavBar />
-      <div className="-mt-56">
+      <div className="mt-56">
         <article className="prose prose-lg max-w-none">
           <h1 className="mb-4 mt-40 text-4xl font-bold">{article.title}</h1>
           {article.cover?.url && (
@@ -111,13 +105,10 @@ export default async function ArticlePage({
                 alt={article.cover.alternativeText || article.title}
                 fill
                 style={{ objectFit: "cover" }}
-                placeholder="blur"
-                blurDataURL="/placeholder.png" // ajuste conforme sua imagem placeholder
                 priority
               />
             </div>
           )}
-
           {/* Metadados do Artigo */}
           <div className="mb-8 text-gray-600">
             <p className="text-sm">
@@ -128,7 +119,6 @@ export default async function ArticlePage({
               <p className="text-sm">Autor: {article.author.name}</p>
             )}
           </div>
-
           {/* Blocos de Conteúdo */}
           <div className="space-y-6 text-gray-700">
             {article.blocks.map((block) => (
@@ -143,6 +133,7 @@ export default async function ArticlePage({
           </div>
         </article>
       </div>
+      <CustomFooter />
     </div>
   );
 }
