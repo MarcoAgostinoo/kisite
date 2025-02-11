@@ -7,17 +7,17 @@ const nextConfig = {
       "tailwindui.com",
       "backendnodemailer.vercel.app",
       "backendnodemailer-git-main-marcos-projects-83aa3827.vercel.app",
-      "localhost",
       "cms-kisite-production.up.railway.app",
+      "localhost:1337",
     ],
     remotePatterns: [
       {
-        protocol: "https", // Atualizado para HTTPS
+        protocol: "http", // Alterado para HTTP para localhost
         hostname: "localhost",
         port: "1337",
       },
       {
-        protocol: "https", // Adicionado para HTTPS
+        protocol: "https", // Mantido para HTTPS
         hostname: "cms-kisite-production.up.railway.app",
       },
     ],

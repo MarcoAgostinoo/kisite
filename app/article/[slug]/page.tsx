@@ -26,7 +26,7 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
   try {
     const response = await fetch(
       `https://cms-kisite-production.up.railway.app/api/articles?filters[slug][$eq]=${slug}&populate=*`,
-      { next: { revalidate: 3600 } } // Revalidação a cada hora
+      { next: { revalidate: 3600 } }, // Revalidação a cada hora
     );
 
     if (!response.ok) {
@@ -67,7 +67,9 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
           }
         : { url: "" },
       blocks: articleData.blocks || [],
-      author: articleData.author ? { name: articleData.author.name } : undefined,
+      author: articleData.author
+        ? { name: articleData.author.name }
+        : undefined,
     };
   } catch (error) {
     console.error("Erro ao buscar artigo:", error);
@@ -101,9 +103,9 @@ export default async function ArticlePage({
       <NavBar />
       <div className="-mt-56">
         <article className="prose prose-lg max-w-none">
-          <h1 className="text-4xl font-bold mb-4 mt-40">{article.title}</h1>
+          <h1 className="mb-4 mt-40 text-4xl font-bold">{article.title}</h1>
           {article.cover?.url && (
-            <div className="relative w-full h-96 mb-6 rounded-lg overflow-hidden">
+            <div className="relative mb-6 h-96 w-full overflow-hidden rounded-lg">
               <Image
                 src={article.cover.url}
                 alt={article.cover.alternativeText || article.title}
@@ -128,7 +130,7 @@ export default async function ArticlePage({
           </div>
 
           {/* Blocos de Conteúdo */}
-          <div className="text-gray-700 space-y-6">
+          <div className="space-y-6 text-gray-700">
             {article.blocks.map((block) => (
               <section key={block.id}>
                 <div

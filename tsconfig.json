@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "app/components/Post/ArticlesPage.js", "app/components/Post/ArticleCard.tsx", ".next/types/app/article/[slug]/page.tsx"  ],
   "exclude": [
     "node_modules"
   ]
