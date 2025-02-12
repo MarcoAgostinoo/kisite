@@ -25,7 +25,8 @@ export default async function ArticlesPage() {
     }
 
     return (
-      <section className="p-4">
+      <div className='mt-52' >
+         <section className="p-4">
         <h1 className="text-3xl font-bold mb-6">Artigos</h1>
         <div className="grid gap-8 md:grid-cols-2">
           {articles.map((article: Article) => (
@@ -33,6 +34,8 @@ export default async function ArticlesPage() {
           ))}
         </div>
       </section>
+      </div>
+     
     );
   } catch (error) {
     console.error('GraphQL Error:', error);
