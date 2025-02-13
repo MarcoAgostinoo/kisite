@@ -1,27 +1,28 @@
-import Link from 'next/link'; // Importar o componente Link
-import Image from 'next/image';
-import { Article } from '../../../app/types/Article';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Article } from "../../types/Article";
 
 interface ArticleCardProps {
   article: Article;
 }
 
-function ArticleCard({ article }: ArticleCardProps) {
-  const coverUrl = article.cover?.url ? `http://localhost:1337${article.cover.url}` : null;
-  const avatarUrl = article.author?.avatar?.url ? `http://localhost:1337${article.author.avatar.url}` : null;
+const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
+  const BASE_URL = "https://cms-kisite-production.up.railway.app";
+  const coverUrl = article.cover?.url ? `${BASE_URL}${article.cover.url}` : null;
+  const avatarUrl = article.author?.avatar?.url ? `${BASE_URL}${article.author.avatar.url}` : null;
 
   return (
     <Link href={`/article/${article.slug}`} passHref>
-      {/* Envolver todo o conteúdo do card com o Link */}
       <div className="border rounded-lg p-4 shadow hover:shadow-lg transition-shadow cursor-pointer">
         <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
         {coverUrl && (
           <Image
             src={coverUrl}
             alt="Imagem do artigo"
-            width={600}
-            height={400}
-            className="w-full h-auto mb-4 rounded"
+            width={300}
+            height={250}
+            className="h-auto mb-4 rounded object-contain"
           />
         )}
         <p className="mb-2">{article.description}</p>
@@ -45,6 +46,6 @@ function ArticleCard({ article }: ArticleCardProps) {
       </div>
     </Link>
   );
-}
+};
 
 export default ArticleCard;

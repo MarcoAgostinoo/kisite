@@ -1,6 +1,6 @@
 // Arquivo: app/articles/page.tsx
 import { Metadata } from 'next';
-import { GET_ARTICLES } from '../../graphql/queries';
+import { GET_ARTICLES } from '../../graphql/Queries';
 import apolloClient from '../../lib/apolloClient';
 import ArticleCard from './ArticleCard';
 import { Article } from '@/app/types/Article';
@@ -18,27 +18,29 @@ export default async function ArticlesPage() {
       query: GET_ARTICLES,
     });
 
-    const articles = data?.articles;
+    // Limita a exibição a no máximo 20 artigos
+    const articles = data?.articles?.slice(0, 20);
 
     if (!articles || articles.length === 0) {
-      return <div>Nenhum artigo encontrado.</div>;
+      return <div className="text-center mt-10">Nenhum artigo encontrado.</div>;
     }
 
     return (
-      <div className='mt-52' >
-         <section className="p-4">
-        <h1 className="text-3xl font-bold mb-6">Artigos</h1>
-        <div className="grid gap-8 md:grid-cols-2">
-          {articles.map((article: Article) => (
-            <ArticleCard key={article.documentId} article={article} />
-          ))}
-        </div>
-      </section>
+      <div style={{marginTop: "130px"}}>
+        <section className="p-4">
+          {/* Título Responsivo */}
+          <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">Artigos</h1>
+          {/* Grid Responsivo */}
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {articles.map((article: Article) => (
+              <ArticleCard key={article.documentId} article={article} />
+            ))}
+          </div>
+        </section>
       </div>
-     
     );
   } catch (error) {
     console.error('GraphQL Error:', error);
-    return <div>Falha ao carregar artigos: {(error as Error).message}</div>;
+    return <div className="text-center mt-10">Falha ao carregar artigos: {(error as Error).message}</div>;
   }
 }
