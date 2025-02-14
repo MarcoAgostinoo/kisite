@@ -27,6 +27,7 @@ function fixImageUrl(url: string): string {
 export default async function ArticlePage({ params }: PageProps) {
   const BASE_URL = "https://cms-kisite-production.up.railway.app";
 
+  // Requisição para buscar o artigo pelo slug
   const res = await axios.get(
     `${BASE_URL}/api/articles?filters[slug][$eq]=${params.slug}&populate=*`,
     {
