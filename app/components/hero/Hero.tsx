@@ -10,7 +10,7 @@ export default function Hero() {
       </div>
       <div className="ml-0 flex flex-col items-center lg:ml-2">
         <div className="flex flex-col items-center space-y-2">
-          <p className="animate-pulse animate-infinite text-shadow-amber max-w-lg lg:mb-10 mb-0 text-lg text-yellow-400 text-shadow-lg sm:text-xl md:text-2xl">
+          <p className="animate-pulse animate-infinite text-shadow-amber max-w-lg lg:mb-10 mb-0 text-lg text-yellow-400 sm:text-xl md:text-2xl">
             Dê o primeiro passo do seu negócio online.
           </p>
         </div>

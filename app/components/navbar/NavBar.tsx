@@ -43,7 +43,7 @@ export default function NavBar() {
     <Navbar
       fluid
       className={`text-slate-950 fixed left-0 right-0 top-0 z-30 transition-all duration-300 ${
-        scrolling ? "bg-gray-200 bg-opacity-95" : "bg-transparent"
+        scrolling ? "bg-gray-200 bg-opacity-95 shadow-2xl" : "bg-transparent"
       } ${scrolling ? "top-0" : isMobile ? "top-0" : "mt-12"} ${
         menuOpen ? "bg-gray-900 bg-opacity-70" : ""
       }`}

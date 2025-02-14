@@ -22,6 +22,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
             alt="Imagem do artigo"
             width={300}
             height={250}
+            style={{ width: "100%", height: "auto", maxHeight: "226px" }}
             className="h-auto mb-4 rounded object-contain"
           />
         )}
