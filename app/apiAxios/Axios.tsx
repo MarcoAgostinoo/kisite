@@ -1,52 +1,91 @@
-import React from 'react';
+import axios from "axios";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { Article } from "../../../types/Article";
 
-interface Article {
-  id: number;
-  title: string;
-  description: string;
-  publishedAt: string;
-  slug: string;
-  cover: { url: string };
-  blocks: { body: string }[];
+interface PageProps {
+  params: {
+    slug: string;
+  };
 }
 
-const Teste01: React.FC = async () => {
-  const res = await fetch("https://cms-kisite-production.up.railway.app/api/articles?populate=*");
-  const json = await res.json();
+// Função auxiliar para corrigir a URL da imagem
+function fixImageUrl(url: string): string {
+  const BASE_URL = "https://cms-kisite-production.up.railway.app";
+  if (!url) return "";
+  // Se a URL for relativa, junta com BASE_URL
+  if (url.startsWith("/")) {
+    return BASE_URL + url;
+  }
+  // Se a URL vier com o domínio do localhost, substitui pelo BASE_URL
+  if (url.includes("localhost:1337")) {
+    return url.replace("http://localhost:1337", BASE_URL);
+  }
+  return url;
+}
 
-  const articles: Article[] = json.data.map((article: any) => ({
-    id: article.id,
-    title: article.title,
-    description: article.description,
-    publishedAt: article.publishedAt,
-    slug: article.slug,
-    cover: article.cover,
-    blocks: article.blocks,
-  }));
+export default async function ArticlePage({ params }: PageProps) {
+  const BASE_URL = "https://cms-kisite-production.up.railway.app";
+
+  // Busca o artigo filtrando pelo slug e populando os relacionamentos
+  const res = await axios.get(
+    `${BASE_URL}/api/articles?filters[slug][$eq]=${params.slug}&populate=*`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`, // Use variáveis de ambiente
+      },
+    }
+  );
+
+  const articles: Article[] = res.data.data;
+
+  if (!articles || articles.length === 0) {
+    notFound();
+  }
+
+  const article = articles[0];
+
+  // Utiliza a função fixImageUrl para garantir que a URL esteja correta
+  const coverUrl = article.cover?.url ? fixImageUrl(article.cover.url) : null;
+  const avatarUrl = article.author?.avatar?.url ? fixImageUrl(article.author.avatar.url) : null;
+
+  console.log("Cover URL:", coverUrl); // Verifique no console se a URL está correta
 
   return (
-    <div>
-      {articles.map((article) => (
-        <div key={article.id}>
-          <h2>{article.title}</h2>
-          <p>{article.description}</p>
-          {article.cover && (
-            <img
-              src={`https://cms-kisite-production.up.railway.app${article.cover.url}`}
-              alt={article.title}
-              style={{ width: '100%', height: 'auto' }}
+    <div className="container mx-auto p-6">
+      <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
+
+      {coverUrl && (
+        <Image
+          src={coverUrl}
+          alt="Imagem do artigo"
+          width={800}
+          height={600}
+          priority
+          className="h-auto mb-4 rounded object-contain"
+        />
+      )}
+
+      <p className="mb-4">{article.description}</p>
+
+      {article.author && (
+        <div className="flex items-center mb-4">
+          {avatarUrl && (
+            <Image
+              src={avatarUrl}
+              alt={`Avatar de ${article.author.name}`}
+              width={50}
+              height={50}
+              className="rounded-full mr-2"
             />
           )}
-          {article.blocks.map((block, index) => (
-            <div
-              key={index}
-              dangerouslySetInnerHTML={{ __html: block.body }}
-            />
-          ))}
+          <p className="text-sm text-gray-600">Por: {article.author.name}</p>
         </div>
-      ))}
+      )}
+
+      <p className="text-xs text-gray-500 mb-4">
+        Publicado em: {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
+      </p>
     </div>
   );
-};
-
-export default Teste01;
+}

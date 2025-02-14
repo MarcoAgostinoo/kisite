@@ -1,137 +1,101 @@
+import axios from "axios";
 import Image from "next/image";
-import NavBar from "@/app/components/navbar/NavBar";
 import { notFound } from "next/navigation";
+import { Article } from "../../types/Article";
+import NavBar from "@/app/components/navbar/NavBar";
 import CustomFooter from "@/app/components/footer/CustomFooter";
 
-interface Article {
-  id: number;
-  title: string;
-  description: string;
-  publishedAt: string;
-  slug: string;
-  cover: {
-    url: string;
-    alternativeText?: string;
-  };
-  blocks: {
-    __component: string;
-    id: number;
-    body: string;
-  }[];
-  author?: {
-    name: string;
+interface PageProps {
+  params: {
+    slug: string;
   };
 }
 
-async function getArticleBySlug(slug: string): Promise<Article | null> {
-  try {
-    const response = await fetch(
-      `http://localhost:1337/api/articles?filters[slug][$eq]=${slug}&populate=*`,
-      { next: { revalidate: 3600 } } // Revalidação a cada hora
-    );
-    if (!response.ok) {
-      console.error("Falha ao buscar artigo, status:", response.status);
-      return null;
-    }
-    const json = await response.json();
-    const { data } = json;
-    if (!data || data.length === 0) return null;
-    const articleData = data[0];
-    let coverUrl = "";
-    if (articleData.cover) {
-      if (articleData.cover.formats && articleData.cover.formats.medium) {
-        coverUrl = articleData.cover.formats.medium.url;
-      } else {
-        coverUrl = articleData.cover.url;
-      }
-    }
-    console.log("Cover URL:", `http://localhost:1337${coverUrl}`);
-    return {
-      id: articleData.id,
-      title: articleData.title,
-      description: articleData.description,
-      publishedAt: articleData.publishedAt,
-      slug: articleData.slug,
-      cover: articleData.cover
-        ? {
-            url: `http://localhost:1337${coverUrl}`,
-            alternativeText:
-              articleData.cover.alternativeText ||
-              articleData.cover.caption ||
-              articleData.title,
-          }
-        : { url: "" },
-      blocks: articleData.blocks || [],
-      author: articleData.author
-        ? { name: articleData.author.name }
-        : undefined,
-    };
-  } catch (error) {
-    console.error("Erro ao buscar artigo:", error);
-    return null;
+// Função auxiliar para corrigir a URL da imagem
+function fixImageUrl(url: string): string {
+  const BASE_URL = "https://cms-kisite-production.up.railway.app";
+  if (!url) return "";
+  if (url.startsWith("/")) {
+    return BASE_URL + url;
   }
+  if (url.includes("localhost:1337")) {
+    return url.replace("http://localhost:1337", BASE_URL);
+  }
+  return url;
 }
 
-interface Params {
-  slug: string;
-}
+export default async function ArticlePage({ params }: PageProps) {
+  const BASE_URL = "https://cms-kisite-production.up.railway.app";
 
-interface ArticlePageProps {
-  params: Params;
-}
+  const res = await axios.get(
+    `${BASE_URL}/api/articles?filters[slug][$eq]=${params.slug}&populate=*`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+    },
+  );
 
-export default async function ArticlePage({
-  params,
-}: ArticlePageProps): Promise<JSX.Element> {
-  const article = await getArticleBySlug(params.slug);
-  if (!article) {
+  const articles: Article[] = res.data.data;
+
+  if (!articles || articles.length === 0) {
     notFound();
   }
 
-  // Função para limpar tags HTML indesejadas
-  const cleanHtml = (html: string) =>
-    html.replace(/<(!DOCTYPE|html|head|meta|title|script)[^>]*>/gi, "");
+  const article = articles[0];
+
+  const coverUrl = article.cover?.url ? fixImageUrl(article.cover.url) : null;
+  const avatarUrl = article.author?.avatar?.url
+    ? fixImageUrl(article.author.avatar.url)
+    : null;
 
   return (
-    <div className="container mx-auto px-4 py-8 mt-">
+    <div>
       <NavBar />
-      <div className="mt-56">
-        <article className="prose prose-lg max-w-none">
-          <h1 className="mb-4 mt-40 text-4xl font-bold">{article.title}</h1>
-          {article.cover?.url && (
-            <div className="relative mb-6 h-96 w-full overflow-hidden rounded-lg">
+      <div className="container mx-auto p-6 mt-24 lg:mt-52">
+        <h1 className="mb-4 text-4xl font-bold">{article.title}</h1>
+
+        {coverUrl && (
+          <Image
+            src={coverUrl}
+            alt="Imagem do artigo"
+            width={1920}
+            height={400}
+            priority
+            className="mb-4 h-[400px] w-full object-cover"
+          />
+        )}
+
+        <p className="mb-4">{article.description}</p>
+
+        {article.author && (
+          <div className="mb-4 flex items-center">
+            {avatarUrl && (
               <Image
-                src={article.cover.url}
-                alt={article.cover.alternativeText || article.title}
-                fill
-                style={{ objectFit: "cover" }}
-                priority
+                src={avatarUrl}
+                alt={`Avatar de ${article.author.name}`}
+                width={50}
+                height={50}
+                className="mr-2 w-full rounded-full"
               />
-            </div>
-          )}
-          {/* Metadados do Artigo */}
-          <div className="mb-8 text-gray-600">
-            <p className="text-sm">
-              Publicado em:{" "}
-              {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
-            </p>
-            {article.author?.name && (
-              <p className="text-sm">Autor: {article.author.name}</p>
             )}
+            <p className="text-sm text-gray-600">Por: {article.author.name}</p>
           </div>
-          {/* Blocos de Conteúdo */}
-          <div className="space-y-6 text-gray-700">
-            {article.blocks.map((block) => (
-              <section key={block.id}>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: cleanHtml(block.body),
-                  }}
-                />
-              </section>
-            ))}
-          </div>
-        </article>
+        )}
+
+        <p className="mb-4 text-xs text-gray-500">
+          Publicado em:{" "}
+          {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
+        </p>
+
+        {article.blocks &&
+          article.blocks.map((block) => (
+            <div
+              key={block.id}
+              dangerouslySetInnerHTML={{ __html: block.body }}
+              className="mb-4"
+            />
+          ))}
       </div>
       <CustomFooter />
     </div>
