@@ -27,78 +27,84 @@ function fixImageUrl(url: string): string {
 export default async function ArticlePage({ params }: PageProps) {
   const BASE_URL = "https://cms-kisite-production.up.railway.app";
 
-  // Requisição para buscar o artigo pelo slug
-  const res = await axios.get(
-    `${BASE_URL}/api/articles?filters[slug][$eq]=${params.slug}&populate=*`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      },
-    },
-  );
+  try {
+    // Requisição para buscar o artigo pelo slug
+    const res = await axios.get(
+      `${BASE_URL}/api/articles?filters[slug][$eq]=${params.slug}&populate=*`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+        },
+      }
+    );
 
-  const articles: Article[] = res.data.data;
+    const articles: Article[] = res.data.data;
 
-  if (!articles || articles.length === 0) {
+    // Verifica se não há artigos
+    if (!articles || articles.length === 0) {
+      notFound();
+    }
+
+    const article = articles[0];
+
+    const coverUrl = article.cover?.url ? fixImageUrl(article.cover.url) : null;
+    const avatarUrl = article.author?.avatar?.url
+      ? fixImageUrl(article.author.avatar.url)
+      : null;
+
+    return (
+      <div>
+        <NavBar />
+        <div className="container mx-auto p-6 mt-24 lg:mt-52">
+          <h1 className="mb-4 text-4xl font-bold">{article.title}</h1>
+
+          {coverUrl && (
+            <Image
+              src={coverUrl}
+              alt="Imagem do artigo"
+              width={1920}
+              height={400}
+              priority
+              className="mb-4 h-[400px] w-full object-cover"
+            />
+          )}
+
+          <p className="mb-4">{article.description}</p>
+
+          {article.author && (
+            <div className="mb-4 flex items-center">
+              {avatarUrl && (
+                <Image
+                  src={avatarUrl}
+                  alt={`Avatar de ${article.author.name}`}
+                  width={50}
+                  height={50}
+                  className="mr-2 w-full rounded-full"
+                />
+              )}
+              <p className="text-sm text-gray-600">Por: {article.author.name}</p>
+            </div>
+          )}
+
+          <p className="mb-4 text-xs text-gray-500">
+            Publicado em:{" "}
+            {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
+          </p>
+
+          {article.blocks &&
+            article.blocks.map((block) => (
+              <div
+                key={block.id}
+                dangerouslySetInnerHTML={{ __html: block.body }}
+                className="mb-4"
+              />
+            ))}
+        </div>
+        <CustomFooter />
+      </div>
+    );
+  } catch (error) {
+    console.error("Erro ao buscar artigo:", error);
     notFound();
   }
-
-  const article = articles[0];
-
-  const coverUrl = article.cover?.url ? fixImageUrl(article.cover.url) : null;
-  const avatarUrl = article.author?.avatar?.url
-    ? fixImageUrl(article.author.avatar.url)
-    : null;
-
-  return (
-    <div>
-      <NavBar />
-      <div className="container mx-auto p-6 mt-24 lg:mt-52">
-        <h1 className="mb-4 text-4xl font-bold">{article.title}</h1>
-
-        {coverUrl && (
-          <Image
-            src={coverUrl}
-            alt="Imagem do artigo"
-            width={1920}
-            height={400}
-            priority
-            className="mb-4 h-[400px] w-full object-cover"
-          />
-        )}
-
-        <p className="mb-4">{article.description}</p>
-
-        {article.author && (
-          <div className="mb-4 flex items-center">
-            {avatarUrl && (
-              <Image
-                src={avatarUrl}
-                alt={`Avatar de ${article.author.name}`}
-                width={50}
-                height={50}
-                className="mr-2 w-full rounded-full"
-              />
-            )}
-            <p className="text-sm text-gray-600">Por: {article.author.name}</p>
-          </div>
-        )}
-
-        <p className="mb-4 text-xs text-gray-500">
-          Publicado em:{" "}
-          {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
-        </p>
-
-        {article.blocks &&
-          article.blocks.map((block) => (
-            <div
-              key={block.id}
-              dangerouslySetInnerHTML={{ __html: block.body }}
-              className="mb-4"
-            />
-          ))}
-      </div>
-      <CustomFooter />
-    </div>
-  );
 }
