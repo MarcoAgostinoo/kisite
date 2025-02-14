@@ -1,7 +1,7 @@
 import axios from "axios";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Article } from "../../../types/Article";
+import { Article } from "../../app/types/Article";
 
 interface PageProps {
   params: {
