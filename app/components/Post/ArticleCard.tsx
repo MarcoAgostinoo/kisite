@@ -13,7 +13,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   const avatarUrl = article.author?.avatar?.url ? `${BASE_URL}${article.author.avatar.url}` : null;
 
   return (
-    <Link href={`/article/${article.slug}`} passHref>
+    <Link href={`/pages/article/${article.slug}`} passHref>
       <div className="border rounded-lg p-4 shadow hover:shadow-lg transition-shadow cursor-pointer">
         <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
         {coverUrl && (
