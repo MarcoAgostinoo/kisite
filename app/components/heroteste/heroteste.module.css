@@ -1,0 +1,84 @@
+.carousel-3d {
+    perspective: 1000px; /* Define a profundidade da perspectiva */
+    transform-style: preserve-3d; /* Mantém os elementos filhos em 3D */
+  }
+  
+  .carousel-3d > div {
+    transform: rotateY(-20deg); /* Inclina o carrossel para a esquerda */
+    transform-origin: center; /* Define o ponto de origem da transformação */
+    transition: transform 0.5s ease; /* Adiciona uma transição suave */
+  }
+  .button-3d {
+    perspective: 1000px; /* Define a profundidade da perspectiva */
+    transform-style: preserve-3d; /* Mantém os elementos filhos em 3D */
+  }
+  
+  .button-3d > button {
+    transform: rotateY(-20deg); /* Inclina o botão para a esquerda */
+    transform-origin: center; /* Define o ponto de origem da transformação */
+    transition: transform 0.5s ease; /* Adiciona uma transição suave */
+  }
+  .hero-container {
+    background: linear-gradient(135deg, #0f172a, #1e293b); /* Fundo gradiente azul-escuro */
+    color: white; /* Textos brancos para contraste */
+    padding: 2rem;
+    border-radius: 12px; /* Bordas arredondadas para suavidade */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+  }
+  
+  .hero-text {
+    font-family: 'Arial', sans-serif; /* Fonte moderna e limpa */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+  }
+  
+  .hero-title {
+    font-size: 2rem; /* Título grande e impactante */
+    font-weight: bold;
+    color: #facc15; /* Amarelo para destacar o título */
+    text-align: center;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem; /* Subtítulo menor */
+    color: #cbd5e1; /* Cinza claro para contrastar com o fundo */
+    text-align: center;
+  }
+  
+  .hero-button {
+    background-color: #facc15; /* Amarelo para chamar a atenção */
+    color: #0f172a; /* Azul-escuro para contraste */
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #eab308; /* Amarelo mais escuro no hover */
+    transform: scale(1.05); /* Efeito de crescimento ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+  }
+
+  /* Estilo personalizado para o botão */
+.custom-button {
+    all: unset; /* Remove todos os estilos padrão */
+    cursor: pointer;
+    background-color: #374151; /* Cor de fundo inicial */
+    color: white; /* Cor do texto */
+    padding: 0.25rem; /* Espaçamento interno */
+    border-radius: 9999px; /* Borda arredondada */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: all 0.3s ease; /* Transição suave */
+  }
+  
+  .custom-button:hover {
+    background-color: #4b5563; /* Cor de fundo no hover */
+    transform: scale(1.1); /* Efeito de crescimento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+  }
+  
+  .custom-button:focus {
+    outline: none; /* Remove o contorno de foco */
+    box-shadow: 0 0 0 3px rgba(164, 202, 255, 0.5); /* Adiciona uma borda suave no foco */
+  }

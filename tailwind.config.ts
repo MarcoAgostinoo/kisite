@@ -13,6 +13,9 @@ const baseConfig: Config = {
     extend: {
       aspectRatio: { "577/310": "577 / 310" },
       colors: { myCustomBlue: "#002d52" },
+      backgroundImage: {
+        'custom-bg': "url('/teste01.jpg')",
+      },
       textShadow: {
         sm: "1px 1px 2px rgba(255, 255, 255, 0.6)",
         md: "2px 2px 4px rgba(255, 255, 255, 0.5)",
