@@ -11,6 +11,7 @@ import GridColumTree from "./components/gridcolumtree/GridColumTree";
 import OutrosServicos from "./components/outrosservicos/OutrosServicos";
 import FaqAccordion from "./components/faqAccordion/FaqAccordion";
 import HeroSecondary from "./components/hero-secondary/HeroSecondary";
+import HeroHomeContainer from "./components/heroHomecontainer/HeroHomeContainer";
 
 
 export default function Home() {
@@ -19,7 +20,8 @@ export default function Home() {
       <BannerTop />
       <Navbar />
       <Hero />
-      <OutrosServicos />
+      <HeroHomeContainer />
+      {/* <OutrosServicos /> */}
       <Servicos />
       <About />
       <Precos />

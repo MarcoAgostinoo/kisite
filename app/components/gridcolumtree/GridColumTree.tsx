@@ -2,16 +2,16 @@ import Image from "next/image";
 
 export default function GridColumTree() {
   return (
-    <div className="bg-gray-50 py-4 sm:py-4">
+    <div className=" py-4 sm:py-4">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-center text-base/7 font-semibold text-indigo-600">
+        <h2 className="text-center text-base/7 font-semibold text-white">
           Transforme sua Presença Online
         </h2>
-        <p className="text-gray-950 mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight sm:text-5xl">
+        <p className="text-white mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight sm:text-5xl">
           Soluções Digitais para Alavancar Seu Negócio
         </p>
         <div className="mt-10 grid gap-4 sm:mt-10 lg:grid-cols-3 lg:grid-rows-2">
-          <div className="relative lg:row-span-2">
+          <div className="relative lg:row-span-2  ">
             <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-lg lg:rounded-l-[2rem]">
               <div className="px-8 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
@@ -24,9 +24,9 @@ export default function GridColumTree() {
                   clientes.
                 </p>
               </div>
-              <div className="relative h-96 w-full grow sm:mt-4 lg:min-h-[30rem] lg:max-w-sm">
+              <div className="relative h-96 bg-transparent w-full grow sm:mt-4 lg:min-h-[30rem] lg:max-w-sm">
                 <Image
-                  className="object-cover"
+                  className="object-cover ml-1 mb-2"
                   src="/smarthphone.png"
                   alt="Celular exibindo um site responsivo"
                   layout="fill"

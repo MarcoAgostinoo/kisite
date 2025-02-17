@@ -1,5 +1,6 @@
 import { Button } from "flowbite-react";
 import { Carousel } from "flowbite-react";
+import Image from "next/image"; // Importe o componente Image
 import styles from "./heroteste.module.css";
 
 const Heroteste = () => {
@@ -27,22 +28,22 @@ const Heroteste = () => {
           </Button>
         </div>
       </div>
-
       {/* Lado Direito: Carrossel */}
-      <div className="mt-6 lg:mt-0 lg:w-1/2">
+      <div className="mt-0 mr-10 lg:mr-0 lg:mt-12 lg:w-1/2 ">
         <div
           className={`h-56 sm:h-64 xl:h-80 2xl:h-96 ${styles["carousel-3d"]}`}
         >
           <Carousel
+          className="shadow-sm"
             pauseOnHover
             leftControl={
               <div className={styles["button-3d"]}>
                 <span
                   role="button"
-                  className="relative z-10 rounded-full bg-gray-700 p-1 text-white shadow-md transition-colors hover:bg-gray-600"
+                  className="relative z-10 rounded-full   p-1 text-white shadow-md transition-colors "
                   style={{
-                    border: "none", // Remove qualquer borda indesejada
-                    outline: "none", // Remove contornos de foco
+                    border: "none",
+                    outline: "none",
                   }}
                 >
                   <svg
@@ -52,15 +53,15 @@ const Heroteste = () => {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     style={{
-                      display: "block", // Garante que o SVG seja renderizado corretamente
-                      margin: "auto", // Centraliza o ícone dentro do botão
+                      display: "block",
+                      margin: "auto",
                     }}
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M9 5l7 7-7 7"
+                      d="M15 19l-7-7 7-7"
                     />
                   </svg>
                 </span>
@@ -70,7 +71,7 @@ const Heroteste = () => {
               <div className={styles["button-3d"]}>
                 <span
                   role="button"
-                  className="rounded-full bg-gray-700 p-1 text-white shadow-md transition-colors"
+                  className="rounded-full  p-1 text-white shadow-md transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -90,25 +91,40 @@ const Heroteste = () => {
               </div>
             }
           >
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
-              alt="..."
+            <Image
+              src="/teste01.jpg"
+              alt="Imagem 1"
+              width={800}
+              height={400}
+              className="object-cover w-full h-full rounded-md"
             />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
-              alt="..."
+            <Image
+              src="/galeria/index01.png"
+              alt="Imagem 2"
+              width={800}
+              height={400}
+              className="object-cover w-full h-full rounded-md"
             />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-              alt="..."
+            <Image
+              src="/galeria/index02.png"
+              alt="Imagem 3"
+              width={800}
+              height={400}
+              className="object-cover w-full h-full rounded-md"
             />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
-              alt="..."
+            <Image
+              src="/galeria/index03.png"
+              alt="Imagem 4"
+              width={800}
+              height={400}
+              className="object-cover w-full h-full rounded-md"
             />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
-              alt="..."
+            <Image
+              src="/galeria/index04.png"
+              alt="Imagem 5"
+              width={800}
+              height={400}
+              className="object-cover w-full h-full rounded-md"
             />
           </Carousel>
         </div>

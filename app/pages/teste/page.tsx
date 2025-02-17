@@ -1,4 +1,4 @@
-import Heroteste from "@/app/components/heroteste/Heroteste";
+import HeroHomeContainer from "@/app/components/heroHomecontainer/HeroHomeContainer";
 
 
 export default function teste() {
@@ -7,7 +7,7 @@ export default function teste() {
       <div className="text-center">
         <h1>teste</h1>
       </div>
-        <Heroteste />
+        <HeroHomeContainer />
     </div>
   );
 }
