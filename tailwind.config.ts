@@ -12,7 +12,16 @@ const baseConfig: Config = {
   theme: {
     extend: {
       aspectRatio: { "577/310": "577 / 310" },
-      colors: { myCustomBlue: "#002d52" },
+      colors: {
+        primaryBlue: "#002b59",
+        secondaryBlue: "#4DA1FF",
+        successGreen: "#81C784",
+        neutralGray: "#757575",
+        pureWhite: "#FFFFFF",
+        deepBlack: "#212121",
+        accentYellow: "#FFF9C4",
+        subtlePurple: "#E8EAF6"
+      },
       backgroundImage: {
         'custom-bg': "url('/teste01.jpg')",
       },

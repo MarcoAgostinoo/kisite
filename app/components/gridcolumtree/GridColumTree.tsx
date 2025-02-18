@@ -24,9 +24,9 @@ export default function GridColumTree() {
                   clientes.
                 </p>
               </div>
-              <div className="relative h-96 bg-transparent w-full grow sm:mt-4 lg:min-h-[30rem] lg:max-w-sm">
+              <div className="relative h-96 bg-transparent w-full grow sm:mt-4 lg:min-h-[30rem] lg:max-w-sm rounded-l-full rounded-r-full">
                 <Image
-                  className="object-cover ml-1 mb-2"
+                  className="object-cover mb-3"
                   src="/smarthphone.png"
                   alt="Celular exibindo um site responsivo"
                   layout="fill"

@@ -15,7 +15,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   return (
     <Link href={`/pages/article/${article.slug}`} passHref>
       <div className="border rounded-lg p-4 shadow hover:shadow-lg transition-shadow cursor-pointer">
-        <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
+        <h2 className="text-center h-20 overflow-hidden text-xl font-semibold mb-10">{article.title}</h2>
         {coverUrl && (
           <Image
             src={coverUrl}

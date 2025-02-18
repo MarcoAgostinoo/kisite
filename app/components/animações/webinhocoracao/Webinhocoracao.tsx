@@ -19,8 +19,8 @@ export default function WebinhoCoracao() {
         <Image
           src="/webinhocoracao.png"
           alt="Webinho Coração"
-          width={300}
-          height={300}
+          width={240}
+          height={240}
           className="mr-0 mt-6 lg:mt-0  lg:mr-16 object-contain"
           priority={true}
         />

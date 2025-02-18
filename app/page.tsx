@@ -13,22 +13,19 @@ import FaqAccordion from "./components/faqAccordion/FaqAccordion";
 import HeroSecondary from "./components/hero-secondary/HeroSecondary";
 import HeroHomeContainer from "./components/heroHomecontainer/HeroHomeContainer";
 
-
 export default function Home() {
   return (
-    <main className="w-full flex flex-col">
+    <main className="flex w-full flex-col">
       <BannerTop />
       <Navbar />
       <Hero />
-      <HeroHomeContainer />
-      {/* <OutrosServicos /> */}
       <Servicos />
+      <HeroHomeContainer />
       <About />
       <Precos />
       <Gallery />
       <HeroSecondary />
-      <ContantSection />      
-      <GridColumTree />
+      <ContantSection />
       <FaqAccordion />
       <CustomFooter />
     </main>

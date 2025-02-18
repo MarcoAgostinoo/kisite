@@ -14,14 +14,14 @@ export default function Gallery() {
     },
     {
       imgelink:
-        "/index02.png",
+        "/galeria/index02.png",
       phrase: "Garagem Oficina",
       phrase2: "Site para a empresa:",
       url: "https://marcoagostinoo.github.io/garagemoficina/",
     },
     {
       imgelink:
-        "/index03.png",
+        "/galeria/index03.png",
       phrase:
         "Concursos Agora",
       phrase2: "Site para a empresa:",
@@ -37,7 +37,7 @@ export default function Gallery() {
     },
     {
       imgelink:
-        "/index03.png",
+        "/galeria/index03.png",
       phrase:
         "Concursos Agora",
       phrase2: "Site para a empresa:",
