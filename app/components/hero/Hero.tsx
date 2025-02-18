@@ -4,32 +4,35 @@ import Homemdigitando from "../animações/homemdigitando/Homemdigitando";
 
 export default function Hero() {
   return (
-    <section className="mt-24 pt-10 relative flex flex-col items-center justify-center min-h-screen bg-custom-bg bg-cover bg-center">
-      {/* Overlay para suavizar o background */}
-      <div className="absolute inset-0 bg-primaryBlue opacity-80"></div>
-
-      <div className="relative z-10 flex flex-col items-center text-center px-6 lg:px-12">
-        {/* Elemento opcional, pode ser removido se desejar simplicidade */}
-
-        <p className="text-xl text-accentYellow mb-4 tracking-wide">
-          Dê o primeiro passo do seu negócio online.
-        </p>
-
-        <h1 className="text-4xl sm:text-6xl lg:text-5xl font-extrabold text-pureWhite mb-6 leading-tight">
-          Atraia mais clientes com um site que reflete a essência da sua marca.
-        </h1>
-
-        <h3 className="text-2xl sm:text-3xl lg:text-4xl text-secondaryBlue mb-10 font-medium">
-          Sites rápidos, responsivos e personalizados para alavancar o seu negócio.
-        </h3>
-
-        <Button className="bg-successGreen text-deepBlack hover:bg-secondaryBlue transition-colors duration-300 rounded-full py-3 px-6">
+    <section className="bg mt-24 flex w-full flex-col items-center justify-center  bg-cover bg-center bg-no-repeat px-2 text-center sm:px-4 lg:mt-36 lg:flex-row">
+      <div className="ml-0 hidden sm:block lg:ml-16">
+        <Homemdigitando />
+      </div>
+      <div className="ml-0 flex flex-col items-center lg:ml-2">
+        <div className="flex flex-col items-center space-y-2">
+          <p className="animate-pulse animate-infinite text-shadow-amber max-w-lg lg:mb-10 mb-0 text-lg text-yellow-400 sm:text-xl md:text-2xl">
+            Dê o primeiro passo do seu negócio online.
+          </p>
+        </div>
+        <div className="my-1 sm:mx-2 md:mx-3">
+          <h1 className="antialiased animate-flip-up animate-once animate-ease-linear animate-normal animate-fill-forwards text-4xl text-black-800 font-bold text-shadow-lg sm:text-5xl md:text-6xl">
+            Atraia mais clientes com um site que reflete a essência da sua
+            marca.
+          </h1>
+        </div>
+        <div className="my-1 sm:mx-2 md:mx-3">
+          <h3 className="animate-flip-up animate-once animate-ease-linear animate-normal animate-fill-forwards text-lg  text-blue-800 text-shadow-lg sm:text-xl md:text-2xl">
+            Sites rápidos, responsivos e personalizados para alavancar o seu
+            negócio. Conquiste o sucesso digital!
+          </h3>
+        </div>
+        <div className="flex flex-col items-center justify-center gap-2 sm:flex-row">
+        <Button className="bg-successGreen text-xl text-deepBlack hover:bg-secondaryBlue transition-colors duration-300 rounded-full py-3 px-6">
           Solicite Seu Orçamento
         </Button>
+        </div>
       </div>
-
-      {/* Componente animado */}
-      <div className="relative z-10 mt-8">
+      <div className="mr-0 lg:mr-16">
         <Webinhocoracao />
       </div>
     </section>

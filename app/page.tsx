@@ -19,10 +19,10 @@ export default function Home() {
       <BannerTop />
       <Navbar />
       <Hero />
-      <Servicos />
       <HeroHomeContainer />
-      <About />
+      <Servicos />
       <Precos />
+      <About />
       <Gallery />
       <HeroSecondary />
       <ContantSection />

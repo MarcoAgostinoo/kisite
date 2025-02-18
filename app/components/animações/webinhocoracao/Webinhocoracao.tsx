@@ -21,7 +21,7 @@ export default function WebinhoCoracao() {
           alt="Webinho Coração"
           width={240}
           height={240}
-          className="mr-0 mt-6 lg:mt-0  lg:mr-16 object-contain"
+          className="mr-0 mt-2 lg:mt-0  lg:mr-12 object-contain"
           priority={true}
         />
       </motion.div>
