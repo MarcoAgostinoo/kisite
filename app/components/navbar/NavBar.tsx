@@ -40,134 +40,139 @@ export default function NavBar() {
   };
 
   return (
-    <Navbar
-      fluid
-      className={`text-slate-950 fixed left-0 right-0 top-0 z-30 transition-all duration-300 ${
-        scrolling ? "bg-gray-200 bg-opacity-95 shadow-2xl" : "bg-transparent"
-      } ${scrolling ? "top-0" : isMobile ? "top-0" : "mt-12"} ${
-        menuOpen ? "bg-gray-900 bg-opacity-70" : ""
-      }`}
-    >
-      <Navbar.Brand href="/">
-        <div className="group flex items-center">
-          <Image
-            src="/logo.png"
-            alt="Flowbite Logo"
-            width={70}
-            height={70}
-            className="mr-3 object-contain lg:ml-40"
-          />
-          <motion.span
-            className="self-center whitespace-nowrap text-xl font-semibold text-shadow-lg group-hover:text-blue-500" // Mudança de cor ao passar o mouse
-            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} // Animação de escala
-          >
-            Kisite
-          </motion.span>
+    <div>
+      <Navbar
+        fluid
+        className={`text-slate-950 fixed left-0 right-0 top-0 z-30 transition-all duration-300 ${
+          scrolling ? "bg-gray-200 bg-opacity-95 shadow-2xl" : "bg-transparent"
+        } ${scrolling ? "top-0" : isMobile ? "top-0" : "mt-12"} ${
+          menuOpen ? "bg-gray-900 bg-opacity-70" : ""
+        }`}
+      >
+        <Navbar.Brand href="/">
+          <div className="group flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Flowbite Logo"
+              width={70}
+              height={70}
+              className="mr-3 object-contain lg:ml-40"
+            />
+            <motion.span
+              className="self-center whitespace-nowrap text-xl font-semibold text-shadow-lg group-hover:text-blue-500" // Mudança de cor ao passar o mouse
+              whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} // Animação de escala
+            >
+              Kisite
+            </motion.span>
+          </div>
+        </Navbar.Brand>
+        <div className="flex gap-10 md:order-2">
+          <Navbar.Toggle onClick={handleToggle} />
         </div>
-      </Navbar.Brand>
-      <div className="flex gap-10 md:order-2">
-        <Navbar.Toggle onClick={handleToggle} />
-      </div>
-      <Navbar.Collapse className={menuOpen ? "block" : "hidden"}>
-        <motion.div
-          className="group relative"
-          whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-        >
-          <Navbar.Link
-            href="/"
-            active
-            onClick={handleLinkClick}
-            className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-              menuOpen ? "text-white" : ""
-            }`}
+        <Navbar.Collapse className={menuOpen ? "block" : "hidden"}>
+          <motion.div
+            className="group relative"
+            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
           >
-            Início
-          </Navbar.Link>
-        </motion.div>
+            <Navbar.Link
+              href="/"
+              active
+              onClick={handleLinkClick}
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+                menuOpen ? "text-white" : ""
+              }`}
+            >
+              Início
+            </Navbar.Link>
+          </motion.div>
 
-        <motion.div
-          className="group relative"
-          whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-        >
-          <Navbar.Link
-            href="/#servicos"
-            active
-            onClick={handleLinkClick}
-            className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-              menuOpen ? "text-white" : ""
-            }`}
+          <motion.div
+            className="group relative"
+            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
           >
-            Serviços
-          </Navbar.Link>
-        </motion.div>
+            <Navbar.Link
+              href="/#servicos"
+              active
+              onClick={handleLinkClick}
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+                menuOpen ? "text-white" : ""
+              }`}
+            >
+              Serviços
+            </Navbar.Link>
+          </motion.div>
 
-        <motion.div
-          className="group relative"
-          whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-        >
-          <Navbar.Link
-            href="/#portifolio"
-            active
-            onClick={handleLinkClick}
-            className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-              menuOpen ? "text-white" : ""
-            }`}
+          <motion.div
+            className="group relative"
+            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
           >
-            Portfólio
-          </Navbar.Link>
-        </motion.div>
+            <Navbar.Link
+              href="/#portifolio"
+              active
+              onClick={handleLinkClick}
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+                menuOpen ? "text-white" : ""
+              }`}
+            >
+              Portfólio
+            </Navbar.Link>
+          </motion.div>
 
-        <motion.div
-          className="group relative"
-          whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-        >
-          <Navbar.Link
-            href="/#precos"
-            active
-            onClick={handleLinkClick}
-            className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-              menuOpen ? "text-white" : ""
-            }`}
+          <motion.div
+            className="group relative"
+            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
           >
-            Preços
-          </Navbar.Link>
-        </motion.div>
+            <Navbar.Link
+              href="/#precos"
+              active
+              onClick={handleLinkClick}
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+                menuOpen ? "text-white" : ""
+              }`}
+            >
+              Preços
+            </Navbar.Link>
+          </motion.div>
 
-        <motion.div
-          className="group relative"
-          whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-        >
-          <Navbar.Link
-            href="/pages/contato"
-            active
-            onClick={handleLinkClick}
-            className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-              menuOpen ? "text-white" : ""
-            }`}
+          <motion.div
+            className="group relative"
+            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
           >
-            Contato
-          </Navbar.Link>
-        </motion.div>
+            <Navbar.Link
+              href="/pages/contato"
+              active
+              onClick={handleLinkClick}
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+                menuOpen ? "text-white" : ""
+              }`}
+            >
+              Contato
+            </Navbar.Link>
+          </motion.div>
 
-        <motion.div
-          className="group relative"
-          whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-        >
-          <Navbar.Link
-            href="/pages/kiblog"
-            active
-            onClick={handleLinkClick}
-            className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-              menuOpen ? "text-white" : ""
-            }`}
+          <motion.div
+            className="group relative"
+            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
           >
-            Blog
-          </Navbar.Link>
-        </motion.div>
-      </Navbar.Collapse>
-      <Link href="/" target="_blank">
-        <Button gradientMonochrome="success">11 91907-2390</Button>
-      </Link>
-    </Navbar>
+            <Navbar.Link
+              href="/pages/kiblog"
+              active
+              onClick={handleLinkClick}
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+                menuOpen ? "text-white" : ""
+              }`}
+            >
+              Blog
+            </Navbar.Link>
+          </motion.div>
+        </Navbar.Collapse>
+        <Link
+          href="/signup"
+          className="ease-in-up shadow-btn hover:shadow-btn-hover bg-secondaryBlue hidden rounded-sm px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+        >
+          Sign Up
+        </Link>
+      </Navbar>
+    </div>
   );
 }

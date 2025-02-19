@@ -1,9 +1,9 @@
 import { Button } from "flowbite-react";
 import { Carousel } from "flowbite-react";
 import Image from "next/image"; // Importe o componente Image
-import styles from "./heroteste.module.css";
+import styles from "./CaroucelHero.module.css";
 
-const Heroteste = () => {
+const CaroucelHero = () => {
   return (
     <div
       className={`${styles["hero-container"]} m-4 flex flex-col lg:m-10 lg:flex-row`}
@@ -29,7 +29,8 @@ const Heroteste = () => {
         </div>
       </div>
       {/* Lado Direito: Carrossel */}
-      <div className="mt-0 mr-10 lg:mr-0 lg:mt-12 lg:w-1/2 ">
+      <div className="mt-6
+       mr-10 lg:mr-0 lg:mt-10 lg:w-1/2 ">
         <div
           className={`h-56 sm:h-64 xl:h-80 2xl:h-96 ${styles["carousel-3d"]}`}
         >
@@ -133,4 +134,4 @@ const Heroteste = () => {
   );
 };
 
-export default Heroteste;
+export default CaroucelHero;

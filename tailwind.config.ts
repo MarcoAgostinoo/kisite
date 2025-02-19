@@ -14,16 +14,17 @@ const baseConfig: Config = {
       aspectRatio: { "577/310": "577 / 310" },
       colors: {
         primaryBlue: "#002b59",
-        secondaryBlue: "#4DA1FF",
+        secondaryBlue: "#4a6cf7",
         successGreen: "#81C784",
         neutralGray: "#757575",
         pureWhite: "#FFFFFF",
         deepBlack: "#212121",
         accentYellow: "#FFF9C4",
-        subtlePurple: "#E8EAF6"
+        subtlePurple: "#E8EAF6",
+        
       },
       backgroundImage: {
-        'custom-bg': "url('/teste01.jpg')",
+        'custom-bg': "url('/background.png')",
       },
       textShadow: {
         sm: "1px 1px 2px rgba(255, 255, 255, 0.6)",

@@ -7,8 +7,6 @@ import ContantSection from "./components/contentsection/ContentSection";
 import BannerTop from "./components/bannertop/BannerTop";
 import Precos from "./components/precos/Precos";
 import Gallery from "./components/galeria/Gallery";
-import GridColumTree from "./components/gridcolumtree/GridColumTree";
-import OutrosServicos from "./components/outrosservicos/OutrosServicos";
 import FaqAccordion from "./components/faqAccordion/FaqAccordion";
 import HeroSecondary from "./components/hero-secondary/HeroSecondary";
 import HeroHomeContainer from "./components/heroHomecontainer/HeroHomeContainer";
