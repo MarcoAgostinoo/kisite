@@ -19,11 +19,9 @@
     transition: transform 0.5s ease; /* Adiciona uma transição suave */
   }
   .hero-container {
-    background: linear-gradient(135deg, #5475c3be, #0445acb7); /* Fundo gradiente azul-escuro */
     color: white; /* Textos brancos para contraste */
     padding: 2rem;
-    border-radius: 12px; /* Bordas arredondadas para suavidade */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+    padding-bottom: 14px;
   }
   
   .hero-text {

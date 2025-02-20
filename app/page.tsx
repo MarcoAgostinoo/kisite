@@ -19,11 +19,11 @@ export default function Home() {
       <Hero />
       <HeroHomeContainer />
       <Servicos />
+      <ContantSection />
       <Precos />
       <About />
       <Gallery />
       <HeroSecondary />
-      <ContantSection />
       <FaqAccordion />
       <CustomFooter />
     </main>

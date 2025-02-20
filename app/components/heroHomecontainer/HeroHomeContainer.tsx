@@ -1,5 +1,5 @@
-import GridColumTree from "../gridcolumtree/GridColumTree";
 import CaroucelHero from "../caroucelHero/CaroucelHero"
+import Caracteristicas from "../Caracteristicas/Caracteristicas";
 
 export default function HeroHomeContainer() {
   return (
@@ -43,12 +43,7 @@ export default function HeroHomeContainer() {
 
       <div className=" bg-primaryBlue  pb-6 pt-12">
         <div>
-          <GridColumTree />
-          <div className="p-4">
-            <h2 className="mt-4 text-center text-3xl font-semibold text-gray-100">
-              Soluções Digitais para Alavancar Seu Negócio
-            </h2>
-          </div>
+          <Caracteristicas />
           <CaroucelHero />
         </div>
       </div>
