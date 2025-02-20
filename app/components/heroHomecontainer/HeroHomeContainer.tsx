@@ -11,7 +11,7 @@ export default function HeroHomeContainer() {
         }}
       >
         <div className="flex w-full flex-col items-center justify-center gap-10 px-4 align-middle lg:flex-row lg:justify-around lg:px-8 lg:pb-4">
-          <div className="bg-softLavender flex h-64 w-4/5 flex-col items-center justify-center rounded-md bg-secondaryBlue p-4 text-center lg:w-1/3">
+          <div className="bg-softLavender flex h-64 w-5/6  lg:w-1/4 flex-col items-center justify-center rounded-md bg-secondaryBlue p-4 text-center">
             <h3 className="text-primary text-xl font-semibold">
               Sites Profissionais
             </h3>
@@ -20,7 +20,7 @@ export default function HeroHomeContainer() {
               negócios, com design exclusivo e otimização de SEO.
             </p>
           </div>
-          <div className="bg-softLavender flex h-64 w-4/5 flex-col items-center justify-center rounded-md bg-secondaryBlue p-4 text-center lg:w-1/3">
+          <div className="bg-softLavender flex h-64 w-5/6 flex-col items-center justify-center rounded-md bg-secondaryBlue p-4 text-center lg:w-1/4">
             <h3 className="text-primary text-xl font-semibold">
               E-commerce Personalizado
             </h3>
@@ -29,7 +29,7 @@ export default function HeroHomeContainer() {
               pagamento, automação de marketing e suporte contínuo.
             </p>
           </div>
-          <div className="bg-softLavender flex h-64 w-4/5 flex-col items-center justify-center rounded-md bg-secondaryBlue p-4 text-center lg:w-1/3">
+          <div className="bg-softLavender flex h-64 w-5/6 flex-col items-center justify-center rounded-md bg-secondaryBlue p-4 text-center lg:w-1/4">
             <h3 className="text-primary text-xl font-semibold">
               Manutenção e Suporte
             </h3>

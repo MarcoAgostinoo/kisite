@@ -7,7 +7,7 @@ export default function CaroucelClientes() {
         <div>
           <div className="flex items-center justify-start p-4 text-left text-white bg-blue-600 rounded-md">
             <div>
-              <h1 className="text-3xl font-semibold">Transforme seu negócio com a KiSite</h1>
+              <h2 className="text-3xl font-semibold">Transforme seu negócio com a KiSite</h2>
               <p className="mt-2 text-xl">
                 Ajudamos empresas a crescerem online com soluções digitais inovadoras.
               </p>

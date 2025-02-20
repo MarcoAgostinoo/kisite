@@ -1,26 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "flowbite-react";
+import styles from './teste.module.css';
 
 export default function HeroSecondary() {
   return (
-    <div className="flex flex-col items-center justify-around overflow-hidden bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 p-10 text-center lg:h-[600px] lg:flex-row">
+    <div className="flex flex-col items-center justify-around overflow-hidden bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 p-10 text-center lg:h-[660px] lg:flex-row">
       <div
         id="esquerda"
         className="mr-20 flex w-[100%] flex-col items-center justify-center p-10 text-center lg:w-[60%]"
       >
         {/* Título Principal */}
-        <h1 className="mb-8 text-center text-5xl text-blue-gray-900 font-bold text-shadow-sm">
+        <h2 className="mb-8 text-center text-5xl font-bold text-blue-gray-900 text-shadow-sm">
           Conquiste seu espaço online com a KiSite
-        </h1>
+        </h2>
 
         {/* Subtítulo */}
-        <p className="mb-8 text-center text-xl font-medium  text-shadow-sm text-white">
+        <p className="mb-8 text-center text-xl font-medium  text-white text-shadow-sm">
           Transforme sua presença digital com soluções inovadoras e eficazes
         </p>
 
         {/* Descrição */}
-        <p className="mx-auto mb-10 max-w-3xl text-center text-base font-normal  text-shadow-sm text-white">
+        <p className="mx-auto mb-10 max-w-3xl text-center text-base font-normal  text-white text-shadow-sm">
           Na KiSite, ajudamos pequenos e médios negócios a crescerem e se
           destacarem online com designs modernos e experiências únicas.
           Oferecemos serviços personalizados para a criação de sites,
@@ -41,9 +42,9 @@ export default function HeroSecondary() {
         <div className="flex space-x-5">
           {/* Primeira coluna */}
           <div className="mb-20 rotate-45 space-y-6">
-            <Link
+          <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
               <div className="h-60 w-60 overflow-hidden">
                 <Image
@@ -51,82 +52,82 @@ export default function HeroSecondary() {
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.4] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
@@ -137,75 +138,76 @@ export default function HeroSecondary() {
           <div className="mb-10 ml-4 rotate-45 space-x-20 space-y-6">
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180   "
                   priority={true}
                 />
               </div>
             </Link>
+
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
@@ -216,75 +218,75 @@ export default function HeroSecondary() {
           <div className="rotate-45 space-x-24 space-y-6">
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
             <Link
               href="#"
-              className="block transform transition-transform duration-300 hover:scale-110 hover:space-y-6"
+              className="block transform transition-transform duration-300 hover:scale-110"
             >
-              <div className="h-60 w-60 overflow-hidden ">
+              <div className="h-60 w-60 overflow-hidden">
                 <Image
                   src="/webinho11.webp"
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 object-contain transition-transform duration-300 hover:scale-110"
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-110"
                   priority={true}
                 />
               </div>

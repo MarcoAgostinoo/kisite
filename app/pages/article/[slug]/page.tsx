@@ -54,7 +54,7 @@ export default async function ArticlePage({ params }: PageProps) {
       <NavBar />
       <div className="mt-36 ">
               <div className="container mx-auto mt-36 p-6 lg:mt-56">
-        <h1 className="mb-4 text-4xl text-center font-bold">{article.title}</h1>
+        <h2 className="mb-4 text-4xl text-center font-bold">{article.title}</h2>
 
         {coverUrl && (
           <Image

@@ -14,11 +14,10 @@ const Hero = () => {
                 className="wow fadeInUp mx-auto max-w-[800px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="mb-5 text-3xl md:text-4xl lg:text-6xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:leading-tight">
-                  Atraia mais clientes com um site que reflete a essência da sua
-                  marca.
+                <h1 className="mb-5 text-center text-3xl font-bold leading-relaxed text-primaryBlue dark:text-white sm:text-4xl sm:leading-relaxed md:text-5xl md:leading-snug lg:text-5xl lg:leading-tight animate-fade-up animate-duration-[1200ms]">
+                Atraia mais clientes com um site que reflete a essência da sua marca.
                 </h1>
-                <p className="dark:text-body-color-dark mb-12 text-base !leading-relaxed text-body-color sm:text-lg md:text-xl">
+                <p className="text-neutralGray text-body-color mb-12 text-base !leading-relaxed sm:text-lg md:text-xl animate-fade-up animate-duration-[1200ms]">
                   Dê o primeiro passo do seu negócio online. Sites rápidos,
                   responsivos e personalizados para alavancar o seu negócio.
                   Conquiste o sucesso digital!
@@ -26,15 +25,15 @@ const Hero = () => {
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
                     href="https://nextjstemplates.com/templates/saas-starter-startup"
-                    className="hover:bg-primary/80 rounded-sm bg-secondaryBlue px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out"
+                    className="hover:bg-primary/80 rounded-sm bg-secondaryBlue px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out animate-fade-right animate-duration-[1200ms]"
                   >
-                    🔥 Get Pro
+                    🔥 Projetos
                   </Link>
                   <Link
                     href="https://github.com/NextJSTemplates/startup-nextjs"
-                    className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
+                    className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5 animate-fade-left animate-duration-[1200ms]"
                   >
-                    Star on GitHub
+                    Quem Somos
                   </Link>
                 </div>
               </div>

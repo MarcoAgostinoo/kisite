@@ -81,9 +81,9 @@ const FaqAccordion: React.FC = () => {
         <section className="max-w-7xl mx-auto p-6 space-y-8" aria-labelledby="faq-title">
             {/* SEO-friendly Title */}
             <div className="text-center">
-                <h1 id="faq-title" className="text-4xl font-bold text-[#002B5B]">
+                <h2 id="faq-title" className="text-4xl font-bold text-[#002B5B] mt-4 lg:mt-14">
                     Perguntas Frequentes – Criação de Sites Profissionais
-                </h1>
+                </h2>
                 <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
                     Descubra as principais dúvidas sobre nossos serviços, planos e como podemos ajudar sua empresa a crescer no ambiente digital.
                 </p>

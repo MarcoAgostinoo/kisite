@@ -52,9 +52,9 @@ export default function ContantSection() {
               <p className="text-base font-semibold text-indigo-600">
                 Desenvolvimento Web Personalizado
               </p>
-              <h1 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+              <h2 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                 Transformamos Ideias em Sites de Impacto
-              </h1>
+              </h2>
               <p className="mt-6 text-xl text-gray-700">
                 Com dedicação, criatividade e atenção aos detalhes, entregamos
                 sites que destacam a identidade da sua empresa e conectam você

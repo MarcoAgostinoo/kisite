@@ -53,7 +53,7 @@ const Teste01 = async () => {
     <div className="mt-28 lg:mt-56">
       <NavBar />
       <div className="container mx-auto p-6">
-        <h1 className="mb-6 text-2xl font-bold">Blog</h1>
+        <h2 className="mb-6 text-2xl font-bold">Blog</h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
             <ArticleCard key={article.id} article={article} />

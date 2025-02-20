@@ -51,9 +51,9 @@ export default function Gallery() {
     <div id="portifolio" className="lg:m-16 px-4 py-8 lg:px-12">
       {/* Seção de introdução */}
       <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-gray-800">
+        <h2 className="text-3xl font-bold text-gray-800">
           Bem-vindo ao nosso Portfólio
-        </h1>
+        </h2>
         <p className="mt-2 text-lg text-gray-600">
           Explore nossa coleção de projetos que refletem paixão, criatividade e
           inovação. Cada imagem conta uma história e inspira soluções únicas.
