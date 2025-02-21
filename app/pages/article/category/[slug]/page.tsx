@@ -1,8 +1,6 @@
 import React from "react";
 import axios from "axios";
 import ArticleCard from "@/app/components/Post/ArticleCard";
-import NavBar from "@/app/components/navbar/NavBar";
-import CustomFooter from "@/app/components/footer/CustomFooter";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -122,7 +120,6 @@ const CategoryPage = async ({ params }: CategoryPageProps) => {
 
   return (
     <div className="m-4 mt-20 lg:mt-56">
-      <NavBar />
       <div>
         <h2 className="m-16 mb-6 w-3/4 text-left text-6xl font-extrabold text-primaryBlue">
           {`Artigos sobre ${categoryName}`}
@@ -176,7 +173,6 @@ const CategoryPage = async ({ params }: CategoryPageProps) => {
           ))}
         </div>
       </div>
-      <CustomFooter />
     </div>
   );
 };

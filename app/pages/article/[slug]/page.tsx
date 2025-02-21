@@ -2,8 +2,6 @@ import axios from "axios";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Article } from "../../../types/Article";
-import NavBar from "@/app/components/navbar/NavBar";
-import CustomFooter from "@/app/components/footer/CustomFooter";
 
 interface PageProps {
   params: {
@@ -51,57 +49,58 @@ export default async function ArticlePage({ params }: PageProps) {
 
   return (
     <div>
-      <NavBar />
       <div className="mt-36 ">
-              <div className="container mx-auto mt-36 p-6 lg:mt-56">
-        <h2 className="mb-4 text-4xl text-center font-bold">{article.title}</h2>
+        <div className="container mx-auto mt-36 p-6 lg:mt-56">
+          <h2 className="mb-4 text-center text-4xl font-bold">
+            {article.title}
+          </h2>
 
-        {coverUrl && (
-          <Image
-            src={coverUrl}
-            alt="Imagem do artigo"
-            width={800} // Ajuste o valor conforme necessário
-            height={400} // Ajuste o valor conforme necessário
-            priority
-            style={{ width: "100%", height: "auto", maxHeight: "400px" }}
-            className="mb-4 rounded object-cover"
-          />
-        )}
-
-        <p className="mb-4">{article.description}</p>
-
-        {article.author && (
-          <div className="mb-4 flex items-center">
-            {avatarUrl && (
-              <Image
-                src={avatarUrl}
-                alt={`Avatar de ${article.author.name}`}
-                width={50}
-                height={50}
-                className="mr-2 rounded-full"
-              />
-            )}
-            <p className="text-sm text-gray-600">Por: {article.author.name}</p>
-          </div>
-        )}
-
-        <p className="mb-4 text-xs text-gray-500">
-          Publicado em:{" "}
-          {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
-        </p>
-
-        {article.blocks &&
-          article.blocks.map((block) => (
-            <div
-              key={block.id}
-              dangerouslySetInnerHTML={{ __html: block.body }}
-              className="mb-4"
+          {coverUrl && (
+            <Image
+              src={coverUrl}
+              alt="Imagem do artigo"
+              width={800} // Ajuste o valor conforme necessário
+              height={400} // Ajuste o valor conforme necessário
+              priority
+              style={{ width: "100%", height: "auto", maxHeight: "400px" }}
+              className="mb-4 rounded object-cover"
             />
-          ))}
-      </div>
-      </div>
+          )}
 
-      <CustomFooter />
+          <p className="mb-4">{article.description}</p>
+
+          {article.author && (
+            <div className="mb-4 flex items-center">
+              {avatarUrl && (
+                <Image
+                  src={avatarUrl}
+                  alt={`Avatar de ${article.author.name}`}
+                  width={50}
+                  height={50}
+                  className="mr-2 rounded-full"
+                />
+              )}
+              <p className="text-sm text-gray-600">
+                Por: {article.author.name}
+              </p>
+            </div>
+          )}
+
+          <p className="mb-4 text-xs text-gray-500">
+            Publicado em:{" "}
+            {new Date(article.publishedAt).toLocaleDateString("pt-BR")}
+          </p>
+
+          {article.blocks &&
+            article.blocks.map((block) => (
+              <div
+                key={block.id}
+                dangerouslySetInnerHTML={{ __html: block.body }}
+                className="mb-4"
+              />
+            ))}
+        </div>
+      </div>
     </div>
   );
 }

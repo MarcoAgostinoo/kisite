@@ -2,8 +2,7 @@ import React from "react";
 import axios from "axios";
 import Link from "next/link";
 import ArticleCard from "../../components/Post/ArticleCard";
-import NavBar from "@/app/components/navbar/NavBar";
-import CustomFooter from "@/app/components/footer/CustomFooter";
+
 
 // Interface para o artigo
 interface Article {
@@ -73,9 +72,6 @@ const KiBlog = async () => {
 
   return (
     <div className="m-4 mt-20 lg:mt-56">
-      {/* Navbar */}
-      <NavBar />
-      {/* Título da Página */}
       <div>
         <h2 className="m-16 mb-6 w-3/4 text-left text-6xl font-extrabold text-primaryBlue">
           BLOG SOBRE WEB DESIGN, SEO E VENDAS ONLINE
@@ -114,8 +110,6 @@ const KiBlog = async () => {
           ))}
         </div>
       </div>
-      {/* Footer */}
-      <CustomFooter />
     </div>
   );
 };

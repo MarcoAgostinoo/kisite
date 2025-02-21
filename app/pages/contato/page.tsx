@@ -1,7 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import CustomFooter from "@/app/components/footer/CustomFooter";
-import NavBar from "@/app/components/navbar/NavBar";
 
 
 const apiUrl = "https://backendnodemailer.vercel.app";
@@ -131,7 +129,6 @@ export default function Contato() {
 
   return (
     <div>
-      <NavBar />
       <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div className="mx-auto mt-16 max-w-2xl text-center">
           <h2 className="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
@@ -235,7 +232,6 @@ export default function Contato() {
           </div>
         )}
       </div>
-      <CustomFooter />
     </div>
   );
 }
