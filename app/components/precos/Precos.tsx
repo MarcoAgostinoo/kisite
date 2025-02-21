@@ -116,13 +116,13 @@ export default function Precos() {
               <div className="mt-6 flex justify-center gap-4">
                 <a
                   href="#"
-                  className="rounded-sm bg-indigo-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-indigo-500"
+                  className="rounded-sm bg-secondaryBlue px-4 py-2 text-center text-sm font-medium text-white hover:bg-indigo-500"
                 >
                   Comece agora
                 </a>
                 <a
                   href="#"
-                  className="rounded-sm border border-indigo-600 px-4 py-2 text-center text-sm font-medium text-indigo-600 hover:bg-indigo-50"
+                  className="rounded-sm border border-secondaryBlue px-4 py-2 text-center text-sm font-medium text-indigo-600 hover:bg-indigo-50"
                 >
                   Saiba mais
                 </a>

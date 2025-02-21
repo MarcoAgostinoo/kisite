@@ -1,10 +1,7 @@
-import Navbar from "./components/navbar/NavBar";
-import CustomFooter from "./components/footer/CustomFooter";
 import Hero from "./components/hero/Hero";
 import Servicos from "./components/servicos/Servicos";
 import About from "./components/about/About";
 import ContantSection from "./components/contentsection/ContentSection";
-import BannerTop from "./components/bannertop/BannerTop";
 import Precos from "./components/precos/Precos";
 import Gallery from "./components/galeria/Gallery";
 import FaqAccordion from "./components/faqAccordion/FaqAccordion";
@@ -14,8 +11,6 @@ import HeroHomeContainer from "./components/heroHomecontainer/HeroHomeContainer"
 export default function Home() {
   return (
     <main className="flex w-full flex-col">
-      <BannerTop />
-      <Navbar />
       <Hero />
       <HeroHomeContainer />
       <Servicos />
@@ -25,7 +20,6 @@ export default function Home() {
       <Gallery />
       <HeroSecondary />
       <FaqAccordion />
-      <CustomFooter />
     </main>
   );
 }

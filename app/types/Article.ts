@@ -1,20 +1,33 @@
-// src/types/Article.ts
-
+// Interface para representar um bloco de conteúdo
 export interface Block {
   id: number;
   body: string; // Ajuste o tipo conforme necessário
 }
 
-export interface Article {
-  id: number;
-  documentId?: string; // Tornando opcional
-  title: string;
-  description: string;
+// Interface para representar a categoria do artigo
+export interface Category {
+  name: string;
   slug: string;
-  createdAt?: string;
-  updatedAt?: string;
-  publishedAt: string;
-  cover?: { url: string };
-  author?: { name: string; avatar?: { url: string } };
-  blocks?: Block[]; // Adicionando a propriedade blocks
+}
+
+// Interface para representar o autor do artigo
+export interface Author {
+  name: string;
+  avatar?: { url: string }; // Avatar é opcional
+}
+
+// Interface principal para representar um artigo
+export interface Article {
+  id: number; // ID único do artigo
+  documentId?: string; // ID do documento (opcional)
+  title: string; // Título do artigo
+  description: string; // Descrição do artigo
+  slug: string; // Slug para URLs amigáveis
+  createdAt?: string; // Data de criação (opcional)
+  updatedAt?: string; // Data de atualização (opcional)
+  publishedAt: string; // Data de publicação
+  cover?: { url: string }; // URL da imagem de capa (opcional)
+  category?: Category; // Categoria do artigo (opcional)
+  author?: Author; // Autor do artigo (opcional)
+  blocks?: Block[]; // Lista de blocos de conteúdo (opcional)
 }
