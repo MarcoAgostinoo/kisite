@@ -75,16 +75,18 @@ const Icon = ({ type, size, top, left }: { type: string; size: number; top: numb
     left: `${left}%`,
     width: `${size}px`,
     height: `${size}px`,
-    backgroundColor: ["circle", "square", "triangle", "pentagon"].includes(type)
-      ? "#007bff"
+    backgroundColor: ["circle", "square", "triangle", "pentagon", "star"].includes(type)
+      ? "#748ef9"
       : "transparent",
-    border: type === "triangle" || type === "pentagon" ? "none" : "1px solid #007bff",
+    border: type === "triangle" || type === "pentagon" || type === "star" ? "none" : "1px solid #007bff",
     borderRadius: type === "circle" ? "50%" : "0%",
     clipPath:
       type === "triangle"
         ? "polygon(50% 0%, 0% 100%, 100% 100%)"
         : type === "pentagon"
         ? "polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)"
+        : type === "star"
+        ? "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"
         : "none",
     zIndex: 1,
   };
@@ -96,10 +98,11 @@ const Icon = ({ type, size, top, left }: { type: string; size: number; top: numb
 };
 
 // Gerar ícones aleatórios
+// Gerar ícones aleatórios
 const generateRandomIcons = (count: number) => {
   const icons = [];
   for (let i = 0; i < count; i++) {
-    const type = ["square", "triangle", "circle", "pentagon"][Math.floor(Math.random() * 4)];
+    const type = ["square", "triangle", "circle", "pentagon", "star"][Math.floor(Math.random() * 5)];
     const size = Math.floor(Math.random() * 40) + 10; // Tamanho entre 10px e 50px
     const top = Math.random() * 100; // Posição vertical (0% a 100%)
     const left = Math.random() * 100; // Posição horizontal (0% a 100%)
@@ -114,7 +117,7 @@ const KiBlog = async () => {
   return (
     <div className="relative bg-cover bg-custom-bg bg-bottom bg-no-repeat">
       {/* Contêiner para os ícones */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
+      <div className="mt-36 gap-6 absolute inset-0 z-10 pointer-events-none">
         {generateRandomIcons(20)}
       </div>
       {/* Conteúdo principal */}
@@ -133,7 +136,7 @@ const KiBlog = async () => {
             </p>
             {/* Opção "Todos" */}
             <Link href="/pages/kiblog" passHref>
-              <p className="mb-4 cursor-pointer text-base font-semibold text-gray-400 hover:text-secondaryBlue sm:text-sm">
+              <p className="mb-4 cursor-pointer text-base font-semibold text-gray-500 hover:text-secondaryBlue sm:text-sm">
                 Todos
               </p>
             </Link>
@@ -145,7 +148,7 @@ const KiBlog = async () => {
                   href={`/pages/article/category/${category.slug}`}
                   passHref
                 >
-                  <p className="mb-4 cursor-pointer text-base font-semibold text-gray-400 hover:text-secondaryBlue sm:text-sm">
+                  <p className="mb-4 cursor-pointer text-base font-semibold text-gray-500 hover:text-secondaryBlue sm:text-sm">
                     {category.name}
                   </p>
                 </Link>

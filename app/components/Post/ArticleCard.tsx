@@ -11,58 +11,61 @@ interface ArticleCardProps {
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   const BASE_URL = "https://cms-kisite-production.up.railway.app";
-  const coverUrl = article.cover?.url ? `${BASE_URL}${article.cover.url}` : null;
-  const avatarUrl = article.author?.avatar?.url ? `${BASE_URL}${article.author.avatar.url}` : null;
+  const coverUrl = article.cover?.url
+    ? `${BASE_URL}${article.cover.url}`
+    : null;
+  const avatarUrl = article.author?.avatar?.url
+    ? `${BASE_URL}${article.author.avatar.url}`
+    : null;
 
   return (
-    <div className="bg-white flex flex-col align-middle border rounded-md p-4 shadow hover:shadow-lg transition-shadow cursor-pointer">
+    <div className="flex cursor-pointer flex-col rounded-md border bg-white p-4 align-middle shadow transition-shadow hover:shadow-lg">
       {/* Título com Link para o artigo */}
       <Link href={`/pages/article/${article.slug}`}>
-        <h2 className="text-primaryBlue text-left h-20 overflow-hidden text-xl font-semibold mb-6 mt-4">
+        <h2 className="mb-6 mt-4 h-20 overflow-hidden text-left text-xl font-semibold text-primaryBlue">
           {article.title}
         </h2>
-      </Link>
+        {coverUrl && (
+          <Image
+            src={coverUrl}
+            alt="Imagem do artigo"
+            width={300}
+            height={250}
+            style={{ width: "100%", height: "auto", maxHeight: "226px" }}
+            className="mb-4 h-auto rounded object-contain"
+          />
+        )}
 
-      {coverUrl && (
-        <Image
-          src={coverUrl}
-          alt="Imagem do artigo"
-          width={300}
-          height={250}
-          style={{ width: "100%", height: "auto", maxHeight: "226px" }}
-          className="h-auto mb-4 rounded object-contain"
-        />
-      )}
+        {article.description && <p className="mb-2">{article.description}</p>}
 
-      {article.description && (
-        <p className="mb-2">{article.description}</p>
-      )}
+        {article.category && (
+          <p className="mb-2 text-sm text-gray-600">
+            Categoria: {article.category.name}
+          </p>
+        )}
 
-      {article.category && (
-        <p className="text-sm text-gray-600 mb-2">
-          Categoria: {article.category.name}
+        {article.author && (
+          <div className="mb-2 flex items-center">
+            {avatarUrl && (
+              <Image
+                src={avatarUrl}
+                alt={`Avatar de ${article.author.name}`}
+                width={30}
+                height={30}
+                className="mr-2 rounded-full"
+              />
+            )}
+            <p className="text-sm text-gray-600">Por: {article.author.name}</p>
+          </div>
+        )}
+
+        <p className="mb-2 text-xs text-gray-500">
+          Publicado em:{" "}
+          {format(new Date(article.publishedAt), "dd/MM/yyyy", {
+            locale: ptBR,
+          })}
         </p>
-      )}
-
-      {article.author && (
-        <div className="flex items-center mb-2">
-          {avatarUrl && (
-            <Image
-              src={avatarUrl}
-              alt={`Avatar de ${article.author.name}`}
-              width={30}
-              height={30}
-              className="rounded-full mr-2"
-            />
-          )}
-          <p className="text-sm text-gray-600">Por: {article.author.name}</p>
-        </div>
-      )}
-
-      <p className="text-xs text-gray-500 mb-2">
-        Publicado em:{" "}
-        {format(new Date(article.publishedAt), "dd/MM/yyyy", { locale: ptBR })}
-      </p>
+      </Link>
     </div>
   );
 };

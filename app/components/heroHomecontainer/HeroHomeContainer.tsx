@@ -41,7 +41,7 @@ export default function HeroHomeContainer() {
         </div>
       </div>
 
-      <div className=" bg-primaryBlue  pb-6 pt-12">
+      <div className=" bg-primaryBlue  pb-10 pt-12">
         <div>
           <Caracteristicas />
           <CaroucelHero />
