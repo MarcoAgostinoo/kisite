@@ -23,7 +23,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <BannerTop />
         <NavBar />
-        {/* Render ThemeModeScript directly in the body */}
         <ThemeModeScript />
         {children}
         <CustomFooter />

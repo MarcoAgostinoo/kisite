@@ -13,7 +13,9 @@ export interface Category {
 // Interface para representar o autor do artigo
 export interface Author {
   name: string;
-  avatar?: { url: string }; // Avatar é opcional
+  avatar?: {
+    url: string; // URL do avatar
+  };
 }
 
 // Interface principal para representar um artigo

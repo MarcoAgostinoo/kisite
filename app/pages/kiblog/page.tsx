@@ -3,7 +3,6 @@ import axios from "axios";
 import Link from "next/link";
 import ArticleCard from "../../components/Post/ArticleCard";
 
-
 // Interface para o artigo
 interface Article {
   id: number;
@@ -23,7 +22,7 @@ interface Article {
 const fetchArticles = async (): Promise<Article[]> => {
   try {
     const res = await axios.get(
-      "https://cms-kisite-production.up.railway.app/api/articles?populate=*"
+      "https://cms-kisite-production.up.railway.app/api/articles?populate=*",
     );
     return res.data.data.map((article: any) => ({
       id: article.id,
@@ -54,7 +53,9 @@ const fetchArticles = async (): Promise<Article[]> => {
 };
 
 // Função para extrair categorias únicas
-const extractUniqueCategories = (articles: Article[]): { name: string; slug: string }[] => {
+const extractUniqueCategories = (
+  articles: Article[],
+): { name: string; slug: string }[] => {
   const categoriesSet = new Set<string>();
   const categories: { name: string; slug: string }[] = [];
   articles.forEach((article) => {
@@ -66,52 +67,104 @@ const extractUniqueCategories = (articles: Article[]): { name: string; slug: str
   return categories;
 };
 
+// Componente para os ícones animados
+const Icon = ({ type, size, top, left }: { type: string; size: number; top: number; left: number }) => {
+  const styles: React.CSSProperties = {
+    position: "absolute",
+    top: `${top}%`,
+    left: `${left}%`,
+    width: `${size}px`,
+    height: `${size}px`,
+    backgroundColor: ["circle", "square", "triangle", "pentagon"].includes(type)
+      ? "#007bff"
+      : "transparent",
+    border: type === "triangle" || type === "pentagon" ? "none" : "1px solid #007bff",
+    borderRadius: type === "circle" ? "50%" : "0%",
+    clipPath:
+      type === "triangle"
+        ? "polygon(50% 0%, 0% 100%, 100% 100%)"
+        : type === "pentagon"
+        ? "polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)"
+        : "none",
+    zIndex: 1,
+  };
+
+  // Classes TailwindCSS para animação
+  const animationClasses = "animate-spin animate-infinite animate-duration-[4000ms] animate-ease-out animate-fill-both";
+
+  return <div style={styles} className={animationClasses}></div>;
+};
+
+// Gerar ícones aleatórios
+const generateRandomIcons = (count: number) => {
+  const icons = [];
+  for (let i = 0; i < count; i++) {
+    const type = ["square", "triangle", "circle", "pentagon"][Math.floor(Math.random() * 4)];
+    const size = Math.floor(Math.random() * 40) + 10; // Tamanho entre 10px e 50px
+    const top = Math.random() * 100; // Posição vertical (0% a 100%)
+    const left = Math.random() * 100; // Posição horizontal (0% a 100%)
+    icons.push(<Icon key={i} type={type} size={size} top={top} left={left} />);
+  }
+  return icons;
+};
+
 const KiBlog = async () => {
   const articles = await fetchArticles();
   const uniqueCategories = extractUniqueCategories(articles); // Extraindo categorias únicas
-
   return (
-    <div className="m-4 mt-20 lg:mt-56">
-      <div>
-        <h2 className="m-16 mb-6 w-3/4 text-left text-6xl font-extrabold text-primaryBlue">
-          BLOG SOBRE WEB DESIGN, SEO E VENDAS ONLINE
-        </h2>
+    <div className="relative bg-cover bg-custom-bg bg-bottom bg-no-repeat">
+      {/* Contêiner para os ícones */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        {generateRandomIcons(20)}
       </div>
-      {/* Layout Principal */}
-      <div className="flex p-2">
-        {/* Barra Lateral com Categorias */}
-        <div className="w-2/12 ml-8 mt-20">
-          <p className="mb-6 font-semibold text-secondaryBlue text-xl">CATEGORIAS</p>
-
-          {/* Opção "Todos" */}
-          <Link href="/pages/kiblog" passHref>
-            <p className="mb-4 font-semibold text-gray-400 text-base hover:text-secondaryBlue cursor-pointer">
-              Todos
-            </p>
-          </Link>
-
-          {/* Lista de Categorias */}
-          {uniqueCategories.length > 0 ? (
-            uniqueCategories.map((category) => (
-              <Link key={category.slug} href={`/pages/article/category/${category.slug}`} passHref>
-                <p className="mb-4 font-semibold text-gray-400 text-base hover:text-secondaryBlue cursor-pointer">
-                  {category.name}
-                </p>
-              </Link>
-            ))
-          ) : (
-            <p className="text-gray-400 text-base">Nenhuma categoria disponível</p>
-          )}
+      {/* Conteúdo principal */}
+      <div className="relative z-20">
+        <div className="m-4 mt-20 lg:mt-56">
+          <h2 className="m-16 mb-6 w-3/4 text-left text-3xl lg:text-6x1 font-extrabold text-primaryBlue sm:w-full">
+            BLOG SOBRE WEB DESIGN, SEO E VENDAS ONLINE
+          </h2>
         </div>
-        {/* Lista de Artigos */}
-        <div className="w-10/12 m-0 lg:m-8 grid grid-cols-1 gap-6 p-10 md:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
+        {/* Layout Principal */}
+        <div className="flex flex-col lg:flex-row p-2">
+          {/* Barra Lateral com Categorias */}
+          <div className="ml-8 mt-20 w-full lg:w-2/12 sm:ml-4 sm:mt-10">
+            <p className="mb-6 text-xl font-semibold text-secondaryBlue sm:text-lg">
+              CATEGORIAS
+            </p>
+            {/* Opção "Todos" */}
+            <Link href="/pages/kiblog" passHref>
+              <p className="mb-4 cursor-pointer text-base font-semibold text-gray-400 hover:text-secondaryBlue sm:text-sm">
+                Todos
+              </p>
+            </Link>
+            {/* Lista de Categorias */}
+            {uniqueCategories.length > 0 ? (
+              uniqueCategories.map((category) => (
+                <Link
+                  key={category.slug}
+                  href={`/pages/article/category/${category.slug}`}
+                  passHref
+                >
+                  <p className="mb-4 cursor-pointer text-base font-semibold text-gray-400 hover:text-secondaryBlue sm:text-sm">
+                    {category.name}
+                  </p>
+                </Link>
+              ))
+            ) : (
+              <p className="text-base text-gray-400 sm:text-sm">
+                Nenhuma categoria disponível
+              </p>
+            )}
+          </div>
+          {/* Lista de Artigos */}
+          <div className="m-0 grid w-full grid-cols-1 gap-6 p-10 md:grid-cols-2 lg:m-8 lg:grid-cols-3 lg:w-10/12 sm:p-4">
+            {articles.map((article) => (
+              <ArticleCard key={article.id} article={article} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
 };
-
 export default KiBlog;

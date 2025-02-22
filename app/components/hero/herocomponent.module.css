@@ -1,7 +1,0 @@
-
-.custom-bg {
-    background-image: url('/herobackground.png'); /* Caminho da imagem */
-    background-size: cover; /* Ajusta a imagem para cobrir todo o elemento */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Impede que a imagem se repita */
-  }

@@ -3,20 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-
-interface Article {
-  id: number;
-  documentId?: string;
-  title: string;
-  description: string;
-  slug: string;
-  createdAt?: string;
-  updatedAt?: string;
-  publishedAt: string;
-  cover?: { url: string };
-  category?: { name: string; slug: string };
-  author?: { name: string; avatar?: { url: string } };
-}
+import { Article } from "@/app/types/Article"; // ajuste o caminho conforme sua estrutura de pastas
 
 interface ArticleCardProps {
   article: Article;
@@ -28,9 +15,9 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   const avatarUrl = article.author?.avatar?.url ? `${BASE_URL}${article.author.avatar.url}` : null;
 
   return (
-    <div className="flex flex-col align-middle border rounded-lg p-4 shadow hover:shadow-lg transition-shadow cursor-pointer">
-      {/* Title wrapped in Link */}
-      <Link href={`/pages/article/${article.slug}`} passHref>
+    <div className="bg-white flex flex-col align-middle border rounded-md p-4 shadow hover:shadow-lg transition-shadow cursor-pointer">
+      {/* Título com Link para o artigo */}
+      <Link href={`/pages/article/${article.slug}`}>
         <h2 className="text-primaryBlue text-left h-20 overflow-hidden text-xl font-semibold mb-6 mt-4">
           {article.title}
         </h2>
@@ -47,14 +34,14 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
         />
       )}
 
-      <p className="mb-2">{article.description}</p>
+      {article.description && (
+        <p className="mb-2">{article.description}</p>
+      )}
 
       {article.category && (
-        <Link href={`/pages/article/category/${article.category.slug}`} passHref>
-          <p className="text-sm text-gray-600 mb-2 cursor-pointer hover:underline">
-            Categoria: {article.category.name}
-          </p>
-        </Link>
+        <p className="text-sm text-gray-600 mb-2">
+          Categoria: {article.category.name}
+        </p>
       )}
 
       {article.author && (
@@ -73,9 +60,11 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
       )}
 
       <p className="text-xs text-gray-500 mb-2">
-        Publicado em: {format(new Date(article.publishedAt), "dd/MM/yyyy", { locale: ptBR })}
+        Publicado em:{" "}
+        {format(new Date(article.publishedAt), "dd/MM/yyyy", { locale: ptBR })}
       </p>
     </div>
   );
 };
+
 export default ArticleCard;

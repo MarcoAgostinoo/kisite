@@ -24,7 +24,8 @@ const baseConfig: Config = {
         
       },
       backgroundImage: {
-        'custom-bg': "url('/background.png')",
+        'custom-bg': "url('/blog/blogbackground.png')",
+
       },
       textShadow: {
         sm: "1px 1px 2px rgba(255, 255, 255, 0.6)",
