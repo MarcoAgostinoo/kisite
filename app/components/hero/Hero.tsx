@@ -5,40 +5,64 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="dark:bg-gray-dark relative z-10 overflow-hidden bg-white pb-16 pt-[120px] md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+        className="dark:bg-gray-dark relative z-10 overflow-hidden bg-white pb-16 pt-[100px] md:pb-[120px] md:pt-[80px] xl:pb-[160px] xl:pt-[120px] 2xl:pb-[200px] 2xl:pt-[150px]"
       >
         <div className="container">
-          <div className="-mx-4 flex flex-wrap">
+          <main className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div
-                className="wow fadeInUp mx-auto max-w-[800px] text-center"
-                data-wow-delay=".2s"
-              >
-                <h1 className="mb-5 text-center text-3xl font-bold leading-relaxed text-primaryBlue dark:text-white sm:text-4xl sm:leading-relaxed md:text-5xl md:leading-snug lg:text-5xl lg:leading-tight animate-fade-up animate-duration-[1200ms]">
-                Atraia mais clientes com um site que reflete a essência da sua marca.
+              <div className="mx-auto max-w-[800px] text-center">
+                <h1 className="text-center text-3xl font-bold leading-relaxed text-primaryBlue dark:text-white sm:text-4xl sm:leading-relaxed md:text-5xl md:leading-snug lg:text-5xl lg:leading-tight">
+                  <span>
+                    Sua empresa
+                    <span className="text-successGreen"> mais forte </span>
+                    online:
+                  </span>
+                  <span className="block">conquiste o mercado digital!</span>
                 </h1>
-                <p className="text-neutralGray text-body-color mb-12 text-base !leading-relaxed sm:text-lg md:text-xl animate-fade-up animate-duration-[1200ms]">
-                  Dê o primeiro passo do seu negócio online. Sites rápidos,
-                  responsivos e personalizados para alavancar o seu negócio.
-                  Conquiste o sucesso digital!
+
+                <p className="mt-4 text-base leading-relaxed text-gray-700">
+                  Em um mercado onde{" "}
+                  <strong>
+                    84% das decisões de compra começam com uma pesquisa online
+                  </strong>
+                  , ter uma presença digital profissional não é mais uma opção,
+                  mas uma necessidade absoluta para sobrevivência. A{" "}
+                  <strong>Kisite</strong> atua como sua{" "}
+                  <strong>parceira estratégica</strong>, oferecendo soluções
+                  completas em:
                 </p>
-                <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+
+                <ul className="mt-4 list-none p-0 text-base text-gray-800">
+                  <li>🚀 Desenvolvimento web moderno e responsivo</li>
+                  <li>📈 SEO otimizado para aumentar seu alcance orgânico</li>
+                  <li>
+                    🎯 Gestão eficiente de tráfego pago para resultados rápidos
+                  </li>
+                </ul>
+
+                <div className="mt-8 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
                     href="/"
-                    className="hover:bg-primary/80 rounded-sm bg-secondaryBlue px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out animate-fade-right animate-duration-[1200ms]"
+                    className="hover:bg-primary/80 rounded-sm bg-secondaryBlue px-8 py-4 text-base font-semibold text-white transition-colors duration-300"
                   >
                     🔥 Projetos
                   </Link>
                   <Link
-                    href="/"
-                    className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5 animate-fade-left animate-duration-[1200ms]"
+                    href="/quem-somos" // Corrigido para um caminho mais semântico
+                    className="rounded-sm bg-gray-900 px-8 py-4 text-base font-semibold text-white transition-colors duration-300 hover:bg-gray-700 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
                     Quem Somos
                   </Link>
                 </div>
+
+                <p className="mt-8 mb-20 sm:mb-0 text-base leading-relaxed text-gray-700">
+                  Com pacotes que unem{" "}
+                  <strong>agilidade e resultados mensuráveis</strong>, ajudamos
+                  você a se destacar da concorrência e conquistar mais clientes.
+                </p>
               </div>
             </div>
-          </div>
+          </main>
         </div>
         <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
@@ -280,6 +304,9 @@ const Hero = () => {
               </radialGradient>
             </defs>
           </svg>
+        </div>
+        <div className="absolute mb-8 lg:mb-0 left-0 w-full text-center  text-3xl lg:text-5xl"> {/* Adjust bottom-8 as needed */}
+          <p className="text-primaryBlue -mt-8 lg:mt-14 pt-4 font-bold">Os 4 Pilares do Fracasso Digital</p>
         </div>
       </section>
     </>

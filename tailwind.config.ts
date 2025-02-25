@@ -25,6 +25,7 @@ const baseConfig: Config = {
       },
       backgroundImage: {
         'custom-bg': "url('/blog/blogbackground.png')",
+        'sectionBackground': "url('/index/backgroundSection.jpg')",
 
       },
       textShadow: {

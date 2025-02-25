@@ -1,13 +1,11 @@
-import HeroHomeContainer from "@/app/components/heroHomecontainer/HeroHomeContainer";
+import Hero from "@/app/components/hero/Hero";
+
 
 
 export default function teste() {
   return (
-    <div className="flex flex-col">
-      <div className="text-center">
-        <h2>teste</h2>
-      </div>
-        <HeroHomeContainer />
+    <div>
+      <Hero />
     </div>
   );
 }

@@ -148,7 +148,7 @@ const KiBlog = async () => {
                   href={`/pages/article/category/${category.slug}`}
                   passHref
                 >
-                  <p className="mb-4 cursor-pointer text-base font-semibold text-gray-500 hover:text-secondaryBlue sm:text-sm">
+                  <p className="mb-4 cursor-pointer text-base font-semibold text-gray-5np00 hover:text-secondaryBlue sm:text-sm">
                     {category.name}
                   </p>
                 </Link>
