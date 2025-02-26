@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Button, Navbar } from "flowbite-react";
+import { Navbar , Button } from "flowbite-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -139,7 +139,7 @@ export default function NavBar() {
             whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
           >
             <Navbar.Link
-              href="/pages/contato"
+              href="/pag/contato"
               active
               onClick={handleLinkClick}
               className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
@@ -155,7 +155,7 @@ export default function NavBar() {
             whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
           >
             <Navbar.Link
-              href="/pages/kiblog"
+              href="/pag/kiblog"
               active
               onClick={handleLinkClick}
               className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${

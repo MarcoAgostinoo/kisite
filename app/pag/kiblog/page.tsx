@@ -68,31 +68,51 @@ const extractUniqueCategories = (
 };
 
 // Componente para os ícones animados
-const Icon = ({ type, size, top, left }: { type: string; size: number; top: number; left: number }) => {
+const Icon = ({
+  type,
+  size,
+  top,
+  left,
+}: {
+  type: string;
+  size: number;
+  top: number;
+  left: number;
+}) => {
   const styles: React.CSSProperties = {
     position: "absolute",
     top: `${top}%`,
     left: `${left}%`,
     width: `${size}px`,
     height: `${size}px`,
-    backgroundColor: ["circle", "square", "triangle", "pentagon", "star"].includes(type)
+    backgroundColor: [
+      "circle",
+      "square",
+      "triangle",
+      "pentagon",
+      "star",
+    ].includes(type)
       ? "#748ef9"
       : "transparent",
-    border: type === "triangle" || type === "pentagon" || type === "star" ? "none" : "1px solid #007bff",
+    border:
+      type === "triangle" || type === "pentagon" || type === "star"
+        ? "none"
+        : "1px solid #007bff",
     borderRadius: type === "circle" ? "50%" : "0%",
     clipPath:
       type === "triangle"
         ? "polygon(50% 0%, 0% 100%, 100% 100%)"
         : type === "pentagon"
-        ? "polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)"
-        : type === "star"
-        ? "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"
-        : "none",
+          ? "polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)"
+          : type === "star"
+            ? "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"
+            : "none",
     zIndex: 1,
   };
 
   // Classes TailwindCSS para animação
-  const animationClasses = "animate-spin animate-infinite animate-duration-[4000ms] animate-ease-out animate-fill-both";
+  const animationClasses =
+    "animate-spin animate-infinite animate-duration-[4000ms] animate-ease-out animate-fill-both";
 
   return <div style={styles} className={animationClasses}></div>;
 };
@@ -102,7 +122,9 @@ const Icon = ({ type, size, top, left }: { type: string; size: number; top: numb
 const generateRandomIcons = (count: number) => {
   const icons = [];
   for (let i = 0; i < count; i++) {
-    const type = ["square", "triangle", "circle", "pentagon", "star"][Math.floor(Math.random() * 5)];
+    const type = ["square", "triangle", "circle", "pentagon", "star"][
+      Math.floor(Math.random() * 5)
+    ];
     const size = Math.floor(Math.random() * 40) + 10; // Tamanho entre 10px e 50px
     const top = Math.random() * 100; // Posição vertical (0% a 100%)
     const left = Math.random() * 100; // Posição horizontal (0% a 100%)
@@ -115,27 +137,27 @@ const KiBlog = async () => {
   const articles = await fetchArticles();
   const uniqueCategories = extractUniqueCategories(articles); // Extraindo categorias únicas
   return (
-    <div className="relative bg-cover bg-custom-bg bg-bottom bg-no-repeat">
+    <div className="relative bg-custom-bg bg-cover bg-bottom bg-no-repeat">
       {/* Contêiner para os ícones */}
-      <div className="mt-36 gap-6 absolute inset-0 z-10 pointer-events-none">
+      <div className="pointer-events-none absolute inset-0 z-10 mt-36 gap-6">
         {generateRandomIcons(20)}
       </div>
       {/* Conteúdo principal */}
       <div className="relative z-20">
-        <div className="m-4 mt-20 lg:mt-56">
-          <h2 className="m-16 mb-6 w-3/4 text-left text-3xl lg:text-6x1 font-extrabold text-primaryBlue sm:w-full">
+        <div className="m-4 mt-20 overflow-hidden lg:mt-56">
+          <h2 className="lg:text-6x1 m-16 mb-6 w-3/4 text-left text-3xl font-extrabold text-primaryBlue sm:w-full">
             BLOG SOBRE WEB DESIGN, SEO E VENDAS ONLINE
           </h2>
         </div>
         {/* Layout Principal */}
-        <div className="flex flex-col lg:flex-row p-2">
+        <div className="flex flex-col p-2 lg:flex-row">
           {/* Barra Lateral com Categorias */}
-          <div className="ml-8 mt-20 w-full lg:w-2/12 sm:ml-4 sm:mt-10">
+          <div className="ml-8 mt-20 w-full sm:ml-4 sm:mt-10 lg:w-2/12">
             <p className="mb-6 text-xl font-semibold text-secondaryBlue sm:text-lg">
               CATEGORIAS
             </p>
             {/* Opção "Todos" */}
-            <Link href="/pages/kiblog" passHref>
+            <Link href="/pag/kiblog" passHref>
               <p className="mb-4 cursor-pointer text-base font-semibold text-gray-500 hover:text-secondaryBlue sm:text-sm">
                 Todos
               </p>
@@ -145,10 +167,10 @@ const KiBlog = async () => {
               uniqueCategories.map((category) => (
                 <Link
                   key={category.slug}
-                  href={`/pages/article/category/${category.slug}`}
+                  href={`/pag/article/category/${category.slug}`}
                   passHref
                 >
-                  <p className="mb-4 cursor-pointer text-base font-semibold text-gray-5np00 hover:text-secondaryBlue sm:text-sm">
+                  <p className="text-gray-5np00 mb-4 cursor-pointer text-base font-semibold hover:text-secondaryBlue sm:text-sm">
                     {category.name}
                   </p>
                 </Link>
@@ -160,7 +182,7 @@ const KiBlog = async () => {
             )}
           </div>
           {/* Lista de Artigos */}
-          <div className="m-0 grid w-full grid-cols-1 gap-6 p-10 md:grid-cols-2 lg:m-8 lg:grid-cols-3 lg:w-10/12 sm:p-4">
+          <div className="m-0 grid w-full grid-cols-1 gap-6 p-10 sm:p-4 md:grid-cols-2 lg:m-8 lg:w-10/12 lg:grid-cols-3">
             {articles.map((article) => (
               <ArticleCard key={article.id} article={article} />
             ))}

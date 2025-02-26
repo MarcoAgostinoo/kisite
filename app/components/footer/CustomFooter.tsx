@@ -15,7 +15,7 @@ export default function CustomFooter() {
             <FlowbiteFooter.Link href="#">Sobre</FlowbiteFooter.Link>
             <FlowbiteFooter.Link href="#">Politica de Privacidade</FlowbiteFooter.Link>
             <FlowbiteFooter.Link href="#">Licenças</FlowbiteFooter.Link>
-            <FlowbiteFooter.Link href="/pages/contato">Contato</FlowbiteFooter.Link>
+            <FlowbiteFooter.Link href="/pag/contato">Contato</FlowbiteFooter.Link>
           </FlowbiteFooter.LinkGroup>
         </div>
         <FlowbiteFooter.Divider />

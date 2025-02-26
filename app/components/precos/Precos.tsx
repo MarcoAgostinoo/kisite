@@ -1,81 +1,73 @@
+// app/page.tsx
 import { CheckIcon } from '@heroicons/react/20/solid';
-import Head from 'next/head';
 
-export default function Precos() {
-  interface Plan {
-    name: string;
-    price: number;
-    description: string;
-    features: string[];
-  }
 
-  const plans: Plan[] = [
-    {
-      name: 'MVP - Diagnóstico + Landing Page',
-      price: 697.0,
-      description:
-        'Ideal para quem está começando e precisa de uma presença online rápida e eficiente.',
-      features: [
-        'Diagnóstico gratuito do site atual (ou ausência dele)',
-        'Landing Page responsiva com até 1 página',
-        'Formulário de contato para captação de leads',
-        'Integração com WhatsApp Business para agendamentos',
-        'SEO básico para melhorar a visibilidade no Google',
-        'Pop-up estratégico para capturar leads',
-        'Hospedagem por 6 meses',
-      ],
-    },
-    {
-      name: 'Profissional - Funil de Vendas',
-      price: 1597.0,
-      description:
-        'Perfeito para empresas em crescimento que desejam escalar suas vendas online.',
-      features: [
-        'Site responsivo com até 7 páginas',
-        'Funil de vendas personalizado (página de captura + página de vendas)',
-        'Sistema de agendamento online integrado',
-        'Automação básica de marketing (e-mail e WhatsApp)',
-        'SEO intermediário para atrair tráfego qualificado',
-        'Relatórios iniciais de desempenho',
-        'Hospedagem por 1 ano',
-        '3 e-mails corporativos',
-      ],
-    },
-    {
-      name: 'Premium - E-commerce + Automação',
-      price: 3997.0,
-      description:
-        'Solução completa para empresas consolidadas que querem maximizar suas vendas online.',
-      features: [
-        'E-commerce integrado para venda de produtos e pacotes',
-        'Automação avançada de marketing (e-mail, WhatsApp, SMS)',
-        'Chat online para atendimento em tempo real',
-        'SEO avançado para dominar as primeiras posições do Google',
-        'Relatórios mensais detalhados de desempenho',
-        'Design exclusivo e totalmente personalizado',
-        'Hospedagem por 1 ano em servidores premium',
-        'E-mails corporativos ilimitados',
-        'Suporte prioritário e manutenção mensal inclusa',
-      ],
-    },
-  ];
+interface Plan {
+  name: string;
+  price: number;
+  description: string;
+  features: string[];
+}
 
-  const calculateParcel = (price: number): string => {
-    const parcel = price / 12;
-    return `R$ ${parcel.toFixed(2).replace('.', ',')}`;
-  };
+const plans: Plan[] = [
+  {
+    name: 'MVP - Diagnóstico + Landing Page',
+    price: 697.0,
+    description:
+      'Ideal para quem está começando e precisa de uma presença online rápida e eficiente.',
+    features: [
+      'Diagnóstico gratuito do site atual (ou ausência dele)',
+      'Landing Page responsiva com até 1 página',
+      'Formulário de contato para captação de leads',
+      'Integração com WhatsApp Business para agendamentos',
+      'SEO básico para melhorar a visibilidade no Google',
+      'Pop-up estratégico para capturar leads',
+      'Hospedagem por 6 meses',
+    ],
+  },
+  {
+    name: 'Profissional - Funil de Vendas',
+    price: 1597.0,
+    description:
+      'Perfeito para empresas em crescimento que desejam escalar suas vendas online.',
+    features: [
+      'Site responsivo com até 7 páginas',
+      'Funil de vendas personalizado (página de captura + página de vendas)',
+      'Sistema de agendamento online integrado',
+      'Automação básica de marketing (e-mail e WhatsApp)',
+      'SEO intermediário para atrair tráfego qualificado',
+      'Relatórios iniciais de desempenho',
+      'Hospedagem por 1 ano',
+      '3 e-mails corporativos',
+    ],
+  },
+  {
+    name: 'Premium - E-commerce + Automação',
+    price: 3997.0,
+    description:
+      'Solução completa para empresas consolidadas que querem maximizar suas vendas online.',
+    features: [
+      'E-commerce integrado para venda de produtos e pacotes',
+      'Automação avançada de marketing (e-mail, WhatsApp, SMS)',
+      'Chat online para atendimento em tempo real',
+      'SEO avançado para dominar as primeiras posições do Google',
+      'Relatórios mensais detalhados de desempenho',
+      'Design exclusivo e totalmente personalizado',
+      'Hospedagem por 1 ano em servidores premium',
+      'E-mails corporativos ilimitados',
+      'Suporte prioritário e manutenção mensal inclusa',
+    ],
+  },
+];
 
+const calculateParcel = (price: number): string => {
+  const parcel = price / 12;
+  return `R$ ${parcel.toFixed(2).replace('.', ',')}`;
+};
+
+export default function Page() {
   return (
     <>
-      <Head>
-        <title>Planos de Preços - KiSite</title>
-        <meta
-          name="description"
-          content="Selecione o plano que melhor atende às suas necessidades e leve sua presença online para o próximo nível com nossos serviços de criação de sites."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.KiSite.com/precos" />
-      </Head>
       <div id="precos" className="bg-white px-6 py-12 sm:py-16 lg:px-8">
         <div className="text-center">
           <h2 className="text-base font-semibold text-indigo-600">Preços</h2>

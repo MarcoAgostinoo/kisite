@@ -21,7 +21,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   return (
     <div className="flex cursor-pointer flex-col rounded-md border bg-white p-4 align-middle shadow transition-shadow hover:shadow-lg">
       {/* Título com Link para o artigo */}
-      <Link href={`/pages/article/${article.slug}`}>
+      <Link href={`/pag/article/${article.slug}`}>
         <h2 className="mb-6 mt-4 h-20 overflow-hidden text-left text-xl font-semibold text-primaryBlue">
           {article.title}
         </h2>

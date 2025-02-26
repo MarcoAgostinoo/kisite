@@ -132,7 +132,7 @@ const CategoryPage = async ({ params }: CategoryPageProps) => {
           </p>
 
           {/* Opção "Todos" */}
-          <Link href="/pages/kiblog" passHref>
+          <Link href="/pag/kiblog" passHref>
             <p
               className={`mb-4 cursor-pointer text-base font-semibold ${
                 slug === "todos" ? "text-secondaryBlue" : "text-gray-400 hover:text-secondaryBlue"
@@ -147,7 +147,7 @@ const CategoryPage = async ({ params }: CategoryPageProps) => {
             uniqueCategories.map((category) => (
               <Link
                 key={category.slug}
-                href={`/pages/article/category/${category.slug}`}
+                href={`/pag/article/category/${category.slug}`}
                 passHref
               >
                 <p
