@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Link from "next/link";
-import ArticleCard from "../../components/Post/ArticleCard";
+import ArticleCard from "@/app/components/Post/ArticleCard";
+import CategoryMenu from "@/app/components/blog/CategoryMenu"; // Adicione esta importação
 
 // Interface para o artigo
 interface Article {
@@ -135,7 +136,8 @@ const generateRandomIcons = (count: number) => {
 
 const KiBlog = async () => {
   const articles = await fetchArticles();
-  const uniqueCategories = extractUniqueCategories(articles); // Extraindo categorias únicas
+  const uniqueCategories = extractUniqueCategories(articles);
+
   return (
     <div className="relative bg-custom-bg bg-cover bg-bottom bg-no-repeat">
       {/* Contêiner para os ícones */}
@@ -145,43 +147,12 @@ const KiBlog = async () => {
       {/* Conteúdo principal */}
       <div className="relative z-20">
         <div className="m-4 mt-20 overflow-hidden lg:mt-56">
-          <h2 className="lg:text-6x1 m-16 mb-6 w-3/4 text-left text-3xl font-extrabold text-primaryBlue sm:w-full">
+          <h2 className="lg:text-6x1 m-16 mb-6 w-3/4 text-left text-3xl font-extrabold text-primaryBlue sm:w-full overflow-hidden">
             BLOG SOBRE WEB DESIGN, SEO E VENDAS ONLINE
           </h2>
         </div>
-        {/* Layout Principal */}
         <div className="flex flex-col p-2 lg:flex-row">
-          {/* Barra Lateral com Categorias */}
-          <div className="ml-8 mt-20 w-full sm:ml-4 sm:mt-10 lg:w-2/12">
-            <p className="mb-6 text-xl font-semibold text-secondaryBlue sm:text-lg">
-              CATEGORIAS
-            </p>
-            {/* Opção "Todos" */}
-            <Link href="/pag/kiblog" passHref>
-              <p className="mb-4 cursor-pointer text-base font-semibold text-gray-500 hover:text-secondaryBlue sm:text-sm">
-                Todos
-              </p>
-            </Link>
-            {/* Lista de Categorias */}
-            {uniqueCategories.length > 0 ? (
-              uniqueCategories.map((category) => (
-                <Link
-                  key={category.slug}
-                  href={`/pag/article/category/${category.slug}`}
-                  passHref
-                >
-                  <p className="text-gray-5np00 mb-4 cursor-pointer text-base font-semibold hover:text-secondaryBlue sm:text-sm">
-                    {category.name}
-                  </p>
-                </Link>
-              ))
-            ) : (
-              <p className="text-base text-gray-400 sm:text-sm">
-                Nenhuma categoria disponível
-              </p>
-            )}
-          </div>
-          {/* Lista de Artigos */}
+          <CategoryMenu categories={uniqueCategories} />
           <div className="m-0 grid w-full grid-cols-1 gap-6 p-10 sm:p-4 md:grid-cols-2 lg:m-8 lg:w-10/12 lg:grid-cols-3">
             {articles.map((article) => (
               <ArticleCard key={article.id} article={article} />
@@ -192,4 +163,5 @@ const KiBlog = async () => {
     </div>
   );
 };
+
 export default KiBlog;

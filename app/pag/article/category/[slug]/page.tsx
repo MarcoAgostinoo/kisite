@@ -106,75 +106,36 @@ const extractUniqueCategories = (
   return categories;
 };
 
-const CategoryPage = async ({ params }: CategoryPageProps) => {
-  const { slug } = params;
-  const articles = await fetchArticlesByCategory(slug); // Artigos filtrados pela categoria
-  const allArticles = await fetchAllArticles(); // Todos os artigos para categorias na barra lateral
-  const uniqueCategories = extractUniqueCategories(allArticles);
-
-  if (articles.length === 0) {
-    notFound(); // Retorna 404 se não houver artigos na categoria
+async function getCategoryArticles(slug: string) {
+  try {
+    const res = await axios.get(
+      `https://cms-kisite-production.up.railway.app/api/articles?populate=*&filters[category][slug][$eq]=${slug}`
+    );
+    return res.data.data;
+  } catch (error) {
+    return [];
   }
+}
 
-  const categoryName = articles[0]?.category?.name || "Categoria";
+export default async function CategoryPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const articles = await getCategoryArticles(params.slug);
 
   return (
-    <div className="m-4 mt-20 lg:mt-56">
-      <div>
-        <h2 className="m-16 mb-6 w-3/4 text-left text-6xl font-extrabold text-primaryBlue">
-          {`Artigos sobre ${categoryName}`}
-        </h2>
-      </div>
-      <div className="flex p-2">
-        <div className="ml-8 mt-20 w-2/12">
-          <p className="mb-6 text-xl font-semibold text-secondaryBlue">
-            CATEGORIAS
-          </p>
-
-          {/* Opção "Todos" */}
-          <Link href="/pag/kiblog" passHref>
-            <p
-              className={`mb-4 cursor-pointer text-base font-semibold ${
-                slug === "todos" ? "text-secondaryBlue" : "text-gray-400 hover:text-secondaryBlue"
-              }`}
-            >
-              Todos
-            </p>
-          </Link>
-
-          {/* Lista de Categorias */}
-          {uniqueCategories.length > 0 ? (
-            uniqueCategories.map((category) => (
-              <Link
-                key={category.slug}
-                href={`/pag/article/category/${category.slug}`}
-                passHref
-              >
-                <p
-                  className={`mb-4 cursor-pointer text-base font-semibold ${
-                    category.slug === slug
-                      ? "text-secondaryBlue"
-                      : "text-gray-400 hover:text-secondaryBlue"
-                  }`}
-                >
-                  {category.name}
-                </p>
-              </Link>
-            ))
-          ) : (
-            <p className="text-base text-gray-400">
-              Nenhuma categoria disponível
-            </p>
-          )}
-        </div>
-        <div className="m-0 grid w-10/12 grid-cols-1 gap-6 p-10 md:grid-cols-2 lg:m-8 lg:grid-cols-3">
-          {articles.map((article) => (
+    <div className="bg-gray-50 pt-56 dark:bg-gray-900">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <h1 className="mb-8 text-3xl font-bold text-gray-900 dark:text-white">
+          Artigos na categoria: {params.slug}
+        </h1>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {articles.map((article: any) => (
             <ArticleCard key={article.id} article={article} />
           ))}
         </div>
       </div>
     </div>
   );
-};
-
-export default CategoryPage;
+}

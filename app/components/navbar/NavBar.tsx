@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Navbar , Button } from "flowbite-react";
+import { Navbar, Button } from "flowbite-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -44,7 +44,8 @@ export default function NavBar() {
       <Navbar
         fluid
         className={`text-slate-950 fixed left-0 right-0 top-0 z-30 transition-all duration-300 ${
-          scrolling ? "bg-gray-200 bg-opacity-95 shadow-2xl" : "bg-transparent"
+          scrolling ? "bg-white/80 backdrop-blur-md shadow-lg dark:bg-gray-900/80"
+          : "bg-transparent"
         } ${scrolling ? "top-0" : isMobile ? "top-0" : "mt-12"} ${
           menuOpen ? "bg-gray-900 bg-opacity-70" : ""
         }`}
@@ -57,6 +58,7 @@ export default function NavBar() {
               width={70}
               height={70}
               className="mr-3 object-contain lg:ml-40"
+              style={{ height: 'auto' }}  // Adicionando style para manter a proporção
             />
             <motion.span
               className="self-center whitespace-nowrap text-xl font-semibold text-shadow-lg group-hover:text-blue-500" // Mudança de cor ao passar o mouse
@@ -66,7 +68,19 @@ export default function NavBar() {
             </motion.span>
           </div>
         </Navbar.Brand>
-        <div className="flex gap-10 md:order-2">
+        <div className="flex items-center gap-4 md:order-2">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="hidden md:block"
+          >
+            <Button
+              gradientDuoTone="purpleToBlue"
+              className="rounded-full px-6 py-2"
+              href="/pag/contato"
+            >
+              Fale Conosco
+            </Button>
+          </motion.div>
           <Navbar.Toggle onClick={handleToggle} />
         </div>
         <Navbar.Collapse className={menuOpen ? "block" : "hidden"}>
@@ -78,7 +92,7 @@ export default function NavBar() {
               href="/"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
                 menuOpen ? "text-white" : ""
               }`}
             >
@@ -94,7 +108,7 @@ export default function NavBar() {
               href="/#servicos"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
                 menuOpen ? "text-white" : ""
               }`}
             >
@@ -110,7 +124,7 @@ export default function NavBar() {
               href="/#portifolio"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
                 menuOpen ? "text-white" : ""
               }`}
             >
@@ -126,7 +140,7 @@ export default function NavBar() {
               href="/#precos"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
                 menuOpen ? "text-white" : ""
               }`}
             >
@@ -142,7 +156,7 @@ export default function NavBar() {
               href="/pag/contato"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
                 menuOpen ? "text-white" : ""
               }`}
             >
@@ -158,13 +172,24 @@ export default function NavBar() {
               href="/pag/kiblog"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
+              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
                 menuOpen ? "text-white" : ""
               }`}
             >
               Blog
             </Navbar.Link>
           </motion.div>
+
+          {/* Botão mobile */}
+          <div className="mt-4 md:hidden">
+            <Button
+              gradientDuoTone="purpleToBlue"
+              className="w-full rounded-full px-6 py-2"
+              href="/pag/contato"
+            >
+              Fale Conosco
+            </Button>
+          </div>
         </Navbar.Collapse>
         <Link
           href="/signup"

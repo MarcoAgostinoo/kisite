@@ -61,18 +61,18 @@ export default function HeroHomeContainer() {
           {caracteristicas.map((caracteristica, index) => (
             <div
               key={index}
-              className="flex h-auto w-11/12 flex-col rounded-md bg-secondaryBlue p-3 pb-2 text-left shadow-lg transition-all duration-300 hover:shadow-xl sm:w-4/5 md:p-4 lg:h-64 lg:w-1/4 xl:p-5"
+              className="flex h-auto w-11/12 flex-col rounded-lg bg-secondaryBlue p-5 text-left shadow-lg transition-all duration-300 hover:shadow-xl sm:w-4/5 md:p-6 lg:h-72 lg:w-1/4 xl:p-7"
             >
-              <h3 className="mb-4 w-full text-center text-xl font-semibold text-accentYellow lg:text-lg">
+              <h3 className="mb-4 w-full text-center text-2xl font-bold text-accentYellow lg:text-xl">
                 {caracteristica.title}
               </h3>
-              <ul className="w-full space-y-2">
+              <ul className="w-full space-y-3">
                 {caracteristica.items.map((item, itemIndex) => (
                   <li
                     key={itemIndex}
-                    className="flex text-sm font-semibold text-pureWhite sm:text-base"
+                    className="flex text-base font-medium text-pureWhite sm:text-lg"
                   >
-                    <div className="mr-2 flex w-5 items-start justify-center text-successGreen">
+                    <div className="mr-3 flex w-6 items-start justify-center text-successGreen">
                       {item.icon}
                     </div>
                     <div className="flex-1 break-words">{item.text}</div>
@@ -83,7 +83,7 @@ export default function HeroHomeContainer() {
           ))}
         </div>
       </div>
-      <div className="bg-primaryBlue pb-10 pt-12">
+      <div className="bg-primaryBlue pb-12 pt-14">
         <div>
           <Caracteristicas />
           <CaroucelHero />

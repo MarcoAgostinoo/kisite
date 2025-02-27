@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-
+import LeadConversion from "../../components/LeadConversion";
 
 const apiUrl = "https://backendnodemailer.vercel.app";
 const endpointUrl = `${apiUrl}/send`;
@@ -29,7 +29,7 @@ export default function Contato() {
   });
   const [formStatus, setFormStatus] = useState<FormStatus | null>(null);
   const [captchaQuestion, setCaptchaQuestion] = useState<string | null>(null);
-  const [captchaAnswer, setCaptchaAnswer] = useState<string>(""); 
+  const [captchaAnswer, setCaptchaAnswer] = useState<string>("");
   const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
 
   useEffect(() => {
@@ -128,109 +128,107 @@ export default function Contato() {
   };
 
   return (
-    <div>
-      <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-        <div className="mx-auto mt-16 max-w-2xl text-center">
-          <h2 className="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-            Entre em contato conosco
-          </h2>
-          <p className="mt-2 text-lg/8 text-gray-600">
-            Estamos aqui para oferecer soluções personalizadas para seu projeto.
-            Preencha o formulário abaixo para que possamos ajudar você da melhor
-            maneira possível!
-          </p>
-        </div>
-        <form
-          onSubmit={handleSubmit}
-          className="mx-auto mt-16 max-w-xl sm:mt-20"
-        >
-          <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-            {/* Campos do formulário */}
-            {["name", "company", "email", "phone", "message"].map((field) => (
-              <div
-                key={field}
-                className={`sm:col-span-2 ${
-                  field === "message" ? "" : "sm:col-span-1"
-                }`}
-              >
+    <div className="bg-gradient-to-r from-blue-500 to-indigo-600 min-h-screen flex items-center justify-center pt-60 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl">
+        <h1 className="text-4xl font-extrabold text-center text-white mb-12">
+          Entre em Contato e Transforme Seu Negócio Digital
+        </h1>
+        <div className="flex flex-col lg:flex-row lg:space-x-8">
+          <div className="lg:w-3/5 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+            <div>
+              <p className="mt-2 text-center text-lg font-semibold text-primaryBlue dark:text-gray-300">
+                Estamos aqui para oferecer soluções personalizadas para seu projeto.
+                Preencha o formulário abaixo para que possamos ajudar você da melhor
+                maneira possível!
+              </p>
+            </div>
+            <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+              <div className="rounded-md shadow-sm -space-y-px">
+                {["name", "company", "email", "phone", "message"].map((field) => (
+                  <div key={field} className="mb-4">
+                    <label
+                      htmlFor={field}
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      {field === "name"
+                        ? "Nome"
+                        : field === "company"
+                        ? "Empresa"
+                        : field === "email"
+                        ? "E-mail"
+                        : field === "phone"
+                        ? "Telefone"
+                        : "Mensagem"}
+                    </label>
+                    <div className="mt-1">
+                      {field === "message" ? (
+                        <textarea
+                          id={field}
+                          name={field}
+                          rows={4}
+                          value={formData[field as keyof FormData]}
+                          onChange={handleChange}
+                          className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                        />
+                      ) : (
+                        <input
+                          id={field}
+                          name={field}
+                          type={field === "email" ? "email" : "text"}
+                          value={formData[field as keyof FormData]}
+                          onChange={handleChange}
+                          className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                        />
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CAPTCHA */}
+              <div>
                 <label
-                  htmlFor={field}
-                  className="block text-sm/6 font-semibold text-gray-900"
+                  htmlFor="captcha"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300"
                 >
-                  {field === "name"
-                    ? "Nome"
-                    : field === "company"
-                    ? "Empresa"
-                    : field === "email"
-                    ? "E-mail"
-                    : field === "phone"
-                    ? "Telefone"
-                    : "Mensagem"}
+                  Resolva a questão: {captchaQuestion || "Carregando..."}
                 </label>
-                <div className="mt-2.5">
-                  {field === "message" ? (
-                    <textarea
-                      id={field}
-                      name={field}
-                      rows={4}
-                      value={formData[field as keyof FormData]}
-                      onChange={handleChange}
-                      className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                    />
-                  ) : (
-                    <input
-                      id={field}
-                      name={field}
-                      type={field === "email" ? "email" : "text"}
-                      value={formData[field as keyof FormData]}
-                      onChange={handleChange}
-                      className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                    />
-                  )}
+                <div className="mt-1">
+                  <input
+                    id="captcha"
+                    name="captcha"
+                    type="text"
+                    value={captchaAnswer}
+                    onChange={handleCaptchaChange}
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  />
                 </div>
               </div>
-            ))}
 
-            {/* CAPTCHA */}
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="captcha"
-                className="block text-sm/6 font-semibold text-gray-900"
-              >
-                Resolva a questão: {captchaQuestion || "Carregando..."}
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="captcha"
-                  name="captcha"
-                  type="text"
-                  value={captchaAnswer}
-                  onChange={handleCaptchaChange}
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                />
+              {/* Botão Enviar */}
+              <div>
+                <button
+                  type="submit"
+                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  Enviar mensagem
+                </button>
               </div>
-            </div>
-
-            {/* Botão Enviar */}
-            <div className="sm:col-span-2">
-              <button
-                type="submit"
-                className="block w-full rounded-md bg-indigo-600 px-4 py-3 text-lg font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50"
+            </form>
+            {formStatus && (
+              <div
+                className={`mt-6 text-center text-lg font-semibold ${
+                  formStatus.success ? "text-green-500" : "text-red-500"
+                }`}
               >
-                Enviar mensagem
-              </button>
-            </div>
+                {formStatus.message}
+              </div>
+            )}
           </div>
-        </form>
-        {formStatus && (
-          <div
-            className={`mt-6 text-center text-lg font-semibold ${
-              formStatus.success ? "text-green-600" : "text-red-600"
-            }`}
-          >
-            {formStatus.message}
+          <div className="lg:w-2/5 mt-12 lg:mt-0">
+            <LeadConversion />
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
