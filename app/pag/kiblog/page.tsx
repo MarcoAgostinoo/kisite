@@ -93,12 +93,12 @@ const Icon = ({
       "pentagon",
       "star",
     ].includes(type)
-      ? "#748ef9"
+      ? "#FFF9C4"
       : "transparent",
     border:
       type === "triangle" || type === "pentagon" || type === "star"
         ? "none"
-        : "1px solid #007bff",
+        : "1px solid #E8EAF6",
     borderRadius: type === "circle" ? "50%" : "0%",
     clipPath:
       type === "triangle"

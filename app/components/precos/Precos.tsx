@@ -1,28 +1,30 @@
 // app/page.tsx
 import { CheckIcon } from '@heroicons/react/20/solid';
 
-
 interface Plan {
   name: string;
-  price: number;
+  price?: number;
   description: string;
   features: string[];
 }
 
 const plans: Plan[] = [
   {
-    name: 'MVP - Diagnóstico + Landing Page',
+    name: 'Site Essencial',
     price: 697.0,
     description:
       'Ideal para quem está começando e precisa de uma presença online rápida e eficiente.',
     features: [
       'Diagnóstico gratuito do site atual (ou ausência dele)',
-      'Landing Page responsiva com até 1 página',
-      'Formulário de contato para captação de leads',
-      'Integração com WhatsApp Business para agendamentos',
-      'SEO básico para melhorar a visibilidade no Google',
-      'Pop-up estratégico para capturar leads',
-      'Hospedagem por 6 meses',
+      'Criação de Site Responsivo ou LandingPage',
+      'Site com até 5 páginas ',
+      'Integração com WhatsApp para agendamentos',
+      'Até 3 contas de email Profissional',
+      'Formulário de contato com integração de e-mail.',
+      'SEO otimizado para melhorar a visibilidade no Google',
+      'Conexão com redes sociais (Facebook, Instagram etc).',
+      'Botões para gerar leads​',
+      'Adequado para desktop, tablet e celular',
     ],
   },
   {
@@ -31,31 +33,51 @@ const plans: Plan[] = [
     description:
       'Perfeito para empresas em crescimento que desejam escalar suas vendas online.',
     features: [
-      'Site responsivo com até 7 páginas',
+      'Diagnóstico gratuito do site atual (ou ausência dele)',
+      'Criação de Site Responsivo ou LandingPage',
+      'Site com até 12 páginas',
+      'Integração com WhatsApp para agendamentos',
+      'Até 10 contas de email Profissional',
+      'Formulário de contato com integração de e-mail.',
+      'SEO otimizado para melhorar a visibilidade no Google',
+      'Conexão com redes sociais (Facebook, Instagram etc).',
+      'Adequado para desktop, tablet e celular',
       'Funil de vendas personalizado (página de captura + página de vendas)',
       'Sistema de agendamento online integrado',
       'Automação básica de marketing (e-mail e WhatsApp)',
-      'SEO intermediário para atrair tráfego qualificado',
-      'Relatórios iniciais de desempenho',
+      '1 Relatórios iniciais de desempenho',
       'Hospedagem por 1 ano',
-      '3 e-mails corporativos',
     ],
   },
   {
-    name: 'Premium - E-commerce + Automação',
-    price: 3997.0,
+    name: 'Site Sob Medida',
     description:
-      'Solução completa para empresas consolidadas que querem maximizar suas vendas online.',
+      'Site feito de forma artesanal, com layout do zero e gestor de projeto exclusivo, atendento todo tipo de situação incluindo E-commerce.',
     features: [
-      'E-commerce integrado para venda de produtos e pacotes',
-      'Automação avançada de marketing (e-mail, WhatsApp, SMS)',
-      'Chat online para atendimento em tempo real',
-      'SEO avançado para dominar as primeiras posições do Google',
-      'Relatórios mensais detalhados de desempenho',
-      'Design exclusivo e totalmente personalizado',
-      'Hospedagem por 1 ano em servidores premium',
-      'E-mails corporativos ilimitados',
-      'Suporte prioritário e manutenção mensal inclusa',
+      'Diagnóstico gratuito do site atual (ou ausência dele)',
+      'Criação de Site Responsivo ou LandingPage',
+      'Site com até 12 páginas',
+      'Integração com WhatsApp para agendamentos',
+      'Até 10 contas de email Profissional',
+      'Formulário de contato com integração de e-mail.',
+      'SEO otimizado para melhorar a visibilidade no Google',
+      'Conexão com redes sociais (Facebook, Instagram etc).',
+      'Adequado para desktop, tablet e celular',
+      'Funil de vendas personalizado (página de captura + página de vendas)',
+      'Sistema de agendamento online integrado',
+      'Automação básica de marketing (e-mail e WhatsApp)',
+      '1 Relatórios iniciais de desempenho',
+      'Hospedagem por 1 ano',
+      'Criação de site profissional com layout sob medida',
+      'Site Responsivo (desktop, tablet, celular)',
+      'Todos os tipos de sites',
+      'Integrações customizadas',
+      'Otimização SEO para Google',
+      'Botões para gerar leads',
+      'Formulários inteligentes',
+      'Integração com redes sociais',
+      'Treinamento para uso do site',
+      'Conformidade com a LGPD',
     ],
   },
 ];
@@ -83,18 +105,30 @@ export default function Page() {
             <div
               key={index}
               className={`bg-white p-6 rounded-md ring-1 shadow-sm ${
-                plan.name === 'Premium - E-commerce + Automação'
-                  ? 'ring-indigo-600'
-                  : 'ring-gray-900/10'
+                index === 0 ? 'ring-indigo-600' : 'ring-gray-900/10'
               }`}
             >
               <h3 className="text-lg font-semibold text-indigo-600">{plan.name}</h3>
-              <p className="mt-2 text-3xl font-bold text-gray-900">
-                R$ {plan.price.toFixed(2).replace('.', ',')}
-              </p>
-              <p className="mt-1 text-sm text-gray-500">
-                ou {calculateParcel(plan.price)} ao mês
-              </p>
+              {plan.price ? (
+                <div>
+                  <p className="flex flex-row mt-2 text-3xl font-bold text-gray-900">
+                    R${plan.price.toFixed(2).replace('.', ',')}
+                  </p>
+                  <p>para construir a aplicação</p>
+                  <p className="mt-1 text-sm text-gray-500">
+                    + {calculateParcel(plan.price)} ao mês para hospedagem e manutenção
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p className="flex flex-row mt-2 text-3xl font-bold text-gray-900">
+                    Sob Orçamento
+                  </p>
+                  <p className="mt-1 text-sm text-gray-500">
+                    PAGAMENTO ÚNICO
+                  </p>
+                </div>
+              )}
               <p className="mt-3 text-sm text-gray-600">{plan.description}</p>
               <ul className="mt-4 space-y-2 text-sm text-gray-600">
                 {plan.features.map((feature, index) => (
@@ -110,7 +144,7 @@ export default function Page() {
                   href="#"
                   className="rounded-sm bg-secondaryBlue px-4 py-2 text-center text-sm font-medium text-white hover:bg-indigo-500"
                 >
-                  Comece agora
+                  Peça o Seu
                 </a>
                 <a
                   href="#"

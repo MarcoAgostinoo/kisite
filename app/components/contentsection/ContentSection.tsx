@@ -1,3 +1,4 @@
+import { Button } from "flowbite-react";
 import Image from "next/image";
 import {
   MdCloudUpload,
@@ -11,7 +12,7 @@ import {
   MdWifi,
 } from "react-icons/md";
 
-export default function ContantSection() {
+export default function ContentSection() {
   return (
     <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-16 lg:overflow-visible lg:px-0">
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -49,13 +50,13 @@ export default function ContantSection() {
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base font-semibold text-indigo-600">
+              <p className="text-xl font-semibold text-indigo-600">
                 Desenvolvimento Web Personalizado
               </p>
-              <h2 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+              <h2 className="mt-6 text-pretty text-4xl font-semibold tracking-tight text-gray-900 lg:text-7xl">
                 Transformamos Ideias em Sites de Impacto
               </h2>
-              <p className="mt-6 text-xl text-gray-700">
+              <p className="mt-6 text-3xl text-gray-700">
                 Com dedicação, criatividade e atenção aos detalhes, entregamos
                 sites que destacam a identidade da sua empresa e conectam você
                 ao público certo. Trabalhamos lado a lado com nossos clientes
@@ -64,21 +65,35 @@ export default function ContantSection() {
             </div>
           </div>
         </div>
-        <div className="bg-transparent sm:ml-0 sm:mt-0 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-12 lg:overflow-hidden">
+        <div className="flex flex-col items-center bg-transparent sm:ml-0 sm:mt-0 lg:sticky lg:top-4 lg:col-start-2 mr-0 lg:mr-20 lg:row-span-2 lg:row-start-1 lg:mt-10 lg:overflow-hidden">
+          <div className="mt-20 flex w-full justify-center">
+            <div className="flex h-[40%] w-4/5 flex-col items-center rounded-lg bg-white p-2 text-center shadow-md md:w-3/4 lg:w-2/3 xl:w-1/2">
+              <strong className="mb-3 block animate-pulse text-xl font-bold text-primaryBlue md:text-2xl">
+                Hospedagem e Manutenção
+              </strong>
+              <span className="animate-fade-in mb-1 block text-base leading-relaxed text-gray-700">
+                Oferecemos serviços de hospedagem confiáveis e suporte contínuo
+                para que seu site esteja sempre no ar.
+              </span>
+            </div>
+          </div>
           <Image
             alt="Desenvolvimento Web"
             src="/webinho.png"
-            width={412}
-            height={412}
+            width={330} // Reduzido
+            height={330} // Reduzido
             objectFit="cover"
-            className="w-full max-w-[45rem] bg-transparent sm:w-full sm:max-w-[40rem] md:max-w-[35rem] lg:mt-20 lg:max-w-[30rem]"
+            className="w-full max-w-[36rem] bg-transparent sm:w-full sm:max-w-[32rem] md:max-w-[28rem] lg:mt-4 lg:max-w-[24rem]" // Reduzido
             priority
           />
+          <button className="animate-slide-in mt-3 transform rounded-full bg-secondaryBlue px-5 py-2 text-sm font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-primaryBlue">
+            Saiba Mais
+          </button>
         </div>
 
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
-            <div className="max-w-xl text-base text-gray-700 lg:max-w-lg">
+            <div className="max-w-xl text-xl text-gray-700 lg:max-w-lg">
               <p>
                 Especializados em criar sites modernos, responsivos e
                 otimizados, ajudamos empresas a estabelecerem uma presença

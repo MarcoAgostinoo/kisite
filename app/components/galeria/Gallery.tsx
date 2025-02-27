@@ -6,40 +6,32 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Gallery() {
   const data = [
     {
-      imgelink:
-        "/galeria/index01.png",
+      imgelink: "/galeria/index01.png",
       phrase: "LcCopper Metalurgica eirelli",
       phrase2: "Site para a empresa:",
       url: "https://www.lccopper.com/",
     },
     {
-      imgelink:
-        "/galeria/index02.png",
+      imgelink: "/galeria/index02.png",
       phrase: "Garagem Oficina",
       phrase2: "Site para a empresa:",
       url: "https://marcoagostinoo.github.io/garagemoficina/",
     },
     {
-      imgelink:
-        "/galeria/index03.png",
-      phrase:
-        "Concursos Agora",
+      imgelink: "/galeria/index03.png",
+      phrase: "Concursos Agora",
       phrase2: "Site para a empresa:",
       url: "https://www.concursosagora.com.br/",
     },
     {
-      imgelink:
-        "/galeria/index04.png",
-      phrase:
-        "Delicias da Deda",
+      imgelink: "/galeria/index04.png",
+      phrase: "Delicias da Deda",
       phrase2: "Site para a empresa:",
       url: "https://marcoagostinoo.github.io/deliciasdaguega/",
     },
     {
-      imgelink:
-        "/galeria/index03.png",
-      phrase:
-        "Concursos Agora",
+      imgelink: "/galeria/index03.png",
+      phrase: "Concursos Agora",
       phrase2: "Site para a empresa:",
       url: "https://www.concursosagora.com.br/",
     },
@@ -51,10 +43,10 @@ export default function Gallery() {
     <div id="portifolio" className="lg:m-16 px-4 py-8 lg:px-12">
       {/* Seção de introdução */}
       <div className="mb-8 text-center">
-        <h2 className="text-3xl font-bold text-gray-800">
+        <h2 className="text-4xl font-extrabold text-primaryBlue">
           Bem-vindo ao nosso Portfólio
         </h2>
-        <p className="mt-2 text-lg text-gray-600">
+        <p className="mt-4 text-xl text-neutralGray">
           Explore nossa coleção de projetos que refletem paixão, criatividade e
           inovação. Cada imagem conta uma história e inspira soluções únicas.
         </p>
@@ -70,15 +62,15 @@ export default function Gallery() {
           exit={{ opacity: 0, x: 50 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="mb-2 text-2xl font-semibold text-gray-800">
+          <h2 className="mb-2 text-3xl font-semibold text-primaryBlue">
             {active.phrase2}
           </h2>
-          <p className="mb-4 text-lg text-gray-700">{active.phrase}</p>
+          <p className="mb-4 text-lg text-deepBlack">{active.phrase}</p>
           <a
             href={active.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block rounded-md bg-blue-500 px-4 py-2 text-white font-medium hover:bg-blue-600"
+            className="inline-block rounded-md bg-gradient-to-r from-secondaryBlue to-primaryBlue px-6 py-3 text-white font-medium shadow-lg hover:from-primaryBlue hover:to-secondaryBlue"
           >
             Confira nosso trabalho
           </a>
@@ -93,18 +85,14 @@ export default function Gallery() {
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5 }}
           >
-            <a
-              href={active.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={active.url} target="_blank" rel="noopener noreferrer">
               <Image
                 src={active.imgelink}
                 alt="Imagem destacada"
                 layout="responsive"
                 width={1070}
                 height={680}
-                className="rounded-lg object-cover object-center shadow-lg"
+                className="rounded-lg object-cover object-center shadow-2xl"
               />
             </a>
           </motion.div>
@@ -112,7 +100,7 @@ export default function Gallery() {
       </div>
 
       {/* Miniaturas interativas */}
-      <div className="mt-2 grid grid-cols-5 gap-1">
+      <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
         {data.map(({ imgelink, phrase, url }, index) => (
           <motion.div
             key={index}
@@ -125,7 +113,7 @@ export default function Gallery() {
               layout="responsive"
               width={200}
               height={200}
-              className="rounded-md object-cover object-center"
+              className="rounded-lg object-cover object-center shadow-md"
             />
           </motion.div>
         ))}

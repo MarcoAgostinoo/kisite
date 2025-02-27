@@ -11,7 +11,7 @@ const Hero = () => {
           <main className="flex flex-wrap justify-center">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
-                <h1 className="text-center text-4xl font-extrabold leading-tight text-primaryBlue dark:text-white sm:text-5xl md:text-6xl lg:text-6xl">
+                <h1 className="text-center text-4xl font-extrabold leading-tight text-primaryBlue dark:text-white sm:text-5xl md:text-5xl lg:text-5xl">
                   <span>
                     Sua empresa
                     <span className="text-successGreen"> mais forte </span>

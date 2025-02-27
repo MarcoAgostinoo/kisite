@@ -34,11 +34,11 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({ categories }) => {
         categories.map((category) => (
           <Link
             key={category.slug}
-            href={`/pag/kiblog/category/${category.slug}`}
+            href={`/pag/kiblog/categoria/${category.slug}`}
             className="block"
           >
             <p className={`mb-4 cursor-pointer text-base font-semibold ${
-              pathname === `/pag/kiblog/category/${category.slug}`
+              pathname === `/pag/kiblog/categoria/${category.slug}`
                 ? 'text-secondaryBlue'
                 : 'text-gray-500 hover:text-secondaryBlue'
             } sm:text-sm`}>
