@@ -89,7 +89,7 @@ export default function ContentSection() {
             className="w-full max-w-xl bg-transparent sm:w-full sm:max-w-lg md:max-w-md lg:mt-4 lg:max-w-[24rem]" // Reduzido
             priority
           />
-          <button className="animate-slide-in mt-3 transform rounded-full bg-secondaryBlue px-5 py-2 text-sm font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-primaryBlue">
+          <button className="animate-slide-in mt-3 transform rounded-md bg-secondaryBlue px-5 py-2 text-sm font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-primaryBlue">
             Saiba Mais
           </button>
         </div>
