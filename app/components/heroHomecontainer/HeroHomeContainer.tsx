@@ -1,4 +1,3 @@
-import CaroucelHero from "../caroucelHero/CaroucelHero";
 import Caracteristicas from "../Caracteristicas/Caracteristicas";
 
 const caracteristicas = [
@@ -89,7 +88,6 @@ export default function HeroHomeContainer() {
       <div className="bg-primaryBlue pb-12 pt-14">
         <div>
           <Caracteristicas />
-          <CaroucelHero />
         </div>
       </div>
     </div>

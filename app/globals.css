@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* Resetando margens e preenchimentos padrões para garantir consistência entre navegadores */
 *,
 *::before,
@@ -13,9 +14,11 @@
 /* Definindo uma fonte padrão e estilos de linha */
 body {
   font-family: 'Arial', sans-serif;
-  line-height: 1.5;
-  background-color: #ffffff; /* Cor de fundo suave */
-  color: #333; /* Cor de texto */
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  /* Cor de fundo suave */
+  color: #333;
+  /* Cor de texto */
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,11 +36,16 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  
+
 }
 
 /* Estilos para cabeçalhos */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Arial', sans-serif;
   margin-bottom: 1rem;
   color: #222;
@@ -48,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 /* Flexbox para garantir um layout fluido */
@@ -136,4 +144,50 @@ textarea:focus {
   .container {
     padding: 0 5px;
   }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilização do elemento details */
+details>summary {
+  list-style: none;
+}
+
+details>summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Estilização da transição de abertura/fechamento */
+details[open]>summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+details[open]>div {
+  animation: slideDown 300ms ease-out;
+}
+
+details[open] {
+  transform: scale(1.05);
+  /* Aumenta o tamanho */
+}
+
+details {
+  transition: transform 0.5s ease-in-out;
+  /* Adiciona transição suave */
+}
+
+/* Transição suave para a altura do conteúdo */
+.transition-height {
+  transition: height 0.3s ease-in-out;
 }

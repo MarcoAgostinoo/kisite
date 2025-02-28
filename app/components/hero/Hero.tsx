@@ -5,37 +5,42 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="dark:bg-gray-900 relative z-10 overflow-hidden bg-gray-50 pb-16 pt-[100px] md:pb-[120px] md:pt-[80px] xl:pb-[160px] xl:pt-[120px] 2xl:pb-[200px] 2xl:pt-[150px]"
+        className="relative z-10 overflow-hidden bg-gray-50 pb-16 pt-[100px] dark:bg-gray-900 md:pb-[120px] md:pt-[80px] xl:pb-[160px] xl:pt-[120px] 2xl:pb-[200px] 2xl:pt-[150px]"
       >
         <div className="container mx-auto px-4">
           <main className="flex flex-wrap justify-center">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
-                <h1 className="text-center text-4xl font-extrabold leading-tight text-primaryBlue dark:text-white sm:text-5xl md:text-5xl lg:text-5xl">
-                  <span>
-                    Sua empresa
-                    <span className="text-successGreen"> mais forte </span>
-                    online:
-                  </span>
-                  <span className="block mt-2">conquiste o mercado digital!</span>
-                </h1>
-
                 <p className="mt-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   Em um mercado onde{" "}
                   <strong>
                     84% das decisões de compra começam com uma pesquisa online
                   </strong>
                   , ter uma presença digital profissional não é mais uma opção,
-                  mas uma necessidade absoluta para sobrevivência. A{" "}
-                  <strong>Kisite</strong> atua como sua{" "}
+                  mas uma necessidade. A <strong>Kisite</strong> atua como sua{" "}
                   <strong>parceira estratégica</strong>, oferecendo soluções
                   completas em:
                 </p>
-
+                <h1 className="text-center text-4xl font-extrabold leading-tight text-primaryBlue dark:text-white sm:text-5xl md:text-5xl lg:text-5xl">
+                  <span>
+                    Sua empresa
+                    <span className="text-successGreen"> mais forte </span>
+                    online:
+                  </span>
+                  <span className="mt-2 block">
+                    conquiste o mercado digital!
+                  </span>
+                </h1>
                 <ul className="mt-6 list-none p-0 text-lg text-gray-800 dark:text-gray-300">
-                  <li className="mb-2">🚀 Desenvolvimento web moderno e responsivo</li>
-                  <li className="mb-2">📈 SEO otimizado para aumentar seu alcance orgânico</li>
-                  <li className="mb-2">🎯 Gestão eficiente de tráfego pago para resultados rápidos</li>
+                  <li className="mb-2">
+                    🚀 Desenvolvimento web moderno e responsivo
+                  </li>
+                  <li className="mb-2">
+                    📈 SEO otimizado para aumentar seu alcance orgânico
+                  </li>
+                  <li className="mb-2">
+                    🎯 Gestão eficiente de tráfego pago para resultados rápidos
+                  </li>
                 </ul>
 
                 <div className="mt-10 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
@@ -53,7 +58,7 @@ const Hero = () => {
                   </Link>
                 </div>
 
-                <p className="mt-10 mb-20 sm:mb-0 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                <p className="mb-20 mt-10 text-lg leading-relaxed text-gray-700 dark:text-gray-300 sm:mb-0">
                   Com pacotes que unem{" "}
                   <strong>agilidade e resultados mensuráveis</strong>, ajudamos
                   você a se destacar da concorrência e conquistar mais clientes.
@@ -303,8 +308,10 @@ const Hero = () => {
             </defs>
           </svg>
         </div>
-        <div className="absolute mb-8 lg:mb-0 left-0 w-full text-center text-3xl lg:text-5xl">
-          <p className="text-primaryBlue -mt-8 lg:mt-14 pt-4 font-bold">Os 4 Pilares do Fracasso Digital</p>
+        <div className="absolute left-0 mb-8 w-full text-center text-3xl lg:mb-0 lg:text-5xl">
+          <p className="-mt-8 pt-4 font-bold text-primaryBlue lg:mt-14">
+            Os 4 Pilares do Fracasso Digital
+          </p>
         </div>
       </section>
     </>

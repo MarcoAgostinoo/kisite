@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Navbar, Button } from "flowbite-react";
+import { Navbar } from "flowbite-react"; // Removido Button da importação
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -44,8 +44,9 @@ export default function NavBar() {
       <Navbar
         fluid
         className={`text-slate-950 fixed left-0 right-0 top-0 z-30 transition-all duration-300 ${
-          scrolling ? "bg-white/80 backdrop-blur-md shadow-lg dark:bg-gray-900/80"
-          : "bg-transparent"
+          scrolling
+            ? "bg-white/80 shadow-lg backdrop-blur-md dark:bg-gray-900/80"
+            : "bg-transparent"
         } ${scrolling ? "top-0" : isMobile ? "top-0" : "mt-12"} ${
           menuOpen ? "bg-gray-900 bg-opacity-70" : ""
         }`}
@@ -55,13 +56,13 @@ export default function NavBar() {
             <Image
               src="/logo.png"
               alt="Flowbite Logo"
-              width={70}
-              height={70}
-              className="mr-3 object-contain lg:ml-40"
-              style={{ height: 'auto' }}  // Adicionando style para manter a proporção
+              width={scrolling ? 70 : 100}
+              height={scrolling ? 70 : 100}
+              className={`mr-3 object-contain lg:ml-40 transition-all duration-300`}
+              style={{ height: "auto" }} // Adicionando style para manter a proporção
             />
             <motion.span
-              className="self-center whitespace-nowrap text-xl font-semibold text-shadow-lg group-hover:text-blue-500" // Mudança de cor ao passar o mouse
+              className="self-center whitespace-nowrap text-2xl font-semibold text-shadow-lg group-hover:text-blue-500" // Mudança de cor ao passar o mouse
               whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} // Animação de escala
             >
               Kisite
@@ -72,15 +73,7 @@ export default function NavBar() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="hidden md:block"
-          >
-            <Button
-              gradientDuoTone="purpleToBlue"
-              className="rounded-full px-6 py-2"
-              href="/pag/contato"
-            >
-              Fale Conosco
-            </Button>
-          </motion.div>
+          ></motion.div>
           <Navbar.Toggle onClick={handleToggle} />
         </div>
         <Navbar.Collapse className={menuOpen ? "block" : "hidden"}>
@@ -92,7 +85,7 @@ export default function NavBar() {
               href="/"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
+              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
                 menuOpen ? "text-white" : ""
               }`}
             >
@@ -108,7 +101,7 @@ export default function NavBar() {
               href="/#servicos"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
+              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
                 menuOpen ? "text-white" : ""
               }`}
             >
@@ -124,7 +117,7 @@ export default function NavBar() {
               href="/#portifolio"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
+              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
                 menuOpen ? "text-white" : ""
               }`}
             >
@@ -140,7 +133,7 @@ export default function NavBar() {
               href="/#precos"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
+              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
                 menuOpen ? "text-white" : ""
               }`}
             >
@@ -156,7 +149,7 @@ export default function NavBar() {
               href="/pag/contato"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
+              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
                 menuOpen ? "text-white" : ""
               }`}
             >
@@ -172,28 +165,17 @@ export default function NavBar() {
               href="/pag/kiblog"
               active
               onClick={handleLinkClick}
-              className={`text-slate-800 group-hover:text-blue-500 lg:p-[6px] lg:text-black text-base ${
+              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
                 menuOpen ? "text-white" : ""
               }`}
             >
               Blog
             </Navbar.Link>
           </motion.div>
-
-          {/* Botão mobile */}
-          <div className="mt-4 md:hidden">
-            <Button
-              gradientDuoTone="purpleToBlue"
-              className="w-full rounded-full px-6 py-2"
-              href="/pag/contato"
-            >
-              Fale Conosco
-            </Button>
-          </div>
         </Navbar.Collapse>
         <Link
           href="/signup"
-          className="ease-in-up shadow-btn hover:shadow-btn-hover bg-secondaryBlue hidden rounded-sm px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+          className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-secondaryBlue px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
         >
           Sign Up
         </Link>

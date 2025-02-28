@@ -1,31 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "flowbite-react";
-import styles from './teste.module.css';
+import styles from "./teste.module.css";
 
 export default function HeroSecondary() {
   return (
-    <div className="flex flex-col items-center justify-around overflow-hidden bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 p-10 text-center lg:h-[660px] lg:flex-row">
+    <div className="flex flex-col items-center justify-around overflow-hidden bg-gradient-to-r from-primaryBlue via-secondaryBlue to-primaryBlue p-4 md:p-10 text-center lg:h-[660px] lg:flex-row">
       <div
         id="esquerda"
-        className="mr-20 flex w-[100%] flex-col items-center justify-center p-10 text-center lg:w-[60%]"
+        className="mr-0 lg:mr-20 flex w-full flex-col items-center justify-center p-4 md:p-10 text-center lg:w-3/5"
       >
         {/* Título Principal */}
-        <h2 className="mb-8 text-center text-5xl font-bold text-blue-gray-900 text-shadow-sm">
+        <h2 className="mb-8 text-center text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg">
           Conquiste seu espaço online com a KiSite
         </h2>
 
         {/* Subtítulo */}
-        <p className="mb-8 text-center text-xl font-medium  text-white text-shadow-sm">
+        <p className="mb-8 text-center text-lg md:text-xl font-medium text-white drop-shadow-md">
           Transforme sua presença digital com soluções inovadoras e eficazes
         </p>
 
         {/* Descrição */}
-        <p className="mx-auto mb-10 max-w-3xl text-center text-base font-normal  text-white text-shadow-sm">
-          Na KiSite, ajudamos pequenos e médios negócios a crescerem e se
-          destacarem online com designs modernos e experiências únicas.
-          Oferecemos serviços personalizados para a criação de sites,
-          e-commerce, SEO, automação de marketing, e muito mais.
+        <p className="mx-auto mb-10 max-w-3xl text-center text-sm md:text-base font-normal text-white drop-shadow-sm">
+          Na KiSite, ajudamos pequenos e médios negócios a crescerem e se destacarem online com designs modernos e experiências únicas. Oferecemos serviços personalizados para a criação de sites, e-commerce, SEO, automação de marketing e muito mais.
         </p>
 
         {/* Botão de Chamada para Ação */}
@@ -42,7 +39,7 @@ export default function HeroSecondary() {
         <div className="flex space-x-5">
           {/* Primeira coluna */}
           <div className="mb-20 rotate-45 space-y-6">
-          <Link
+            <Link
               href="#"
               className="block transform transition-transform duration-300 hover:scale-110"
             >
@@ -191,12 +188,11 @@ export default function HeroSecondary() {
                   alt="Webinho Coração"
                   width={800}
                   height={800}
-                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180   "
+                  className="-rotate-45 scale-[1.42] object-cover transition-transform duration-300 hover:scale-180"
                   priority={true}
                 />
               </div>
             </Link>
-
             <Link
               href="#"
               className="block transform transition-transform duration-300 hover:scale-110"

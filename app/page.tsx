@@ -14,10 +14,10 @@ export default function Home() {
       <Hero />
       <HeroHomeContainer />
       <Servicos />
+      <Gallery />
       <ContantSection />
       <Precos />
       <About />
-      <Gallery />
       <HeroSecondary />
       <FaqAccordion />
     </main>
