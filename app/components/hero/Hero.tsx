@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="container mx-auto px-4">
           <main className="flex flex-wrap justify-center">
             <div className="w-full px-4">
-              <div className="mx-auto max-w-[800px] text-center">
+              <div className="mx-auto max-w-screen-lg text-center">
                 <p className="mt-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   Em um mercado onde{" "}
                   <strong>

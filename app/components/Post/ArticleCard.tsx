@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from 'framer-motion';
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
@@ -20,12 +19,8 @@ interface ArticleCardProps {
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   const BASE_URL = "https://cms-kisite-production.up.railway.app";
-  const coverUrl = article.cover?.url
-    ? `${BASE_URL}${article.cover.url}`
-    : null;
-  const avatarUrl = article.author?.avatar?.url
-    ? `${BASE_URL}${article.author.avatar.url}`
-    : null;
+  const coverUrl = article.cover?.url ? `${BASE_URL}${article.cover.url}` : null;
+  const avatarUrl = article.author?.avatar?.url ? `${BASE_URL}${article.author.avatar.url}` : null;
 
   return (
     <Link 
@@ -75,7 +70,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
                   <div className="h-8 w-8 rounded-full bg-gray-200" />
                 )}
                 <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">
-                  {article.author.name}
+                  Por {article.author.name}
                 </span>
               </div>
             )}

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link"; // Adicione esta importação
 import { motion, AnimatePresence } from "framer-motion";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
@@ -63,20 +64,20 @@ export default function Gallery() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 50 }}
           transition={{ duration: 0.5 }}
-          className="backdrop-blur-sm bg-white/10 p-6 rounded-lg"
+          className="backdrop-blur-sm bg-white/10 p-6 rounded-md"
         >
           <h2 className="mb-2 text-3xl font-semibold text-blue-200">
             {active.phrase2}
           </h2>
           <p className="mb-4 text-lg text-blue-100">{active.phrase}</p>
-          <a
+          <Link
             href={active.url}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded-md bg-gradient-to-r from-blue-400 to-blue-600 px-6 py-3 text-white font-medium shadow-lg hover:from-blue-500 hover:to-blue-700 transition-all duration-300"
           >
             Visualizar Projeto
-          </a>
+          </Link>
         </motion.div>
 
         {/* Imagem em destaque com animação */}
@@ -87,19 +88,18 @@ export default function Gallery() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5 }}
-            className="relative"
+            className="relative group cursor-pointer"
+            onClick={() => window.open(active.url, '_blank', 'noopener,noreferrer')}
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-[#002b59]/50 to-transparent rounded-lg"></div>
-            <a href={active.url} target="_blank" rel="noopener noreferrer">
-              <Image
-                src={active.imgelink}
-                alt="Imagem destacada"
-                layout="responsive"
-                width={1070}
-                height={680}
-                className="rounded-lg object-cover object-center shadow-2xl hover:shadow-blue-500/20"
-              />
-            </a>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#002b59]/50 to-transparent rounded-lg group-hover:from-[#002b59]/60 transition-all duration-300"></div>
+            <Image
+              src={active.imgelink}
+              alt="Imagem destacada"
+              layout="responsive"
+              width={1070}
+              height={680}
+              className="rounded-md object-cover object-center shadow-2xl group-hover:shadow-blue-500/30 transition-all duration-300"
+            />
           </motion.div>
         </AnimatePresence>
       </div>
@@ -136,14 +136,14 @@ export default function Gallery() {
                 className="cursor-pointer transition-all duration-300 hover:scale-105 relative group"
                 onClick={() => setActive(item)}
               >
-                <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors duration-300 rounded-lg"></div>
+                <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors duration-300 rounded-md"></div>
                 <Image
                   src={item.imgelink}
                   alt={item.phrase}
                   layout="responsive"
                   width={200}
                   height={200}
-                  className="rounded-lg object-cover object-center shadow-md group-hover:shadow-blue-400/30"
+                  className="rounded-md object-cover object-center shadow-md group-hover:shadow-blue-400/30"
                 />
               </motion.div>
             </SplideSlide>

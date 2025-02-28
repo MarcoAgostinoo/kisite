@@ -10,6 +10,9 @@ import {
   MdAttachFile,
   MdPhone,
   MdWifi,
+  MdAnalytics,
+  MdSchool,
+  MdUpdate,
 } from "react-icons/md";
 
 export default function ContentSection() {
@@ -67,7 +70,7 @@ export default function ContentSection() {
         </div>
         <div className="flex flex-col items-center bg-transparent sm:ml-0 sm:mt-0 lg:sticky lg:top-4 lg:col-start-2 mr-0 lg:mr-20 lg:row-span-2 lg:row-start-1 lg:mt-10 lg:overflow-hidden">
           <div className="mt-20 flex w-full justify-center">
-            <div className="flex h-[40%] w-4/5 flex-col items-center rounded-lg bg-white p-2 text-center shadow-md md:w-3/4 lg:w-2/3 xl:w-1/2">
+            <div className="flex h-2/5 w-4/5 flex-col items-center rounded-lg bg-white p-2 text-center shadow-md md:w-3/4 lg:w-2/3 xl:w-1/2">
               <strong className="mb-3 block animate-pulse text-xl font-bold text-primaryBlue md:text-2xl">
                 Hospedagem e Manutenção
               </strong>
@@ -83,7 +86,7 @@ export default function ContentSection() {
             width={330} // Reduzido
             height={330} // Reduzido
             objectFit="cover"
-            className="w-full max-w-[36rem] bg-transparent sm:w-full sm:max-w-[32rem] md:max-w-[28rem] lg:mt-4 lg:max-w-[24rem]" // Reduzido
+            className="w-full max-w-xl bg-transparent sm:w-full sm:max-w-lg md:max-w-md lg:mt-4 lg:max-w-[24rem]" // Reduzido
             priority
           />
           <button className="animate-slide-in mt-3 transform rounded-full bg-secondaryBlue px-5 py-2 text-sm font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-primaryBlue">
@@ -102,6 +105,46 @@ export default function ContentSection() {
               </p>
               <ul role="list" className="mt-8 space-y-8 text-gray-600">
                 <li className="flex gap-x-3">
+                  <MdAnalytics
+                    aria-hidden="true"
+                    className="mt-1 size-5 flex-none text-indigo-600"
+                  />
+                  <span>
+                    <strong className="font-semibold text-gray-900">
+                      Acompanhamento de Resultados. 
+                    </strong>{" "} <br />
+                    Monitoramos e analisamos o desempenho do seu site,
+                    fornecendo relatórios detalhados para otimizar suas
+                    estratégias.
+                  </span>
+                </li>
+                <li className="flex gap-x-3">
+                  <MdSchool
+                    aria-hidden="true"
+                    className="mt-1 size-5 flex-none text-indigo-600"
+                  />
+                  <span>
+                    <strong className="font-semibold text-gray-900">
+                      Educação e Capacitação.
+                    </strong>{" "} <br />
+                    Oferecemos treinamentos e materiais educativos para capacitar
+                    você a gerenciar seu próprio site com eficiência.
+                  </span>
+                </li>
+                <li className="flex gap-x-3">
+                  <MdUpdate
+                    aria-hidden="true"
+                    className="mt-1 size-5 flex-none text-indigo-600"
+                  />
+                  <span>
+                    <strong className="font-semibold text-gray-900">
+                      Inovação e Atualização Contínua.
+                    </strong>{" "} <br />
+                    Mantemos seu site atualizado com as últimas tendências e
+                    tecnologias, garantindo que você esteja sempre à frente.
+                  </span>
+                </li>
+                <li className="flex gap-x-3">
                   <MdCloud
                     aria-hidden="true"
                     className="mt-1 size-5 flex-none text-indigo-600"
@@ -109,12 +152,11 @@ export default function ContentSection() {
                   <span>
                     <strong className="font-semibold text-gray-900">
                       Hospedagem e Manutenção.
-                    </strong>{" "}
+                    </strong>{" "} <br />
                     Oferecemos serviços de hospedagem confiáveis e suporte
                     contínuo para que seu site esteja sempre no ar.
                   </span>
                 </li>
-                {/* Novos itens */}
                 <li className="flex gap-x-3">
                   <MdCode
                     aria-hidden="true"
@@ -123,12 +165,11 @@ export default function ContentSection() {
                   <span>
                     <strong className="font-semibold text-gray-900">
                       Desenvolvimento Personalizado.
-                    </strong>{" "}
+                    </strong>{" "} <br />
                     Criamos soluções de websites e e-commerce totalmente
                     customizadas para as necessidades do seu negócio.
                   </span>
                 </li>
-
                 <li className="flex gap-x-3">
                   <MdEdit
                     aria-hidden="true"
@@ -137,7 +178,7 @@ export default function ContentSection() {
                   <span>
                     <strong className="font-semibold text-gray-900">
                       Design Responsivo.
-                    </strong>{" "}
+                    </strong>{" "} <br />
                     Nossos sites são projetados para se adaptar a qualquer
                     dispositivo, oferecendo uma ótima experiência em desktop e
                     dispositivos móveis.
@@ -151,7 +192,7 @@ export default function ContentSection() {
                   <span>
                     <strong className="font-semibold text-gray-900">
                       Desempenho de Alto Nível.
-                    </strong>{" "}
+                    </strong>{" "} <br />
                     Sites rápidos e bem otimizados para garantir uma excelente
                     experiência do usuário e melhores posições nos motores de
                     busca.
@@ -165,7 +206,7 @@ export default function ContentSection() {
                   <span>
                     <strong className="font-semibold text-gray-900">
                       Otimização para SEO.
-                    </strong>{" "}
+                    </strong>{" "} <br />
                     Implementamos técnicas de SEO para melhorar a visibilidade
                     do seu site nos motores de busca e atrair mais visitantes.
                   </span>
@@ -178,7 +219,7 @@ export default function ContentSection() {
                   <span>
                     <strong className="font-semibold text-gray-900">
                       Segurança Garantida.
-                    </strong>{" "}
+                    </strong>{" "} <br />
                     Implementamos certificação SSL e outras medidas para
                     proteger os dados e a confiança dos seus clientes.
                   </span>
@@ -191,7 +232,7 @@ export default function ContentSection() {
                   <span>
                     <strong className="font-semibold text-gray-900">
                       Integração com Ferramentas.
-                    </strong>{" "}
+                    </strong>{" "} <br />
                     Integramos seu site com ferramentas como Google Analytics,
                     WhatsApp e sistemas de pagamento, garantindo maior
                     funcionalidade.
@@ -205,7 +246,7 @@ export default function ContentSection() {
                   <span>
                     <strong className="font-semibold text-gray-900">
                       Suporte 24/7.
-                    </strong>{" "}
+                    </strong>{" "} <br />
                     Oferecemos suporte técnico contínuo para garantir que seu
                     site esteja sempre em funcionamento e respondendo
                     rapidamente.
@@ -219,7 +260,7 @@ export default function ContentSection() {
                   <span>
                     <strong className="font-semibold text-gray-900">
                       Conectividade Eficiente.
-                    </strong>{" "}
+                    </strong>{" "} <br />
                     Garantimos a conectividade do seu site com os principais
                     serviços e plataformas online, maximizando a experiência do
                     usuário.
