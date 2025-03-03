@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeModeScript } from "flowbite-react"; // Import the component
 import "./globals.css";
-import NavBar from "./components/navegacao/Nagegacao";
+import NavBar from "./components/navbar/NavBar";
 import BannerTop from "./components/bannertop/BannerTop";
 import CustomFooter from "./components/footer/CustomFooter";
 

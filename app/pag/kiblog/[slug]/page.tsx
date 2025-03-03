@@ -75,6 +75,9 @@ export default async function ArticlePage({
   return (
     <div className="bg-gray-50 pt-56 dark:bg-gray-900 min-h-screen">
       <article className="mx-auto max-w-4xl px-4 py-12">
+      <h1 className="mb-4 text-4xl font-bold text-primaryBlue dark:text-white overflow-hidden">
+            {article.title}
+          </h1>
         {coverUrl && (
           <div className="relative mb-8 h-96 w-full overflow-hidden rounded-lg">
             <Image
@@ -93,9 +96,6 @@ export default async function ArticlePage({
               {article.category.name}
             </span>
           )}
-          <h1 className="mb-4 text-4xl font-bold text-primaryBlue dark:text-white overflow-hidden">
-            {article.title}
-          </h1>
           
           <div className="flex items-center justify-between text-gray-600 dark:text-gray-400">
             {article.author && (

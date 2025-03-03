@@ -105,7 +105,7 @@ const Testemunhos = () => {
               2.157 pessoas disseram como o KiSite é bom
             </p>
             <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl">
-              O que nossos clientes satisfeitos dizem sobre nós
+              O que nossos clientes dizem sobre nós
             </h2>
           </div>
 

@@ -70,7 +70,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
                   <div className="h-8 w-8 rounded-full bg-gray-200" />
                 )}
                 <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">
-                  Por {article.author.name}
+                  {article.author.name}
                 </span>
               </div>
             )}
