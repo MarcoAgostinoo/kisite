@@ -1,5 +1,7 @@
 import Hero from "@/app/components/hero/Hero";
 import SplideCarousel from "@/app/components/caroucelanimated/Caroucelanimated";
+import TesteMargin from "@/app/components/teste/Testemargin";
+
 
 export default function teste() {
   const imageUrls = [
@@ -14,6 +16,7 @@ export default function teste() {
     <div>
       <Hero />
       <SplideCarousel imageUrls={imageUrls} />
+      <TesteMargin />
     </div>
   );
 }

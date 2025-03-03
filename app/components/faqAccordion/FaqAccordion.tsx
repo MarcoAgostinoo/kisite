@@ -138,7 +138,7 @@ export default function FaqAccordion() {
         </p>
         <a
           href="#contato"
-          className="inline-block bg-gradient-to-r from-primaryBlue to-secondaryBlue text-white px-8 py-3 rounded-md font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
+          className="inline-block bg-gradient-to-r from-successGreen to-successGreen text-white px-8 py-3 rounded-md font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
         >
           Fale Conosco
         </a>

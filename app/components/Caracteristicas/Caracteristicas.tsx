@@ -126,7 +126,7 @@ export default function ComoFunciona() {
         {/* Botão de Chamada à Ação */}
         <div className="col-span-full mt-12 flex justify-center">
           <button 
-            className="group relative animate-slide-in transform rounded-lg bg-gradient-to-r from-secondaryBlue to-primaryBlue px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:from-primaryBlue hover:to-secondaryBlue"
+            className="group relative animate-slide-in transform rounded-lg bg-gradient-to-r from-secondaryBlue to-primaryBlue px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:from-primaryBlue hover:to-successGreen"
           >
             <span className="relative z-10 flex items-center gap-2">
               <ChatBubbleBottomCenterTextIcon className="h-6 w-6 animate-pulse" />

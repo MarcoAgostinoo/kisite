@@ -9,6 +9,7 @@ const nextConfig = {
       "backendnodemailer-git-main-marcos-projects-83aa3827.vercel.app",
       "cms-kisite-production.up.railway.app",
       "localhost:1337",
+      "cdn.rareblocks.xyz" // Adicionando o novo domínio
     ],
     remotePatterns: [
       {

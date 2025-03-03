@@ -81,18 +81,13 @@ export default function Servicos() {
                     {feature.description}
                   </p>
                 </div>
-                <div className="mt-auto">
-                  <button className="text-indigo-600 font-medium hover:text-indigo-500 transition-colors duration-300">
-                    Saiba mais →
-                  </button>
-                </div>
               </div>
             </div>
           ))}
         </div>
 
         <div className="mt-16 flex justify-center">
-          <button className="inline-flex items-center gap-2 bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 rounded-xl transition-all duration-300 hover:scale-105">
+          <button className="inline-flex items-center gap-2 bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-successGreen rounded-xl transition-all duration-300 hover:scale-105">
             Solicite um Orçamento
             <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />

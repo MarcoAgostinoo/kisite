@@ -86,10 +86,10 @@ export default function ContentSection() {
             width={330} // Reduzido
             height={330} // Reduzido
             objectFit="cover"
-            className="w-full max-w-xl bg-transparent sm:w-full sm:max-w-lg md:max-w-md lg:mt-4 lg:max-w-[24rem]" // Reduzido
+            className="w-full max-w-xl bg-transparent sm:w-full sm:max-w-lg md:max-w-md lg:mt-4 lg:max-w-[24rem] animate-wiggle-more animate-infinite animate-duration-[2000ms] animate-ease-in-out" // Reduzido
             priority
           />
-          <button className="animate-slide-in mt-3 transform rounded-md bg-secondaryBlue px-5 py-2 text-sm font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-primaryBlue">
+          <button className="animate-slide-in mt-3 transform rounded-md bg-secondaryBlue px-5 py-2 text-sm font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-successGreen">
             Saiba Mais
           </button>
         </div>

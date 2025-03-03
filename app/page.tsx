@@ -7,6 +7,7 @@ import Gallery from "./components/galeria/Gallery";
 import FaqAccordion from "./components/faqAccordion/FaqAccordion";
 import HeroSecondary from "./components/hero-secondary/HeroSecondary";
 import HeroHomeContainer from "./components/heroHomecontainer/HeroHomeContainer";
+import Testemunhos from "./components/testemunhos/Testemunhos";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Precos />
       <About />
       <HeroSecondary />
+      <Testemunhos />
       <FaqAccordion />
     </main>
   );

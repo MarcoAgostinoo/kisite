@@ -15,7 +15,7 @@ const baseConfig: Config = {
       colors: {
         primaryBlue: "#002b59",
         secondaryBlue: "#4a6cf7",
-        successGreen: "#81C784",
+        successGreen: "#40c351",
         neutralGray: "#74608b",
         pureWhite: "#FFFFFF",
         deepBlack: "#212121",

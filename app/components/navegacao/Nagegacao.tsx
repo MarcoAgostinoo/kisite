@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import { Navbar } from "flowbite-react"; // Removido Button da importação
+import { Navbar } from "flowbite-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function NavBar() {
+export default function Navegacao() {
   const [scrolling, setScrolling] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -59,21 +59,18 @@ export default function NavBar() {
               width={scrolling ? 70 : 100}
               height={scrolling ? 70 : 100}
               className={`mr-3 object-contain lg:ml-40 transition-all duration-300`}
-              style={{ height: "auto" }} // Adicionando style para manter a proporção
+              style={{ height: "auto" }}
             />
             <motion.span
-              className="self-center whitespace-nowrap text-2xl font-semibold text-shadow-lg group-hover:text-blue-500" // Mudança de cor ao passar o mouse
-              whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} // Animação de escala
+              className="self-center whitespace-nowrap text-2xl font-semibold text-shadow-lg group-hover:text-blue-500"
+              whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
             >
               Kisite
             </motion.span>
           </div>
         </Navbar.Brand>
         <div className="flex items-center gap-4 md:order-2">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="hidden md:block"
-          ></motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} className="hidden md:block"></motion.div>
           <Navbar.Toggle onClick={handleToggle} />
         </div>
         <Navbar.Collapse className={menuOpen ? "block" : "hidden"}>
@@ -175,9 +172,14 @@ export default function NavBar() {
         </Navbar.Collapse>
         <Link
           href="/signup"
-          className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-secondaryBlue px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+          className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-successGreen px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
         >
-         WhatssApp
+          <motion.span
+            whileHover={{ scale: 1.1, rotate: 5, transition: { duration: 0.3 } }}
+            className="block"
+          >
+            WhatsApp
+          </motion.span>
         </Link>
       </Navbar>
     </div>

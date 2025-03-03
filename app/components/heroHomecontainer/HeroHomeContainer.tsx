@@ -50,7 +50,7 @@ const caracteristicas = [
 export default function HeroHomeContainer() {
   return (
     <div>
-      <div
+      <div id="caracteristicas"
         className="relative"
         style={{
           background: "linear-gradient(#ffffff 50%, #002b55 50%)",
@@ -63,7 +63,7 @@ export default function HeroHomeContainer() {
               className="flex h-80 w-11/12 flex-col rounded-lg bg-secondaryBlue p-5 text-left shadow-lg transition-all duration-300 hover:shadow-xl sm:w-4/5 md:p-6 lg:w-1/4 xl:p-7"
               style={{ minHeight: '300px', maxHeight: '350px' }} // Definindo uma altura mínima e máxima para todas as caixas
             >
-              <h3 className="mb-4 w-full text-center text-2xl font-bold text-accentYellow lg:text-xl">
+              <h3 className="mb-4 w-full text-center text-2xl font-bold text-primaryBlue lg:text-xl">
                 {caracteristica.title}
               </h3>
               <ul className="w-full space-y-3 overflow-hidden">

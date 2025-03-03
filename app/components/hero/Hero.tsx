@@ -10,16 +10,16 @@ const Hero = () => {
         <div className="container mx-auto px-4">
           <main className="flex flex-wrap justify-center">
             <div className="w-full px-4">
-              <div className="mx-auto max-w-screen-lg text-center">
+              <div className="mx-auto max-w-screen-lg text-center animate-fade-right animate-ease-in-out">
                 <p className="mt-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   Em um mercado onde{" "}
                   <strong>
-                    84% das decisões de compra começam com uma pesquisa online
+                    mais de 70% das decisões de compra começam com uma pesquisa online
                   </strong>
                   , ter uma presença digital profissional não é mais uma opção,
                   mas uma necessidade. A <strong>Kisite</strong> atua como sua{" "}
                   <strong>parceira estratégica</strong>, oferecendo soluções
-                  completas em:
+                  completas.
                 </p>
                 <h1 className="text-center text-4xl font-extrabold leading-tight text-primaryBlue dark:text-white sm:text-5xl md:text-5xl lg:text-5xl">
                   <span>
@@ -45,16 +45,16 @@ const Hero = () => {
 
                 <div className="mt-10 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
-                    href="/"
+                    href="/#portifolio"
                     className="hover:bg-primary/80 rounded-md bg-secondaryBlue px-8 py-4 text-lg font-semibold text-white transition-colors duration-300"
                   >
                     🔥 Projetos
                   </Link>
                   <Link
-                    href="/quem-somos"
+                    href="/#caracteristicas"
                     className="rounded-md bg-gray-900 px-8 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:bg-gray-700 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
-                    Quem Somos
+                    Como Trabalhamos
                   </Link>
                 </div>
 
