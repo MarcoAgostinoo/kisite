@@ -1,5 +1,5 @@
 import axios from 'axios';
-import ArticleCard from './ArticleCard';
+import ArticleCard from './CardBlog';
 
 interface RelatedPostsProps {
   categorySlug?: string;

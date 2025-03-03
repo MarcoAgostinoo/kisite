@@ -1,7 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import axios from 'axios';
-import ArticleCard from '@/app/components/Post/ArticleCard';
+import ArticleCard from '@/app/components/cardBlog/CardBlog';
 import CategoryMenu from '@/app/components/blog/CategoryMenu';
 
 interface Category {

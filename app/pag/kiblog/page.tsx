@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Link from "next/link";
-import ArticleCard from "@/app/components/Post/ArticleCard";
+import CardBlog from "@/app/components/cardBlog/CardBlog";
 import CategoryMenu from "@/app/components/blog/CategoryMenu"; // Adicione esta importação
 
 // Interface para o artigo
@@ -162,8 +162,8 @@ const KiBlog = async () => {
         <div className="flex flex-col p-2 lg:flex-row">
           <CategoryMenu categories={uniqueCategories} />
           <div className="m-0 grid w-full grid-cols-1 gap-6 p-10 sm:p-4 md:grid-cols-2 lg:m-8 lg:w-10/12 lg:grid-cols-3">
-''            {sortedArticles.map((article) => (
-              <ArticleCard key={article.id} article={article} />
+            {sortedArticles.map((article) => (
+              <CardBlog key={article.id} article={article} />
             ))}
           </div>
         </div>

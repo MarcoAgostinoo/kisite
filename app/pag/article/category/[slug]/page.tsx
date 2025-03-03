@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import ArticleCard from "@/app/components/Post/ArticleCard";
+import ArticleCard from "@/app/components/cardBlog/CardBlog";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 

@@ -1,9 +1,9 @@
 import axios from 'axios';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import AuthorInfo from '@/app/components/Post/AuthorInfo';
-import ShareButtons from '@/app/components/Post/ShareButtons';
-import RelatedPosts from '@/app/components/Post/RelatedPosts';
+import AuthorInfo from '@/app/components/cardBlog/AuthorInfo';
+import ShareButtons from '@/app/components/cardBlog/ShareButtons';
+import RelatedPosts from '@/app/components/cardBlog/RelatedPosts';
 
 async function getArticle(slug: string) {
   try {

@@ -17,18 +17,22 @@ interface ArticleCardProps {
   };
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
+const CardBlog: React.FC<ArticleCardProps> = ({ article }) => {
   const BASE_URL = "https://cms-kisite-production.up.railway.app";
-  const coverUrl = article.cover?.url ? `${BASE_URL}${article.cover.url}` : null;
-  const avatarUrl = article.author?.avatar?.url ? `${BASE_URL}${article.author.avatar.url}` : null;
+  const coverUrl = article.cover?.url
+    ? `${BASE_URL}${article.cover.url}`
+    : null;
+  const avatarUrl = article.author?.avatar?.url
+    ? `${BASE_URL}${article.author.avatar.url}`
+    : null;
 
   return (
-    <Link 
+    <Link
       href={`/pag/kiblog/${article.slug}`}
-      className="block transform transition-transform hover:scale-102 duration-300"
+      className="hover:scale-102 block h-full transform transition-transform duration-300"
     >
-      <div className="overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800">
-        <div className="relative h-48 w-full">
+      <div className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800">
+        <div className="relative h-48 w-full flex-shrink-0">
           {coverUrl ? (
             <Image
               src={coverUrl}
@@ -48,14 +52,16 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
             </div>
           )}
         </div>
-        <div className="p-6">
-          <h3 className="mb-2 text-xl font-bold text-primaryBlue dark:text-white">
-            {article.title}
-          </h3>
-          <p className="mb-4 text-gray-600 dark:text-gray-300">
-            {article.description.substring(0, 150)}...
-          </p>
-          <div className="flex items-center justify-between">
+        <div className="flex flex-grow flex-col p-6">
+          <div className="flex-grow">
+            <h3 className="mb-2 line-clamp-2 overflow-hidden text-xl font-bold text-primaryBlue dark:text-white">
+              {article.title}
+            </h3>
+            <p className="mb-4 line-clamp-3 overflow-hidden text-gray-600 dark:text-gray-300">
+              {article.description}
+            </p>
+          </div>
+          <div className="mt-auto flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-700">
             {article.author && (
               <div className="flex items-center">
                 {avatarUrl ? (
@@ -86,4 +92,4 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   );
 };
 
-export default ArticleCard;
+export default CardBlog;
