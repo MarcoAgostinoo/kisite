@@ -136,6 +136,14 @@ const generateRandomIcons = (count: number) => {
 
 const KiBlog = async () => {
   const articles = await fetchArticles();
+  
+  // Ordenar artigos por data de publicação (do mais recente para o mais antigo)
+  const sortedArticles = articles.sort((a, b) => {
+    const dateA = new Date(a.publishedAt);
+    const dateB = new Date(b.publishedAt);
+    return dateB.getTime() - dateA.getTime();
+  });
+  
   const uniqueCategories = extractUniqueCategories(articles);
 
   return (
@@ -154,7 +162,7 @@ const KiBlog = async () => {
         <div className="flex flex-col p-2 lg:flex-row">
           <CategoryMenu categories={uniqueCategories} />
           <div className="m-0 grid w-full grid-cols-1 gap-6 p-10 sm:p-4 md:grid-cols-2 lg:m-8 lg:w-10/12 lg:grid-cols-3">
-            {articles.map((article) => (
+''            {sortedArticles.map((article) => (
               <ArticleCard key={article.id} article={article} />
             ))}
           </div>
