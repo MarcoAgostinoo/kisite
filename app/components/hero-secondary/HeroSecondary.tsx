@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "flowbite-react";
-import styles from "./teste.module.css";
+
 
 export default function HeroSecondary() {
   return (

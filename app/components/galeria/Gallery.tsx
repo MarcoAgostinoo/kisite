@@ -33,10 +33,10 @@ export default function Gallery() {
       url: "https://marcoagostinoo.github.io/deliciasdaguega/",
     },
     {
-      imgelink: "/galeria/index03.png",
-      phrase: "Concursos Agora",
+      imgelink: "/galeria/index05.png",
+      phrase: "Modelo de Ecomerce",
       phrase2: "Site para a empresa:",
-      url: "https://www.concursosagora.com.br/",
+      url: "https://marcoagostinoo.github.io/ecomerce-template/",
     },
   ];
 
