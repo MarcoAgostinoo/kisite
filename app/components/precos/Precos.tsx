@@ -14,7 +14,8 @@ const plans: Plan[] = [
   {
     name: "Site Essencial",
     price: 897.0,
-    description: "Solução inicial ideal para estabelecer sua presença online com rapidez e qualidade.",
+    description:
+      "Solução inicial ideal para estabelecer sua presença online com rapidez e qualidade.",
     isMVP: true,
     features: [
       "Início rápido em até 5 dias úteis",
@@ -33,7 +34,8 @@ const plans: Plan[] = [
   },
   {
     name: "E-commerce & Projetos Especiais",
-    description: "Soluções personalizadas para e-commerce e projetos complexos.",
+    description:
+      "Soluções personalizadas para e-commerce e projetos complexos.",
     features: [
       "Páginas ilimitadas",
       "E-commerce completo",
@@ -53,24 +55,32 @@ const plans: Plan[] = [
 
 // Removed unused calculateParcel function
 
-function PlanCard({ plan, isHighlighted }: { plan: Plan; isHighlighted: boolean }) {
+function PlanCard({
+  plan,
+  isHighlighted,
+}: {
+  plan: Plan;
+  isHighlighted: boolean;
+}) {
   return (
     <div
       className={`relative rounded-2xl p-8 shadow-xl transition-transform duration-300 hover:scale-105
-        ${isHighlighted 
-          ? 'bg-gradient-to-br from-subtlePurple via-subtlePurple to-pureWhite border-2 border-blue-300 shadow-lg animate-border-pulse' 
-          : 'bg-gradient-to-br from-pureWhite to-subtlePurple border border-neutralGray'
+        ${
+          isHighlighted
+            ? "animate-border-pulse border-2 border-blue-300 bg-gradient-to-br from-subtlePurple via-subtlePurple to-pureWhite shadow-lg"
+            : "border border-neutralGray bg-gradient-to-br from-pureWhite to-subtlePurple"
         }`}
     >
-      {/* Rest of PlanCard component remains unchanged */}
       {isHighlighted && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondaryBlue text-pureWhite px-4 py-1 rounded-full text-sm font-medium shadow-md">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-secondaryBlue px-4 py-1 text-sm font-medium text-pureWhite shadow-md">
           Mais Popular
         </div>
       )}
 
       <div className="mb-6">
-        <h3 className={`text-xl font-bold ${isHighlighted ? 'text-primaryBlue' : 'text-primaryBlue'}`}>
+        <h3
+          className={`text-xl font-bold ${isHighlighted ? "text-primaryBlue" : "text-primaryBlue"}`}
+        >
           {plan.name}
         </h3>
         <p className="mt-3 text-base text-neutralGray">{plan.description}</p>
@@ -80,13 +90,17 @@ function PlanCard({ plan, isHighlighted }: { plan: Plan; isHighlighted: boolean 
         {plan.price ? (
           <>
             <p className="flex items-baseline">
-              <span className="text-4xl font-bold tracking-tight text-deepBlack flex items-baseline">
-                <span className="text-3xl">R$</span>&nbsp;{plan.price.toFixed(2).replace(".", ",")}
+              <span className="flex items-baseline text-4xl font-bold tracking-tight text-deepBlack">
+                <span className="text-3xl">R$</span>&nbsp;
+                {plan.price.toFixed(2).replace(".", ",")}
               </span>
-              <span className="ml-1 text-base font-semibold text-neutralGray">/em até 4X no pix ou cartão</span>
+              <span className="ml-1 text-base font-semibold text-neutralGray">
+                /em até 4X no pix ou cartão
+              </span>
             </p>
             <p className="mt-1 text-base text-neutralGray">
-              + R$ {(plan.price / 14).toFixed(2).replace(".", ",")} mensal para hospedagem e manutenção
+              + R$ {(plan.price / 14).toFixed(2).replace(".", ",")} mensal para
+              hospedagem e manutenção
             </p>
           </>
         ) : (
@@ -97,7 +111,9 @@ function PlanCard({ plan, isHighlighted }: { plan: Plan; isHighlighted: boolean 
       <ul className="mt-6 space-y-4">
         {plan.features.map((feature) => (
           <li key={feature} className="flex gap-x-3">
-            <CheckIcon className={`h-6 w-5 flex-shrink-0 ${isHighlighted ? 'text-successGreen' : 'text-secondaryBlue'}`} />
+            <CheckIcon
+              className={`h-6 w-5 flex-shrink-0 ${isHighlighted ? "text-successGreen" : "text-secondaryBlue"}`}
+            />
             <span className="text-base text-neutralGray">{feature}</span>
           </li>
         ))}
@@ -108,10 +124,11 @@ function PlanCard({ plan, isHighlighted }: { plan: Plan; isHighlighted: boolean 
           href={`https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre o plano ${encodeURIComponent(plan.name)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className={`block w-full px-6 py-3 text-center text-pureWhite font-semibold rounded-lg transition-colors shadow-md
-            ${isHighlighted 
-              ? 'bg-secondaryBlue hover:bg-primaryBlue' 
-              : 'bg-primaryBlue hover:bg-secondaryBlue'
+          className={`block w-full rounded-lg px-6 py-3 text-center font-semibold text-pureWhite shadow-md transition-colors
+            ${
+              isHighlighted
+                ? "bg-secondaryBlue hover:bg-primaryBlue"
+                : "bg-primaryBlue hover:bg-secondaryBlue"
             }`}
         >
           Falar com Consultor
@@ -122,8 +139,10 @@ function PlanCard({ plan, isHighlighted }: { plan: Plan; isHighlighted: boolean 
 }
 
 export default function Precos() {
-  const essentialPlan = plans.find(p => p.name === "Site Essencial");
-  const ecommercePlan = plans.find(p => p.name === "E-commerce & Projetos Especiais");
+  const essentialPlan = plans.find((p) => p.name === "Site Essencial");
+  const ecommercePlan = plans.find(
+    (p) => p.name === "E-commerce & Projetos Especiais",
+  );
 
   return (
     <section id="precos" className="bg-gradient-to-b from-pureWhite to-subtlePurple px-6 py-16 sm:py-20 lg:px-8">
@@ -147,13 +166,13 @@ export default function Precos() {
           )}
           {/* Middle Column - CTA with sticky positioning */}
           <div className="lg:sticky lg:top-24 self-start">
-            <div className="flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-successGreen to-light-green-50 rounded-2xl shadow-xl">
+            <div className="flex flex-col items-center justify-center p-8 text-center">
               <Image 
                 src="/index/precos.png" 
                 alt="Consultoria personalizada" 
                 width={128}
                 height={128}
-                className="w-32 h-auto mb-6"
+                className="w-32 h-auto mb-6 animate-wiggle animate-infinite animate-duration-[1200ms]"
               />
               <h3 className="text-2xl font-bold text-primaryBlue mb-4">
                 Precisa de ajuda para escolher?

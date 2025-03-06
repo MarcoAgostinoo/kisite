@@ -5,6 +5,7 @@ import "./globals.css";
 import NavBar from "./components/navbar/NavBar";
 import BannerTop from "./components/bannertop/BannerTop";
 import CustomFooter from "./components/footer/CustomFooter";
+import Footer from "./components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,7 @@ export default function RootLayout({
         <NavBar />
         <ThemeModeScript />
         {children}
-        <CustomFooter />
+        <Footer />
       </body>
     </html>
   );

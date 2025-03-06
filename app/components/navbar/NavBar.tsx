@@ -172,7 +172,7 @@ export default function Navegacao() {
         </Navbar.Collapse>
         <Link
           href="/signup"
-          className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-successGreen px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+          className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-md bg-successGreen px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
         >
           <motion.span
             whileHover={{ scale: 1.1, rotate: 5, transition: { duration: 0.3 } }}

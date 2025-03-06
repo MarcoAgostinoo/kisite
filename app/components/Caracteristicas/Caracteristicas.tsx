@@ -24,7 +24,7 @@ export default function ComoFunciona() {
       <div className="grid grid-cols-1 gap-8 p-4 lg:grid-cols-3 lg:p-14">
         {/* Etapa 1 */}
         <div className="bg-secondaryDarkBlue hover:bg-primaryLightBlue group rounded-lg p-6 text-left transition-all duration-300 hover:shadow-xl">
-          <div className="bg-blue-900 inline-block rounded-sm p-2 transition-transform duration-300 group-hover:scale-110">
+          <div className="bg-blue-900 inline-block rounded-md p-2 transition-transform duration-300 group-hover:scale-110">
             <GlobeAltIcon className="h-16 w-16 text-white" />
           </div>
           <h3 className="group-hover:text-darkBlue mt-4 text-2xl font-bold text-white transition-colors duration-300">
@@ -37,7 +37,7 @@ export default function ComoFunciona() {
 
         {/* Etapa 2 */}
         <div className="bg-secondaryDarkBlue hover:bg-primaryLightBlue group rounded-lg p-6 text-left transition-all duration-300 hover:shadow-xl">
-          <div className="bg-blue-900 inline-block rounded-sm p-2 transition-transform duration-300 group-hover:scale-110">
+          <div className="bg-blue-900 inline-block rounded-md p-2 transition-transform duration-300 group-hover:scale-110">
             <CalendarIcon className="h-16 w-16 text-white" />
           </div>
           <h3 className="group-hover:text-darkBlue mt-4 text-2xl font-bold text-white transition-colors duration-300">
@@ -50,7 +50,7 @@ export default function ComoFunciona() {
 
         {/* Etapa 3 */}
         <div className="bg-secondaryDarkBlue hover:bg-primaryLightBlue group rounded-lg p-6 text-left transition-all duration-300 hover:shadow-xl">
-          <div className="bg-blue-900 inline-block rounded-sm p-2 transition-transform duration-300 group-hover:scale-110">
+          <div className="bg-blue-900 inline-block rounded-md p-2 transition-transform duration-300 group-hover:scale-110">
             <MagnifyingGlassCircleIcon className="h-16 w-16 text-white" />
           </div>
           <h3 className="group-hover:text-darkBlue mt-4 text-2xl font-bold text-white transition-colors duration-300">
@@ -72,7 +72,7 @@ export default function ComoFunciona() {
         <div className="col-span-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Hospedagem 24/7 */}
           <div className="bg-secondaryDarkBlue hover:bg-primaryLightBlue group rounded-lg p-4 text-left transition-all duration-300 hover:shadow-xl">
-            <div className="bg-blue-900 inline-block rounded-sm p-2 transition-transform duration-300 group-hover:scale-110">
+            <div className="bg-blue-900 inline-block rounded-md p-2 transition-transform duration-300 group-hover:scale-110">
               <ServerIcon className="h-12 w-12 lg:h-14 lg:w-14 text-white" />
             </div>
             <h3 className="group-hover:text-darkBlue mt-3 text-xl lg:text-2xl font-bold text-white transition-colors duration-300">
@@ -85,7 +85,7 @@ export default function ComoFunciona() {
 
           {/* E-mail Corporativo */}
           <div className="bg-secondaryDarkBlue hover:bg-primaryLightBlue group rounded-lg p-4 text-left transition-all duration-300 hover:shadow-xl">
-            <div className="bg-blue-900 inline-block rounded-sm p-2 transition-transform duration-300 group-hover:scale-110">
+            <div className="bg-blue-900 inline-block rounded-md p-2 transition-transform duration-300 group-hover:scale-110">
               <EnvelopeIcon className="h-12 w-12 lg:h-14 lg:w-14 text-white" />
             </div>
             <h3 className="group-hover:text-darkBlue mt-3 text-xl lg:text-2xl font-bold text-white transition-colors duration-300">
@@ -98,7 +98,7 @@ export default function ComoFunciona() {
 
           {/* Suporte Técnico */}
           <div className="bg-secondaryDarkBlue hover:bg-primaryLightBlue group rounded-lg p-4 text-left transition-all duration-300 hover:shadow-xl">
-            <div className="bg-blue-900 inline-block rounded-sm p-2 transition-transform duration-300 group-hover:scale-110">
+            <div className="bg-blue-900 inline-block rounded-md p-2 transition-transform duration-300 group-hover:scale-110">
               <PhoneIcon className="h-12 w-12 lg:h-14 lg:w-14 text-white" />
             </div>
             <h3 className="group-hover:text-darkBlue mt-3 text-xl lg:text-2xl font-bold text-white transition-colors duration-300">
@@ -111,7 +111,7 @@ export default function ComoFunciona() {
 
           {/* Gestão de Tráfego */}
           <div className="bg-secondaryDarkBlue hover:bg-primaryLightBlue group rounded-lg p-4 text-left transition-all duration-300 hover:shadow-xl">
-            <div className="bg-blue-900 inline-block rounded-sm p-2 transition-transform duration-300 group-hover:scale-110">
+            <div className="bg-blue-900 inline-block rounded-md p-2 transition-transform duration-300 group-hover:scale-110">
               <CurrencyDollarIcon className="h-12 w-12 lg:h-14 lg:w-14 text-white" />
             </div>
             <h3 className="group-hover:text-darkBlue mt-3 text-xl lg:text-2xl font-bold text-white transition-colors duration-300">

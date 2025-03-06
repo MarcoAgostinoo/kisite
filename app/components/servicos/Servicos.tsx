@@ -46,9 +46,13 @@ const features = [
   },
 ];
 
-export default function Servicos() {
+const Video = () => {
   return (
-    <div id="servicos" className="bg-gradient-to-b from-white to-gray-50 py-24 sm:py-32">
+    <section className="relative z-10 py-16 md:py-20 lg:py-28">
+      <div className="container">
+      <div
+      id="servicos"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-base font-semibold leading-7 text-indigo-600">
@@ -58,23 +62,27 @@ export default function Servicos() {
             Soluções Digitais Completas
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Transforme sua presença online com nossas soluções personalizadas. 
-            Desenvolvemos estratégias digitais que geram resultados reais para seu negócio.
+            Transforme sua presença online com nossas soluções personalizadas.
+            Desenvolvemos estratégias digitais que geram resultados reais para
+            seu negócio.
           </p>
         </div>
-        
-        <div className="mx-auto mt-16 max-w-7xl grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
             <div
               key={feature.name}
-              className="relative group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 ease-in-out"
+              className="group relative rounded-2xl bg-white p-8 shadow-sm transition-all duration-300 ease-in-out hover:shadow-xl"
             >
               <div className="flex flex-col items-start gap-6">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-600 group-hover:bg-indigo-500 transition-colors duration-300">
-                  <feature.icon className="h-8 w-8 text-white" aria-hidden="true" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-md bg-indigo-600 transition-colors duration-300 group-hover:bg-indigo-500">
+                  <feature.icon
+                    className="h-8 w-8 text-white"
+                    aria-hidden="true"
+                  />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold leading-7 text-gray-900 group-hover:text-indigo-600 transition-colors duration-300">
+                  <h3 className="text-xl font-semibold leading-7 text-gray-900 transition-colors duration-300 group-hover:text-indigo-600">
                     {feature.name}
                   </h3>
                   <p className="mt-2 text-base leading-7 text-gray-600">
@@ -87,14 +95,50 @@ export default function Servicos() {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <button className="inline-flex items-center gap-2 bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-successGreen rounded-xl transition-all duration-300 hover:scale-105">
+          <button className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-successGreen">
             Solicite um Orçamento
             <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+              <path
+                fillRule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clipRule="evenodd"
+              />
             </svg>
           </button>
         </div>
       </div>
+      
+      {/* SVG Background Element */}
+      <div className="relative mt-16 w-full overflow-hidden">
+        <svg 
+          className="absolute bottom-0 left-0 w-full" 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path 
+            fill="#f3f4f6" 
+            fillOpacity="1" 
+            d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,138.7C672,139,768,181,864,181.3C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+      
+      {/* Remove the old SVG and background div */}
     </div>
+        <div className="-mx-4 flex flex-wrap">
+          <div className="w-full px-4">
+            <div
+              className="wow fadeInUp mx-auto max-w-[770px] overflow-hidden rounded-md"
+              data-wow-delay=".15s"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 z-[-1] h-full w-full bg-[url(/index/shape.svg)] bg-cover bg-center bg-no-repeat"></div>
+    </section>
   );
-}
+};
+
+export default Video;

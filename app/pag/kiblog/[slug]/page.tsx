@@ -1,9 +1,24 @@
-import React from 'react';
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import axios from 'axios';
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
+import React from "react";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import axios from "axios";
+import { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+// Importação dinâmica do CardPagSlug com loading fallback
+const CardPagSlug = dynamic(
+  () => import("@/app/components/cardBlog/CardPagSlug"),
+  {
+    loading: () => (
+      <div className="animate-pulse">
+        <div className="mb-4 h-24 rounded bg-gray-200 dark:bg-gray-700"></div>
+        <div className="mb-4 h-24 rounded bg-gray-200 dark:bg-gray-700"></div>
+        <div className="mb-4 h-24 rounded bg-gray-200 dark:bg-gray-700"></div>
+        <div className="h-24 rounded bg-gray-200 dark:bg-gray-700"></div>
+      </div>
+    ),
+  },
+);
 
 interface ArticleData {
   id: number;
@@ -48,13 +63,33 @@ interface ArticleData {
 async function getArticle(slug: string): Promise<ArticleData | null> {
   try {
     const response = await axios.get(
-      `https://cms-kisite-production.up.railway.app/api/articles?filters[slug][$eq]=${slug}&populate=*`
+      `https://cms-kisite-production.up.railway.app/api/articles?filters[slug][$eq]=${slug}&populate=*`,
     );
     return response.data.data[0] || null;
   } catch (error) {
-    console.error('Erro ao buscar artigo:', error);
+    console.error("Erro ao buscar artigo:", error);
     return null;
   }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const article = await getArticle(params.slug);
+
+  if (!article) {
+    return {
+      title: "Artigo não encontrado",
+      description: "O artigo que você está procurando não foi encontrado.",
+    };
+  }
+
+  return {
+    title: `${article.title} | Blog KiSite`,
+    description: article.description,
+  };
 }
 
 export default async function ArticlePage({
@@ -68,56 +103,82 @@ export default async function ArticlePage({
     notFound();
   }
 
+  // Log the category slug to verify it's correct
+  console.log("Category slug:", article.category?.slug);
+  console.log("Article ID:", article.id);
+
   const coverUrl = article.cover?.formats?.large?.url
     ? `https://cms-kisite-production.up.railway.app${article.cover.formats.large.url}`
     : null;
 
   return (
-    <div className="bg-gray-50 pt-56 dark:bg-gray-900 min-h-screen">
-      <article className="mx-auto max-w-4xl px-4 py-12">
-      <h1 className="mb-4 text-4xl font-bold text-primaryBlue dark:text-white overflow-hidden">
+    <div className="mx-auto flex max-w-7xl flex-col justify-between lg:flex-row">
+      <div className="min-h-screen flex-1 overflow-hidden bg-gray-50 pt-56 dark:bg-gray-900">
+        <article className="max-w-4xl px-4 py-12">
+          <h1 className="mb-8 text-3xl font-bold leading-tight text-primaryBlue dark:text-white sm:text-4xl sm:leading-tight">
             {article.title}
           </h1>
-        {coverUrl && (
-          <div className="relative mb-8 h-96 w-full overflow-hidden rounded-lg">
-            <Image
-              src={coverUrl}
-              alt={article.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        )}
-        
-        <header className="mb-8">
-          {article.category && (
-            <span className="mb-4 inline-block rounded-full bg-secondaryBlue px-4 py-1 text-sm font-semibold text-white">
-              {article.category.name}
-            </span>
-          )}
-          
-          <div className="flex items-center justify-between text-gray-600 dark:text-gray-400">
-            {article.author && (
-              <div className="flex items-center">
-                <span className="font-medium">{article.author.name}</span>
+
+          <div className="mb-4 flex flex-wrap items-center justify-between border-b border-gray-200 border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
+            <div className="flex flex-wrap items-center">
+              {article.author && (
+                <div className="mb-5 mr-10 flex items-center">
+                  <div className="w-full">
+                    <span className="mb-1 text-base font-medium text-gray-600 dark:text-gray-400">
+                      Por{" "}
+                      <span className="font-semibold">
+                        {article.author.name}
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {article.category && (
+              <div className="mb-5">
+                <span className="inline-flex items-center justify-center rounded-full bg-secondaryBlue px-4 py-2 text-sm font-semibold text-white">
+                  {article.category.name}
+                </span>
               </div>
             )}
-            <time dateTime={article.publishedAt}>
-              {format(new Date(article.publishedAt), "dd 'de' MMMM 'de' yyyy", {
-                locale: ptBR,
-              })}
-            </time>
           </div>
-        </header>
 
-        <div 
-          className="prose prose-lg max-w-none dark:prose-invert"
-          dangerouslySetInnerHTML={{ 
-            __html: article.blocks?.[0]?.body || article.description 
-          }}
-        />
-      </article>
+          <p className="mb-10 text-base font-medium leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
+            {article.description}
+          </p>
+
+          {coverUrl && (
+            <div className="mb-10 w-full overflow-hidden rounded-lg">
+              <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
+                <Image
+                  src={coverUrl}
+                  alt={article.title}
+                  fill
+                  className="h-full w-full object-cover object-center"
+                  priority
+                />
+              </div>
+            </div>
+          )}
+
+          <div
+            className="prose prose-lg dark:prose-invert max-w-none text-base font-medium leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
+            dangerouslySetInnerHTML={{
+              __html: article.blocks?.[0]?.body || article.description,
+            }}
+          />
+        </article>
+      </div>
+
+      <div className="mt-56 h-fit w-full px-4 lg:sticky lg:top-56 lg:w-96">
+        <h4 className="text-dark mb-6 text-2xl font-semibold dark:text-white">
+          Artigos Recentes
+        </h4>
+        <div className="mt-8 border-t border-gray-200 pt-8 dark:border-gray-700">
+          <CardPagSlug currentPostId={article.id} />
+        </div>
+      </div>
     </div>
   );
 }

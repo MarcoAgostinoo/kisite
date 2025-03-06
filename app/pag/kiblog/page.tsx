@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Link from "next/link";
 import CardBlog from "@/app/components/cardBlog/CardBlog";
 import CategoryMenu from "@/app/components/blog/CategoryMenu"; // Adicione esta importação
 
