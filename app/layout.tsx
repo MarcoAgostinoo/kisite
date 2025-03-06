@@ -4,7 +4,6 @@ import { ThemeModeScript } from "flowbite-react"; // Import the component
 import "./globals.css";
 import NavBar from "./components/navbar/NavBar";
 import BannerTop from "./components/bannertop/BannerTop";
-import CustomFooter from "./components/footer/CustomFooter";
 import Footer from "./components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
