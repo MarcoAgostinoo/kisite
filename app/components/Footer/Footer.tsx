@@ -148,7 +148,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/privacidade"
+                      href="/pag/politica-de-privacidade"
                       className="dark:text-body-color-dark text-body-color hover:text-primary dark:hover:text-primary mb-4 inline-block text-base duration-300"
                     >
                       Política de Privacidade

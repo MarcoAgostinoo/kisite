@@ -15,45 +15,48 @@ const plans: Plan[] = [
     name: "Site Essencial",
     price: 897.0,
     description:
-      "Solução inicial ideal para estabelecer sua presença online com rapidez e qualidade.",
+      "Site criado por um programador profissional com Next.js, ultra rápido e com a melhor indexação no Google e demais buscadores, superando sites criados com Wordpress.",
     isMVP: true,
     features: [
-      "Início rápido em até 5 dias úteis",
-      "Site 100% profissional e responsivo",
-      "Landingpage ou Até 5 páginas otimizadas",
+      "Site 100% profissional",
+      "Início em até 5 dias úteis",
+      "Personalização total (cores, imagens, texto) a partir de um de nossos modelos",
+      "Design responsivo (desktop, tablet, celular)",
+      "Landing page ou até 5 páginas otimizadas",
       "Integração com WhatsApp",
-      "3 contas de email profissional",
-      "Formulário de contato integrado",
-      "SEO básico otimizado",
-      "Certificado SSL de site seguro",
-      "Conformidade com a LGPD",
+      "3 contas de e-mail profissional",
+      "Formulários e botões para gerar leads",
+      "Integração com redes sociais",
+      "SEO otimizado para Google e Bing",
+      "Certificado SSL incluso",
+      "Conformidade com LGPD",
       "Design mobile-first",
       "Suporte técnico para manutenção",
-      "Integração com redes sociais",
     ],
   },
   {
-    name: "E-commerce & Projetos Especiais",
+    name: "Funcionalidades Adicionais",
     description:
-      "Soluções personalizadas para e-commerce e projetos complexos.",
+      "Soluções web com funcionalidades avançadas para o seu negócio: e-commerce, portais de notícias, painéis administrativos personalizados e muito mais.",
     features: [
       "Páginas ilimitadas",
-      "E-commerce completo",
-      "Blog completo ou integrado em site institucional",
-      "Integrações com",
+      "Site com posibilidade total de personalização",
+      "E-commerce completo (Wordpress ou em Nextjs.)",
+      "Blog integrado com painel administrativo para adicionar artigos",
+      "Portal de noticiascom painel administrativo para adicionar artigos",
+      "Painel administrativo customizado",
       "Automação avançada de marketing",
       "Formulários inteligentes",
       "Integrações com meios de pagamento",
       "API personalizada (se necessário)",
-      "Painel administrativo customizado",
       "Consultoria estratégica mensal",
-      "Treinamento para toda equipe",
+      "Treinamento para equipe",
       "Conformidade total com LGPD",
+      "Design mobile-first",
+      "Suporte técnico para manutenção",
     ],
   },
 ];
-
-// Removed unused calculateParcel function
 
 function PlanCard({
   plan,
@@ -64,139 +67,135 @@ function PlanCard({
 }) {
   return (
     <div
-      className={`relative rounded-2xl p-8 shadow-xl transition-transform duration-300 hover:scale-105
-        ${
-          isHighlighted
-            ? "animate-border-pulse border-2 border-blue-300 bg-gradient-to-br from-subtlePurple via-subtlePurple to-pureWhite shadow-lg"
-            : "border border-neutralGray bg-gradient-to-br from-pureWhite to-subtlePurple"
-        }`}
+      className={`relative rounded-2xl p-8 shadow-lg transition-transform duration-300 hover:scale-105 border ${
+        isHighlighted
+          ? "border-secondaryBlue bg-gradient-to-br from-subtlePurple to-pureWhite"
+          : "border-neutralGray/20 bg-gradient-to-br from-pureWhite to-subtlePurple"
+      }`}
     >
       {isHighlighted && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-secondaryBlue px-4 py-1 text-sm font-medium text-pureWhite shadow-md">
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-secondaryBlue px-3 py-1 text-xs font-medium text-pureWhite shadow-md">
           Mais Popular
-        </div>
+        </span>
       )}
 
       <div className="mb-6">
-        <h3
-          className={`text-xl font-bold ${isHighlighted ? "text-primaryBlue" : "text-primaryBlue"}`}
-        >
-          {plan.name}
-        </h3>
-        <p className="mt-3 text-base text-neutralGray">{plan.description}</p>
+        <h3 className="text-2xl font-semibold text-primaryBlue">{plan.name}</h3>
+        <p className="mt-2 text-base text-neutralGray">{plan.description}</p>
       </div>
 
-      <div className="mt-4">
+      <div className="mb-6">
         {plan.price ? (
           <>
-            <p className="flex items-baseline">
-              <span className="flex items-baseline text-4xl font-bold tracking-tight text-deepBlack">
-                <span className="text-3xl">R$</span>&nbsp;
-                {plan.price.toFixed(2).replace(".", ",")}
+            <p className="flex items-baseline gap-2">
+              <span className="text-3xl font-bold text-deepBlack">
+                R$ {plan.price.toFixed(2).replace(".", ",")}
               </span>
-              <span className="ml-1 text-base font-semibold text-neutralGray">
-                /em até 4X no pix ou cartão
+              <span className="text-sm text-neutralGray">
+                em até 4x no Pix ou cartão
               </span>
             </p>
-            <p className="mt-1 text-base text-neutralGray">
-              + R$ {(plan.price / 14).toFixed(2).replace(".", ",")} mensal para
-              hospedagem e manutenção
+            <p className="mt-1 text-sm text-neutralGray">
+              + R$ {(plan.price / 12).toFixed(2).replace(".", ",")} mensal
+              (hospedagem e manutenção)
             </p>
           </>
         ) : (
-          <p className="text-3xl font-bold text-deepBlack">Sob consulta</p>
+          <p className="text-3xl font-semibold text-deepBlack">
+            Sob Orçamento
+          </p>
         )}
       </div>
 
-      <ul className="mt-6 space-y-4">
+      <ul className="mb-8 space-y-3">
         {plan.features.map((feature) => (
-          <li key={feature} className="flex gap-x-3">
+          <li key={feature} className="flex items-start gap-3">
             <CheckIcon
-              className={`h-6 w-5 flex-shrink-0 ${isHighlighted ? "text-successGreen" : "text-secondaryBlue"}`}
+              className="h-5 w-5 flex-shrink-0 text-successGreen"
+              aria-hidden="true"
             />
-            <span className="text-base text-neutralGray">{feature}</span>
+            <span className="text-sm text-neutralGray">{feature}</span>
           </li>
         ))}
       </ul>
 
-      <div className="mt-6">
-        <Link
-          href={`https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre o plano ${encodeURIComponent(plan.name)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`block w-full rounded-lg px-6 py-3 text-center font-semibold text-pureWhite shadow-md transition-colors
-            ${
-              isHighlighted
-                ? "bg-secondaryBlue hover:bg-primaryBlue"
-                : "bg-primaryBlue hover:bg-secondaryBlue"
-            }`}
-        >
-          Falar com Consultor
-        </Link>
-      </div>
+      <Link
+        href={`https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre o plano ${encodeURIComponent(plan.name)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Falar com consultor sobre o plano ${plan.name}`}
+        className={`block w-full rounded-lg py-3 text-center text-sm font-medium text-pureWhite transition-colors ${
+          isHighlighted
+            ? "bg-secondaryBlue hover:bg-primaryBlue"
+            : "bg-primaryBlue hover:bg-secondaryBlue"
+        }`}
+      >
+        Falar com Consultor
+      </Link>
     </div>
   );
 }
 
 export default function Precos() {
   const essentialPlan = plans.find((p) => p.name === "Site Essencial");
-  const ecommercePlan = plans.find(
-    (p) => p.name === "E-commerce & Projetos Especiais",
+  const additionalPlan = plans.find(
+    (p) => p.name === "Funcionalidades Adicionais",
   );
 
   return (
-    <section id="precos" className="bg-gradient-to-b from-pureWhite to-subtlePurple px-6 py-16 sm:py-20 lg:px-8">
+    <section
+      id="precos"
+      className="bg-gradient-to-b from-pureWhite to-subtlePurple py-16 px-6 lg:px-8"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-primaryBlue sm:text-4xl">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold text-primaryBlue sm:text-4xl">
             Escolha o plano ideal para o seu negócio
           </h2>
-          <p className="mt-4 text-lg text-neutralGray">
-            Comece com o plano Site Essencial e evolua conforme seu negócio cresce
+          <p className="mt-3 text-lg text-neutralGray">
+            Comece com o Site Essencial e evolua conforme suas necessidades.
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3 relative">
-          {/* Left Column - Essential Plan */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {essentialPlan && (
             <PlanCard
               plan={essentialPlan}
               isHighlighted={Boolean(essentialPlan.isMVP)}
             />
           )}
+
           {/* Middle Column - CTA with sticky positioning */}
-          <div className="lg:sticky lg:top-24 self-start">
+          <div className="self-start lg:sticky lg:top-24">
             <div className="flex flex-col items-center justify-center p-8 text-center">
-              <Image 
-                src="/index/precos.png" 
-                alt="Consultoria personalizada" 
+              <Image
+                src="/index/precos.png"
+                alt="Consultoria personalizada"
                 width={128}
                 height={128}
-                className="w-32 h-auto mb-6 animate-wiggle animate-infinite animate-duration-[1200ms]"
+                className="mb-6 h-auto w-32 animate-wiggle animate-duration-[1200ms] animate-infinite"
               />
-              <h3 className="text-2xl font-bold text-primaryBlue mb-4">
+              <h3 className="mb-4 text-2xl font-bold text-primaryBlue">
                 Precisa de ajuda para escolher?
               </h3>
-              <p className="text-neutralGray mb-6">
-                Nossos consultores estão prontos para entender suas necessidades e recomendar a melhor solução para seu negócio.
+              <p className="mb-6 text-neutralGray">
+                Nossos consultores estão prontos para entender suas necessidades
+                e recomendar a melhor solução para seu negócio.
               </p>
               <Link
                 href="https://wa.me/5511919072390?text=Olá! Gostaria de uma consultoria para escolher o melhor plano"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-secondaryBlue hover:bg-primaryBlue text-pureWhite font-semibold px-8 py-4 rounded-lg transition-colors shadow-md animate-pulse"
+                className="animate-pulse rounded-lg bg-secondaryBlue px-8 py-4 font-semibold text-pureWhite shadow-md transition-colors hover:bg-primaryBlue"
               >
                 Agendar Consultoria Gratuita
               </Link>
             </div>
           </div>
 
-          {/* Right Column - E-commerce Plan */}
-          {ecommercePlan && (
-            <PlanCard
-              plan={ecommercePlan}
-              isHighlighted={false}
-            />
+
+          {additionalPlan && (
+            <PlanCard plan={additionalPlan} isHighlighted={false} />
           )}
         </div>
       </div>
