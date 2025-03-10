@@ -10,63 +10,68 @@ const Hero = () => {
         <div className="container mx-auto px-4">
           <main className="flex flex-wrap justify-center">
             <div className="w-full px-4">
-              <div className="mx-auto max-w-screen-lg text-center animate-fade-right animate-ease-in-out">
-                <p className="mt-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                  Em um mercado onde{" "}
+              <div className="mx-auto max-w-screen-lg animate-fade-right text-center animate-ease-in-out">
+                {/* Description */}
+                <p className="mt-6 mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   <strong>
-                    mais de 70% das decisões de compra começam com uma pesquisa online
-                  </strong>
-                  , ter uma presença digital profissional não é mais uma opção,
-                  mas uma necessidade. A <strong>Kisite</strong> atua como sua{" "}
-                  <strong>parceira estratégica</strong>, oferecendo soluções
-                  completas.
+                    81% das pequenas empresas brasileiras perdem vendas
+                  </strong>{" "}
+                  por não terem um site profissional (Fonte: Sebrae 2025). Na{" "}
+                  <strong>KiSite</strong>, desenvolvemos sua presença digital
+                  completa em até 5 dias úteis, com garantia de aparecer nas
+                  primeiras posições do Google para seus principais serviços.
                 </p>
+                {/* Main Title */}
                 <h1 className="text-center text-4xl font-extrabold leading-tight text-primaryBlue dark:text-white sm:text-5xl md:text-5xl lg:text-5xl">
                   <span>
-                    Sua empresa
-                    <span className="text-successGreen"> mais forte </span>
-                    online:
+                    Sites Profissionais que Geram Clientes para Sua Empresa
                   </span>
                   <span className="mt-2 block">
-                    conquiste o mercado digital!
+                    Apareça no Google e Converta Visitantes em Vendas
                   </span>
                 </h1>
-                <ul className="mt-6 list-none p-0 text-lg text-gray-800 dark:text-gray-300">
-                  <li className="mb-2">
-                    🚀 Desenvolvimento web moderno e responsivo
-                  </li>
-                  <li className="mb-2">
-                    📈 SEO otimizado para aumentar seu alcance orgânico
-                  </li>
-                  <li className="mb-2">
-                    🎯 Gestão eficiente de tráfego pago para resultados rápidos
-                  </li>
-                </ul>
+                <div className="flex w-full justify-center">
+                </div>
 
+                {/* CTAs */}
                 <div className="mt-10 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                  <div className="text-center">
+                    <Link
+                      href="https://wa.me/5511919072390?text=Olá! Gostaria de uma consultoria gratuita"
+                      className="hover:bg-primary/80 inline-flex items-center rounded-md bg-secondaryBlue px-8 py-4 text-lg font-semibold text-white transition-colors duration-300"
+                    >
+                      Quero Aparecer no Google - Fale com Especialista Grátis!
+                    </Link>
+                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                      ⏳ Vagas Limitadas - Atendemos apenas 10 clientes por mês
+                    </p>
+                  </div>
                   <Link
                     href="/#portifolio"
-                    className="hover:bg-primary/80 rounded-md bg-secondaryBlue px-8 py-4 text-lg font-semibold text-white transition-colors duration-300"
-                  >
-                    🔥 Projetos
-                  </Link>
-                  <Link
-                    href="/#caracteristicas"
                     className="rounded-md bg-gray-900 px-8 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:bg-gray-700 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
-                    Como Trabalhamos
+                    Ver Cases de Sucesso
                   </Link>
                 </div>
 
-                <p className="mb-20 mt-10 text-lg leading-relaxed text-gray-700 dark:text-gray-300 sm:mb-0">
-                  Com pacotes que unem{" "}
-                  <strong>agilidade e resultados mensuráveis</strong>, ajudamos
-                  você a se destacar da concorrência e conquistar mais clientes.
-                </p>
+                {/* Social Proof Element */}
+                <div className="mt-8 flex items-center justify-center space-x-4">
+                  <div className="flex -space-x-4">
+                    {/* Adicione aqui os avatares dos clientes se disponível */}
+                    <div className="h-10 w-10 rounded-full bg-primaryBlue"></div>
+                    <div className="h-10 w-10 rounded-full bg-secondaryBlue"></div>
+                    <div className="h-10 w-10 rounded-full bg-successGreen"></div>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <strong>127+ PMEs Brasileiras</strong> já transformaram seus
+                    resultados
+                  </p>
+                </div>  
               </div>
             </div>
           </main>
         </div>
+
         <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
             width="450"

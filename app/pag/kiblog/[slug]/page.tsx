@@ -60,6 +60,15 @@ interface ArticleData {
   }>;
 }
 
+interface ArticleHeaderProps {
+  article: ArticleData;
+}
+
+interface ArticleContentProps {
+  article: ArticleData;
+  coverUrl: string | null;
+}
+
 async function getArticle(slug: string): Promise<ArticleData | null> {
   try {
     const response = await axios.get(
@@ -92,6 +101,65 @@ export async function generateMetadata({
   };
 }
 
+const ArticleHeader = ({ article }: ArticleHeaderProps) => {
+  return (
+    <div className="mb-4 flex flex-wrap items-center justify-between border-b border-gray-200 border-opacity-10 pb-4">
+      <div className="flex flex-wrap items-center">
+        {article.author && (
+          <div className="mb-5 mr-10 flex items-center">
+            <div className="w-full">
+              <span className="mb-1 text-base font-medium text-gray-600 dark:text-gray-400">
+                Por <span className="font-semibold">{article.author.name}</span>
+              </span>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {article.category && (
+        <div className="mb-5">
+          <span className="inline-flex items-center justify-center rounded-full bg-secondaryBlue px-4 py-2 text-sm font-semibold text-white">
+            {article.category.name}
+          </span>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const ArticleContent = ({ article, coverUrl }: ArticleContentProps) => {
+  return (
+    <div className="prose prose-lg dark:prose-invert max-w-none text-base font-medium leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
+      <p className="mb-10 text-base font-medium leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
+        {article.description}
+      </p>
+
+      {coverUrl && (
+        <div className="mb-10 w-full overflow-hidden rounded-lg">
+          <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
+            <Image
+              src={coverUrl}
+              alt={article.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="h-full w-full object-cover object-center"
+              loading="lazy"
+              quality={75}
+            />
+          </div>
+        </div>
+      )}
+
+      <div
+        className="prose prose-lg dark:prose-invert max-w-none text-base font-medium leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
+        dangerouslySetInnerHTML={{
+          __html: article.blocks?.[0]?.body || article.description,
+        }}
+      />
+    </div>
+  );
+};
+
 export default async function ArticlePage({
   params,
 }: {
@@ -119,55 +187,9 @@ export default async function ArticlePage({
             {article.title}
           </h1>
 
-          <div className="mb-4 flex flex-wrap items-center justify-between border-b border-gray-200 border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
-            <div className="flex flex-wrap items-center">
-              {article.author && (
-                <div className="mb-5 mr-10 flex items-center">
-                  <div className="w-full">
-                    <span className="mb-1 text-base font-medium text-gray-600 dark:text-gray-400">
-                      Por{" "}
-                      <span className="font-semibold">
-                        {article.author.name}
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              )}
-            </div>
+          <ArticleHeader article={article} />
 
-            {article.category && (
-              <div className="mb-5">
-                <span className="inline-flex items-center justify-center rounded-full bg-secondaryBlue px-4 py-2 text-sm font-semibold text-white">
-                  {article.category.name}
-                </span>
-              </div>
-            )}
-          </div>
-
-          <p className="mb-10 text-base font-medium leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-            {article.description}
-          </p>
-
-          {coverUrl && (
-            <div className="mb-10 w-full overflow-hidden rounded-lg">
-              <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
-                <Image
-                  src={coverUrl}
-                  alt={article.title}
-                  fill
-                  className="h-full w-full object-cover object-center"
-                  priority
-                />
-              </div>
-            </div>
-          )}
-
-          <div
-            className="prose prose-lg dark:prose-invert max-w-none text-base font-medium leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
-            dangerouslySetInnerHTML={{
-              __html: article.blocks?.[0]?.body || article.description,
-            }}
-          />
+          <ArticleContent article={article} coverUrl={coverUrl} />
         </article>
       </div>
 

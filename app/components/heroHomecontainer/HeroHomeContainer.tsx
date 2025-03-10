@@ -85,9 +85,9 @@ export default function HeroHomeContainer() {
           {caracteristicas.map((caracteristica, index) => (
             <div
               key={index}
-              className="flex max-h-80 min-h-80 flex-col items-start gap-6 rounded-md bg-successGreen p-6"
+              className="flex max-h-72 min-h-80 flex-col items-start gap-6 rounded-md bg-successGreen p-6"
             >
-              <h3 className="flex h-[4rem] w-full items-center justify-center text-center text-2xl font-bold text-primaryBlue lg:text-xl px-2">
+              <h3 className="flex h-[3rem] w-full items-center justify-center text-center text-2xl font-bold text-primaryBlue lg:text-xl px-2">
                 {caracteristica.title}
               </h3>
               <ul className="w-full">

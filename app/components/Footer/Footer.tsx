@@ -37,7 +37,7 @@ const Footer = () => {
                   </p>
                 </div>
 
-                <div className="flex items-center">
+                <div className="ml-0 flex items-center lg:ml-10 ">
                   <a
                     href="https://facebook.com"
                     aria-label="social-link"

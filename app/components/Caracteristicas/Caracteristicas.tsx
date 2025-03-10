@@ -3,10 +3,10 @@ import {
   CalendarIcon,
   MagnifyingGlassCircleIcon,
   ChatBubbleBottomCenterTextIcon,
-  ServerIcon, // Novo ícone para hospedagem
-  EnvelopeIcon, // Novo ícone para email
-  PhoneIcon, // Novo ícone para suporte
-  CurrencyDollarIcon, // Novo ícone para tráfego pago
+  ServerIcon,
+  EnvelopeIcon,
+  PhoneIcon,
+  CurrencyDollarIcon,
 } from "@heroicons/react/24/outline";
 
 export default function ComoFunciona() {
@@ -31,7 +31,7 @@ export default function ComoFunciona() {
             Identificação das Necessidades
           </h3>
           <p className="mt-2 text-base font-medium text-gray-300 transition-colors duration-300 group-hover:text-white">
-            Escolha entre soluções personalizadas ou pacotes prontos. Ajudamos você a decidir o que é ideal para o seu negócio.
+            Na Kisite, entendemos que cada empresa tem necessidades únicas. Oferecemos tanto soluções personalizadas quanto pacotes prontos, e nosso time especializado o guiará para escolher a opção que melhor se adapta ao seu negócio, garantindo resultados eficientes.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function ComoFunciona() {
             Adicionais que Fazem a Diferença
           </h3>
           <p className="mt-2 text-base font-medium text-gray-300 transition-colors duration-300 group-hover:text-white">
-            Personalize sua solução com funcionalidades como blog, multi-idiomas, portfólio dinâmico, área de membros e mais.
+            Além de nosso core, oferecemos uma variedade de funcionalidades adicionais para personalizar seu site de acordo com suas necessidades específicas, como blog, suporte a múltiplos idiomas, portfólio interativo, e muito mais. Cada adicional é projetado para aumentar a funcionalidade e a eficiência do seu site.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function ComoFunciona() {
             Planejamento e Execução
           </h3>
           <p className="mt-2 text-base font-medium text-gray-300 transition-colors duration-300 group-hover:text-white">
-            Formalizamos o contrato, realizamos um briefing detalhado e entregamos resultados incríveis em poucos dias.
+            Com a Kisite, o processo é transparente e eficiente. Depois de formalizar o contrato, realizamos um briefing detalhado para entender suas necessidades específicas. Nosso time de especialistas então trabalha diligentemente para entregar um site incrível em um prazo rápido, garantindo que você comece a colher os benefícios o mais rápido possível.
           </p>
         </div>
 
@@ -102,10 +102,10 @@ export default function ComoFunciona() {
               <PhoneIcon className="h-12 w-12 lg:h-14 lg:w-14 text-white" />
             </div>
             <h3 className="group-hover:text-darkBlue mt-3 text-xl lg:text-2xl font-bold text-white transition-colors duration-300">
-              Suporte 24/7
+              Suporte Online
             </h3>
             <p className="mt-2 text-sm lg:text-base font-medium text-gray-300 transition-colors duration-300 group-hover:text-white">
-              Suporte técnico especializado disponível 24 horas, sem custos surpresa.
+              Suporte técnico especializado disponível por WhatsApp alem de telefone, sem custos surpresa.
             </p>
           </div>
 
@@ -130,12 +130,11 @@ export default function ComoFunciona() {
           >
             <span className="relative z-10 flex items-center gap-2">
               <ChatBubbleBottomCenterTextIcon className="h-6 w-6 animate-pulse" />
-              Inicie Sua Transformação Digital Agora
+              Agende uma Consultoria Gratuitas Agora
             </span>
             <div className="absolute inset-0 -z-10 rounded-lg bg-gradient-to-r from-blue-600 to-blue-800 opacity-0 blur transition-opacity duration-300 group-hover:opacity-10"></div>
           </button>
         </div>
-
       </div>
     </div>
   );
