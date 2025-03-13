@@ -2,8 +2,8 @@ import {
   ComputerDesktopIcon,
   MagnifyingGlassIcon,
   CurrencyDollarIcon,
-  VideoCameraIcon,
-  SwatchIcon,
+  ChatBubbleLeftIcon,
+  Cog6ToothIcon,
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 
@@ -11,38 +11,38 @@ const features = [
   {
     name: "Site Essencial",
     description:
-      "Site institucional ou landing page ultra rápido, com indexação otimizada para Google e demais buscadores. Início em até 5 dias úteis.",
+      "Aumente sua presença digital com um site Next.js configurado de forma completa. Lançamento em até 5 dias úteis, com design moderno, performance otimizada e indexação impecável para buscadores.",
     icon: ComputerDesktopIcon,
   },
   {
     name: "SEO Otimizado",
     description:
-      "Melhore sua visibilidade online com técnicas avançadas de SEO, garantindo posições de destaque no Google e Bing.",
+      "Maximize sua visibilidade online com técnicas avançadas de SEO. Estruturamos seu site para alcançar posições de destaque no Google e demais mecanismos de buscas, atraindo clientes qualificados para o seu negócio.",
     icon: MagnifyingGlassIcon,
   },
   {
-    name: "Design Responsivo",
+    name: "Chatbot Automatizado",
     description:
-      "Layouts modernos, mobile-first e totalmente personalizáveis para oferecer a melhor experiência em qualquer dispositivo.",
-    icon: SwatchIcon,
+      "Transforme o atendimento ao cliente com chatbots inteligentes. Nossa solução em IA integra-se perfeitamente ao seu site, oferecendo respostas imediatas e personalizadas 24/7.",
+    icon: ChatBubbleLeftIcon,
   },
   {
     name: "Integração Completa",
     description:
-      "Conecte seu site com WhatsApp, redes sociais, formulários inteligentes e e-mails profissionais para maximizar a geração de leads.",
+      "Conecte seu site com WhatsApp, redes sociais, formulários inteligentes e e-mails profissionais. Potencialize a comunicação e a geração de leads com integrações feitas sob medida.",
     icon: EnvelopeIcon,
   },
   {
     name: "Hospedagem & Suporte",
     description:
-      "Hospedagem segura e manutenção contínua por apenas R$ 74,75 mensais, garantindo desempenho e segurança 24/7.",
+      "Tenha tranquilidade com hospedagem segura e suporte técnico 24/7 por apenas R$ 74,75 mensais. Nossa equipe garante manutenção contínua e atualizações para performance máxima.",
     icon: CurrencyDollarIcon,
   },
   {
     name: "Funcionalidades Avançadas",
     description:
-      "Soluções personalizadas como e-commerce, portais, painéis administrativos e APIs, sob orçamento, para expandir seu negócio.",
-    icon: VideoCameraIcon,
+      "Foque no crescimento do seu negócio enquanto cuidamos de toda a complexidade técnica. Oferecemos integrações avançadas e configurações completas do seu site profissional, assegurando desempenho, segurança e SEO de alta performance.",
+    icon: Cog6ToothIcon,
   },
 ];
 
