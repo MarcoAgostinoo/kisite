@@ -1,15 +1,9 @@
 import { Button } from "flowbite-react";
 import Image from "next/image";
 import {
-  MdCloudUpload,
-  MdLock,
   MdCloud,
   MdCode,
   MdEdit,
-  MdSearch,
-  MdAttachFile,
-  MdPhone,
-  MdWifi,
   MdAnalytics,
   MdSchool,
   MdUpdate,
@@ -18,6 +12,7 @@ import {
 export default function ContentSection() {
   return (
     <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-16 lg:overflow-visible lg:px-0">
+      {/* Background SVG */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <svg
           aria-hidden="true"
@@ -50,60 +45,59 @@ export default function ContentSection() {
         </svg>
       </div>
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+        {/* Introdução Disruptiva */}
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
               <p className="text-xl font-semibold text-indigo-600">
-                Desenvolvimento Web Personalizado
+                Revolução Digital no Brasil
               </p>
               <h2 className="mt-6 text-pretty text-4xl font-semibold tracking-tight text-gray-900 lg:text-7xl">
-                Transformamos Ideias em Sites de Impacto
+                Seu Site é a Chave para Dominar o Mercado
               </h2>
               <p className="mt-6 text-3xl text-gray-700">
-                Com dedicação, criatividade e atenção aos detalhes, entregamos
-                sites que destacam a identidade da sua empresa e conectam você
-                ao público certo. Trabalhamos lado a lado com nossos clientes
-                para garantir resultados incríveis.
+                Em um cenário competitivo, sua presença online é seu maior trunfo. Nós
+                criamos sites disruptivos, otimizados para SEO e focados no mercado brasileiro,
+                para que você conquiste o Google e os clientes certos.
               </p>
             </div>
           </div>
         </div>
+        {/* Seção de Imagem e CTA */}
         <div className="flex flex-col items-center bg-transparent sm:ml-0 sm:mt-0 lg:sticky lg:top-4 lg:col-start-2 mr-0 lg:mr-20 lg:row-span-2 lg:row-start-1 lg:mt-10 lg:overflow-hidden">
           <div className="mt-20 flex w-full justify-center">
             <div className="flex h-2/5 w-4/5 flex-col items-center rounded-lg bg-white p-2 text-center shadow-md md:w-3/4 lg:w-2/3 xl:w-1/2">
               <strong className="mb-3 block animate-pulse text-xl font-bold text-primaryBlue md:text-2xl">
-                Hospedagem e Manutenção
+                Transforme Seu Negócio Agora
               </strong>
               <span className="animate-fade-in mb-1 block text-base leading-relaxed text-gray-700">
-                Oferecemos serviços de hospedagem confiáveis e suporte contínuo
-                para que seu site esteja sempre no ar.
+                Hospedagem, manutenção e suporte premium para impulsionar seu site nas buscas.
               </span>
             </div>
           </div>
           <Image
-            alt="Desenvolvimento Web"
+            alt="Site inovador para seu negócio"
             src="/webinho.png"
-            width={330} // Reduzido
-            height={330} // Reduzido
+            width={330}
+            height={330}
             objectFit="cover"
-            className="w-full max-w-xl bg-transparent sm:w-full sm:max-w-lg md:max-w-md lg:mt-4 lg:max-w-[24rem] animate-wiggle-more animate-infinite animate-duration-[2000ms] animate-ease-in-out" // Reduzido
+            className="w-full max-w-xl bg-transparent sm:w-full sm:max-w-lg md:max-w-md lg:mt-4 lg:max-w-[24rem] animate-wiggle-more animate-infinite animate-duration-[2000ms] animate-ease-in-out"
             priority
           />
           <button className="animate-slide-in mt-3 transform rounded-md bg-secondaryBlue px-5 py-2 text-sm font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-successGreen">
-            Saiba Mais
+            Fale Conosco e Inove
           </button>
         </div>
-
+        {/* Processo Cronológico para Converter */}
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="max-w-xl text-xl text-gray-700 lg:max-w-lg">
-              <p>
-                Especializados em criar sites modernos, responsivos e
-                otimizados, ajudamos empresas a estabelecerem uma presença
-                online sólida e atrativa. Nosso foco está em entender suas
-                necessidades e entregar soluções que superem expectativas.
+              <p className="mb-6">
+                Siga nosso método comprovado para transformar sua presença digital. Cada etapa é
+                desenhada para maximizar visibilidade, engajamento e conversões – tudo com foco no
+                mercado brasileiro.
               </p>
-              <ul role="list" className="mt-8 space-y-8 text-gray-600">
+              <ul role="list" className="space-y-8 text-gray-600">
                 <li className="flex gap-x-3">
                   <MdAnalytics
                     aria-hidden="true"
@@ -111,11 +105,10 @@ export default function ContentSection() {
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      Acompanhamento de Resultados. 
-                    </strong>{" "} <br />
-                    Monitoramos e analisamos o desempenho do seu site,
-                    fornecendo relatórios detalhados para otimizar suas
-                    estratégias.
+                      1. Diagnóstico Estratégico.
+                    </strong>{" "}
+                    Analisamos o mercado e identificamos oportunidades para posicionar seu site no
+                    topo do Google.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -125,10 +118,10 @@ export default function ContentSection() {
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      Educação e Capacitação.
-                    </strong>{" "} <br />
-                    Oferecemos treinamentos e materiais educativos para capacitar
-                    você a gerenciar seu próprio site com eficiência.
+                      2. Planejamento Inovador.
+                    </strong>{" "}
+                    Traçamos uma estratégia digital personalizada, alinhando tendências e dados
+                    reais do mercado brasileiro.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -138,10 +131,10 @@ export default function ContentSection() {
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      Inovação e Atualização Contínua.
-                    </strong>{" "} <br />
-                    Mantemos seu site atualizado com as últimas tendências e
-                    tecnologias, garantindo que você esteja sempre à frente.
+                      3. Desenvolvimento Ágil.
+                    </strong>{" "}
+                    Criamos um site responsivo e impactante, pronto para converter visitantes em
+                    clientes – tudo em tempo recorde.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -151,10 +144,10 @@ export default function ContentSection() {
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      Hospedagem e Manutenção.
-                    </strong>{" "} <br />
-                    Oferecemos serviços de hospedagem confiáveis e suporte
-                    contínuo para que seu site esteja sempre no ar.
+                      4. SEO e Performance.
+                    </strong>{" "}
+                    Aplicamos técnicas avançadas de SEO para garantir que seu site domine os
+                    resultados do Google e outros buscadores.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -164,10 +157,10 @@ export default function ContentSection() {
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      Desenvolvimento Personalizado.
-                    </strong>{" "} <br />
-                    Criamos soluções de websites e e-commerce totalmente
-                    customizadas para as necessidades do seu negócio.
+                      5. Integração Total.
+                    </strong>{" "}
+                    Conectamos seu site às melhores ferramentas e redes sociais para ampliar seu
+                    alcance digital.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -177,93 +170,10 @@ export default function ContentSection() {
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      Design Responsivo.
-                    </strong>{" "} <br />
-                    Nossos sites são projetados para se adaptar a qualquer
-                    dispositivo, oferecendo uma ótima experiência em desktop e
-                    dispositivos móveis.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <MdCloudUpload
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-indigo-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Desempenho de Alto Nível.
-                    </strong>{" "} <br />
-                    Sites rápidos e bem otimizados para garantir uma excelente
-                    experiência do usuário e melhores posições nos motores de
-                    busca.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <MdSearch
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-indigo-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Otimização para SEO.
-                    </strong>{" "} <br />
-                    Implementamos técnicas de SEO para melhorar a visibilidade
-                    do seu site nos motores de busca e atrair mais visitantes.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <MdLock
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-indigo-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Segurança Garantida.
-                    </strong>{" "} <br />
-                    Implementamos certificação SSL e outras medidas para
-                    proteger os dados e a confiança dos seus clientes.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <MdAttachFile
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-indigo-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Integração com Ferramentas.
-                    </strong>{" "} <br />
-                    Integramos seu site com ferramentas como Google Analytics,
-                    WhatsApp e sistemas de pagamento, garantindo maior
-                    funcionalidade.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <MdPhone
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-indigo-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Suporte 24/7.
-                    </strong>{" "} <br />
-                    Oferecemos suporte técnico contínuo para garantir que seu
-                    site esteja sempre em funcionamento e respondendo
-                    rapidamente.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <MdWifi
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-indigo-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Conectividade Eficiente.
-                    </strong>{" "} <br />
-                    Garantimos a conectividade do seu site com os principais
-                    serviços e plataformas online, maximizando a experiência do
-                    usuário.
+                      6. Suporte e Crescimento.
+                    </strong>{" "}
+                    Monitoramos seu site 24/7 e ajustamos a estratégia para garantir um crescimento
+                    contínuo e sustentável.
                   </span>
                 </li>
               </ul>

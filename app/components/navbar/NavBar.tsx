@@ -40,10 +40,10 @@ export default function Navegacao() {
   };
 
   return (
-    <div>
+    <div className={`z-100`}>
       <Navbar
         fluid
-        className={`text-slate-950 fixed left-0 right-0 top-0 z-30 transition-all duration-300 ${
+        className={`z-1000 text-slate-950 fixed left-0 right-0 top-0 z-20 transition-all duration-300 ${
           scrolling
             ? "bg-white/80 shadow-lg backdrop-blur-md dark:bg-gray-900/80"
             : "bg-transparent"

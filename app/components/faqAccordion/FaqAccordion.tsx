@@ -6,91 +6,91 @@ const faqItems = [
     id: 1,
     question: "O que é a KiSite?",
     answer:
-      "A KiSite é uma empresa especializada na criação de sites modernos, responsivos e otimizados para ajudar pequenos e médios negócios a crescerem e se destacarem no ambiente digital.",
+      "A KiSite cria sites modernos, responsivos e otimizados para pequenas e médias empresas, fortalecendo sua presença digital.",
   },
   {
     id: 2,
     question: "Quais serviços a KiSite oferece?",
     answer:
-      "Oferecemos criação de sites profissionais, e-commerce personalizado, manutenção contínua, otimização de SEO, consultoria digital e integrações avançadas como WhatsApp e Google Analytics.",
+      "Desenvolvemos sites profissionais, e-commerces customizados, e oferecemos manutenção, SEO e consultoria digital com integrações como WhatsApp e Google Analytics.",
   },
   {
     id: 3,
-    question: "Por que devo investir em um site profissional?",
+    question: "Por que investir em um site profissional?",
     answer:
-      "Ter um site profissional é essencial para garantir visibilidade online, atrair novos clientes e aumentar a credibilidade da sua marca, sendo a base de qualquer estratégia de marketing digital.",
+      "Um site profissional amplia a visibilidade, atrai clientes e reforça a credibilidade da sua marca.",
   },
   {
     id: 4,
-    question: "Quais planos estão disponíveis na KiSite?",
+    question: "Quais planos estão disponíveis?",
     answer:
-      "Disponibilizamos os planos Essencial, Profissional e Sob Medida, com opções que variam de funcionalidades essenciais a soluções avançadas, como automação de marketing e integrações de e-commerce.",
+      "Oferecemos os planos Essencial, Profissional e Sob Medida, com recursos que vão do básico ao avançado, incluindo automação de marketing.",
   },
   {
     id: 5,
-    question: "Como funciona a criação de e-commerce personalizado?",
+    question: "Como funciona a criação de e-commerce?",
     answer:
-      "Desenvolvemos lojas virtuais completas, integrando sistemas de pagamento, automação de marketing e funcionalidades específicas para o seu negócio, com foco em vendas online.",
+      "Desenvolvemos lojas virtuais completas com sistemas de pagamento e funcionalidades específicas para impulsionar suas vendas online.",
   },
   {
     id: 6,
-    question: "O que está incluído nos planos de manutenção contínua?",
+    question: "O que inclui a manutenção contínua?",
     answer:
-      "Os planos incluem atualizações regulares, suporte técnico, ajustes de conteúdo, melhorias de desempenho e segurança para manter seu site funcional e atualizado.",
+      "Incluímos atualizações, suporte técnico e melhorias de desempenho para manter seu site sempre atualizado e seguro.",
   },
   {
     id: 7,
-    question: "Como a KiSite otimiza sites para SEO?",
+    question: "Como a KiSite otimiza para SEO?",
     answer:
-      "Realizamos análises estratégicas e aplicamos práticas de SEO como otimização de palavras-chave, criação de conteúdo relevante e melhorias técnicas para posicionar o site nos primeiros resultados do Google.",
+      "Aplicamos estratégias robustas de SEO com análise de palavras-chave, conteúdo relevante e ajustes técnicos para garantir alta visibilidade no Google.",
   },
   {
     id: 8,
-    question: "Quais são as tecnologias utilizadas pela KiSite?",
+    question: "Quais tecnologias a KiSite utiliza?",
     answer:
-      "Utilizamos tecnologias líderes como Next.js, Tailwind CSS e WordPress, integrações com APIs de pagamento e envio como Mercado Pago e Correios, garantindo sites rápidos, escaláveis, modernos e com excelente desempenho técnico.",
+      "Utilizamos Next.js, Tailwind CSS, WordPress e integrações com APIs para criar sites rápidos, escaláveis e de alto desempenho.",
   },
   {
     id: 9,
-    question: "Quanto tempo leva para um site ficar pronto?",
+    question: "Qual o prazo de entrega?",
     answer:
-      "O prazo varia conforme o plano escolhido. Sites simples são entregues em até 5 dias úteis, enquanto projetos mais complexos podem levar até 30 dias úteis.",
+      "Sites simples são entregues em até 5 dias úteis; projetos complexos podem levar até 30 dias úteis.",
   },
   {
     id: 10,
-    question: "É possível integrar WhatsApp e outras ferramentas ao site?",
+    question: "É possível integrar WhatsApp e outras ferramentas?",
     answer:
-      "Sim, integramos ferramentas como WhatsApp, Google Analytics e automação de marketing, ajudando a melhorar a comunicação com seus clientes e a análise de resultados.",
+      "Sim, integramos WhatsApp, Google Analytics e automação de marketing para otimizar comunicação e resultados.",
   },
   {
     id: 11,
-    question: "Quantas revisões posso solicitar no projeto?",
+    question: "Quantas revisões posso solicitar?",
     answer:
-      "Não estabelecemos um limite fixo para revisões, pois nosso objetivo é garantir sua total satisfação. Desde o início, realizamos reuniões e um briefing detalhado para alinhar expectativas e minimizar ajustes. Entretanto, todas as alterações serão realizadas com base no escopo inicial acordado, seguindo práticas de revisão de requisitos que garantem precisão e alinhamento com os objetivos do projeto. Caso haja mudanças significativas no briefing, avaliaremos a necessidade de ajustes contratuais, conforme regulamentações vigentes.",
+      "Oferecemos revisões ilimitadas dentro do escopo inicial para garantir total alinhamento com o projeto.",
   },
   {
     id: 12,
-    question: "Qual é a garantia de segurança ao contratar um site com a UpSites?",
+    question: "Como é garantida a segurança jurídica?",
     answer:
-      "A segurança jurídica é prioridade. Antes do desenvolvimento, assinamos um contrato digital que detalha prazos, custos, direitos e responsabilidades, conforme práticas recomendadas para projetos de investimento. Esse documento assegura transparência e validade jurídica, garantindo conformidade com normas técnicas e legislativas aplicáveis. Além disso, seguimos padrões de revisão de design para garantir que todas as etapas estejam documentadas e alinhadas às suas necessidades.",
+      "Firmamos um contrato digital detalhado que assegura transparência e conformidade com as normas técnicas e legais.",
   },
   {
     id: 13,
-    question: "Qual será o canal de contato durante o processo de criação do site?",
+    question: "Qual o canal de contato durante o projeto?",
     answer:
-      "Você terá um gerente de projetos dedicado, que atuará como ponto único de contato via WhatsApp, e-mail e telefone. Esse profissional acompanhará todas as etapas, desde a customização até o lançamento, garantindo comunicação ágil e resolução rápida de dúvidas. Utilizamos ferramentas de gestão como checklists e relatórios de progresso para manter o controle total do projeto.",
+      "Você contará com um gerente de projetos dedicado, disponível via WhatsApp, e-mail e telefone para acompanhar todas as etapas.",
   },
   {
     id: 14,
-    question: "Quais são as etapas do processo de criação de sites?",
+    question: "Quais são as etapas da criação de sites?",
     answer:
-      "Site Expresso:\n\n• Escolha do modelo: Selecione um layout pré-aprovado.\n• Envio de conteúdo: Compartilhe textos, imagens e informações.\n• Customização: Personalizamos o site com base no seu briefing.\n• Entrega em 5 dias úteis: Publicação rápida com garantia de qualidade.\n\nSite Sob Medida:\n\n• Briefing detalhado: Coletamos requisitos e metas do projeto.\n• Criação do layout: Desenvolvemos um design exclusivo.\n• Desenvolvimento: Codificação funcional e responsiva.\n• Testes rigorosos: Verificamos desempenho e usabilidade.\n• Checklist final: Revisão de todos os detalhes conforme especificado.\n• Lançamento: Publicação do site com suporte pós-entrega.",
+      "Para sites expressos: escolha do modelo, envio de conteúdo, customização e entrega em 5 dias úteis. Para sites sob medida: briefing, design exclusivo, desenvolvimento, testes e lançamento com suporte.",
   },
   {
     id: 15,
-    question: "A KiSite oferece suporte para pequenos empreendedores?",
+    question: "A KiSite atende pequenos empreendedores?",
     answer:
-      "Sim! Nosso foco é atender pequenas e médias empresas, oferecendo soluções acessíveis e personalizadas para ajudá-las a crescer e se destacar online.",
+      "Sim, oferecemos soluções acessíveis e personalizadas para que pequenos e médios negócios se destaquem online.",
   },
 ];
 
@@ -102,10 +102,10 @@ export default function FaqAccordion() {
           id="faq-title"
           className="text-4xl font-bold bg-gradient-to-r from-primaryBlue to-secondaryBlue bg-clip-text text-transparent mt-4 lg:mt-14"
         >
-          Perguntas Frequentes – Criação de Sites Profissionais
+          Perguntas Frequentes – Sites Profissionais
         </h2>
         <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Descubra as principais dúvidas sobre nossos serviços, planos e como podemos ajudar sua empresa a crescer no ambiente digital.
+          Tire suas dúvidas sobre nossos serviços, planos e como impulsionar sua presença digital.
         </p>
       </div>
 
@@ -113,9 +113,9 @@ export default function FaqAccordion() {
         {faqItems.map((item) => (
           <details
             key={item.id}
-            className="group bg-white rounded-xl shadow-md transition-transform duration-500 ease-in-out transform scale-100 hover:scale-105 open:scale-105"
+            className="group bg-white rounded-xl shadow-md transition-transform duration-500 ease-in-out transform hover:scale-105 open:scale-105"
           >
-            <summary className="flex cursor-pointer items-center justify-between rounded-xl p-6 marker:content-none hover:bg-gray-50/50">
+            <summary className="flex cursor-pointer items-center justify-between rounded-xl p-6 hover:bg-gray-50/50">
               <h3 className="text-lg font-medium text-primaryBlue group-hover:text-secondaryBlue transition-colors duration-300">
                 {item.question}
               </h3>
@@ -133,9 +133,7 @@ export default function FaqAccordion() {
       </div>
 
       <div className="text-center mt-12">
-        <p className="text-gray-600 mb-4">
-          Não encontrou o que procurava?
-        </p>
+        <p className="text-gray-600 mb-4">Não encontrou o que procurava?</p>
         <a
           href="#contato"
           className="inline-block bg-gradient-to-r from-successGreen to-successGreen text-white px-8 py-3 rounded-md font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"

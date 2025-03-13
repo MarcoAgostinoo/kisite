@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -18,7 +18,7 @@ export default function Accordion() {
               type="button"
               className={`flex w-full items-center justify-between rounded-t-xl border border-b-0 border-gray-200 p-5 font-medium text-gray-500 focus:ring-4 focus:ring-gray-200 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-800 rtl:text-right hover:bg-[${item.bgColor}] gap-3 dark:hover:bg-[#3a6ea5]`}
               onClick={() => toggleAccordion(index)}
-              aria-expanded={activeIndex === index}
+              aria-expanded={activeIndex === index ? "true" : "false"}
               aria-controls={`accordion-open-body-${index + 1}`}
             >
               <span className="flex items-center">

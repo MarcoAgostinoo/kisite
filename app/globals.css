@@ -191,3 +191,173 @@ details {
 .transition-height {
   transition: height 0.3s ease-in-out;
 }
+
+/* Estilos para o smooth scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+[data-scroll-container] {
+  min-height: 100vh;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  padding-top: 64px;
+  /* Mesma altura do navbar */
+}
+
+[data-scroll-section] {
+  position: relative;
+  will-change: transform;
+}
+
+.has-scroll-direction-horizontal [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100vh;
+}
+
+/* Animação de reveal para elementos */
+[data-scroll] {
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+[data-scroll].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilos para Locomotive Scroll */
+.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Animações de reveal */
+[data-scroll] {
+  opacity: 0;
+  -webkit-transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
+  will-change: transform, opacity;
+}
+
+[data-scroll].is-revealed {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* Otimização de Performance */
+.smooth-scroll {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* Suporte para Smooth Scroll Nativo */
+@supports (scroll-behavior: smooth) {
+  html:not(.has-scroll-smooth) {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Suavização de Fontes */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Media Query para Dispositivos com Tela Pequena */
+@media (max-width: 768px) {
+  [data-scroll] {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* Animações Personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classes de Utilidade para Animações */
+.scroll-animation {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.scroll-delay-100 {
+  animation-delay: 100ms;
+}
+
+.scroll-delay-200 {
+  animation-delay: 200ms;
+}
+
+.scroll-delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Estilos para Navbar fixa */
+.navbar-scrolled {
+  @apply translate-y-0 opacity-100;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Ajuste para o conteúdo principal */
+main {
+  padding-top: 80px;
+  /* Ajuste conforme a altura do seu navbar */
+}
+
+/* Estilos para Navbar */
+.navbar-fixed {
+  @apply fixed left-0 right-0 top-0 z-50 w-full;
+  height: 64px;
+  /* Ajuste conforme necessário */
+}
+
+/* Desative o scroll suave apenas para o navbar */
+.navbar-fixed {
+  position: fixed !important;
+  transform: none !important;
+}
+
+/* Estilos para Navbar */
+.navbar-transition {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+/* Animação para quando o navbar ficar fixo */
+.navbar-fixed {
+  animation: slideDown 0.5s ease-out forwards;
+}

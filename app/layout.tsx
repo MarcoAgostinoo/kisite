@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeModeScript } from "flowbite-react"; // Import the component
+import { ThemeModeScript } from "flowbite-react";
 import "./globals.css";
 import NavBar from "./components/navbar/NavBar";
 
@@ -21,7 +21,6 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={inter.className}>
-
         <NavBar />
         <ThemeModeScript />
         {children}

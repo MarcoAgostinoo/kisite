@@ -5,14 +5,14 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative z-10 overflow-hidden bg-gray-50 pb-16 pt-[100px] dark:bg-gray-900 md:pb-[120px] md:pt-[80px] xl:pb-[160px] xl:pt-[120px] 2xl:pb-[200px] 2xl:pt-[150px]"
+        className="relative z-10 -mt-20 bg-gray-50"
       >
         <div className="container mx-auto px-4">
           <main className="flex flex-wrap justify-center">
-            <div className="w-full px-4">
-              <div className="mx-auto max-w-screen-lg animate-fade-right text-center animate-ease-in-out">
+            <div className="w-full px-4 mt-4">
+              <div className="mx-auto mt-16 max-w-screen-lg animate-fade-right text-center animate-ease-in-out">
                 {/* Description */}
-                <p className="mt-6 mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                <p className="mb-6 mt-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   <strong>
                     81% das pequenas empresas brasileiras perdem vendas
                   </strong>{" "}
@@ -30,8 +30,7 @@ const Hero = () => {
                     Apareça no Google e Converta Visitantes em Vendas
                   </span>
                 </h1>
-                <div className="flex w-full justify-center">
-                </div>
+                <div className="flex w-full justify-center"></div>
 
                 {/* CTAs */}
                 <div className="mt-10 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
@@ -66,8 +65,13 @@ const Hero = () => {
                     <strong>127+ PMEs Brasileiras</strong> já transformaram seus
                     resultados
                   </p>
-                </div>  
+                </div>
               </div>
+            </div>
+            <div className="left-0 mt-20 md:mt-0 mb-8 w-full text-center text-3xl lg:mb-0 lg:text-5xl">
+              <p className="-mt-8 pt-4 font-bold text-primaryBlue lg:mt-14">
+                Os 4 Pilares do Fracasso Digital
+              </p>
             </div>
           </main>
         </div>
@@ -210,7 +214,9 @@ const Hero = () => {
             </defs>
           </svg>
         </div>
-        <div className="absolute bottom-0 left-0 z-[-1] opacity-30 lg:opacity-100">
+        <div className="absolute  bottom-[20px] left-0 z-[-1] opacity-30 lg:opacity-100">
+        <div className="lg:translate-y-[90px] translate-y-[86px]"> 
+
           <svg
             width="364"
             height="201"
@@ -313,10 +319,6 @@ const Hero = () => {
             </defs>
           </svg>
         </div>
-        <div className="absolute left-0 mb-8 w-full text-center text-3xl lg:mb-0 lg:text-5xl">
-          <p className="-mt-8 pt-4 font-bold text-primaryBlue lg:mt-14">
-            Os 4 Pilares do Fracasso Digital
-          </p>
         </div>
       </section>
     </>
