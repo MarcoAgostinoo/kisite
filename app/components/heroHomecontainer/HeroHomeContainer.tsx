@@ -6,7 +6,7 @@ const caracteristicas = [
     items: [
       {
         icon: "🚀",
-        text: "Sua vitrine online em 5 dias: site profissional, responsivo e otimizado para o Google por apenas R$897.",
+        text: "A vitrine online da sua empresa em 5 dias: site profissional, responsivo e otimizado para o Google por apenas R$897.",
       },
       {
         icon: "📱",

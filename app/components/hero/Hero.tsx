@@ -67,7 +67,7 @@ const Hero = () => {
             </div>
             <div className="left-0 mt-20 md:mt-0 mb-8 w-full text-center text-3xl lg:mb-0 lg:text-5xl">
               <p className="-mt-8 pt-4 font-bold text-primaryBlue lg:mt-14">
-                Os 3 Erros Fatais na Construção de Site.
+              Soluções Digitais para Impulsionar Seu Negócio
               </p>
             </div>
           </main>

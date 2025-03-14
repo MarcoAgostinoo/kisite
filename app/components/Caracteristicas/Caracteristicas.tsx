@@ -10,39 +10,39 @@ import {
 export default function ComoFunciona() {
   const steps = [
     {
-      name: "1. Diagnóstico Gratuito & Solução Ideal",
+      name: "1. Diagnóstico & Avaliação",
       description:
-        "Entenda suas necessidades e escolha a melhor solução: Site Essencial, Agente de Atendimento com IA ou a combinação perfeita para o seu negócio.",
+        "Analisamos as necessidades do seu negócio com uma avaliação gratuita e detalhada.",
       icon: GlobeAltIcon,
     },
     {
-      name: "2. Site Essencial em 5 Dias",
+      name: "2. Planejamento & Proposta",
       description:
-        "Tenha sua presença online profissional e otimizada para o Google em tempo recorde: design moderno e responsivo.",
+        "Desenvolvemos uma proposta personalizada, definindo estratégias e soluções ideais.",
       icon: CalendarIcon,
     },
     {
-      name: "3. Agente de Atendimento com IA",
+      name: "3. Desenvolvimento do Site",
       description:
-        "Seu assistente virtual 24/7: atenda clientes, responda dúvidas e qualifique leads automaticamente no WhatsApp, liberando sua equipe.",
+        "Criamos seu site com design responsivo, moderno e otimizado para buscadores.",
       icon: MagnifyingGlassCircleIcon,
     },
     {
-      name: "4. Integração Site + Agente IA",
+      name: "4. Integração Opcional de Agente de IA",
       description:
-        "Unifique suas ferramentas e maximize resultados: atendimento inteligente no site e WhatsApp, captando e convertendo mais clientes.",
+        "Caso seja necessário, implementamos um agente virtual para atendimento e suporte, conforme a demanda do cliente.",
       icon: ServerIcon,
     },
     {
-      name: "5. Estratégias de Marketing Opcionais",
+      name: "5. Funcionalidades Extras (Opcional)",
       description:
-        "Amplie seu alcance com campanhas de marketing digital e tráfego pago, personalizadas para atrair mais clientes qualificados.",
+        "Recursos adicionais, como campanhas de marketing digital ou tráfego pago, podem ser incorporados conforme a necessidade do seu negócio.",
       icon: CurrencyDollarIcon,
     },
     {
-      name: "6. Acompanhamento & Otimização Contínua",
+      name: "6. Implementação & Lançamento",
       description:
-        "Monitore seus resultados e otimize sua estratégia com nossos especialistas para um crescimento constante e sustentável.",
+        "Finalizamos o projeto com testes rigorosos e entregamos sua solução pronta para uso.",
       icon: ChatBubbleBottomCenterTextIcon,
     },
   ];
@@ -54,7 +54,7 @@ export default function ComoFunciona() {
           COMO FUNCIONA NOSSA PARCERIA?
         </h2>
         <p className="mx-auto max-w-2xl text-center text-lg font-medium text-gray-200">
-          Simplificamos o processo para você ter Site Profissional + Agente de Atendimento com I.A trabalhando juntos pelo seu sucesso!
+          Do diagnóstico à implementação, cada etapa foi planejada para atender suas necessidades.
         </p>
       </div>
       <div className="grid grid-cols-1 gap-8 p-4 lg:grid-cols-3 lg:p-14">
