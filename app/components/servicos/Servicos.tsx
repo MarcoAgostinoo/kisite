@@ -9,39 +9,39 @@ import {
 
 const features = [
   {
-    name: "Site Essencial",
+    name: "WebSite Turbinado",
     description:
-      "Aumente sua presença digital com um site Next.js configurado de forma completa. Lançamento em até 5 dias úteis, com design moderno, performance otimizada e indexação impecável para buscadores.",
+      "Cansado de sites que não vendem? Seu novo site Next.js é lançado em 5 dias, com design que impressiona e tecnologia que converte visitantes em clientes.",
     icon: ComputerDesktopIcon,
   },
   {
-    name: "SEO Otimizado",
+    name: "SEO Imbatível",
     description:
-      "Maximize sua visibilidade online com técnicas avançadas de SEO. Estruturamos seu site para alcançar posições de destaque no Google e demais mecanismos de buscas, atraindo clientes qualificados para o seu negócio.",
+      "Esqueça a briga por cliques! Posicione-se no topo do Google e conquiste os clientes certos, sem depender de anúncios caros e concorridos.",
     icon: MagnifyingGlassIcon,
   },
   {
-    name: "Chatbot Automatizado",
+    name: "Agente de IA",
     description:
-      "Transforme o atendimento ao cliente com chatbots inteligentes. Nossa solução em IA integra-se perfeitamente ao seu site, oferecendo respostas imediatas e personalizadas 24/7.",
+      "Deixe a inteligência artificial trabalhar por você! Atendimento 24/7 no WhatsApp, respostas personalizadas e vendas no piloto automático.",
     icon: ChatBubbleLeftIcon,
   },
   {
-    name: "Integração Completa",
+    name: "Conexão Total",
     description:
-      "Conecte seu site com WhatsApp, redes sociais, formulários inteligentes e e-mails profissionais. Potencialize a comunicação e a geração de leads com integrações feitas sob medida.",
+      "WhatsApp, redes sociais, e-mail... Integre tudo e centralize sua comunicação! Simplifique a vida do seu cliente e nunca perca uma oportunidade.",
     icon: EnvelopeIcon,
   },
   {
-    name: "Hospedagem & Suporte",
+    name: "Zero Preocupação",
     description:
-      "Tenha tranquilidade com hospedagem segura e suporte técnico 24/7 por apenas R$ 74,75 mensais. Nossa equipe garante manutenção contínua e atualizações para performance máxima.",
+      "Hospedagem, suporte, manutenção... Deixe a parte técnica conosco e foque no que importa: fazer seu negócio bombar! Tudo isso por apenas R$ 74,75/mês.",
     icon: CurrencyDollarIcon,
   },
   {
-    name: "Funcionalidades Avançadas",
+    name: "Poder Ilimitado",
     description:
-      "Foque no crescimento do seu negócio enquanto cuidamos de toda a complexidade técnica. Oferecemos integrações avançadas e configurações completas do seu site profissional, assegurando desempenho, segurança e SEO de alta performance.",
+      "Escalabilidade, personalização, integrações... Seu site cresce com você! A tecnologia Next.js oferece flexibilidade total para acompanhar o ritmo do seu negócio.",
     icon: Cog6ToothIcon,
   },
 ];
@@ -53,14 +53,13 @@ const Video = () => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-base font-semibold leading-7 text-indigo-600">
-              Transforme sua Presença Digital!
+              Chegou a Hora de Destravar Seu Potencial!
             </h2>
             <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Sites Essenciais e Soluções Avançadas
+              WebSite Essencial + Agente de IA: A Dupla Imbatível
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Oferecemos o pacote Site Essencial, com lançamento em até 5 dias úteis,
-              hospedagem, manutenção e funcionalidades personalizadas para impulsionar sua marca.
+              Conquiste mais clientes, economize tempo e dinheiro, e veja seu negócio decolar com nossas soluções digitais de alto impacto.
             </p>
           </div>
 
@@ -92,7 +91,7 @@ const Video = () => {
 
           <div className="mt-16 flex justify-center">
             <button className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-successGreen">
-              Fale com um Consultor
+              Quero Deixar Meu Negócio no Piloto Automático
               <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path
                   fillRule="evenodd"

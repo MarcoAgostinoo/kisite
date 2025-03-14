@@ -2,53 +2,53 @@ import Caracteristicas from "../Caracteristicas/Caracteristicas";
 
 const caracteristicas = [
   {
-    title: "1. Investimentos sem Retorno: Riscos de Soluções Amadoras",
+    title: "1. Site Essencial: A Base Digital Para Seu Crescimento",
     items: [
-      {
-        icon: "💸",
-        text: "Soluções gratuitas oferecem baixa performance e comprometem a credibilidade da marca.",
-      },
-      {
-        icon: "🤝",
-        text: "Abordagens amadoras prejudicam a imagem e afastam clientes desde o primeiro contato.",
-      },
-      {
-        icon: "📉",
-        text: "Investimentos de baixo custo resultam em oportunidades perdidas e faturamento comprometido.",
-      },
-    ],
-  },
-  {
-    title: "2. SEO Subestimado: Perda de Visibilidade",
-    items: [
-      {
-        icon: "🔍",
-        text: "Sem uma estratégia SEO robusta, seu site permanece oculto nos principais buscadores.",
-      },
-      {
-        icon: "⚙️",
-        text: "Estratégias básicas não competem com soluções avançadas de SEO.",
-      },
       {
         icon: "🚀",
-        text: "Negligenciar o SEO é abrir mão de posicionamento estratégico e crescimento sustentável.",
+        text: "Sua vitrine online em 5 dias: site profissional, responsivo e otimizado para o Google por apenas R$897.",
+      },
+      {
+        icon: "📱",
+        text: "Alcance clientes no celular: 85% dos brasileiros pesquisam no Google pelo smartphone (IBGE 2025).",
+      },
+      {
+        icon: "🏆",
+        text: "SEO otimizado: apareça nas buscas do Google e atraia clientes qualificados sem pagar por anúncios.",
       },
     ],
   },
   {
-    title: "3. Experiência Mobile Deficiente: Impacto na Conversão",
+    title: "2. Chatbot Inteligente: Atendimento 24/7 Que Vende Mais",
     items: [
       {
-        icon: "📱",
-        text: "Com 60% dos acessos oriundos de dispositivos móveis, sites não otimizados perdem clientes potenciais.",
+        icon: "🤖",
+        text: "Seu vendedor virtual: atenda clientes 24/7 no WhatsApp, tire dúvidas e gere leads automaticamente.",
       },
       {
-        icon: "💔",
-        text: "Layouts incompatíveis prejudicam a usabilidade e a experiência do usuário.",
+        icon: "💸",
+        text: "Economize até 6x: um chatbot inteligente custa menos que um vendedor CLT e não tem encargos.",
       },
       {
-        icon: "📉",
-        text: "Design mobile-first é essencial para manter visitantes e aumentar as conversões.",
+        icon: "📈",
+        text: "Aumente suas vendas: chatbots geram 40% mais leads qualificados que o atendimento humano tradicional.",
+      },
+    ],
+  },
+  {
+    title: "3. Integração Estratégica: Site + Chatbot = Mais Vendas",
+    items: [
+      {
+        icon: "🤝",
+        text: "Conecte seu site ao chatbot: turbine a geração de leads e ofereça suporte instantâneo aos visitantes.",
+      },
+      {
+        icon: "🎯",
+        text: "Personalização: adapte o chatbot ao seu negócio e responda às dúvidas mais frequentes dos seus clientes.",
+      },
+      {
+        icon: "📊",
+        text: "Resultados comprovados: empresas que integram site e chatbot aumentam em 30% a taxa de conversão.",
       },
     ],
   },

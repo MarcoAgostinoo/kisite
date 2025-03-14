@@ -10,39 +10,39 @@ import {
 export default function ComoFunciona() {
   const steps = [
     {
-      name: "Diagnóstico & Consultoria",
+      name: "1. Diagnóstico Gratuito & Solução Ideal",
       description:
-        "Iniciamos com uma consultoria gratuita para identificar as necessidades do seu negócio e definir a estratégia ideal – seja com o Site Essencial ou com soluções avançadas.",
+        "Entenda suas necessidades e escolha a melhor solução: Site Essencial, Agente de Atendimento com IA ou a combinação perfeita para o seu negócio.",
       icon: GlobeAltIcon,
     },
     {
-      name: "Desenvolvimento do Site Essencial",
+      name: "2. Site Essencial em 5 Dias",
       description:
-        "Criamos seu site institucional ou landing page com design responsivo, SEO otimizado e personalização total, garantindo lançamento em até 5 dias úteis.",
+        "Tenha sua presença online profissional e otimizada para o Google em tempo recorde: design moderno e responsivo.",
       icon: CalendarIcon,
     },
     {
-      name: "Integração de Funcionalidades Avançadas",
+      name: "3. Agente de Atendimento com IA",
       description:
-        "Adicionamos integrações essenciais, como WhatsApp, redes sociais, e-mail corporativo e formulários inteligentes, para ampliar sua presença digital.",
+        "Seu assistente virtual 24/7: atenda clientes, responda dúvidas e qualifique leads automaticamente no WhatsApp, liberando sua equipe.",
       icon: MagnifyingGlassCircleIcon,
     },
     {
-      name: "Hospedagem & Suporte Contínuo",
+      name: "4. Integração Site + Agente IA",
       description:
-        "Oferecemos hospedagem segura, manutenção e suporte técnico 24/7, assegurando a performance máxima do seu site.",
+        "Unifique suas ferramentas e maximize resultados: atendimento inteligente no site e WhatsApp, captando e convertendo mais clientes.",
       icon: ServerIcon,
     },
     {
-      name: "Marketing Digital & Tráfego Pago",
+      name: "5. Estratégias de Marketing Opcionais",
       description:
-        "Impulsione seu negócio com campanhas segmentadas e estratégias de marketing digital que aumentam a visibilidade e geram resultados reais.",
+        "Amplie seu alcance com campanhas de marketing digital e tráfego pago, personalizadas para atrair mais clientes qualificados.",
       icon: CurrencyDollarIcon,
     },
     {
-      name: "Acompanhamento & Otimização",
+      name: "6. Acompanhamento & Otimização Contínua",
       description:
-        "Monitoramos os resultados do seu site para promover melhorias contínuas, ajustes estratégicos e crescimento sustentável.",
+        "Monitore seus resultados e otimize sua estratégia com nossos especialistas para um crescimento constante e sustentável.",
       icon: ChatBubbleBottomCenterTextIcon,
     },
   ];
@@ -54,7 +54,7 @@ export default function ComoFunciona() {
           COMO FUNCIONA NOSSA PARCERIA?
         </h2>
         <p className="mx-auto max-w-2xl text-center text-lg font-medium text-gray-200">
-          Conheça as etapas do nosso processo completo para transformar sua presença digital.
+          Simplificamos o processo para você ter Site Profissional + Agente de Atendimento com I.A trabalhando juntos pelo seu sucesso!
         </p>
       </div>
       <div className="grid grid-cols-1 gap-8 p-4 lg:grid-cols-3 lg:p-14">
@@ -81,7 +81,7 @@ export default function ComoFunciona() {
         >
           <span className="relative z-10 flex items-center gap-2">
             <ChatBubbleBottomCenterTextIcon className="h-6 w-6 animate-pulse" />
-            Agende sua Consultoria Gratuita
+            Quero Site, Agente de IA ou os 2 - Consultoria Gratuita!
           </span>
           <div className="absolute inset-0 -z-10 rounded-lg bg-gradient-to-r from-blue-600 to-blue-800 opacity-0 blur transition-opacity duration-300 group-hover:opacity-10"></div>
         </button>

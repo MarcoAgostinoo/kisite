@@ -2,38 +2,37 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "flowbite-react";
 
-
 export default function HeroSecondary() {
   return (
     <div className="flex flex-col items-center justify-around overflow-hidden bg-gradient-to-r from-primaryBlue via-secondaryBlue to-primaryBlue p-4 md:p-10 text-center lg:h-[660px] lg:flex-row">
-      <div
-        id="esquerda"
-        className="mr-0 lg:mr-20 flex w-full flex-col items-center justify-center p-4 md:p-10 text-center lg:w-3/5"
-      >
-        {/* Título Principal */}
-        <h2 className="mb-8 text-center text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg">
-          Conquiste seu espaço online com a KiSite
-        </h2>
+<div
+  id="esquerda"
+  className="mr-0 lg:mr-20 flex w-full flex-col items-center justify-center p-4 md:p-10 text-center lg:w-3/5"
+>
+  {/* Título Principal */}
+  <h2 className="mb-8 text-center text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg">
+    Seu Negócio no Celular dos Clientes – Agora ou Nunca!
+  </h2>
 
-        {/* Subtítulo */}
-        <p className="mb-8 text-center text-lg md:text-xl font-medium text-white drop-shadow-md">
-          Transforme sua presença digital com soluções inovadoras e eficazes
-        </p>
+  {/* Subtítulo */}
+  <p className="mb-8 text-center text-lg md:text-xl font-medium text-white drop-shadow-md">
+    Aproveite o Boom das Compras pelo Smartphone no Brasil
+  </p>
 
-        {/* Descrição */}
-        <p className="mx-auto mb-10 max-w-3xl text-center text-sm md:text-base font-normal text-white drop-shadow-sm">
-          Na KiSite, ajudamos pequenos e médios negócios a crescerem e se destacarem online com designs modernos e experiências únicas. Oferecemos serviços personalizados para a criação de sites, e-commerce, SEO, automação de marketing e muito mais.
-        </p>
+  {/* Descrição */}
+  <p className="mx-auto mb-10 max-w-3xl text-center text-sm md:text-base font-normal text-white drop-shadow-sm">
+    Em 2024, 72% das compras online no Brasil foram feitas por celulares, e a maioria dos sites ainda não está pronta para essa realidade. Na KiSite, criamos sites otimizados para mobile que capturam clientes onde eles estão: nas telas dos smartphones. Seu negócio online, rápido, funcional e pronto para vender mais.
+  </p>
 
-        {/* Botão de Chamada para Ação */}
-        <div className="flex justify-center">
-          <Link href="/contato">
-            <Button className="rounded-md bg-secondaryBlue px-6 py-3 font-bold text-white shadow-md transition-all duration-300 hover:bg-successGreen">
-              Entre em Contato
-            </Button>
-          </Link>
-        </div>
-      </div>
+  {/* Botão de Chamada para Ação */}
+  <div className="flex justify-center">
+    <Link href="/contato">
+      <Button className="rounded-md bg-secondaryBlue px-6 py-3 font-bold text-white shadow-md transition-all duration-300 hover:bg-successGreen">
+        Quero Meu Site Mobile Já
+      </Button>
+    </Link>
+  </div>
+</div>
 
       <div id="direita" className="ml-[5%] hidden w-[35%] sm:block">
         <div className="flex space-x-5">

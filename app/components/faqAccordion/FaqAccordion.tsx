@@ -6,97 +6,100 @@ const faqItems = [
     id: 1,
     question: "O que é a KiSite?",
     answer:
-      "A KiSite cria sites modernos, responsivos e otimizados para pequenas e médias empresas, fortalecendo sua presença digital.",
+      "A KiSite é especialista em transformar a presença digital de pequenas e médias empresas, oferecendo sites profissionais entregues em apenas 5 dias e chatbots de atendimento 24/7.",
   },
   {
     id: 2,
-    question: "Quais serviços a KiSite oferece?",
+    question: "Quais soluções a KiSite oferece?",
     answer:
-      "Desenvolvemos sites profissionais, e-commerces customizados, e oferecemos manutenção, SEO e consultoria digital com integrações como WhatsApp e Google Analytics.",
+      "Oferecemos criação rápida de sites modernos, integração com WhatsApp, chatbots inteligentes com IA, SEO avançado e estratégias de marketing digital para potencializar suas vendas.",
   },
   {
     id: 3,
-    question: "Por que investir em um site profissional?",
+    question: "Como a KiSite ajuda minha empresa a não perder clientes?",
     answer:
-      "Um site profissional amplia a visibilidade, atrai clientes e reforça a credibilidade da sua marca.",
+      "Com um site otimizado e atendimento automatizado, sua empresa permanece acessível 24/7, atraindo e convertendo clientes de forma contínua.",
   },
   {
     id: 4,
-    question: "Quais planos estão disponíveis?",
+    question: "Qual o prazo de entrega do site?",
     answer:
-      "Oferecemos os planos Essencial, Profissional e Sob Medida, com recursos que vão do básico ao avançado, incluindo automação de marketing.",
+      "Sites essenciais são entregues em apenas 5 dias úteis, garantindo uma presença digital rápida e eficaz.",
   },
   {
     id: 5,
-    question: "Como funciona a criação de e-commerce?",
+    question: "O que está incluso no plano Site Essencial?",
     answer:
-      "Desenvolvemos lojas virtuais completas com sistemas de pagamento e funcionalidades específicas para impulsionar suas vendas online.",
+      "O plano inclui design responsivo, SEO otimizado, integração com WhatsApp, contas de e-mail profissional e suporte técnico, tudo pensado para impulsionar seu negócio.",
   },
   {
     id: 6,
-    question: "O que inclui a manutenção contínua?",
+    question: "Como funciona o atendimento automatizado com IA?",
     answer:
-      "Incluímos atualizações, suporte técnico e melhorias de desempenho para manter seu site sempre atualizado e seguro.",
+      "Implementamos um chatbot inteligente que responde dúvidas, qualifica leads e gera vendas automaticamente, complementando sua equipe e reduzindo custos.",
   },
   {
     id: 7,
-    question: "Como a KiSite otimiza para SEO?",
+    question: "Posso integrar o site com outras ferramentas digitais?",
     answer:
-      "Aplicamos estratégias robustas de SEO com análise de palavras-chave, conteúdo relevante e ajustes técnicos para garantir alta visibilidade no Google.",
+      "Sim, integramos seu site com WhatsApp, Google Analytics e outras plataformas para centralizar sua comunicação e otimizar resultados.",
   },
   {
     id: 8,
-    question: "Quais tecnologias a KiSite utiliza?",
+    question: "Como a KiSite otimiza meu site para o Google?",
     answer:
-      "Utilizamos Next.js, Tailwind CSS, WordPress e integrações com APIs para criar sites rápidos, escaláveis e de alto desempenho.",
+      "Aplicamos estratégias robustas de SEO – desde análise de palavras-chave até ajustes técnicos – para posicionar seu site no topo das buscas e atrair clientes qualificados.",
   },
   {
     id: 9,
-    question: "Qual o prazo de entrega?",
+    question: "Quais tecnologias são utilizadas na criação dos sites?",
     answer:
-      "Sites simples são entregues em até 5 dias úteis; projetos complexos podem levar até 30 dias úteis.",
+      "Utilizamos tecnologias modernas como Next.js e Tailwind CSS, garantindo sites rápidos, seguros e escaláveis.",
   },
   {
     id: 10,
-    question: "É possível integrar WhatsApp e outras ferramentas?",
+    question: "Existe suporte pós-lançamento?",
     answer:
-      "Sim, integramos WhatsApp, Google Analytics e automação de marketing para otimizar comunicação e resultados.",
+      "Sim, oferecemos manutenção contínua, atualizações e suporte técnico para manter seu site sempre atualizado e seguro.",
   },
   {
     id: 11,
-    question: "Quantas revisões posso solicitar?",
+    question: "O serviço de chatbot substitui o atendimento humano?",
     answer:
-      "Oferecemos revisões ilimitadas dentro do escopo inicial para garantir total alinhamento com o projeto.",
+      "Não, o chatbot complementa sua equipe ao oferecer atendimento 24/7, liberando tempo para que sua equipe se concentre em tarefas estratégicas.",
   },
   {
     id: 12,
-    question: "Como é garantida a segurança jurídica?",
+    question: "A KiSite atende empresas de todos os segmentos?",
     answer:
-      "Firmamos um contrato digital detalhado que assegura transparência e conformidade com as normas técnicas e legais.",
+      "Sim, nossas soluções são personalizadas para pequenas e médias empresas de diversos setores que buscam inovação e eficiência digital.",
   },
   {
     id: 13,
-    question: "Qual o canal de contato durante o projeto?",
+    question: "Como posso acompanhar os resultados do meu site?",
     answer:
-      "Você contará com um gerente de projetos dedicado, disponível via WhatsApp, e-mail e telefone para acompanhar todas as etapas.",
+      "Fornecemos análises de desempenho, relatórios de SEO e métricas de conversão para que você monitore o crescimento e o impacto digital do seu negócio.",
   },
   {
     id: 14,
-    question: "Quais são as etapas da criação de sites?",
+    question: "Quais os benefícios de integrar site e chatbot?",
     answer:
-      "Para sites expressos: escolha do modelo, envio de conteúdo, customização e entrega em 5 dias úteis. Para sites sob medida: briefing, design exclusivo, desenvolvimento, testes e lançamento com suporte.",
+      "A integração potencializa a geração de leads, melhora a experiência do usuário e aumenta a taxa de conversão, resultando em mais vendas para sua empresa.",
   },
   {
     id: 15,
-    question: "A KiSite atende pequenos empreendedores?",
+    question: "Como posso iniciar meu projeto com a KiSite?",
     answer:
-      "Sim, oferecemos soluções acessíveis e personalizadas para que pequenos e médios negócios se destaquem online.",
+      "Entre em contato conosco via WhatsApp, e-mail ou formulário de contato para uma consultoria gratuita e descubra a melhor solução para o seu negócio.",
   },
 ];
 
 export default function FaqAccordion() {
   return (
-    <section className="max-w-7xl mx-auto p-6 space-y-8" aria-labelledby="faq-title">
+    <section
+      className="max-w-7xl mx-auto p-6 space-y-8"
+      aria-labelledby="faq-title"
+    >
       <div className="text-center">
         <h2
           id="faq-title"
@@ -105,7 +108,8 @@ export default function FaqAccordion() {
           Perguntas Frequentes – Sites Profissionais
         </h2>
         <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Tire suas dúvidas sobre nossos serviços, planos e como impulsionar sua presença digital.
+          Tire suas dúvidas sobre nossos serviços, planos e como impulsionar sua
+          presença digital.
         </p>
       </div>
 

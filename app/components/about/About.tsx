@@ -50,19 +50,35 @@ export default function About() {
     return () => observer.disconnect();
   }, []);
 
-  // Atualizando estatísticas com dados do mercado brasileiro
+  // Estatísticas atualizadas com explicações
   const stats = [
-    { name: "R$ Bilhões de Faturamento do E-commerce em 2025 ", value: 234 },
-    { name: "Milhões Consumidores Online em 2025 ", value: 94 },
-    { name: "Milhões de Pedidos Online em 2025 ", value: 435 },
-    { name: "Milhões de Usuários de Internet no Brasil", value: 150 },
+    {
+      name: "R$ Bilhões de Faturamento do E-commerce em 2025",
+      value: 234,
+      explanation: "Um site profissional muda o jogo.",
+    },
+    {
+      name: "Milhões de Consumidores Online em 2025",
+      value: 94,
+      explanation: "Esteja onde seus clientes estão.",
+    },
+    {
+      name: "Milhões de Pedidos Online em 2025",
+      value: 435,
+      explanation: "Automatize vendas com um chatbot.",
+    },
+    {
+      name: "Milhões de Usuários de Internet no Brasil",
+      value: 150,
+      explanation: "Chegue ao topo do Google.",
+    },
   ];
 
   const links = [
-    { name: "Trafego Pago", href: "#" },
-    { name: "Trafego Orgânico", href: "#" },
-    { name: "Segurança Digital", href: "#" },
-    { name: "Desenvolvimento Web", href: "#" },
+    { name: "Site Profissional em 5 Dias", href: "#" },
+    { name: "Chatbot Inteligente 24/7", href: "#" },
+    { name: "SEO para o Topo do Google", href: "#" },
+    { name: "Integração com WhatsApp", href: "#" },
   ];
 
   return (
@@ -81,10 +97,10 @@ export default function About() {
         {/* Título */}
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-5xl font-bold tracking-tight text-primaryBlue text-shadow-lg sm:text-7xl">
-            Oportunidades no Mercado Digital Brasileiro
+            Seu Negócio Está Perdendo Clientes? Aproveite o Boom Digital Agora!
           </h2>
           <p className="mt-8 text-lg font-medium text-deepBlack text-shadow-md">
-            Descubra como o mercado de e-commerce e desenvolvimento web no Brasil está em plena expansão.
+            O e-commerce no Brasil vai faturar R$234 bilhões em 2025, e 94 milhões de consumidores estão online agora. Sem um site profissional e um chatbot, seu negócio está ficando para trás.
           </p>
         </div>
 
@@ -100,7 +116,7 @@ export default function About() {
                 href={link.href}
                 className="transition-colors duration-300 hover:text-successGreen"
               >
-                {link.name} <span aria-hidden="true">&rarr;</span>
+                {link.name} <span aria-hidden="true">→</span>
               </a>
             ))}
           </div>
@@ -114,9 +130,20 @@ export default function About() {
               <dd className="text-4xl font-bold tracking-tight text-primaryBlue">
                 <AnimatedStat value={stat.value} isVisible={isVisible} />
               </dd>
+              <p className="text-sm text-gray-600">{stat.explanation}</p>
             </div>
           ))}
         </dl>
+
+        {/* Call-to-Action */}
+        <div className="mt-12 text-center">
+          <a
+            href="#"
+            className="inline-block rounded-md bg-secondaryBlue px-8 py-4 text-lg font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-successGreen"
+          >
+            Não Espere Mais – Transforme Seu Negócio Hoje!
+          </a>
+        </div>
       </div>
     </div>
   );

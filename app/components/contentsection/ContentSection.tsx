@@ -50,15 +50,13 @@ export default function ContentSection() {
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
               <p className="text-xl font-semibold text-indigo-600">
-                Revolução Digital no Brasil
+                Seu Negócio no Digital
               </p>
               <h2 className="mt-6 text-pretty text-4xl font-semibold tracking-tight text-gray-900 lg:text-7xl">
-                Seu Site é a Chave para Dominar o Mercado
+                Pare de Perder Clientes e Comece a Vender Mais
               </h2>
               <p className="mt-6 text-3xl text-gray-700">
-                Em um cenário competitivo, sua presença online é seu maior trunfo. Nós
-                criamos sites disruptivos, otimizados para SEO e focados no mercado brasileiro,
-                para que você conquiste o Google e os clientes certos.
+                76% das pequenas empresas brasileiras estão deixando dinheiro na mesa por não terem um site profissional ou atendimento ágil. Nós mudamos isso com um site que vende em 5 dias e um chatbot que trabalha 24/7.
               </p>
             </div>
           </div>
@@ -68,10 +66,10 @@ export default function ContentSection() {
           <div className="mt-20 flex w-full justify-center">
             <div className="flex h-2/5 w-4/5 flex-col items-center rounded-lg bg-white p-2 text-center shadow-md md:w-3/4 lg:w-2/3 xl:w-1/2">
               <strong className="mb-3 block animate-pulse text-xl font-bold text-primaryBlue md:text-2xl">
-                Transforme Seu Negócio Agora
+                Seu Negócio no Ar em 5 Dias!
               </strong>
               <span className="animate-fade-in mb-1 block text-base leading-relaxed text-gray-700">
-                Hospedagem, manutenção e suporte premium para impulsionar seu site nas buscas.
+                Site por R$897 ou chatbot por R$447 – tudo com hospedagem, suporte e resultados reais.
               </span>
             </div>
           </div>
@@ -85,7 +83,7 @@ export default function ContentSection() {
             priority
           />
           <button className="animate-slide-in mt-3 transform rounded-md bg-secondaryBlue px-5 py-2 text-sm font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-successGreen">
-            Fale Conosco e Inove
+            Destrave Seu Potencial Agora
           </button>
         </div>
         {/* Processo Cronológico para Converter */}
@@ -93,9 +91,7 @@ export default function ContentSection() {
           <div className="lg:pr-4">
             <div className="max-w-xl text-xl text-gray-700 lg:max-w-lg">
               <p className="mb-6">
-                Siga nosso método comprovado para transformar sua presença digital. Cada etapa é
-                desenhada para maximizar visibilidade, engajamento e conversões – tudo com foco no
-                mercado brasileiro.
+                Nosso processo é simples, rápido e feito para colocar seu negócio no mapa digital. Veja como transformamos sua presença online em uma máquina de vendas.
               </p>
               <ul role="list" className="space-y-8 text-gray-600">
                 <li className="flex gap-x-3">
@@ -105,10 +101,9 @@ export default function ContentSection() {
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      1. Diagnóstico Estratégico.
+                      1. Raio-X do Seu Negócio.
                     </strong>{" "}
-                    Analisamos o mercado e identificamos oportunidades para posicionar seu site no
-                    topo do Google.
+                    Mapeamos o que seu público quer e como te destacar no mercado brasileiro.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -118,10 +113,9 @@ export default function ContentSection() {
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      2. Planejamento Inovador.
+                      2. Plano de Ataque Digital.
                     </strong>{" "}
-                    Traçamos uma estratégia digital personalizada, alinhando tendências e dados
-                    reais do mercado brasileiro.
+                    Desenhamos uma estratégia matadora para seu site brilhar e vender mais.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -131,10 +125,9 @@ export default function ContentSection() {
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      3. Desenvolvimento Ágil.
+                      3. Site Pronto pra Vender.
                     </strong>{" "}
-                    Criamos um site responsivo e impactante, pronto para converter visitantes em
-                    clientes – tudo em tempo recorde.
+                    Em 5 dias, entregamos um site que impressiona no celular e no Google.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -144,10 +137,9 @@ export default function ContentSection() {
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      4. SEO e Performance.
+                      4. Topo do Google.
                     </strong>{" "}
-                    Aplicamos técnicas avançadas de SEO para garantir que seu site domine os
-                    resultados do Google e outros buscadores.
+                    Colocamos você na frente com SEO profissional, para que dependa menos de anúncios caros.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -157,10 +149,9 @@ export default function ContentSection() {
                   />
                   <span>
                     <strong className="font-semibold text-gray-900">
-                      5. Integração Total.
+                      5. Tudo Conectado.
                     </strong>{" "}
-                    Conectamos seu site às melhores ferramentas e redes sociais para ampliar seu
-                    alcance digital.
+                    Seu site + WhatsApp + chatbot = mais leads e vendas no piloto automático.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -169,14 +160,16 @@ export default function ContentSection() {
                     className="mt-1 size-5 flex-none text-indigo-600"
                   />
                   <span>
-                    <strong className="font-semibold text-gray-900">
-                      6. Suporte e Crescimento.
+                    <strong id="precos" className="font-semibold text-gray-900">
+                      6. Lucro Sem Parar.
                     </strong>{" "}
-                    Monitoramos seu site 24/7 e ajustamos a estratégia para garantir um crescimento
-                    contínuo e sustentável.
+                    Acompanhamos e otimizamos tudo para seu negócio decolar de vez.
                   </span>
                 </li>
               </ul>
+              <p className="mt-8 text-xl text-gray-700">
+                Invista uma vez e lucre sempre: site por R$897, chatbot por R$447 ou a dupla imbatível por um preço especial. Mais de 120 empresas já escolheram crescer com a gente!
+              </p>
             </div>
           </div>
         </div>

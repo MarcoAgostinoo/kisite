@@ -14,20 +14,18 @@ const Hero = () => {
                 {/* Description */}
                 <p className="mb-6 mt-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   <strong>
-                    81% das pequenas empresas brasileiras perdem vendas
+                    76% das pequenas empresas perdem clientes diariamente
                   </strong>{" "}
-                  por não terem um site profissional (Fonte: Sebrae 2025). Na{" "}
-                  <strong>KiSite</strong>, desenvolvemos sua presença digital
-                  completa em até 5 dias úteis, com garantia de aparecer nas
-                  primeiras posições do Google para seus principais serviços.
+                  por não terem presença digital profissional ou atendimento eficiente (DataSebrae 2025). A{" "}
+                  <strong>KiSite</strong> entrega seu site em apenas 5 dias úteis por <strong>R$897</strong> ou automatiza seu atendimento com IA por <strong>R$447</strong> - invista uma vez e lucre sempre.
                 </p>
                 {/* Main Title */}
                 <h1 className="text-center text-4xl font-extrabold leading-tight text-primaryBlue dark:text-white sm:text-5xl md:text-5xl lg:text-5xl">
                   <span>
-                    Sites Profissionais que Geram Clientes para Sua Empresa
+                    Transforme seu Negócio com Site Profissional
                   </span>
                   <span className="mt-2 block">
-                    Apareça no Google e Converta Visitantes em Vendas
+                    Atraia mais Clientes e Automatize seu Atendimento 24/7 com I.A
                   </span>
                 </h1>
                 <div className="flex w-full justify-center"></div>
@@ -36,20 +34,20 @@ const Hero = () => {
                 <div className="mt-10 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <div className="text-center">
                     <Link
-                      href="https://wa.me/5511919072390?text=Olá! Gostaria de uma consultoria gratuita"
+                      href="https://wa.me/5511919072390?text=Olá! Gostaria de conhecer o plano Site Essencial por R$897"
                       className="hover:bg-primary/80 inline-flex items-center rounded-md bg-secondaryBlue px-8 py-4 text-lg font-semibold text-white transition-colors duration-300"
                     >
-                      Quero Aparecer no Google - Fale com Especialista Grátis!
+                      Site Profissional por R$897 - Fale com Especialista
                     </Link>
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                      ⏳ Vagas Limitadas - Atendemos apenas 10 clientes por mês
+                      ⏳ Promoção por tempo limitado - Economia de R$300!
                     </p>
                   </div>
                   <Link
-                    href="/#portifolio"
+                    href="/#planos"
                     className="rounded-md bg-gray-900 px-8 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:bg-gray-700 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
-                    Ver Cases de Sucesso
+                    Ver Todos os Planos
                   </Link>
                 </div>
 
@@ -62,21 +60,20 @@ const Hero = () => {
                     <div className="h-10 w-10 rounded-full bg-successGreen"></div>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    <strong>127+ PMEs Brasileiras</strong> já transformaram seus
-                    resultados
+                    <strong>+120 Empresas</strong> economizaram com nossas soluções digitais
                   </p>
                 </div>
               </div>
             </div>
             <div className="left-0 mt-20 md:mt-0 mb-8 w-full text-center text-3xl lg:mb-0 lg:text-5xl">
               <p className="-mt-8 pt-4 font-bold text-primaryBlue lg:mt-14">
-                Os 4 Pilares do Fracasso Digital
+                Os 3 Erros Fatais na Construção de Site.
               </p>
             </div>
           </main>
         </div>
-
-        <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
+        {/* Os SVGs de decoração permanecem inalterados */}
+                <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
             width="450"
             height="556"
