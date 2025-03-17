@@ -58,17 +58,15 @@ export default function Navegacao() {
               alt="Flowbite Logo"
               width={scrolling ? 70 : 100}
               height={scrolling ? 70 : 100}
-              className={`mr-3 object-contain lg:ml-40 transition-all duration-300`}
-              style={{ height: "auto" }}
-              priority={true}
-              loading="eager"
+              className="mr-3 object-contain lg:ml-40 transition-all duration-300"
+              priority
+              quality={75}
+              style={{
+                height: "auto",
+                transform: "translateZ(0)",
+                willChange: "transform"
+              }}
             />
-            <motion.span
-              className="self-center whitespace-nowrap text-2xl font-semibold text-shadow-lg group-hover:text-blue-500"
-              whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-            >
-              Kisite
-            </motion.span>
           </div>
         </Navbar.Brand>
         <div className="flex items-center gap-4 md:order-2">
