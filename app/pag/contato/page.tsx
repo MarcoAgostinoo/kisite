@@ -8,7 +8,7 @@ const endpointUrl = `${apiUrl}/send`;
 interface FormData {
   name: string;
   company: string;
-  email: string;git add .
+  email: string;
   phone: string;
   message: string;
 }
