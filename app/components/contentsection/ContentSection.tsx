@@ -56,19 +56,22 @@ export default function ContentSection() {
                 Pare de Perder Clientes e Comece a Vender Mais
               </h2>
               <p className="mt-6 text-3xl text-gray-700">
-                76% das pequenas empresas brasileiras estão deixando dinheiro na mesa por não terem um site profissional ou atendimento ágil. Nós mudamos isso com um site que vende em 7 dias e um Agente de I.A que trabalha 24/7.
+                76% das pequenas empresas brasileiras estão deixando dinheiro na
+                mesa por não terem um site profissional ou atendimento ágil. Nós
+                mudamos isso com um site que vende em 7 dias e um Agente de I.A
+                que trabalha 24/7.
               </p>
             </div>
           </div>
         </div>
         {/* Seção de Imagem e CTA */}
-        <div className="flex flex-col items-center bg-transparent sm:ml-0 sm:mt-0 lg:sticky lg:top-8 lg:col-start-2 mr-0 lg:mr-20 lg:row-span-2 lg:row-start-1 lg:mt-10 lg:overflow-hidden">
+        <div className="mr-0 flex flex-col items-center bg-transparent sm:ml-0 sm:mt-0 lg:sticky lg:top-8 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mr-20 lg:mt-10 lg:overflow-hidden">
           <div className="mt-20 flex w-full justify-center">
             <div className="flex h-2/5 w-4/5 flex-col items-center rounded-lg bg-white p-2 text-center shadow-md md:w-3/4 lg:w-2/3 xl:w-1/2">
               <strong className="mb-3 block animate-pulse text-xl font-bold text-primaryBlue md:text-2xl">
                 Seu Negócio Online.
               </strong>
-              <span className="animate-fade-in mb-1 block text-base leading-relaxed text-gray-700">
+              <span className="mb-1 block animate-fade-in text-base leading-relaxed text-gray-700">
                 Site para aparecer no google, agente de I.A ou os dois.
               </span>
             </div>
@@ -79,7 +82,7 @@ export default function ContentSection() {
             width={300}
             height={300}
             objectFit="cover"
-            className="w-full max-w-xl bg-transparent sm:w-full sm:max-w-lg md:max-w-md lg:mt-4 lg:max-w-[24rem] animate-wiggle-more animate-infinite animate-duration-[2000ms] animate-ease-in-out"
+            className="w-full max-w-xl animate-wiggle-more bg-transparent animate-duration-[2000ms] animate-infinite animate-ease-in-out sm:w-full sm:max-w-lg md:max-w-md lg:mt-4 lg:max-w-sm"
             priority
           />
           <a
@@ -96,7 +99,9 @@ export default function ContentSection() {
           <div className="lg:pr-4">
             <div className="max-w-xl text-xl text-gray-700 lg:max-w-lg">
               <p className="mb-6">
-                Nosso processo é simples, rápido e feito para colocar seu negócio no mapa digital. Veja como transformamos sua presença online em uma máquina de vendas.
+                Nosso processo é simples, rápido e feito para colocar seu
+                negócio no mapa digital. Veja como transformamos sua presença
+                online em uma máquina de vendas.
               </p>
               <ul role="list" className="space-y-8 text-gray-600">
                 <li className="flex gap-x-3">
@@ -108,7 +113,8 @@ export default function ContentSection() {
                     <strong className="font-semibold text-gray-900">
                       1. Raio-X do Seu Negócio.
                     </strong>{" "}
-                    Mapeamos o que seu público quer e como te destacar no mercado brasileiro.
+                    Mapeamos o que seu público quer e como te destacar no
+                    mercado brasileiro.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -120,7 +126,8 @@ export default function ContentSection() {
                     <strong className="font-semibold text-gray-900">
                       2. Plano de Ataque Digital.
                     </strong>{" "}
-                    Desenhamos uma estratégia matadora para seu site brilhar e vender mais.
+                    Desenhamos uma estratégia matadora para seu site brilhar e
+                    vender mais.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -132,7 +139,8 @@ export default function ContentSection() {
                     <strong className="font-semibold text-gray-900">
                       3. Site Pronto pra Vender.
                     </strong>{" "}
-                    Em 7 dias, entregamos um site que impressiona no celular e no Google.
+                    Em 7 dias, entregamos um site que impressiona no celular e
+                    no Google.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -144,7 +152,8 @@ export default function ContentSection() {
                     <strong className="font-semibold text-gray-900">
                       4. Topo do Google.
                     </strong>{" "}
-                    Colocamos você na frente com SEO profissional, para que dependa menos de anúncios caros.
+                    Colocamos você na frente com SEO profissional, para que
+                    dependa menos de anúncios caros.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -156,7 +165,8 @@ export default function ContentSection() {
                     <strong className="font-semibold text-gray-900">
                       5. Tudo Conectado.
                     </strong>{" "}
-                    Seu site + WhatsApp + Agente de I.A = mais leads e vendas no piloto automático.
+                    Seu site + WhatsApp + Agente de I.A = mais leads e vendas no
+                    piloto automático.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -168,12 +178,15 @@ export default function ContentSection() {
                     <strong id="precos" className="font-semibold text-gray-900">
                       6. Lucro Sem Parar.
                     </strong>{" "}
-                    Acompanhamos e otimizamos tudo para seu negócio decolar de vez.
+                    Acompanhamos e otimizamos tudo para seu negócio decolar de
+                    vez.
                   </span>
                 </li>
               </ul>
               <p className="mt-8 text-xl text-gray-700">
-                Invista uma vez e lucre sempre: site por R$897, Agente de I.A por R$447 ou a dupla imbatível por um preço especial. Mais de 120 empresas já escolheram crescer com a gente!
+                Invista uma vez e lucre sempre: site por R$897, Agente de I.A
+                por R$447 ou a dupla imbatível por um preço especial. Mais de
+                120 empresas já escolheram crescer com a gente!
               </p>
             </div>
           </div>

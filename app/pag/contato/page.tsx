@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import LeadConversion from "../../components/LeadConversion";
 
 const apiUrl = "https://backendnodemailer.vercel.app";
 const endpointUrl = `${apiUrl}/send`;
@@ -9,7 +8,7 @@ const endpointUrl = `${apiUrl}/send`;
 interface FormData {
   name: string;
   company: string;
-  email: string;
+  email: string;git add .
   phone: string;
   message: string;
 }
@@ -225,9 +224,7 @@ export default function Contato() {
               </div>
             )}
           </div>
-          <div className="lg:w-2/5 mt-12 lg:mt-0">
-            <LeadConversion />
-          </div>
+
         </div>
       </div>
     </div>
