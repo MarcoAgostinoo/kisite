@@ -92,7 +92,7 @@ const PlanCard: React.FC<{ plan: Plan }> = ({ plan }) => (
     </div>
     <div className="mt-auto space-y-3">
       <Link
-        href={`https://wa.me/5511919072390?text=Olá! Gostaria de contratar o plano ${plan.name}`}
+        href={`https://wa.me/5511919072390?text=Olá! Gostaria de contratar o plano ${plan.name} por ${plan.price}`}
         target="_blank"
         rel="noreferrer"
         className="w-full bg-primaryBlue text-white font-bold py-3 px-6 rounded-lg hover:bg-secondaryBlue transition-colors duration-300 flex items-center justify-center mt-6 mb-6"
@@ -100,7 +100,9 @@ const PlanCard: React.FC<{ plan: Plan }> = ({ plan }) => (
         Comprar
       </Link>
       <Link
-        href={`/planos/${plan.name.toLowerCase().replace(/\s+/g, '-')}`}
+        href={`https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre o plano ${plan.name}`}
+        target="_blank"
+        rel="noreferrer"
         className="w-full border-2 border-primaryBlue text-primaryBlue font-bold py-3 px-6 rounded-lg hover:bg-primaryBlue hover:text-white transition-colors duration-300 flex items-center justify-center"
       >
         Saiba Mais

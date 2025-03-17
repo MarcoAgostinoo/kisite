@@ -11,6 +11,25 @@
   box-sizing: border-box;
 }
 
+/* Rolagem Suave Nativa com Velocidade Personalizada (Mais Lenta) */
+@supports (scroll-behavior: smooth) {
+  html:not(.has-scroll-smooth) {
+    scroll-behavior: smooth;
+    transition: scroll-position 2.5s cubic-bezier(0.86, 0, 0.07, 1); /* Aumenta a duração para 2.5 segundos */
+  }
+}
+
+/* Efeito de "Parallax" Básico */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-section > * {
+  transform: translate3d(0, calc(var(--scroll-y) * 0.2), 0);
+  transition: transform 0.5s ease-out; /* Aumenta a duração para 0.5 segundos */
+}
+
 /* Definindo uma fonte padrão e estilos de linha */
 body {
   font-family: 'Arial', sans-serif;
@@ -36,7 +55,6 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-
 }
 
 /* Estilos para cabeçalhos */
@@ -71,20 +89,6 @@ h6 {
 .justify-between {
   justify-content: space-between;
 }
-
-/* Estilo para botões */
-/* button {
-  cursor: pointer;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-} */
-
-/* button:hover {
-  background-color: #45a049;
-} */
 
 /* Estilo para input e textarea */
 input,
@@ -192,98 +196,13 @@ details {
   transition: height 0.3s ease-in-out;
 }
 
-/* Estilos para o smooth scroll */
-html.has-scroll-smooth {
-  overflow: hidden;
-}
-
-.has-scroll-smooth body {
-  overflow: hidden;
-}
-
-[data-scroll-container] {
-  min-height: 100vh;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  padding-top: 64px;
-  /* Mesma altura do navbar */
-}
-
-[data-scroll-section] {
-  position: relative;
-  will-change: transform;
-}
-
-.has-scroll-direction-horizontal [data-scroll-section] {
-  display: inline-block;
-  vertical-align: top;
-  white-space: nowrap;
-  height: 100vh;
-}
-
-/* Animação de reveal para elementos */
-[data-scroll] {
-  opacity: 0;
-  transition: all 1s ease-out;
-}
-
-[data-scroll].is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Estilos para Locomotive Scroll */
-.has-scroll-dragging {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Animações de reveal */
-[data-scroll] {
-  opacity: 0;
-  -webkit-transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-  -webkit-transform: translateY(50px);
-  transform: translateY(50px);
-  will-change: transform, opacity;
-}
-
-[data-scroll].is-revealed {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
-/* Otimização de Performance */
-.smooth-scroll {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-}
-
-/* Suporte para Smooth Scroll Nativo */
-@supports (scroll-behavior: smooth) {
-  html:not(.has-scroll-smooth) {
-    scroll-behavior: smooth;
-  }
-}
-
 /* Suavização de Fontes */
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Media Query para Dispositivos com Tela Pequena */
-@media (max-width: 768px) {
-  [data-scroll] {
-    transform: none;
-    opacity: 1;
-  }
-}
+
 
 /* Animações Personalizadas */
 @keyframes fadeInUp {
@@ -298,22 +217,7 @@ body {
   }
 }
 
-/* Classes de Utilidade para Animações */
-.scroll-animation {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
 
-.scroll-delay-100 {
-  animation-delay: 100ms;
-}
-
-.scroll-delay-200 {
-  animation-delay: 200ms;
-}
-
-.scroll-delay-300 {
-  animation-delay: 300ms;
-}
 
 /* Estilos para Navbar fixa */
 .navbar-scrolled {

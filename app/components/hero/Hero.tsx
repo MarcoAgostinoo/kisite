@@ -44,7 +44,7 @@ const Hero = () => {
                     </p>
                   </div>
                   <Link
-                    href="/#planos"
+                    href="/#precos"
                     className="rounded-md bg-gray-900 px-8 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:bg-gray-700 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
                     Ver Todos os Planos

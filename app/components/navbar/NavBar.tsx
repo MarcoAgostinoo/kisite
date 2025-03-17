@@ -60,6 +60,8 @@ export default function Navegacao() {
               height={scrolling ? 70 : 100}
               className={`mr-3 object-contain lg:ml-40 transition-all duration-300`}
               style={{ height: "auto" }}
+              priority={true}
+              loading="eager"
             />
             <motion.span
               className="self-center whitespace-nowrap text-2xl font-semibold text-shadow-lg group-hover:text-blue-500"
@@ -171,7 +173,9 @@ export default function Navegacao() {
           </motion.div>
         </Navbar.Collapse>
         <Link
-          href="/signup"
+          href="https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre os serviços da Kisite"
+          target="_blank"
+          rel="noopener noreferrer"
           className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-md bg-successGreen px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
         >
           <motion.span

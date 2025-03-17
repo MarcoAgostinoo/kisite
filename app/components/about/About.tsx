@@ -75,10 +75,22 @@ export default function About() {
   ];
 
   const links = [
-    { name: "Site Profissional em 5 Dias", href: "#" },
-    { name: "Chatbot Inteligente 24/7", href: "#" },
-    { name: "SEO para o Topo do Google", href: "#" },
-    { name: "Integração com WhatsApp", href: "#" },
+    { 
+      name: "Site Profissional em 5 Dias", 
+      href: "https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre o site profissional em 5 dias" 
+    },
+    { 
+      name: "Chatbot Inteligente 24/7", 
+      href: "https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre o chatbot inteligente" 
+    },
+    { 
+      name: "SEO para o Topo do Google", 
+      href: "https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre SEO" 
+    },
+    { 
+      name: "Integração com WhatsApp", 
+      href: "https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre a integração com WhatsApp" 
+    },
   ];
 
   return (
@@ -138,7 +150,9 @@ export default function About() {
         {/* Call-to-Action */}
         <div className="mt-12 text-center">
           <a
-            href="#"
+            href="https://wa.me/5511919072390?text=Olá! Gostaria de transformar meu negócio digitalmente"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block rounded-md bg-secondaryBlue px-8 py-4 text-lg font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-successGreen"
           >
             Não Espere Mais – Transforme Seu Negócio Hoje!

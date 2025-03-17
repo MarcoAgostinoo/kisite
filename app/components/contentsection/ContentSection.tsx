@@ -62,29 +62,34 @@ export default function ContentSection() {
           </div>
         </div>
         {/* Seção de Imagem e CTA */}
-        <div className="flex flex-col items-center bg-transparent sm:ml-0 sm:mt-0 lg:sticky lg:top-4 lg:col-start-2 mr-0 lg:mr-20 lg:row-span-2 lg:row-start-1 lg:mt-10 lg:overflow-hidden">
+        <div className="flex flex-col items-center bg-transparent sm:ml-0 sm:mt-0 lg:sticky lg:top-8 lg:col-start-2 mr-0 lg:mr-20 lg:row-span-2 lg:row-start-1 lg:mt-10 lg:overflow-hidden">
           <div className="mt-20 flex w-full justify-center">
             <div className="flex h-2/5 w-4/5 flex-col items-center rounded-lg bg-white p-2 text-center shadow-md md:w-3/4 lg:w-2/3 xl:w-1/2">
               <strong className="mb-3 block animate-pulse text-xl font-bold text-primaryBlue md:text-2xl">
-                Seu Negócio no Ar em 5 Dias!
+                Seu Negócio Online.
               </strong>
               <span className="animate-fade-in mb-1 block text-base leading-relaxed text-gray-700">
-                Site por R$897 ou chatbot por R$447 – tudo com hospedagem, suporte e resultados reais.
+                Site para aparecer no google, agente de I.A ou os dois.
               </span>
             </div>
           </div>
           <Image
             alt="Site inovador para seu negócio"
             src="/webinho.png"
-            width={330}
-            height={330}
+            width={300}
+            height={300}
             objectFit="cover"
             className="w-full max-w-xl bg-transparent sm:w-full sm:max-w-lg md:max-w-md lg:mt-4 lg:max-w-[24rem] animate-wiggle-more animate-infinite animate-duration-[2000ms] animate-ease-in-out"
             priority
           />
-          <button className="animate-slide-in mt-3 transform rounded-md bg-secondaryBlue px-5 py-2 text-sm font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-successGreen">
+          <a
+            href="https://wa.me/5511919072390?text=Olá! Gostaria de saber como destravar o potencial do meu negócio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="animate-slide-in mt-3 transform rounded-md bg-secondaryBlue px-5 py-2 text-sm font-bold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:bg-successGreen"
+          >
             Destrave Seu Potencial Agora
-          </button>
+          </a>
         </div>
         {/* Processo Cronológico para Converter */}
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">

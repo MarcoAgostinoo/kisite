@@ -139,7 +139,9 @@ export default function FaqAccordion() {
       <div className="text-center mt-12">
         <p className="text-gray-600 mb-4">Não encontrou o que procurava?</p>
         <a
-          href="#contato"
+          href="https://wa.me/5511919072390?text=Olá! Tenho algumas dúvidas sobre os serviços da KiSite"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block bg-gradient-to-r from-successGreen to-successGreen text-white px-8 py-3 rounded-md font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
         >
           Fale Conosco

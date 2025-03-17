@@ -90,7 +90,12 @@ const Video = () => {
           </div>
 
           <div className="mt-16 flex justify-center">
-            <button className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-successGreen">
+            <a
+              href="https://wa.me/5511919072390?text=Olá! Gostaria de automatizar meu negócio com site e IA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-successGreen"
+            >
               Quero Deixar Meu Negócio no Piloto Automático
               <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path
@@ -99,7 +104,7 @@ const Video = () => {
                   clipRule="evenodd"
                 />
               </svg>
-            </button>
+            </a>
           </div>
         </div>
 

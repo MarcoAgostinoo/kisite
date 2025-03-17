@@ -26,11 +26,14 @@ export default function HeroSecondary() {
 
   {/* Botão de Chamada para Ação */}
   <div className="flex justify-center">
-    <Link href="/contato">
-      <Button className="rounded-md bg-secondaryBlue px-6 py-3 font-bold text-white shadow-md transition-all duration-300 hover:bg-successGreen">
-        Quero Meu Site Mobile Já
-      </Button>
-    </Link>
+    <a
+      href="https://wa.me/5511919072390?text=Olá! Gostaria de criar meu site mobile otimizado"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="rounded-md bg-secondaryBlue px-6 py-3 font-bold text-white shadow-md transition-all duration-300 hover:bg-successGreen"
+    >
+      Quero Meu Site Mobile Já
+    </a>
   </div>
 </div>
 

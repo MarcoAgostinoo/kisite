@@ -76,7 +76,10 @@ export default function ComoFunciona() {
         ))}
       </div>
       <div className="mt-12 flex justify-center">
-        <button
+        <a
+          href="https://wa.me/5511919072390?text=Olá! Gostaria de uma consultoria gratuita sobre Site e/ou Agente de IA"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group relative animate-slide-in transform rounded-lg bg-gradient-to-r from-secondaryBlue to-primaryBlue px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:from-primaryBlue hover:to-successGreen"
         >
           <span className="relative z-10 flex items-center gap-2">
@@ -84,7 +87,7 @@ export default function ComoFunciona() {
             Quero Site, Agente de IA ou os 2 - Consultoria Gratuita!
           </span>
           <div className="absolute inset-0 -z-10 rounded-lg bg-gradient-to-r from-blue-600 to-blue-800 opacity-0 blur transition-opacity duration-300 group-hover:opacity-10"></div>
-        </button>
+        </a>
       </div>
     </div>
   );
