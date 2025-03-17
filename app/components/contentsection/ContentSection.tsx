@@ -56,7 +56,7 @@ export default function ContentSection() {
                 Pare de Perder Clientes e Comece a Vender Mais
               </h2>
               <p className="mt-6 text-3xl text-gray-700">
-                76% das pequenas empresas brasileiras estão deixando dinheiro na mesa por não terem um site profissional ou atendimento ágil. Nós mudamos isso com um site que vende em 5 dias e um chatbot que trabalha 24/7.
+                76% das pequenas empresas brasileiras estão deixando dinheiro na mesa por não terem um site profissional ou atendimento ágil. Nós mudamos isso com um site que vende em 7 dias e um Agente de I.A que trabalha 24/7.
               </p>
             </div>
           </div>
@@ -132,7 +132,7 @@ export default function ContentSection() {
                     <strong className="font-semibold text-gray-900">
                       3. Site Pronto pra Vender.
                     </strong>{" "}
-                    Em 5 dias, entregamos um site que impressiona no celular e no Google.
+                    Em 7 dias, entregamos um site que impressiona no celular e no Google.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -156,7 +156,7 @@ export default function ContentSection() {
                     <strong className="font-semibold text-gray-900">
                       5. Tudo Conectado.
                     </strong>{" "}
-                    Seu site + WhatsApp + chatbot = mais leads e vendas no piloto automático.
+                    Seu site + WhatsApp + Agente de I.A = mais leads e vendas no piloto automático.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -173,7 +173,7 @@ export default function ContentSection() {
                 </li>
               </ul>
               <p className="mt-8 text-xl text-gray-700">
-                Invista uma vez e lucre sempre: site por R$897, chatbot por R$447 ou a dupla imbatível por um preço especial. Mais de 120 empresas já escolheram crescer com a gente!
+                Invista uma vez e lucre sempre: site por R$897, Agente de I.A por R$447 ou a dupla imbatível por um preço especial. Mais de 120 empresas já escolheram crescer com a gente!
               </p>
             </div>
           </div>

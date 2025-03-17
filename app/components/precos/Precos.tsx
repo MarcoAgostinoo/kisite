@@ -20,7 +20,7 @@ const plans: Plan[] = [
     description: "Site institucional ou landing page otimizado para SEO. Apareça no Google.",
     features: [
       "Site 100% profissional",
-      "Lançamento em 5 dias úteis",
+      "Lançamento em 7 dias úteis",
       "Design responsivo",
       "Integração com WhatsApp",
       "3 contas de e-mail profissional",
@@ -36,12 +36,12 @@ const plans: Plan[] = [
     isMVP: true,
   },
   {
-    name: "Chatbot Inteligente",
+    name: "Agente de I.A",
     price: "R$447,00",
-    monthlyFee: "R$74,75",
+    monthlyFee: "R$189,00",
     description: "Atendimento automático 24/7 com IA, economizando custos e aumentando a eficiência.",
     features: [
-      "Integração de chatbot em IA",
+      "Integração de Agente de IA",
       "Respostas automáticas 24/7",
       "Personalização baseada em dados",
       "Análise de desempenho",
@@ -181,7 +181,7 @@ const PricingSection: React.FC = () => (
           </div>
         </div>
 
-        {/* Plano Chatbot Inteligente (Direita) */}
+        {/* Plano Agente de I.A (Direita) */}
         <div className="flex justify-center">
           <PlanCard plan={plans[1]} />
         </div>

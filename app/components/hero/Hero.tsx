@@ -17,7 +17,7 @@ const Hero = () => {
                     76% das pequenas empresas perdem clientes diariamente
                   </strong>{" "}
                   por não terem presença digital profissional ou atendimento eficiente (DataSebrae 2025). A{" "}
-                  <strong>KiSite</strong> entrega seu site em apenas 5 dias úteis por <strong>R$897</strong> ou automatiza seu atendimento com IA por <strong>R$447</strong> - invista uma vez e lucre sempre.
+                  <strong>KiSite</strong> entrega seu site em apenas 7 dias úteis ou automatiza seu atendimento com um Agemte de IA por - invista uma vez e lucre sempre.
                 </p>
                 {/* Main Title */}
                 <h1 className="text-center text-4xl font-extrabold leading-tight text-primaryBlue dark:text-white sm:text-5xl md:text-5xl lg:text-5xl">
@@ -34,10 +34,10 @@ const Hero = () => {
                 <div className="mt-10 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <div className="text-center">
                     <Link
-                      href="https://wa.me/5511919072390?text=Olá! Gostaria de conhecer o plano Site Essencial por R$897"
+                      href="https://wa.me/5511919072390?text=Olá! Gostaria de conhecer o plano Site Essencial"
                       className="hover:bg-primary/80 inline-flex items-center rounded-md bg-secondaryBlue px-8 py-4 text-lg font-semibold text-white transition-colors duration-300"
                     >
-                      Site Profissional por R$897 - Fale com Especialista
+                      Site Profissional  - Fale com Especialista
                     </Link>
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                       ⏳ Promoção por tempo limitado - Economia de R$300!

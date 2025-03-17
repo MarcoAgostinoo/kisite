@@ -11,7 +11,7 @@ const features = [
   {
     name: "WebSite Turbinado",
     description:
-      "Cansado de sites que não vendem? Seu novo site Next.js é lançado em 5 dias, com design que impressiona e tecnologia que converte visitantes em clientes.",
+      "Cansado de sites que não vendem? Seu novo site Next.js é lançado em 7 dias, com design que impressiona e tecnologia que converte visitantes em clientes.",
     icon: ComputerDesktopIcon,
   },
   {

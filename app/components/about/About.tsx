@@ -65,7 +65,7 @@ export default function About() {
     {
       name: "Milhões de Pedidos Online em 2025",
       value: 435,
-      explanation: "Automatize vendas com um chatbot.",
+      explanation: "Automatize vendas com um Agente de I.A.",
     },
     {
       name: "Milhões de Usuários de Internet no Brasil",
@@ -76,12 +76,12 @@ export default function About() {
 
   const links = [
     { 
-      name: "Site Profissional em 5 Dias", 
-      href: "https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre o site profissional em 5 dias" 
+      name: "Site Profissional em 7 dias", 
+      href: "https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre o site profissional em 7 dias" 
     },
     { 
-      name: "Chatbot Inteligente 24/7", 
-      href: "https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre o chatbot inteligente" 
+      name: "Agente Inteligente 24/7", 
+      href: "https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre o Agente inteligente" 
     },
     { 
       name: "SEO para o Topo do Google", 
@@ -112,7 +112,7 @@ export default function About() {
             Seu Negócio Está Perdendo Clientes? Aproveite o Boom Digital Agora!
           </h2>
           <p className="mt-8 text-lg font-medium text-deepBlack text-shadow-md">
-            O e-commerce no Brasil vai faturar R$234 bilhões em 2025, e 94 milhões de consumidores estão online agora. Sem um site profissional e um chatbot, seu negócio está ficando para trás.
+            O e-commerce no Brasil vai faturar R$234 bilhões em 2025, e 94 milhões de consumidores estão online agora. Sem um site profissional e um Agente de I.a, seu negócio está ficando para trás.
           </p>
         </div>
 

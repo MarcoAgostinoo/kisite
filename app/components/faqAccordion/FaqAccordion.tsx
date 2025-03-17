@@ -6,13 +6,13 @@ const faqItems = [
     id: 1,
     question: "O que é a KiSite?",
     answer:
-      "A KiSite é especialista em transformar a presença digital de pequenas e médias empresas, oferecendo sites profissionais entregues em apenas 5 dias e chatbots de atendimento 24/7.",
+      "A KiSite é especialista em transformar a presença digital de pequenas e médias empresas, oferecendo sites profissionais entregues em apenas 7 dias e Agente de I.A de atendimento 24/7.",
   },
   {
     id: 2,
     question: "Quais soluções a KiSite oferece?",
     answer:
-      "Oferecemos criação rápida de sites modernos, integração com WhatsApp, chatbots inteligentes com IA, SEO avançado e estratégias de marketing digital para potencializar suas vendas.",
+      "Oferecemos criação rápida de sites modernos, integração com WhatsApp, Agente de I.A inteligentes com IA, SEO avançado e estratégias de marketing digital para potencializar suas vendas.",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const faqItems = [
     id: 4,
     question: "Qual o prazo de entrega do site?",
     answer:
-      "Sites essenciais são entregues em apenas 5 dias úteis, garantindo uma presença digital rápida e eficaz.",
+      "Sites essenciais são entregues em apenas 7 dias úteis, garantindo uma presença digital rápida e eficaz.",
   },
   {
     id: 5,
@@ -36,7 +36,7 @@ const faqItems = [
     id: 6,
     question: "Como funciona o atendimento automatizado com IA?",
     answer:
-      "Implementamos um chatbot inteligente que responde dúvidas, qualifica leads e gera vendas automaticamente, complementando sua equipe e reduzindo custos.",
+      "Implementamos um Agente de I.A inteligente que responde dúvidas, qualifica leads e gera vendas automaticamente, complementando sua equipe e reduzindo custos.",
   },
   {
     id: 7,
@@ -64,9 +64,9 @@ const faqItems = [
   },
   {
     id: 11,
-    question: "O serviço de chatbot substitui o atendimento humano?",
+    question: "O serviço de Agente de I.A substitui o atendimento humano?",
     answer:
-      "Não, o chatbot complementa sua equipe ao oferecer atendimento 24/7, liberando tempo para que sua equipe se concentre em tarefas estratégicas.",
+      "Não, o Agente de I.A complementa sua equipe ao oferecer atendimento 24/7, liberando tempo para que sua equipe se concentre em tarefas estratégicas.",
   },
   {
     id: 12,
@@ -82,7 +82,7 @@ const faqItems = [
   },
   {
     id: 14,
-    question: "Quais os benefícios de integrar site e chatbot?",
+    question: "Quais os benefícios de integrar site e chatbAgente de I.A ?",
     answer:
       "A integração potencializa a geração de leads, melhora a experiência do usuário e aumenta a taxa de conversão, resultando em mais vendas para sua empresa.",
   },

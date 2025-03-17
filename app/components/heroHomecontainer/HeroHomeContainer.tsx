@@ -6,7 +6,7 @@ const caracteristicas = [
     items: [
       {
         icon: "🚀",
-        text: "A vitrine online da sua empresa em 5 dias: site profissional, responsivo e otimizado para o Google por apenas R$897.",
+        text: "A vitrine online da sua empresa em 7 dias: site profissional, responsivo e otimizado para o Google por apenas R$897.",
       },
       {
         icon: "📱",
@@ -19,7 +19,7 @@ const caracteristicas = [
     ],
   },
   {
-    title: "2. Chatbot Inteligente: Atendimento 24/7 Que Vende Mais",
+    title: "2. Agente Inteligente: Atendimento 24/7 Que Vende Mais",
     items: [
       {
         icon: "🤖",
@@ -27,28 +27,28 @@ const caracteristicas = [
       },
       {
         icon: "💸",
-        text: "Economize até 6x: um chatbot inteligente custa menos que um vendedor CLT e não tem encargos.",
+        text: "Economize até 6x: um Agente de atendimento inteligente custa menos que um vendedor CLT e não tem encargos.",
       },
       {
         icon: "📈",
-        text: "Aumente suas vendas: chatbots geram 40% mais leads qualificados que o atendimento humano tradicional.",
+        text: "Aumente suas vendas: Agente de I.A geram 40% mais leads qualificados que o atendimento humano tradicional.",
       },
     ],
   },
   {
-    title: "3. Integração Estratégica: Site + Chatbot = Mais Vendas",
+    title: "3. Integração Estratégica: Site + Agente de I.A = Mais Vendas",
     items: [
       {
         icon: "🤝",
-        text: "Conecte seu site ao chatbot: turbine a geração de leads e ofereça suporte instantâneo aos visitantes.",
+        text: "Conecte seu site ao Agente de I.A: turbine a geração de leads e ofereça suporte instantâneo aos visitantes.",
       },
       {
         icon: "🎯",
-        text: "Personalização: adapte o chatbot ao seu negócio e responda às dúvidas mais frequentes dos seus clientes.",
+        text: "Personalização: adapte o Agente de I.A ao seu negócio e responda às dúvidas mais frequentes dos seus clientes.",
       },
       {
         icon: "📊",
-        text: "Resultados comprovados: empresas que integram site e chatbot aumentam em 30% a taxa de conversão.",
+        text: "Resultados comprovados: empresas que integram site e Agente de I.A aumentam em 30% a taxa de conversão.",
       },
     ],
   },
