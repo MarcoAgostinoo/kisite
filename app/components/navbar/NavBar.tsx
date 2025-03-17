@@ -95,7 +95,7 @@ export default function Navegacao() {
         <Navbar.Collapse className={menuOpen ? "block" : "hidden"}>
           <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
             {navLinks.map((link: NavLink) => (
-              <li key={link.name} className="group relative">
+              <li key={link.name} className="group relative font-bold ">
                 <motion.div
                   className="group relative"
                   whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
@@ -120,7 +120,8 @@ export default function Navegacao() {
           href="https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre os serviços da Kisite"
           target="_blank"
           rel="noopener noreferrer"
-          className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-md bg-successGreen px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+          className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-md bg-successGreen px-8 py-3 text-base font-bold text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+          aria-label="Contato via WhatsApp"
         >
           <motion.span
             whileHover={{ scale: 1.1, rotate: 5, transition: { duration: 0.3 } }}

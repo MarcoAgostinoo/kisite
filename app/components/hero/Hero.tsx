@@ -17,7 +17,7 @@ const Hero = () => {
                     76% das pequenas empresas perdem clientes diariamente
                   </strong>{" "}
                   por não terem presença digital profissional ou atendimento eficiente (DataSebrae 2025). A{" "}
-                  <strong>KiSite</strong> entrega seu site em apenas 7 dias úteis ou automatiza seu atendimento com um Agemte de IA por - invista uma vez e lucre sempre.
+                  <strong>KiSite</strong> entrega seu site em apenas 7 dias úteis ou automatiza seu atendimento com um Agemte de IA - invista uma vez e lucre sempre.
                 </p>
                 {/* Main Title */}
                 <h1 className="w-full text-center text-4xl font-bold text-primaryBlue lg:text-5xl">
