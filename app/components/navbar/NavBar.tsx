@@ -5,10 +5,26 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+// Add this interface near the top of the file, after the imports
+interface NavLink {
+  name: string;
+  href: string;
+}
+
 export default function Navegacao() {
   const [scrolling, setScrolling] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Add the navLinks array
+  const navLinks: NavLink[] = [
+    { name: "Início", href: "/" },
+    { name: "Serviços", href: "/#servicos" },
+    { name: "Portfólio", href: "/#portifolio" },
+    { name: "Preços", href: "/#precos" },
+    { name: "Contato", href: "/pag/contato" },
+    { name: "Blog", href: "/pag/kiblog" }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,6 +83,9 @@ export default function Navegacao() {
                 willChange: "transform"
               }}
             />
+            <span className="self-center text-2xl font-semibold text-primaryBlue dark:text-white">
+              KiSite
+            </span>
           </div>
         </Navbar.Brand>
         <div className="flex items-center gap-4 md:order-2">
@@ -74,101 +93,28 @@ export default function Navegacao() {
           <Navbar.Toggle onClick={handleToggle} />
         </div>
         <Navbar.Collapse className={menuOpen ? "block" : "hidden"}>
-          <motion.div
-            className="group relative"
-            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-          >
-            <Navbar.Link
-              href="/"
-              active
-              onClick={handleLinkClick}
-              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-                menuOpen ? "text-white" : ""
-              }`}
-            >
-              Início
-            </Navbar.Link>
-          </motion.div>
-
-          <motion.div
-            className="group relative"
-            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-          >
-            <Navbar.Link
-              href="/#servicos"
-              active
-              onClick={handleLinkClick}
-              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-                menuOpen ? "text-white" : ""
-              }`}
-            >
-              Serviços
-            </Navbar.Link>
-          </motion.div>
-
-          <motion.div
-            className="group relative"
-            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-          >
-            <Navbar.Link
-              href="/#portifolio"
-              active
-              onClick={handleLinkClick}
-              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-                menuOpen ? "text-white" : ""
-              }`}
-            >
-              Portfólio
-            </Navbar.Link>
-          </motion.div>
-
-          <motion.div
-            className="group relative"
-            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-          >
-            <Navbar.Link
-              href="/#precos"
-              active
-              onClick={handleLinkClick}
-              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-                menuOpen ? "text-white" : ""
-              }`}
-            >
-              Preços
-            </Navbar.Link>
-          </motion.div>
-
-          <motion.div
-            className="group relative"
-            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-          >
-            <Navbar.Link
-              href="/pag/contato"
-              active
-              onClick={handleLinkClick}
-              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-                menuOpen ? "text-white" : ""
-              }`}
-            >
-              Contato
-            </Navbar.Link>
-          </motion.div>
-
-          <motion.div
-            className="group relative"
-            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-          >
-            <Navbar.Link
-              href="/pag/kiblog"
-              active
-              onClick={handleLinkClick}
-              className={`text-slate-800 text-base group-hover:text-blue-500 lg:p-[6px] lg:text-black ${
-                menuOpen ? "text-white" : ""
-              }`}
-            >
-              Blog
-            </Navbar.Link>
-          </motion.div>
+          <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+            {navLinks.map((link: NavLink) => (
+              <li key={link.name} className="group relative">
+                <motion.div
+                  className="group relative"
+                  whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+                >
+                  <Link 
+                    href={link.href}
+                    className={`text-base font-medium ${
+                      menuOpen 
+                        ? "text-white hover:text-blue-300" 
+                        : "text-slate-800 group-hover:text-blue-500"
+                    } lg:p-[6px] lg:text-black`}
+                    onClick={handleLinkClick}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              </li>
+            ))}
+          </ul>
         </Navbar.Collapse>
         <Link
           href="https://wa.me/5511919072390?text=Olá! Gostaria de saber mais sobre os serviços da Kisite"

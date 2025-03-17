@@ -20,14 +20,9 @@ const Hero = () => {
                   <strong>KiSite</strong> entrega seu site em apenas 7 dias úteis ou automatiza seu atendimento com um Agemte de IA por - invista uma vez e lucre sempre.
                 </p>
                 {/* Main Title */}
-                <h1 className="text-center text-4xl font-extrabold leading-tight text-primaryBlue dark:text-white sm:text-5xl md:text-5xl lg:text-5xl">
-                  <span>
-                    Transforme seu Negócio com Site Profissional
-                  </span>
-                  <span className="mt-2 block">
-                    Atraia mais Clientes e Automatize seu Atendimento 24/7 com I.A
-                  </span>
-                </h1>
+                <h1 className="w-full text-center text-4xl font-bold text-primaryBlue lg:text-5xl">
+                          Site Essencial: A Base Digital Para Seu Crescimento
+                        </h1>
                 <div className="flex w-full justify-center"></div>
 
                 {/* CTAs */}

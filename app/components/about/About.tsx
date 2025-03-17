@@ -142,7 +142,7 @@ export default function About() {
               <dd className="text-4xl font-bold tracking-tight text-primaryBlue">
                 <AnimatedStat value={stat.value} isVisible={isVisible} />
               </dd>
-              <p className="text-sm text-gray-600">{stat.explanation}</p>
+              <dt className="text-sm text-neutralGray">{stat.explanation}</dt>
             </div>
           ))}
         </dl>
